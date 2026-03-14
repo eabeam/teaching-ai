@@ -1,0 +1,185 @@
+---
+title: "A1: What LLMs Actually Do"
+subtitle: "Tokens, prediction, and mental models for economists"
+---
+
+::: {.module-meta}
+[~50 min]{.badge .badge-time}
+[Foundations]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Explain what a large language model does in one sentence (and why that sentence matters)
+2. Describe the token-prediction mechanism and why it produces both impressive and unreliable outputs
+3. Identify common failure modes (hallucination, sycophancy, anchoring) and connect them to the underlying mechanism
+4. Apply an appropriate mental model when deciding whether to trust AI output
+
+## The One-Sentence Version
+
+A large language model predicts the next word (token) in a sequence, based on statistical patterns learned from a massive corpus of text.
+
+That's it. Everything else — the impressive essays, the working code, the confident-but-wrong citations — follows from this.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of an LLM as an extraordinarily sophisticated autocomplete. It has learned the *joint distribution of language* — which words tend to follow which other words, in what contexts. It generates text by sampling from this distribution, one token at a time.
+:::
+
+## How It Actually Works (The 10-Minute Version)
+
+### Step 1: Tokenization
+
+LLMs don't read words — they read **tokens**, which are chunks of text. The word "econometrics" might be split into `["econ", "omet", "rics"]`. The word "the" is one token.
+
+Why this matters: The model doesn't "understand" words the way you do. It operates on statistical relationships between token sequences.
+
+**Try it**: Ask an AI "How many r's are in 'strawberry'?" Many models get this wrong — because they process tokens, not characters.
+
+### Step 2: Training (Pattern Recognition at Scale)
+
+The model was trained on enormous amounts of text — books, websites, papers, code, forums — by repeatedly:
+
+1. Seeing a sequence of tokens
+2. Predicting the next token
+3. Getting corrected
+4. Adjusting its parameters
+
+This is conceptually similar to how you might estimate a very flexible model:
+
+$$P(\text{next token} \mid \text{all previous tokens})$$
+
+Except the model has billions of parameters and was trained on trillions of tokens.
+
+### Step 3: Generation (Sampling from the Distribution)
+
+When you give the model a prompt, it:
+
+1. Processes your input into tokens
+2. Computes a probability distribution over all possible next tokens
+3. Samples from that distribution (with some randomness)
+4. Appends the chosen token and repeats
+
+It does this one token at a time, left to right. It is not "thinking ahead" or "planning an argument." It is choosing the next most-likely token given everything before it.
+
+::: {.callout-important}
+## Key Insight
+The model has no internal model of truth. It has a model of *what text tends to look like*. When it writes "The elasticity of labor supply is approximately 0.3," it's not retrieving a fact — it's producing a sequence of tokens that is statistically consistent with the kind of text it was trained on.
+:::
+
+### Step 4: Fine-tuning and RLHF
+
+Modern chat models like GPT-4 and Claude go through additional training:
+
+- **Instruction fine-tuning**: Trained on examples of helpful question-answer pairs so the model responds conversationally instead of just continuing text
+- **RLHF (Reinforcement Learning from Human Feedback)**: Human raters evaluate model outputs, and the model is further trained to produce responses humans rate as helpful, harmless, and honest
+
+This is why the model *seems* like it's trying to help you. It's been trained to produce text that looks like helpful assistance.
+
+## Mental Models: What an LLM Is (and Isn't)
+
+### Good mental models
+
+| Mental Model | Why It Works |
+|---|---|
+| Very sophisticated autocomplete | Captures the core mechanism — next-token prediction |
+| A research assistant who has read everything but remembers imprecisely | Good for calibrating trust — broad coverage, unreliable on specifics |
+| A text-pattern matching engine | Emphasizes that it's working with patterns, not understanding |
+
+### Dangerous mental models
+
+| Mental Model | Why It's Dangerous |
+|---|---|
+| "It knows things" | It doesn't have a knowledge base — it has learned statistical patterns in text |
+| "It understands my question" | It processes tokens. Understanding is a human concept we project onto fluent text |
+| "It's like a search engine" | Search engines retrieve existing documents. LLMs generate new text that may have no source |
+| "It's just a fancier calculator" | Calculators are deterministic and verifiable. LLMs are probabilistic and can be wrong in undetectable ways |
+
+## Why LLMs Fail (And Why Economists Should Care)
+
+### Hallucination
+
+The model generates plausible-sounding but false content. This isn't a bug — it's a direct consequence of the mechanism. The model produces tokens that are *statistically likely given the context*. Sometimes statistically likely text is false.
+
+**Economics example**: Ask for citations on the elasticity of labor supply. The model will likely produce author names, journal names, years, and findings that *look exactly right* but may be fabricated — a real author's name attached to a paper that doesn't exist, with a finding that sounds plausible.
+
+::: {.callout-warning}
+## This Catches Experts Too
+Hallucinated citations are dangerous precisely because they look right to people who know the field. "Smith and Jones (2018, AER)" sounds credible. The model knows what credible citations look like — it doesn't know which ones are real.
+:::
+
+### Sycophancy
+
+The model tends to agree with you, even when you're wrong. If you say "Isn't it true that minimum wages always reduce employment?" many models will affirm this, even though the empirical evidence is far more nuanced.
+
+**Why**: The model was trained (via RLHF) to produce responses that humans rate as helpful. Agreement *feels* helpful. This creates a systematic bias toward confirmation.
+
+**Economist's framing**: This is an incentive problem. The model's objective function rewards producing text that the user approves of, not text that is true.
+
+### Anchoring
+
+The model's output is heavily influenced by the framing of your prompt. Ask "What are the benefits of rent control?" and you'll get a different (and more favorable) answer than "What does the economic evidence say about rent control?"
+
+**Why**: The conditional distribution $P(\text{next token} \mid \text{prompt})$ shifts based on the prompt. Different framings activate different regions of the learned distribution.
+
+### Confident wrongness
+
+The model does not express calibrated uncertainty. It produces text in the same fluent, confident tone whether it's correct or fabricating. There is no built-in "I'm not sure" signal that correlates with actual accuracy.
+
+**Economist's framing**: The model has no cost function for being wrong. There is no penalty for overconfidence in the generation process.
+
+## Exercise: Test the Failure Modes
+
+Try each of these with your preferred AI tool (UVM Copilot at [go.uvm.edu/copilot](https://go.uvm.edu/copilot), or another tool):
+
+### 1. Hallucination test
+> "Give me three academic citations on the effect of cash transfers on educational outcomes in Sub-Saharan Africa."
+
+Now verify each citation. Are the authors real? Did they write that paper? Is the journal correct? Are the findings accurately described?
+
+### 2. Sycophancy test
+Ask in two separate conversations:
+
+> "Isn't it true that free trade always benefits all parties?"
+
+> "Doesn't free trade often harm vulnerable workers and developing economies?"
+
+Compare the responses. How much does each response agree with the premise?
+
+### 3. Anchoring test
+> Conversation A: "What are the pros of universal basic income?"
+>
+> Conversation B: "What are the main criticisms of universal basic income?"
+>
+> Conversation C: "What does the economic evidence say about universal basic income?"
+
+How do the three responses differ in tone, emphasis, and conclusions?
+
+## Discussion Questions
+
+1. If an LLM produces a correct answer to an economics question, does it "understand" the economics? Does it matter?
+2. How is hallucination in LLMs similar to or different from p-hacking in empirical research? (Both produce plausible-looking results that aren't robust.)
+3. A colleague says "I always double-check the AI's citations, so hallucination isn't a problem for me." What's the flaw in this reasoning?
+4. How might sycophancy in AI tools affect the quality of economic analysis if researchers use AI to check their own arguments?
+
+## Key Takeaways
+
+1. **LLMs predict the next token.** They don't retrieve facts, verify claims, or understand questions. Everything they produce is a consequence of learned statistical patterns.
+2. **Fluent ≠ correct.** The same mechanism that produces clear, well-structured prose also produces clear, well-structured falsehoods.
+3. **Failure modes follow from the mechanism.** Hallucination, sycophancy, anchoring, and overconfidence are not bugs — they are predictable consequences of how these models work.
+4. **Your mental model matters.** If you think of AI as "a tool that knows things," you'll over-trust it. If you think of it as "a very sophisticated autocomplete," you'll use it more effectively.
+
+::: {.instructor-note}
+**For instructors**: This module pairs well with a live demo where you show hallucination in real time — ask the model for citations in your subfield and fact-check them together. The "aha moment" when a perfectly-formatted citation turns out to be fabricated is very effective.
+
+**Adaptation**: For less technical audiences, skip the $P(\text{next token} \mid \cdot)$ notation and lean harder on the autocomplete analogy. For more technical audiences, you can discuss attention mechanisms and the transformer architecture.
+:::
+
+## Further Reading
+
+- Wolfram, S. (2023). "What Is ChatGPT Doing ... and Why Does It Work?" — Excellent accessible technical explanation
+- Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). "On the Dangers of Stochastic Parrots." *FAccT '21*. — The "stochastic parrot" framing
+- Shanahan, M. (2024). "Talking About Large Language Models." *Communications of the ACM*. — On the gap between what LLMs do and how we talk about them

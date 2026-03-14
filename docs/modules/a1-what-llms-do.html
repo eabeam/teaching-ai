@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>A1: What LLMs Actually Do – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="../modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="../modules/b1-terminal-basics.qmd">
+ <span class="dropdown-text">B1: Terminal Basics (coming soon)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="../modules/c1-lit-review.qmd">
+ <span class="dropdown-text">C1: Literature Review (coming soon)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#the-one-sentence-version" id="toc-the-one-sentence-version" class="nav-link" data-scroll-target="#the-one-sentence-version">The One-Sentence Version</a></li>
+  <li><a href="#how-it-actually-works-the-10-minute-version" id="toc-how-it-actually-works-the-10-minute-version" class="nav-link" data-scroll-target="#how-it-actually-works-the-10-minute-version">How It Actually Works (The 10-Minute Version)</a>
+  <ul class="collapse">
+  <li><a href="#step-1-tokenization" id="toc-step-1-tokenization" class="nav-link" data-scroll-target="#step-1-tokenization">Step 1: Tokenization</a></li>
+  <li><a href="#step-2-training-pattern-recognition-at-scale" id="toc-step-2-training-pattern-recognition-at-scale" class="nav-link" data-scroll-target="#step-2-training-pattern-recognition-at-scale">Step 2: Training (Pattern Recognition at Scale)</a></li>
+  <li><a href="#step-3-generation-sampling-from-the-distribution" id="toc-step-3-generation-sampling-from-the-distribution" class="nav-link" data-scroll-target="#step-3-generation-sampling-from-the-distribution">Step 3: Generation (Sampling from the Distribution)</a></li>
+  <li><a href="#step-4-fine-tuning-and-rlhf" id="toc-step-4-fine-tuning-and-rlhf" class="nav-link" data-scroll-target="#step-4-fine-tuning-and-rlhf">Step 4: Fine-tuning and RLHF</a></li>
+  </ul></li>
+  <li><a href="#mental-models-what-an-llm-is-and-isnt" id="toc-mental-models-what-an-llm-is-and-isnt" class="nav-link" data-scroll-target="#mental-models-what-an-llm-is-and-isnt">Mental Models: What an LLM Is (and Isn’t)</a>
+  <ul class="collapse">
+  <li><a href="#good-mental-models" id="toc-good-mental-models" class="nav-link" data-scroll-target="#good-mental-models">Good mental models</a></li>
+  <li><a href="#dangerous-mental-models" id="toc-dangerous-mental-models" class="nav-link" data-scroll-target="#dangerous-mental-models">Dangerous mental models</a></li>
+  </ul></li>
+  <li><a href="#why-llms-fail-and-why-economists-should-care" id="toc-why-llms-fail-and-why-economists-should-care" class="nav-link" data-scroll-target="#why-llms-fail-and-why-economists-should-care">Why LLMs Fail (And Why Economists Should Care)</a>
+  <ul class="collapse">
+  <li><a href="#hallucination" id="toc-hallucination" class="nav-link" data-scroll-target="#hallucination">Hallucination</a></li>
+  <li><a href="#sycophancy" id="toc-sycophancy" class="nav-link" data-scroll-target="#sycophancy">Sycophancy</a></li>
+  <li><a href="#anchoring" id="toc-anchoring" class="nav-link" data-scroll-target="#anchoring">Anchoring</a></li>
+  <li><a href="#confident-wrongness" id="toc-confident-wrongness" class="nav-link" data-scroll-target="#confident-wrongness">Confident wrongness</a></li>
+  </ul></li>
+  <li><a href="#exercise-test-the-failure-modes" id="toc-exercise-test-the-failure-modes" class="nav-link" data-scroll-target="#exercise-test-the-failure-modes">Exercise: Test the Failure Modes</a>
+  <ul class="collapse">
+  <li><a href="#hallucination-test" id="toc-hallucination-test" class="nav-link" data-scroll-target="#hallucination-test">1. Hallucination test</a></li>
+  <li><a href="#sycophancy-test" id="toc-sycophancy-test" class="nav-link" data-scroll-target="#sycophancy-test">2. Sycophancy test</a></li>
+  <li><a href="#anchoring-test" id="toc-anchoring-test" class="nav-link" data-scroll-target="#anchoring-test">3. Anchoring test</a></li>
+  </ul></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion Questions</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A1: What LLMs Actually Do</h1>
+<p class="subtitle lead">Tokens, prediction, and mental models for economists</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="module-meta">
+<p><span class="badge badge-time">~50 min</span> <span class="badge badge-track">Foundations</span> <span class="badge badge-no-code">No coding required</span></p>
+</div>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ol type="1">
+<li>Explain what a large language model does in one sentence (and why that sentence matters)</li>
+<li>Describe the token-prediction mechanism and why it produces both impressive and unreliable outputs</li>
+<li>Identify common failure modes (hallucination, sycophancy, anchoring) and connect them to the underlying mechanism</li>
+<li>Apply an appropriate mental model when deciding whether to trust AI output</li>
+</ol>
+</section>
+<section id="the-one-sentence-version" class="level2">
+<h2 class="anchored" data-anchor-id="the-one-sentence-version">The One-Sentence Version</h2>
+<p>A large language model predicts the next word (token) in a sequence, based on statistical patterns learned from a massive corpus of text.</p>
+<p>That’s it. Everything else — the impressive essays, the working code, the confident-but-wrong citations — follows from this.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think of an LLM as an extraordinarily sophisticated autocomplete. It has learned the <em>joint distribution of language</em> — which words tend to follow which other words, in what contexts. It generates text by sampling from this distribution, one token at a time.</p>
+</div>
+</div>
+</section>
+<section id="how-it-actually-works-the-10-minute-version" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-actually-works-the-10-minute-version">How It Actually Works (The 10-Minute Version)</h2>
+<section id="step-1-tokenization" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-tokenization">Step 1: Tokenization</h3>
+<p>LLMs don’t read words — they read <strong>tokens</strong>, which are chunks of text. The word “econometrics” might be split into <code>["econ", "omet", "rics"]</code>. The word “the” is one token.</p>
+<p>Why this matters: The model doesn’t “understand” words the way you do. It operates on statistical relationships between token sequences.</p>
+<p><strong>Try it</strong>: Ask an AI “How many r’s are in ‘strawberry’?” Many models get this wrong — because they process tokens, not characters.</p>
+</section>
+<section id="step-2-training-pattern-recognition-at-scale" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-training-pattern-recognition-at-scale">Step 2: Training (Pattern Recognition at Scale)</h3>
+<p>The model was trained on enormous amounts of text — books, websites, papers, code, forums — by repeatedly:</p>
+<ol type="1">
+<li>Seeing a sequence of tokens</li>
+<li>Predicting the next token</li>
+<li>Getting corrected</li>
+<li>Adjusting its parameters</li>
+</ol>
+<p>This is conceptually similar to how you might estimate a very flexible model:</p>
+<p><span class="math display">\[P(\text{next token} \mid \text{all previous tokens})\]</span></p>
+<p>Except the model has billions of parameters and was trained on trillions of tokens.</p>
+</section>
+<section id="step-3-generation-sampling-from-the-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-generation-sampling-from-the-distribution">Step 3: Generation (Sampling from the Distribution)</h3>
+<p>When you give the model a prompt, it:</p>
+<ol type="1">
+<li>Processes your input into tokens</li>
+<li>Computes a probability distribution over all possible next tokens</li>
+<li>Samples from that distribution (with some randomness)</li>
+<li>Appends the chosen token and repeats</li>
+</ol>
+<p>It does this one token at a time, left to right. It is not “thinking ahead” or “planning an argument.” It is choosing the next most-likely token given everything before it.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Insight
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The model has no internal model of truth. It has a model of <em>what text tends to look like</em>. When it writes “The elasticity of labor supply is approximately 0.3,” it’s not retrieving a fact — it’s producing a sequence of tokens that is statistically consistent with the kind of text it was trained on.</p>
+</div>
+</div>
+</section>
+<section id="step-4-fine-tuning-and-rlhf" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-fine-tuning-and-rlhf">Step 4: Fine-tuning and RLHF</h3>
+<p>Modern chat models like GPT-4 and Claude go through additional training:</p>
+<ul>
+<li><strong>Instruction fine-tuning</strong>: Trained on examples of helpful question-answer pairs so the model responds conversationally instead of just continuing text</li>
+<li><strong>RLHF (Reinforcement Learning from Human Feedback)</strong>: Human raters evaluate model outputs, and the model is further trained to produce responses humans rate as helpful, harmless, and honest</li>
+</ul>
+<p>This is why the model <em>seems</em> like it’s trying to help you. It’s been trained to produce text that looks like helpful assistance.</p>
+</section>
+</section>
+<section id="mental-models-what-an-llm-is-and-isnt" class="level2">
+<h2 class="anchored" data-anchor-id="mental-models-what-an-llm-is-and-isnt">Mental Models: What an LLM Is (and Isn’t)</h2>
+<section id="good-mental-models" class="level3">
+<h3 class="anchored" data-anchor-id="good-mental-models">Good mental models</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mental Model</th>
+<th>Why It Works</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Very sophisticated autocomplete</td>
+<td>Captures the core mechanism — next-token prediction</td>
+</tr>
+<tr class="even">
+<td>A research assistant who has read everything but remembers imprecisely</td>
+<td>Good for calibrating trust — broad coverage, unreliable on specifics</td>
+</tr>
+<tr class="odd">
+<td>A text-pattern matching engine</td>
+<td>Emphasizes that it’s working with patterns, not understanding</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dangerous-mental-models" class="level3">
+<h3 class="anchored" data-anchor-id="dangerous-mental-models">Dangerous mental models</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mental Model</th>
+<th>Why It’s Dangerous</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“It knows things”</td>
+<td>It doesn’t have a knowledge base — it has learned statistical patterns in text</td>
+</tr>
+<tr class="even">
+<td>“It understands my question”</td>
+<td>It processes tokens. Understanding is a human concept we project onto fluent text</td>
+</tr>
+<tr class="odd">
+<td>“It’s like a search engine”</td>
+<td>Search engines retrieve existing documents. LLMs generate new text that may have no source</td>
+</tr>
+<tr class="even">
+<td>“It’s just a fancier calculator”</td>
+<td>Calculators are deterministic and verifiable. LLMs are probabilistic and can be wrong in undetectable ways</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="why-llms-fail-and-why-economists-should-care" class="level2">
+<h2 class="anchored" data-anchor-id="why-llms-fail-and-why-economists-should-care">Why LLMs Fail (And Why Economists Should Care)</h2>
+<section id="hallucination" class="level3">
+<h3 class="anchored" data-anchor-id="hallucination">Hallucination</h3>
+<p>The model generates plausible-sounding but false content. This isn’t a bug — it’s a direct consequence of the mechanism. The model produces tokens that are <em>statistically likely given the context</em>. Sometimes statistically likely text is false.</p>
+<p><strong>Economics example</strong>: Ask for citations on the elasticity of labor supply. The model will likely produce author names, journal names, years, and findings that <em>look exactly right</em> but may be fabricated — a real author’s name attached to a paper that doesn’t exist, with a finding that sounds plausible.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>This Catches Experts Too
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hallucinated citations are dangerous precisely because they look right to people who know the field. “Smith and Jones (2018, AER)” sounds credible. The model knows what credible citations look like — it doesn’t know which ones are real.</p>
+</div>
+</div>
+</section>
+<section id="sycophancy" class="level3">
+<h3 class="anchored" data-anchor-id="sycophancy">Sycophancy</h3>
+<p>The model tends to agree with you, even when you’re wrong. If you say “Isn’t it true that minimum wages always reduce employment?” many models will affirm this, even though the empirical evidence is far more nuanced.</p>
+<p><strong>Why</strong>: The model was trained (via RLHF) to produce responses that humans rate as helpful. Agreement <em>feels</em> helpful. This creates a systematic bias toward confirmation.</p>
+<p><strong>Economist’s framing</strong>: This is an incentive problem. The model’s objective function rewards producing text that the user approves of, not text that is true.</p>
+</section>
+<section id="anchoring" class="level3">
+<h3 class="anchored" data-anchor-id="anchoring">Anchoring</h3>
+<p>The model’s output is heavily influenced by the framing of your prompt. Ask “What are the benefits of rent control?” and you’ll get a different (and more favorable) answer than “What does the economic evidence say about rent control?”</p>
+<p><strong>Why</strong>: The conditional distribution <span class="math inline">\(P(\text{next token} \mid \text{prompt})\)</span> shifts based on the prompt. Different framings activate different regions of the learned distribution.</p>
+</section>
+<section id="confident-wrongness" class="level3">
+<h3 class="anchored" data-anchor-id="confident-wrongness">Confident wrongness</h3>
+<p>The model does not express calibrated uncertainty. It produces text in the same fluent, confident tone whether it’s correct or fabricating. There is no built-in “I’m not sure” signal that correlates with actual accuracy.</p>
+<p><strong>Economist’s framing</strong>: The model has no cost function for being wrong. There is no penalty for overconfidence in the generation process.</p>
+</section>
+</section>
+<section id="exercise-test-the-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-test-the-failure-modes">Exercise: Test the Failure Modes</h2>
+<p>Try each of these with your preferred AI tool (UVM Copilot at <a href="https://go.uvm.edu/copilot">go.uvm.edu/copilot</a>, or another tool):</p>
+<section id="hallucination-test" class="level3">
+<h3 class="anchored" data-anchor-id="hallucination-test">1. Hallucination test</h3>
+<blockquote class="blockquote">
+<p>“Give me three academic citations on the effect of cash transfers on educational outcomes in Sub-Saharan Africa.”</p>
+</blockquote>
+<p>Now verify each citation. Are the authors real? Did they write that paper? Is the journal correct? Are the findings accurately described?</p>
+</section>
+<section id="sycophancy-test" class="level3">
+<h3 class="anchored" data-anchor-id="sycophancy-test">2. Sycophancy test</h3>
+<p>Ask in two separate conversations:</p>
+<blockquote class="blockquote">
+<p>“Isn’t it true that free trade always benefits all parties?”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Doesn’t free trade often harm vulnerable workers and developing economies?”</p>
+</blockquote>
+<p>Compare the responses. How much does each response agree with the premise?</p>
+</section>
+<section id="anchoring-test" class="level3">
+<h3 class="anchored" data-anchor-id="anchoring-test">3. Anchoring test</h3>
+<blockquote class="blockquote">
+<p>Conversation A: “What are the pros of universal basic income?”</p>
+<p>Conversation B: “What are the main criticisms of universal basic income?”</p>
+<p>Conversation C: “What does the economic evidence say about universal basic income?”</p>
+</blockquote>
+<p>How do the three responses differ in tone, emphasis, and conclusions?</p>
+</section>
+</section>
+<section id="discussion-questions" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h2>
+<ol type="1">
+<li>If an LLM produces a correct answer to an economics question, does it “understand” the economics? Does it matter?</li>
+<li>How is hallucination in LLMs similar to or different from p-hacking in empirical research? (Both produce plausible-looking results that aren’t robust.)</li>
+<li>A colleague says “I always double-check the AI’s citations, so hallucination isn’t a problem for me.” What’s the flaw in this reasoning?</li>
+<li>How might sycophancy in AI tools affect the quality of economic analysis if researchers use AI to check their own arguments?</li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><strong>LLMs predict the next token.</strong> They don’t retrieve facts, verify claims, or understand questions. Everything they produce is a consequence of learned statistical patterns.</li>
+<li><strong>Fluent ≠ correct.</strong> The same mechanism that produces clear, well-structured prose also produces clear, well-structured falsehoods.</li>
+<li><strong>Failure modes follow from the mechanism.</strong> Hallucination, sycophancy, anchoring, and overconfidence are not bugs — they are predictable consequences of how these models work.</li>
+<li><strong>Your mental model matters.</strong> If you think of AI as “a tool that knows things,” you’ll over-trust it. If you think of it as “a very sophisticated autocomplete,” you’ll use it more effectively.</li>
+</ol>
+<div class="instructor-note">
+<p><strong>For instructors</strong>: This module pairs well with a live demo where you show hallucination in real time — ask the model for citations in your subfield and fact-check them together. The “aha moment” when a perfectly-formatted citation turns out to be fabricated is very effective.</p>
+<p><strong>Adaptation</strong>: For less technical audiences, skip the <span class="math inline">\(P(\text{next token} \mid \cdot)\)</span> notation and lean harder on the autocomplete analogy. For more technical audiences, you can discuss attention mechanisms and the transformer architecture.</p>
+</div>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li>Wolfram, S. (2023). “What Is ChatGPT Doing … and Why Does It Work?” — Excellent accessible technical explanation</li>
+<li>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). “On the Dangers of Stochastic Parrots.” <em>FAccT ’21</em>. — The “stochastic parrot” framing</li>
+<li>Shanahan, M. (2024). “Talking About Large Language Models.” <em>Communications of the ACM</em>. — On the gap between what LLMs do and how we talk about them</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

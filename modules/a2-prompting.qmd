@@ -1,0 +1,227 @@
+---
+title: "A2: Prompting as Problem Specification"
+subtitle: "Clear prompts = clear thinking"
+---
+
+::: {.module-meta}
+[~50 min]{.badge .badge-time}
+[Foundations]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Explain why prompt quality determines output quality (and why this is not obvious)
+2. Apply a structured framework for writing effective prompts
+3. Diagnose common prompt failures and fix them
+4. Use iterative prompting to refine outputs rather than starting over
+
+## The Core Idea
+
+Writing a good prompt is the same skill as specifying a research question clearly.
+
+A vague research question ("What's the effect of education?") produces vague analysis. A precise one ("What is the causal effect of an additional year of secondary schooling on formal labor force participation among women in rural Kenya?") produces focused, useful work.
+
+Prompts work exactly the same way. The model can only respond to what you give it.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of the prompt as your **identification strategy**. If your identification strategy is vague, your results will be unreliable — not because the method is bad, but because you haven't defined the problem clearly enough for the method to work.
+:::
+
+## Why Prompt Quality Matters More Than You Think
+
+### The model has no context you don't provide
+
+When you open a new conversation with an AI, it knows nothing about:
+
+- Your course, your level, your background
+- What you've already tried
+- What kind of answer you want
+- How much detail is appropriate
+- What format would be useful
+
+**It fills in all of these with its best guess** based on the tokens in your prompt. If your prompt is ambiguous, the model resolves that ambiguity for you — and it may resolve it in a direction you didn't intend.
+
+### Example: The same question, three ways
+
+**Version 1** (vague):
+> "Tell me about instrumental variables."
+
+*What you'll get*: A generic textbook overview, probably pitched at a level that's either too basic or too abstract for what you need.
+
+**Version 2** (better):
+> "Explain instrumental variables to an upper-level undergraduate economics student who understands OLS and omitted variable bias but hasn't seen IV before. Use a concrete example."
+
+*What you'll get*: A clearer explanation at the right level, probably with the classic returns-to-education / quarter-of-birth example.
+
+**Version 3** (specific):
+> "I'm an econ major working on a paper about the effect of immigration on wages. I want to use an instrumental variable approach but I'm struggling to think of valid instruments. Can you:
+> 1. Explain what makes an instrument valid (relevance + exclusion restriction) in plain language
+> 2. Suggest 2-3 instruments that have been used in the immigration-wages literature
+> 3. For each, explain the argument for why the exclusion restriction might or might not hold"
+
+*What you'll get*: Something you can actually use.
+
+The model didn't get smarter between Version 1 and Version 3. You got clearer about what you needed.
+
+## A Framework for Effective Prompts
+
+### The ROCS framework
+
+| Component | What it is | Example |
+|---|---|---|
+| **R**ole / Context | Who you are, what you're doing | "I'm an econ student writing a research proposal..." |
+| **O**bjective | What you want the output to be | "...I need help identifying a plausible identification strategy..." |
+| **C**onstraints | Boundaries, format, level, length | "...explain in 2-3 paragraphs, at an advanced undergrad level..." |
+| **S**pecifics | Details that shape the answer | "...for estimating the effect of Medicaid expansion on ER utilization in rural areas." |
+
+You don't need all four every time. But when an AI gives you a bad response, it's almost always because one of these was missing.
+
+::: {.callout-note}
+## This Is Not a Magic Formula
+Frameworks like ROCS are training wheels. The actual skill is **thinking clearly about what you want before you ask for it** — which is a skill that transfers far beyond AI.
+:::
+
+### When to keep it simple
+
+Not every prompt needs to be a paragraph. Quick, well-specified questions work fine:
+
+- "What's the formula for the Herfindahl-Hirschman Index?"
+- "Convert this Stata code to R: `reg y x1 x2, robust`"
+- "What does 'heteroskedasticity' mean in plain English?"
+
+The framework is for when you're getting bad output and need to diagnose why.
+
+## Common Prompt Failures (And Fixes)
+
+### Failure 1: The Blank Canvas
+
+**Prompt**: "Help me with my econometrics problem set."
+
+**Problem**: The model has no idea what course, what topic, what level, what specifically you're stuck on.
+
+**Fix**: "I'm working on a problem set about instrumental variables for my Econometrics course. The question asks me to estimate the returns to education using quarter of birth as an instrument. I've run the first-stage regression and the F-statistic is 3.2. I'm worried about weak instruments. Can you explain what the weak instrument problem is and whether I should be concerned with this F-statistic?"
+
+### Failure 2: The Implicit Assumption
+
+**Prompt**: "Is this regression specification correct?" [pastes Stata code]
+
+**Problem**: "Correct" relative to what? What are you trying to estimate? What's the identification assumption?
+
+**Fix**: "I'm trying to estimate the effect of class size on test scores, using a diff-in-diff design. Treatment is a policy that reduced class sizes in schools above a size threshold. Here's my Stata code [paste]. Does this specification correctly implement the diff-in-diff? Specifically, am I including the right fixed effects and interaction terms?"
+
+### Failure 3: The Kitchen Sink
+
+**Prompt**: "Explain monetary policy, fiscal policy, the IS-LM model, how the Fed works, what quantitative easing is, and how this all relates to inflation. Also what's the Taylor Rule?"
+
+**Problem**: Too many questions at once. The model will give you a shallow answer to each rather than a useful answer to any.
+
+**Fix**: Ask one question at a time. Depth beats breadth.
+
+### Failure 4: The Leading Question
+
+**Prompt**: "Explain why minimum wage increases cause unemployment."
+
+**Problem**: You've embedded your conclusion in the prompt. The model will likely agree (sycophancy — see Module A1) rather than present the nuanced evidence.
+
+**Fix**: "What does the empirical evidence say about the employment effects of minimum wage increases? Summarize the key findings and the main debate."
+
+## Iterative Prompting: Conversations, Not One-Shots
+
+The most effective use of AI is not a single perfect prompt — it's a conversation where you refine the output.
+
+### The iteration pattern
+
+1. **Start with a reasonable prompt** (doesn't have to be perfect)
+2. **Evaluate the response** — what's good, what's missing, what's wrong?
+3. **Give specific feedback** — not "try again" but "this is too technical, simplify the explanation of the exclusion restriction" or "good, but now add a concrete example using trade data"
+4. **Repeat** until the output is useful
+
+### Example: Iterating on a literature summary
+
+**Round 1**:
+> "Summarize the literature on cash transfers and education in developing countries."
+
+*Output is too broad, generic, no citations.*
+
+**Round 2**:
+> "Good start, but I need more specifics. Focus on conditional vs. unconditional cash transfers, outcomes specifically about enrollment and attendance (not test scores), and studies from Sub-Saharan Africa. Include author names and years for key studies."
+
+*Output is better but includes some suspicious citations.*
+
+**Round 3**:
+> "I'm going to verify these citations. For each study, give me the exact paper title and journal so I can look it up."
+
+*Now you can fact-check and have a useful starting point for your lit review.*
+
+::: {.callout-important}
+## Iteration > Perfection
+You will almost always get better results from three rounds of a decent prompt + specific feedback than from one "perfect" prompt. Don't over-invest in crafting the initial prompt.
+:::
+
+## Exercise: Prompt Makeover
+
+Take each "before" prompt and rewrite it using what you've learned. Then try both versions in an AI tool and compare the outputs.
+
+### 1. Research help
+
+**Before**: "Help me find a topic for my econ research paper."
+
+**Your rewrite**: _(consider: what course? what interests you? what constraints?)_
+
+### 2. Concept explanation
+
+**Before**: "Explain difference-in-differences."
+
+**Your rewrite**: _(consider: what level? what do you already know? what's the context?)_
+
+### 3. Data analysis
+
+**Before**: "How do I analyze this data?" [pastes variable list]
+
+**Your rewrite**: _(consider: what's the research question? what's the unit of observation? what do you want to estimate?)_
+
+### 4. Writing help
+
+**Before**: "Edit my paper."
+
+**Your rewrite**: _(consider: what kind of edit? what's the audience? what are you worried about?)_
+
+## The Deeper Point
+
+Learning to prompt well is really learning to:
+
+- **Specify what you want** before you ask for it
+- **Decompose complex problems** into manageable pieces
+- **Provide relevant context** to someone who doesn't share your background knowledge
+- **Evaluate outputs critically** and give actionable feedback
+
+These are the same skills that make you a good researcher, a clear writer, and an effective collaborator. AI just makes the feedback loop faster.
+
+::: {.callout-tip}
+## The Prompting Paradox
+The better you understand a topic, the better your prompts will be, and the more useful AI becomes. AI is *most* useful to people who already know enough to ask good questions and evaluate the answers. It's *least* reliable when you're using it to learn something you can't yet evaluate.
+:::
+
+## Discussion Questions
+
+1. A classmate says "I don't need to learn prompting — the AI should just figure out what I mean." What's the problem with this view?
+2. How is the skill of writing a good prompt similar to the skill of writing a good research question? Where does the analogy break down?
+3. Think of a time you got a bad or useless response from an AI tool. Using the ROCS framework, what was missing from your prompt?
+4. What are the risks of getting *too* good at prompting? (Hint: think about what happens to your critical evaluation if the outputs start looking really polished.)
+
+## Key Takeaways
+
+1. **Prompt quality determines output quality.** The model responds to exactly what you give it — no more.
+2. **Specificity beats cleverness.** ROCS (Role, Objective, Constraints, Specifics) is a useful diagnostic when outputs are bad.
+3. **Iterate, don't optimize.** Three rounds of feedback beats one perfect prompt.
+4. **This is a transferable skill.** Clear specification, decomposition, and critical evaluation are valuable with or without AI.
+
+::: {.instructor-note}
+**For instructors**: This module works well as a hands-on workshop. Have students bring a real question from their coursework, write a prompt, share outputs, then revise. The comparison between "first draft" and "revised" prompts is very compelling.
+
+**Assessment idea**: Have students submit a prompt log showing their iteration process for a homework question — grade the *process* (was the iteration productive?) not just the final output.
+:::

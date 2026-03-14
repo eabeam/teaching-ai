@@ -1,0 +1,35 @@
+---
+title: "About This Project"
+---
+
+## Why This Exists
+
+AI tools are transforming how economists work — but most students learn to use them through trial and error, YouTube videos, or vibes. Meanwhile, most "AI literacy" resources are generic, platform-specific, or focused on policy rather than skill-building.
+
+This project fills the gap: **economics-specific AI literacy** that teaches students how to *think with* AI, including the technical foundations that make them effective.
+
+## Who It's For
+
+**Students**: Advanced undergrad economics majors. The examples assume comfort with regression, economic intuition, and academic writing — but no prior coding or AI experience is required for the Foundations track.
+
+**Instructors**: Anyone teaching economics who wants to incorporate AI literacy without building everything from scratch. Each module is designed to be dropped into an existing course.
+
+## Design Principles
+
+- **Modular**: Every lesson is self-contained. Use one or use them all.
+- **Honest**: We teach limitations and failure modes, not just capabilities.
+- **Economics-native**: Examples come from real economics workflows — not generic prompt engineering.
+- **Platform-flexible**: Concepts transfer. We note tool-specific details (like UVM's enterprise Copilot) but don't lock into any platform.
+- **Open**: Licensed CC-BY 4.0. Adapt, remix, redistribute with attribution.
+
+## UVM Context
+
+The University of Vermont provides enterprise-protected [Microsoft Copilot](https://go.uvm.edu/copilot) to all students, faculty, and staff. This uses GPT-4 with enterprise data protections (your data is not used for model training). Some modules reference this tool, but all concepts apply to any LLM.
+
+## Contact
+
+[Emily Beam](https://eabeam.github.io) · Department of Economics · University of Vermont · emily.beam@uvm.edu
+
+## Acknowledgments
+
+This project was developed with the assistance of AI tools (Claude, Copilot), which felt appropriate.

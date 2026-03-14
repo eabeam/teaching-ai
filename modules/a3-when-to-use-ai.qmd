@@ -1,0 +1,187 @@
+---
+title: "A3: When AI Helps vs. Hurts Your Learning"
+subtitle: "Metacognition for the AI era"
+---
+
+::: {.module-meta}
+[~30 min]{.badge .badge-time}
+[Foundations]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Distinguish between tasks where AI accelerates learning and tasks where it substitutes for learning
+2. Apply the concept of "desirable difficulty" to AI use decisions
+3. Develop a personal framework for when to reach for AI and when to struggle
+4. Recognize the warning signs that AI is undermining your skill development
+
+## The Central Question
+
+Every time you open an AI tool, you're making an implicit decision:
+
+> **Am I using AI to do something I already know how to do (faster), or to avoid learning something I need to learn?**
+
+The answer determines whether AI is a power tool or a crutch.
+
+## Desirable Difficulty: The Learning Science
+
+Psychologists have a concept called **desirable difficulty** — the idea that learning requires struggle, and that making learning *feel* easier often makes it *work* worse.
+
+Examples you already know:
+
+- **Cramming** feels productive but produces weak retention. **Spaced practice** feels harder but works better.
+- **Re-reading** notes feels like studying. **Self-testing** feels uncomfortable but produces deeper learning.
+- **Highlighting** feels active. **Summarizing in your own words** is harder but more effective.
+
+AI creates a new version of this problem: **getting a clear, correct answer from AI feels like learning, but it may bypass the cognitive processes that produce actual understanding.**
+
+::: {.callout-important}
+## The Fluency Trap
+When you read a clear AI-generated explanation, your brain registers it as "I understand this." But comprehension while reading is not the same as the ability to *reconstruct, apply, or extend* the idea independently. The AI did the hard cognitive work. You consumed the output.
+:::
+
+## A Framework: The 2x2
+
+Think about any task along two dimensions:
+
+|  | **You could do it yourself** (with effort) | **You genuinely can't do it** (yet) |
+|---|---|---|
+| **Core skill** (you need to develop this) | **Danger zone**: AI does it faster, but you need the practice | **Learning zone**: Use AI as a *tutor*, not an *answer key* |
+| **Not a core skill** (efficiency matters more) | **Power tool**: Use AI freely — this is what it's for | **Outsource**: Delegate and verify |
+
+### Examples for an econ major
+
+| Task | Category | AI Use |
+|---|---|---|
+| Deriving the OLS estimator | Core skill, you can do it | **Danger zone** — do it yourself, check with AI after |
+| Writing Stata code to run a regression | Core skill, learning it | **Learning zone** — ask AI to explain, not just generate |
+| Formatting a bibliography | Not core, you can do it | **Power tool** — let AI handle it |
+| Creating a LaTeX table from regression output | Not core, can't yet | **Outsource** — get AI to generate, verify it looks right |
+| Understanding *why* an IV estimate differs from OLS | Core skill, developing it | **Danger zone** — think first, then discuss with AI |
+| Brainstorming research topics | Core skill, early stage | **Learning zone** — use AI to expand options, not to decide |
+
+::: {.callout-tip}
+## The Homework Test
+If a task is assigned as homework, it's almost certainly in the "core skill" column. Your instructor assigned it because they believe the *process* of doing it builds important skills. Using AI to skip the process defeats the purpose — even if the output is correct.
+:::
+
+## When AI Genuinely Helps Learning
+
+AI isn't always a crutch. Here's when it accelerates learning:
+
+### 1. As a tutor (not an answer key)
+
+**Bad**: "Solve this optimization problem for me."
+
+**Good**: "I'm stuck on this optimization problem. I set up the Lagrangian and took the first-order conditions, but I'm getting a negative value for $\lambda$ and I don't think that's right. Can you help me figure out where I went wrong?"
+
+The difference: in the second version, *you* did the thinking. AI is helping you debug your own reasoning.
+
+### 2. For unsticking, not completing
+
+When you've genuinely tried and hit a wall, AI can be the "nudge" that gets you moving again — like asking a TA for a hint, not the answer.
+
+**Prompt pattern**: "I'm working on [X]. I've tried [Y] and [Z]. I'm stuck because [specific issue]. Can you give me a hint about what to try next — don't solve it for me."
+
+### 3. For connecting ideas
+
+AI is useful for "How does X relate to Y?" questions where you understand both concepts but haven't made the connection:
+
+> "I understand the concept of selection bias and I understand instrumental variables. Can you explain how IV addresses selection bias, using the returns-to-education example?"
+
+### 4. For translation between representations
+
+Moving between math, intuition, code, and plain language:
+
+> "I can see that the coefficient on the interaction term in my diff-in-diff is 0.15 and statistically significant. Can you help me write a clear interpretation of this in words, in the context of my study on school lunch programs and test scores?"
+
+### 5. For checking your work (after you've done it)
+
+Use AI as a second pair of eyes *after* you've completed a task:
+
+> "Here's my derivation of the demand elasticity for this Cobb-Douglas utility function. Can you check my work and point out any errors?"
+
+## Warning Signs: When AI Is Hurting You
+
+### You can't do it without AI anymore
+
+If you find yourself unable to start a problem set, write a paragraph, or debug code without first asking AI — that's a signal. You've outsourced a cognitive process you need.
+
+**Test**: Can you explain, in your own words, without AI open, the main concept from the last assignment you used AI to complete?
+
+### You're prompting instead of thinking
+
+If your workflow is: read question → open AI → paste question → submit answer — you've replaced thinking with prompting. The learning happened in the thinking step you skipped.
+
+### Your AI outputs are better than your solo work
+
+If there's a large gap between the quality of work you produce with AI and without it, that gap represents skills you're not developing. In a timed exam, a job interview, or a meeting with your advisor, you won't have AI to close that gap.
+
+### You can't evaluate the output
+
+If AI gives you a derivation, a code block, or an explanation and you can't tell whether it's correct — you're in a dangerous spot. You're trusting output you can't verify, in a domain where you're supposed to be building expertise.
+
+::: {.callout-warning}
+## The Automation Paradox in Learning
+In industry, when humans oversee automated systems, their skills atrophy — and they become *worse* at catching the automation's errors precisely when it matters most (this is a well-studied problem in aviation and manufacturing). The same dynamic applies to learning: the more you rely on AI, the less capable you become of evaluating its output, which makes you more dependent on it.
+:::
+
+## Exercise: Your AI Audit
+
+Think about the last week of your academic work. For each instance where you used (or could have used) AI:
+
+| Task | Did I use AI? | Core skill or not? | Did AI help me learn, or replace my learning? | What should I do differently? |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+
+Be honest. This exercise is for you, not for a grade.
+
+## Developing Your Personal Policy
+
+There's no universal rule for when to use AI. But you should have a **deliberate policy** rather than defaulting to AI whenever it's convenient. Here's a template:
+
+### I will use AI freely for:
+*(tasks that aren't core skills, where efficiency matters)*
+
+Examples: formatting, bibliography management, converting code between languages I already know, generating boilerplate
+
+### I will use AI as a tutor for:
+*(tasks where I'm learning, and I'll engage actively with the output)*
+
+Examples: understanding error messages, connecting concepts, checking my work after I've attempted it
+
+### I will not use AI for:
+*(tasks where the struggle IS the learning)*
+
+Examples: first attempts at problem sets, writing first drafts of arguments, working through derivations, coding exercises designed to teach a new skill
+
+### My check-in rule:
+Once per week, I'll ask: "Could I do last week's work without AI?" If the answer is no for core skills, I'll adjust.
+
+## Discussion Questions
+
+1. Your friend says "Using AI to help with homework is the same as using a calculator in math class — it's just a tool." Do you agree? Where does this analogy work and where does it break down?
+2. How would your AI use policy differ between an introductory course (where everything is a core skill you're learning) and a senior thesis (where you have strong foundations and need to be productive)?
+3. A professor bans all AI use on assignments. Another professor requires students to use AI and submit their prompt logs. Which approach better serves student learning? Does it depend on the course?
+4. How might the "right" amount of AI use differ between someone who wants to be a professional economist and someone taking econ as an elective?
+
+## Key Takeaways
+
+1. **Not all AI use is equal.** Using AI for efficiency on non-core tasks is smart. Using it to skip the struggle on core skills is costly.
+2. **The fluency trap is real.** Reading a clear AI explanation feels like understanding, but it isn't. You have to *do the cognitive work* yourself.
+3. **Be deliberate, not default.** Have a policy. Know when you're reaching for AI and why.
+4. **Check yourself.** Regularly ask: "Could I do this without AI?" If you're losing skills you need, recalibrate.
+
+::: {.instructor-note}
+**For instructors**: This module is effective early in a semester to set norms. Consider having students develop their personal AI policies and submit them — not to grade, but to make the reflection concrete.
+
+**Adaptation**: For courses where you want to encourage AI use, frame this module as "how to use AI *well*" rather than "when not to use AI." The framework still applies — it just emphasizes the tutor/power-tool quadrants more.
+
+**Discussion format**: The "Your AI Audit" exercise works well as a think-pair-share. Students are often surprised by how much they've been defaulting to AI for core-skill tasks.
+:::

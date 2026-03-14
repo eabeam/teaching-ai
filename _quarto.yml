@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AI Literacy for Economists"
+  description: "Modular lessons for teaching economics students to use AI effectively"
+  site-url: https://eabeam.github.io/teaching-ai
+  repo-url: https://github.com/eabeam/teaching-ai
+  repo-actions: [issue]
+
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Foundations
+        menu:
+          - href: modules/a1-what-llms-do.qmd
+            text: "A1: What LLMs Actually Do"
+          - href: modules/a2-prompting.qmd
+            text: "A2: Prompting as Problem Specification"
+          - href: modules/a3-when-to-use-ai.qmd
+            text: "A3: When AI Helps vs. Hurts"
+      - text: Technical
+        menu:
+          - href: modules/b1-terminal-basics.qmd
+            text: "B1: Terminal Basics (coming soon)"
+      - text: Econ Workflows
+        menu:
+          - href: modules/c1-lit-review.qmd
+            text: "C1: Literature Review (coming soon)"
+      - href: about.qmd
+        text: About
+
+  page-footer:
+    center: |
+      Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+      Built by [Emily Beam](https://eabeam.github.io), University of Vermont.
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap

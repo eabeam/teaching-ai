@@ -1,0 +1,60 @@
+---
+title: "AI Literacy for Economists"
+subtitle: "Modular lessons you can use, adapt, or drop into any course"
+---
+
+## What Is This?
+
+A growing collection of self-contained modules for teaching economics students how to use AI effectively. Each module is designed to work on its own — pick what you need.
+
+**For students**: Build real skills, not just familiarity. Understand what AI does, when it helps, and how to use it without losing the learning.
+
+**For instructors**: Each module is a standalone lesson (~30–75 min) you can adopt as-is or adapt for your course. No sequence required.
+
+## Modules
+
+### Foundations (no coding required)
+
+| Module | Description | Time |
+|--------|-------------|------|
+| [A1: What LLMs Actually Do](modules/a1-what-llms-do.qmd) | Tokens, prediction, and why AI hallucinates — mental models for economists | ~50 min |
+| [A2: Prompting as Problem Specification](modules/a2-prompting.qmd) | Clear prompts = clear thinking. The prompt is your identification strategy | ~50 min |
+| [A3: When AI Helps vs. Hurts Your Learning](modules/a3-when-to-use-ai.qmd) | Metacognition for the AI era — when to use it, when to struggle | ~30 min |
+
+### Technical Foundations (coming soon)
+
+| Module | Description | Time |
+|--------|-------------|------|
+| B1: Terminal Basics | What is a shell, navigating files, basic commands, and why reproducibility matters | ~75 min |
+| B2: Git & GitHub Essentials | Version control for economists — clone, commit, push, and why you should care | ~75 min |
+
+### AI for Economics Workflows (coming soon)
+
+| Module | Description | Time |
+|--------|-------------|------|
+| C1: Literature Review & Synthesis | Using AI to survey a field — and catching what it gets wrong | ~50 min |
+| C2: Code Assistance (Stata/R) | Debugging, translation, documentation — and when AI code is dangerous | ~50 min |
+
+## Design Philosophy
+
+1. **Each module stands alone.** No prerequisites, no required sequence.
+2. **Economics-native examples.** Not "write a poem" — "debug this regression," "summarize this literature."
+3. **Honest about limitations.** We teach when AI fails, not just when it shines.
+4. **Platform-flexible.** Concepts transfer across tools. UVM-specific notes where relevant.
+
+## For Instructors
+
+Every module includes:
+
+- **Learning objectives** aligned to AI literacy competencies
+- **Suggested timing** and natural break points
+- **Discussion questions** and reflection prompts
+- **Adaptation notes** for different course contexts
+
+Licensed [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) — use freely with attribution.
+
+## About
+
+Created by [Emily Beam](https://eabeam.github.io), Department of Economics, University of Vermont.
+
+Built with [Quarto](https://quarto.org). Source on [GitHub](https://github.com/eabeam/teaching-ai).
