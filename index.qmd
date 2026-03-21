@@ -35,6 +35,8 @@ A growing collection of self-contained modules for teaching economics students h
 | [C1: Literature Review & Synthesis](modules/c1-lit-review.qmd) | Using AI to survey a field — and catching what it gets wrong | ~50 min |
 | [C2: Code Assistance (Stata/R)](modules/c2-code-assistance.qmd) | Debugging, translation, documentation — and when AI code is dangerous | ~50 min |
 | [C3: Data Exploration & Cleaning](modules/c3-data-exploration.qmd) | Describing datasets, flagging anomalies — and why cleaning decisions are yours | ~50 min |
+| [C4: Writing & Revision](modules/c4-writing-revision.qmd) | AI as copy editor, not ghostwriter — maintaining your voice | ~50 min |
+| [C5: Math & Derivations](modules/c5-math-derivations.qmd) | Checking proofs, working through optimization — and verifying every step | ~50 min |
 
 ## Design Philosophy
 

@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>C5: Math &amp; Derivations – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="../modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="../modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="../modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#ai-and-math-impressively-formatted-dangerously-unreliable" id="toc-ai-and-math-impressively-formatted-dangerously-unreliable" class="nav-link" data-scroll-target="#ai-and-math-impressively-formatted-dangerously-unreliable">AI and Math: Impressively Formatted, Dangerously Unreliable</a></li>
+  <li><a href="#what-ai-is-good-at" id="toc-what-ai-is-good-at" class="nav-link" data-scroll-target="#what-ai-is-good-at">What AI Is Good At</a>
+  <ul class="collapse">
+  <li><a href="#explaining-intuition" id="toc-explaining-intuition" class="nav-link" data-scroll-target="#explaining-intuition">Explaining intuition</a></li>
+  <li><a href="#showing-steps" id="toc-showing-steps" class="nav-link" data-scroll-target="#showing-steps">Showing steps</a></li>
+  <li><a href="#latex-formatting" id="toc-latex-formatting" class="nav-link" data-scroll-target="#latex-formatting">LaTeX formatting</a></li>
+  <li><a href="#checking-your-work-first-pass" id="toc-checking-your-work-first-pass" class="nav-link" data-scroll-target="#checking-your-work-first-pass">Checking your work (first pass)</a></li>
+  <li><a href="#analogies-and-connections" id="toc-analogies-and-connections" class="nav-link" data-scroll-target="#analogies-and-connections">Analogies and connections</a></li>
+  </ul></li>
+  <li><a href="#where-ai-fails-with-math" id="toc-where-ai-fails-with-math" class="nav-link" data-scroll-target="#where-ai-fails-with-math">Where AI Fails with Math</a>
+  <ul class="collapse">
+  <li><a href="#sign-errors-and-algebra-mistakes" id="toc-sign-errors-and-algebra-mistakes" class="nav-link" data-scroll-target="#sign-errors-and-algebra-mistakes">Sign errors and algebra mistakes</a></li>
+  <li><a href="#incorrect-application-of-theorems" id="toc-incorrect-application-of-theorems" class="nav-link" data-scroll-target="#incorrect-application-of-theorems">Incorrect application of theorems</a></li>
+  <li><a href="#plausible-but-wrong-steps" id="toc-plausible-but-wrong-steps" class="nav-link" data-scroll-target="#plausible-but-wrong-steps">Plausible-but-wrong steps</a></li>
+  <li><a href="#overconfidence" id="toc-overconfidence" class="nav-link" data-scroll-target="#overconfidence">Overconfidence</a></li>
+  </ul></li>
+  <li><a href="#economics-math-examples" id="toc-economics-math-examples" class="nav-link" data-scroll-target="#economics-math-examples">Economics Math Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-1-consumer-optimization-ai-usually-gets-this-right" id="toc-example-1-consumer-optimization-ai-usually-gets-this-right" class="nav-link" data-scroll-target="#example-1-consumer-optimization-ai-usually-gets-this-right">Example 1: Consumer optimization (AI usually gets this right)</a></li>
+  <li><a href="#example-2-a-subtler-problem-where-ai-may-stumble" id="toc-example-2-a-subtler-problem-where-ai-may-stumble" class="nav-link" data-scroll-target="#example-2-a-subtler-problem-where-ai-may-stumble">Example 2: A subtler problem (where AI may stumble)</a></li>
+  <li><a href="#example-3-comparative-statics-and-second-order-conditions" id="toc-example-3-comparative-statics-and-second-order-conditions" class="nav-link" data-scroll-target="#example-3-comparative-statics-and-second-order-conditions">Example 3: Comparative statics and second-order conditions</a></li>
+  </ul></li>
+  <li><a href="#a-verification-framework-for-ai-math" id="toc-a-verification-framework-for-ai-math" class="nav-link" data-scroll-target="#a-verification-framework-for-ai-math">A Verification Framework for AI Math</a>
+  <ul class="collapse">
+  <li><a href="#check-boundary-cases" id="toc-check-boundary-cases" class="nav-link" data-scroll-target="#check-boundary-cases">1. Check boundary cases</a></li>
+  <li><a href="#check-dimensions-and-units" id="toc-check-dimensions-and-units" class="nav-link" data-scroll-target="#check-dimensions-and-units">2. Check dimensions and units</a></li>
+  <li><a href="#check-special-cases" id="toc-check-special-cases" class="nav-link" data-scroll-target="#check-special-cases">3. Check special cases</a></li>
+  <li><a href="#work-backwards" id="toc-work-backwards" class="nav-link" data-scroll-target="#work-backwards">4. Work backwards</a></li>
+  <li><a href="#check-signs" id="toc-check-signs" class="nav-link" data-scroll-target="#check-signs">5. Check signs</a></li>
+  </ul></li>
+  <li><a href="#ai-as-a-study-tool-vs.-a-crutch" id="toc-ai-as-a-study-tool-vs.-a-crutch" class="nav-link" data-scroll-target="#ai-as-a-study-tool-vs.-a-crutch">AI as a Study Tool vs.&nbsp;a Crutch</a>
+  <ul class="collapse">
+  <li><a href="#the-good-workflow" id="toc-the-good-workflow" class="nav-link" data-scroll-target="#the-good-workflow">The good workflow</a></li>
+  <li><a href="#the-bad-workflow" id="toc-the-bad-workflow" class="nav-link" data-scroll-target="#the-bad-workflow">The bad workflow</a></li>
+  <li><a href="#the-explain-it-to-me-test" id="toc-the-explain-it-to-me-test" class="nav-link" data-scroll-target="#the-explain-it-to-me-test">The “explain it to me” test</a></li>
+  </ul></li>
+  <li><a href="#exercise-testing-ai-on-economics-math" id="toc-exercise-testing-ai-on-economics-math" class="nav-link" data-scroll-target="#exercise-testing-ai-on-economics-math">Exercise: Testing AI on Economics Math</a>
+  <ul class="collapse">
+  <li><a href="#part-1-solve-it-yourself-15-min" id="toc-part-1-solve-it-yourself-15-min" class="nav-link" data-scroll-target="#part-1-solve-it-yourself-15-min">Part 1: Solve it yourself (~15 min)</a></li>
+  <li><a href="#part-2-ask-ai-to-solve-it-5-min" id="toc-part-2-ask-ai-to-solve-it-5-min" class="nav-link" data-scroll-target="#part-2-ask-ai-to-solve-it-5-min">Part 2: Ask AI to solve it (~5 min)</a></li>
+  <li><a href="#part-3-introduce-an-error-10-min" id="toc-part-3-introduce-an-error-10-min" class="nav-link" data-scroll-target="#part-3-introduce-an-error-10-min">Part 3: Introduce an error (~10 min)</a></li>
+  <li><a href="#part-4-test-ai-as-a-checker-10-min" id="toc-part-4-test-ai-as-a-checker-10-min" class="nav-link" data-scroll-target="#part-4-test-ai-as-a-checker-10-min">Part 4: Test AI as a checker (~10 min)</a></li>
+  </ul></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion Questions</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">C5: Math &amp; Derivations</h1>
+<p class="subtitle lead">AI can show its work — but can you check it?</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="module-meta">
+<p><span class="badge badge-time">~50 min</span> <span class="badge badge-track">Econ Workflows</span> <span class="badge badge-technical">Math required</span></p>
+</div>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ol type="1">
+<li>Identify the types of mathematical tasks where AI is genuinely helpful (intuition, formatting, study scaffolding) versus where it is unreliable (novel derivations, verifying conditions)</li>
+<li>Recognize common failure patterns in AI-generated math: sign errors, unchecked conditions, and plausible-but-wrong steps</li>
+<li>Apply a verification framework to check AI-produced derivations using boundary cases, dimensional analysis, and special cases</li>
+<li>Use AI as a math study tool that <em>supports</em> your learning rather than replacing it</li>
+</ol>
+</section>
+<section id="ai-and-math-impressively-formatted-dangerously-unreliable" class="level2">
+<h2 class="anchored" data-anchor-id="ai-and-math-impressively-formatted-dangerously-unreliable">AI and Math: Impressively Formatted, Dangerously Unreliable</h2>
+<p>Ask an AI to derive the Slutsky equation, and you’ll get a beautifully typeset sequence of steps with clean LaTeX, clear notation, and a confident conclusion. It will probably be correct — this is a textbook staple, and the model has seen hundreds of versions in its training data.</p>
+<p>Now ask it to derive the comparative statics of a slightly unusual model — say, an optimization problem with a non-standard constraint or an uncommon functional form. The output will look <em>exactly as polished</em>. The LaTeX will be just as clean. The steps will flow just as smoothly. But there’s a meaningful chance that one of those steps is wrong.</p>
+<p>This is the core problem with AI and math: <strong>the formatting is always confident, whether or not the content is correct.</strong> A wrong derivation in neat LaTeX looks more convincing than a correct derivation in messy handwriting.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think of AI-generated math like a regression table produced by code you didn’t write. The numbers are nicely formatted, the standard errors look reasonable, and the stars are in the right place. But if you don’t understand the specification — what’s being estimated, what the identifying assumption is, whether the standard errors are clustered correctly — the pretty table tells you nothing. Pretty math is the same: the formatting is not evidence of correctness.</p>
+</div>
+</div>
+</section>
+<section id="what-ai-is-good-at" class="level2">
+<h2 class="anchored" data-anchor-id="what-ai-is-good-at">What AI Is Good At</h2>
+<section id="explaining-intuition" class="level3">
+<h3 class="anchored" data-anchor-id="explaining-intuition">Explaining intuition</h3>
+<p>This may be AI’s single best math-related capability. Ask:</p>
+<blockquote class="blockquote">
+<p>“What does the envelope theorem mean intuitively? Explain it like I understand optimization but haven’t seen this theorem before.”</p>
+</blockquote>
+<p>AI excels here because it has processed thousands of explanations of the envelope theorem — textbooks, lecture notes, forum posts, blog entries. It can synthesize these into a clear, plain-language explanation that connects the formalism to economic reasoning.</p>
+<p>Similarly:</p>
+<blockquote class="blockquote">
+<p>“Why does the Lagrange multiplier represent the shadow price of the constraint? What’s the economic intuition?”</p>
+</blockquote>
+<p>These “explain the concept” prompts are low-risk and high-value. The model is doing what it does best — producing fluent text that synthesizes patterns from its training data — and the task is one where plausibility and correctness tend to align.</p>
+</section>
+<section id="showing-steps" class="level3">
+<h3 class="anchored" data-anchor-id="showing-steps">Showing steps</h3>
+<blockquote class="blockquote">
+<p>“Walk me through the derivation of the Slutsky equation step by step, starting from the expenditure minimization problem.”</p>
+</blockquote>
+<p>For well-known derivations, AI will typically produce a correct step-by-step walkthrough. This is useful for studying — you can see the derivation laid out more explicitly than most textbooks, and you can ask follow-up questions like “Why did you substitute <span class="math inline">\(h(\mathbf{p}, u) = x(\mathbf{p}, e(\mathbf{p}, u))\)</span>?” to drill into specific transitions.</p>
+<p>The key caveat: <strong>verify each step yourself.</strong> Don’t just read it and think “that looks right.” Work through each transition with pencil and paper. The point is to use AI as scaffolding for your own understanding, not as a substitute for it.</p>
+</section>
+<section id="latex-formatting" class="level3">
+<h3 class="anchored" data-anchor-id="latex-formatting">LaTeX formatting</h3>
+<p>This is purely mechanical and AI handles it well:</p>
+<blockquote class="blockquote">
+<p>“Convert this handwritten math to LaTeX: max utility of x to the alpha times y to the 1 minus alpha subject to px times x plus py times y equals m”</p>
+</blockquote>
+<p>Output:</p>
+<p><span class="math display">\[\max_{x, y} \; x^{\alpha} y^{1-\alpha} \quad \text{s.t.} \quad p_x x + p_y y = m\]</span></p>
+<p>AI is also excellent at fixing LaTeX syntax errors, converting between notation styles, and reformatting equations for slides versus papers. These are tasks where correctness is easy to verify by inspection.</p>
+</section>
+<section id="checking-your-work-first-pass" class="level3">
+<h3 class="anchored" data-anchor-id="checking-your-work-first-pass">Checking your work (first pass)</h3>
+<p>You can use AI as a first-pass sanity check:</p>
+<blockquote class="blockquote">
+<p>“Here’s my derivation of the demand function for <span class="math inline">\(x\)</span> from Cobb-Douglas utility. Is each step correct?”</p>
+</blockquote>
+<p>AI will often catch algebra errors, misapplied rules, and sign mistakes. This is useful — but treat it as a <strong>first-pass screen</strong>, not a proof verifier. AI catches errors by pattern-matching against what correct derivations look like, not by logically verifying each step. It can miss subtle errors that “look right,” and it can flag correct steps that use unusual approaches.</p>
+</section>
+<section id="analogies-and-connections" class="level3">
+<h3 class="anchored" data-anchor-id="analogies-and-connections">Analogies and connections</h3>
+<blockquote class="blockquote">
+<p>“How is the firm’s cost minimization problem structurally similar to the consumer’s expenditure minimization problem?”</p>
+</blockquote>
+<p>AI is genuinely good at drawing parallels between mathematical structures. It can point out that the firm minimizes <span class="math inline">\(wL + rK\)</span> subject to <span class="math inline">\(f(L,K) = q\)</span> while the consumer minimizes <span class="math inline">\(p_1 x_1 + p_2 x_2\)</span> subject to <span class="math inline">\(u(x_1, x_2) = \bar{u}\)</span>, and that the duality results carry over. These structural insights can deepen your understanding of why the same mathematical tools appear across different economic models.</p>
+</section>
+</section>
+<section id="where-ai-fails-with-math" class="level2">
+<h2 class="anchored" data-anchor-id="where-ai-fails-with-math">Where AI Fails with Math</h2>
+<section id="sign-errors-and-algebra-mistakes" class="level3">
+<h3 class="anchored" data-anchor-id="sign-errors-and-algebra-mistakes">Sign errors and algebra mistakes</h3>
+<p>This is the most common failure mode. AI will carry a negative sign correctly through five steps and then drop it on the sixth. It will expand a product correctly but combine terms incorrectly. It will differentiate a function properly on line 3 and then substitute the result with the wrong sign on line 7.</p>
+<p>Consider a simple example. Suppose we’re finding the comparative static effect of a tax <span class="math inline">\(t\)</span> on output, and the derivation involves:</p>
+<p><span class="math display">\[\frac{\partial q^*}{\partial t} = -\frac{f'(L^*)}{f''(L^*)} \cdot \frac{\partial w_{\text{eff}}}{\partial t}\]</span></p>
+<p>AI might correctly derive the numerator and denominator but lose the negative sign, flipping the direction of the effect. In a 15-line derivation, this kind of error is easy to miss — especially because everything else looks perfect.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The Pattern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AI math errors rarely look like errors. The wrong step is formatted identically to the right steps. There is no hesitation, no asterisk, no hedge. Every line looks equally confident. You have to check each transition yourself.</p>
+</div>
+</div>
+</section>
+<section id="incorrect-application-of-theorems" class="level3">
+<h3 class="anchored" data-anchor-id="incorrect-application-of-theorems">Incorrect application of theorems</h3>
+<p>AI knows the statements of theorems. It does not reliably check whether the <em>conditions</em> are satisfied.</p>
+<p>For example, AI might invoke the implicit function theorem to sign a comparative static without verifying that the relevant function is continuously differentiable. It might apply the second welfare theorem without checking convexity of preferences. It might use L’Hopital’s rule without confirming that the original expression is actually an indeterminate form.</p>
+<p>In an intermediate micro or econometrics context, this matters most with:</p>
+<ul>
+<li><strong>Second-order conditions</strong>: AI frequently skips verification that a critical point is actually a maximum (or minimum) rather than a saddle point</li>
+<li><strong>Constraint qualification</strong>: In constrained optimization, the Lagrangian conditions require constraint qualification (e.g., the constraint gradient must be non-zero). AI almost never checks this.</li>
+<li><strong>Existence and uniqueness</strong>: AI will produce “the solution” to an optimization problem without verifying that a solution exists or is unique</li>
+</ul>
+</section>
+<section id="plausible-but-wrong-steps" class="level3">
+<h3 class="anchored" data-anchor-id="plausible-but-wrong-steps">Plausible-but-wrong steps</h3>
+<p>This is the most insidious failure. AI can produce a derivation where each individual step <em>looks</em> reasonable but the transitions don’t actually follow logically. The output reads smoothly, the notation is consistent, the conclusion is stated confidently — but somewhere in the middle, there’s a step that doesn’t follow from the previous one.</p>
+<p>This happens because the model is generating text that <em>looks like</em> a correct derivation, not executing a logical proof. Each line is produced by predicting “what typically comes next in a math derivation that looks like this.” Usually that prediction is correct. Sometimes it isn’t.</p>
+</section>
+<section id="overconfidence" class="level3">
+<h3 class="anchored" data-anchor-id="overconfidence">Overconfidence</h3>
+<p>This deserves its own section because it compounds every other problem. When you make a sign error, you might notice because you hesitate — “wait, should this be positive?” AI never hesitates. Every step is delivered with identical confidence, whether it’s trivially correct or subtly wrong.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Insight
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AI has no internal uncertainty signal for math. A human doing a derivation will slow down at hard steps, double-check algebra, and feel uncertain when something seems off. AI generates every step at the same “temperature.” This means you cannot use the model’s confidence as a signal of correctness — because confidence is always 100%.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="economics-math-examples" class="level2">
+<h2 class="anchored" data-anchor-id="economics-math-examples">Economics Math Examples</h2>
+<p>Let’s work through concrete cases to see where AI succeeds and where it breaks down.</p>
+<section id="example-1-consumer-optimization-ai-usually-gets-this-right" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-consumer-optimization-ai-usually-gets-this-right">Example 1: Consumer optimization (AI usually gets this right)</h3>
+<p><strong>Problem</strong>: A consumer maximizes <span class="math inline">\(U(x,y) = x^{\alpha} y^{1-\alpha}\)</span> subject to <span class="math inline">\(p_x x + p_y y = m\)</span>. Find the demand functions for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>This is a textbook problem. AI will almost certainly produce the correct derivation:</p>
+<ol type="1">
+<li><p>Set up the Lagrangian: <span class="math inline">\(\mathcal{L} = x^{\alpha} y^{1-\alpha} + \lambda(m - p_x x - p_y y)\)</span></p></li>
+<li><p>First-order conditions: <span class="math display">\[\frac{\partial \mathcal{L}}{\partial x} = \alpha x^{\alpha - 1} y^{1-\alpha} - \lambda p_x = 0\]</span> <span class="math display">\[\frac{\partial \mathcal{L}}{\partial y} = (1-\alpha) x^{\alpha} y^{-\alpha} - \lambda p_y = 0\]</span></p></li>
+<li><p>Divide the FOCs to get the MRS condition: <span class="math display">\[\frac{\alpha}{1-\alpha} \cdot \frac{y}{x} = \frac{p_x}{p_y}\]</span></p></li>
+<li><p>Solve with the budget constraint to get: <span class="math display">\[x^* = \frac{\alpha m}{p_x}, \qquad y^* = \frac{(1-\alpha) m}{p_y}\]</span></p></li>
+</ol>
+<p>AI handles this reliably because it has seen thousands of versions in its training data. The Cobb-Douglas demand function is one of the most common derivations in economics.</p>
+<p><strong>Sanity checks you should still run:</strong></p>
+<ul>
+<li>Does demand increase with income? Yes — <span class="math inline">\(\partial x^*/\partial m = \alpha / p_x &gt; 0\)</span>.</li>
+<li>Does demand decrease with own price? Yes — <span class="math inline">\(\partial x^*/\partial p_x = -\alpha m / p_x^2 &lt; 0\)</span>.</li>
+<li>Do expenditure shares sum to 1? <span class="math inline">\(p_x x^*/m + p_y y^*/m = \alpha + (1-\alpha) = 1\)</span>. Yes.</li>
+</ul>
+<p>Even when the derivation is correct, running these checks builds good habits.</p>
+</section>
+<section id="example-2-a-subtler-problem-where-ai-may-stumble" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-a-subtler-problem-where-ai-may-stumble">Example 2: A subtler problem (where AI may stumble)</h3>
+<p><strong>Problem</strong>: A worker chooses hours of labor <span class="math inline">\(L\)</span> to maximize <span class="math inline">\(U = C^{\gamma} (T-L)^{1-\gamma}\)</span> where <span class="math inline">\(C = wL + V\)</span> (wage income plus non-labor income <span class="math inline">\(V\)</span>), and <span class="math inline">\(T\)</span> is total time. Derive the labor supply elasticity with respect to the wage.</p>
+<p>This is still a standard-ish problem, but it involves more steps and some algebra that’s easy to get wrong. Here’s where to watch AI carefully:</p>
+<p><strong>Step 1: FOC.</strong> The worker maximizes: <span class="math display">\[U = (wL + V)^{\gamma}(T - L)^{1-\gamma}\]</span></p>
+<p>Taking the derivative with respect to <span class="math inline">\(L\)</span> and setting it equal to zero: <span class="math display">\[\gamma w (wL + V)^{\gamma - 1}(T-L)^{1-\alpha} = (1-\gamma)(wL+V)^{\gamma}(T-L)^{-\gamma}\]</span></p>
+<p><strong>Watch for</strong>: AI may write <span class="math inline">\(1-\alpha\)</span> where it should be <span class="math inline">\(1-\gamma\)</span> (mixing up parameter names). It may also have sign errors when differentiating <span class="math inline">\((T-L)^{1-\gamma}\)</span> because of the implicit negative from the chain rule.</p>
+<p><strong>Step 2: Solving for <span class="math inline">\(L^*\)</span>.</strong> After simplification, optimal labor supply is: <span class="math display">\[L^* = \gamma T - \frac{(1-\gamma)V}{w}\]</span></p>
+<p><strong>Watch for</strong>: AI should get the algebra right on a good day, but check the sign on the <span class="math inline">\(V/w\)</span> term. A positive <span class="math inline">\(V\)</span> (non-labor income) should <em>reduce</em> labor supply (income effect), so the negative sign is correct.</p>
+<p><strong>Step 3: The elasticity.</strong> The labor supply elasticity with respect to the wage is: <span class="math display">\[\varepsilon_{L,w} = \frac{\partial L^*}{\partial w} \cdot \frac{w}{L^*} = \frac{(1-\gamma)V}{w^2} \cdot \frac{w}{L^*} = \frac{(1-\gamma)V}{wL^*}\]</span></p>
+<p><strong>Where AI might go wrong</strong>: This is where it gets tricky. AI will often produce a correct-looking elasticity formula but fail to discuss what it <em>means</em>. Notice that:</p>
+<ul>
+<li>If <span class="math inline">\(V = 0\)</span> (no non-labor income), the elasticity is zero — labor supply doesn’t respond to the wage</li>
+<li>If <span class="math inline">\(V &gt; 0\)</span>, the elasticity is positive — higher wages increase labor supply</li>
+<li>The magnitude depends on the ratio of non-labor income to labor income</li>
+</ul>
+<p>An AI that gets the algebra right might still say something misleading about interpretation — for example, claiming this represents “the substitution effect” when it actually captures both substitution and income effects through the role of <span class="math inline">\(V\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why This Matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In economics, getting the math right is necessary but not sufficient. You also need to interpret the result correctly. AI is better at algebra than interpretation, so the most likely failure mode is: correct formula, wrong economic meaning.</p>
+</div>
+</div>
+</section>
+<section id="example-3-comparative-statics-and-second-order-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-comparative-statics-and-second-order-conditions">Example 3: Comparative statics and second-order conditions</h3>
+<p><strong>Problem</strong>: A firm maximizes profit <span class="math inline">\(\pi = p \cdot f(L) - wL\)</span> where <span class="math inline">\(f'(L) &gt; 0\)</span> and <span class="math inline">\(f''(L) &lt; 0\)</span>. Find how optimal labor demand changes when the wage increases, and verify the second-order conditions.</p>
+<p>AI will typically set up the FOC correctly: <span class="math display">\[p \cdot f'(L^*) = w\]</span></p>
+<p>And then apply the implicit function theorem: <span class="math display">\[\frac{\partial L^*}{\partial w} = \frac{1}{p \cdot f''(L^*)}\]</span></p>
+<p>Since <span class="math inline">\(f''(L^*) &lt; 0\)</span> (diminishing returns), this is negative — higher wages reduce labor demand. So far, so good.</p>
+<p><strong>Where to check AI carefully:</strong></p>
+<ol type="1">
+<li><p><strong>Did it verify the SOC?</strong> The second-order condition requires <span class="math inline">\(p \cdot f''(L^*) &lt; 0\)</span>, which holds by assumption. AI often states the SOC result without actually checking it, or skips it entirely. If the problem didn’t assume <span class="math inline">\(f''(L) &lt; 0\)</span>, would AI notice that the SOC might fail?</p></li>
+<li><p><strong>Did it check that the implicit function theorem applies?</strong> The IFT requires that the FOC function is continuously differentiable and that the derivative with respect to <span class="math inline">\(L\)</span> (i.e., <span class="math inline">\(pf''(L^*)\)</span>) is non-zero at the optimum. AI almost never mentions these conditions.</p></li>
+<li><p><strong>Try a modification.</strong> Ask AI to redo the problem with <span class="math inline">\(f(L) = L^{\beta}\)</span> for general <span class="math inline">\(\beta\)</span>. Does AI notice that when <span class="math inline">\(\beta \geq 1\)</span>, the SOC fails and there is no interior maximum?</p></li>
+</ol>
+<p>This kind of follow-up question is a good stress test. AI handles the <em>mechanics</em> of well-posed problems but often misses the <em>conditions</em> that make the problem well-posed in the first place.</p>
+</section>
+</section>
+<section id="a-verification-framework-for-ai-math" class="level2">
+<h2 class="anchored" data-anchor-id="a-verification-framework-for-ai-math">A Verification Framework for AI Math</h2>
+<p>When AI hands you a derivation, don’t just read it and nod. Run these checks:</p>
+<section id="check-boundary-cases" class="level3">
+<h3 class="anchored" data-anchor-id="check-boundary-cases">1. Check boundary cases</h3>
+<p>Does the formula give sensible results at extreme values?</p>
+<ul>
+<li>If a price goes to zero, does demand go to infinity (for normal goods with standard preferences)?</li>
+<li>If income goes to zero, does demand go to zero?</li>
+<li>If a parameter goes to 1, does the general case reduce to a familiar special case?</li>
+</ul>
+</section>
+<section id="check-dimensions-and-units" class="level3">
+<h3 class="anchored" data-anchor-id="check-dimensions-and-units">2. Check dimensions and units</h3>
+<p>Economists sometimes call this “units analysis,” and it catches a surprising number of errors.</p>
+<ul>
+<li>An elasticity must be dimensionless (a ratio of percentages)</li>
+<li>A marginal effect must have units of <span class="math inline">\(\Delta y / \Delta x\)</span></li>
+<li>A price must be in $/unit, a quantity in units</li>
+</ul>
+<p>If AI produces an elasticity that has units of dollars, something went wrong.</p>
+</section>
+<section id="check-special-cases" class="level3">
+<h3 class="anchored" data-anchor-id="check-special-cases">3. Check special cases</h3>
+<p>Does the general result reduce to a known result in a familiar special case?</p>
+<ul>
+<li>Does a CES demand function become Cobb-Douglas as <span class="math inline">\(\sigma \to 1\)</span>?</li>
+<li>Does a general equilibrium result reduce to the partial equilibrium result when cross-effects are zero?</li>
+<li>Does a dynamic model’s steady state match the static model’s solution?</li>
+</ul>
+</section>
+<section id="work-backwards" class="level3">
+<h3 class="anchored" data-anchor-id="work-backwards">4. Work backwards</h3>
+<p>Does the answer actually satisfy the original equation?</p>
+<ul>
+<li>Plug the optimal <span class="math inline">\(x^*\)</span> and <span class="math inline">\(y^*\)</span> back into the budget constraint: does it hold?</li>
+<li>Plug the optimal <span class="math inline">\(L^*\)</span> back into the FOC: is the FOC satisfied?</li>
+<li>Substitute the demand function into the indirect utility function: do you get the expected form?</li>
+</ul>
+</section>
+<section id="check-signs" class="level3">
+<h3 class="anchored" data-anchor-id="check-signs">5. Check signs</h3>
+<p>Does the result have economically sensible comparative statics?</p>
+<ul>
+<li>A price increase should reduce demand for a normal good (law of demand)</li>
+<li>Higher wages should increase labor supply through the substitution effect (holding utility constant)</li>
+<li>An increase in marginal cost should reduce output</li>
+<li>A positive income shock should increase demand for normal goods and decrease it for inferior goods</li>
+</ul>
+<p>If any sign contradicts economic intuition, either the derivation is wrong or you’ve found something interesting that needs explanation.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This verification framework is like running specification checks on a regression. You don’t just run the regression and report the coefficient — you check robustness, examine residuals, test overidentifying restrictions, and see if the results survive placebo tests. Math derivations deserve the same skepticism. The “plausibility check” is not optional.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="ai-as-a-study-tool-vs.-a-crutch" class="level2">
+<h2 class="anchored" data-anchor-id="ai-as-a-study-tool-vs.-a-crutch">AI as a Study Tool vs.&nbsp;a Crutch</h2>
+<p>There is a productive way and an unproductive way to use AI for mathematical economics.</p>
+<section id="the-good-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="the-good-workflow">The good workflow</h3>
+<ol type="1">
+<li><strong>Try the problem yourself first.</strong> Get as far as you can. If you solve it completely, great — now you can use AI to check your work.</li>
+<li><strong>When you get stuck, ask for a targeted hint.</strong> Not “solve this for me” but “I’m stuck on the step where I need to go from the FOC to the demand function. What technique should I use here?”</li>
+<li><strong>After the hint, continue yourself.</strong> Work through the rest of the problem with the hint in mind.</li>
+<li><strong>Compare your final answer to AI’s.</strong> If they differ, figure out where and why.</li>
+</ol>
+</section>
+<section id="the-bad-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="the-bad-workflow">The bad workflow</h3>
+<ol type="1">
+<li>Paste the problem into AI.</li>
+<li>Copy the solution.</li>
+<li>Turn it in (or “study” by reading it once).</li>
+<li>Learn nothing.</li>
+</ol>
+<p>This is not just an academic integrity issue — it’s a learning issue. Mathematical economics builds cumulatively. If you don’t understand the Lagrangian method in intermediate micro, you will be lost in graduate micro. If you can’t do comparative statics by hand, you won’t understand structural estimation. There is no shortcut.</p>
+</section>
+<section id="the-explain-it-to-me-test" class="level3">
+<h3 class="anchored" data-anchor-id="the-explain-it-to-me-test">The “explain it to me” test</h3>
+<p>Here’s a simple rule: <strong>if you can’t explain why each step follows from the previous one — in your own words, without looking at the AI output — you don’t understand the derivation.</strong> Reading a correct solution is not the same as being able to produce one. Recognizing correct math is easier than generating correct math, and exams test the latter.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The Fluency Trap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reading AI-generated math feels like understanding it. The steps flow logically, the notation is clean, and each line seems to follow naturally from the last. This creates an illusion of comprehension. You might think “I totally follow this” when what you really mean is “I can’t find an error.” Those are not the same thing. Test yourself by closing the AI output and re-deriving from scratch.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-testing-ai-on-economics-math" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-testing-ai-on-economics-math">Exercise: Testing AI on Economics Math</h2>
+<section id="part-1-solve-it-yourself-15-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-solve-it-yourself-15-min">Part 1: Solve it yourself (~15 min)</h3>
+<p>Choose one of the following problems (or use one from your current coursework):</p>
+<p><strong>Option A</strong> (Intermediate Micro): A consumer has utility <span class="math inline">\(U(x,y) = \ln(x) + \ln(y)\)</span> and faces prices <span class="math inline">\(p_x\)</span>, <span class="math inline">\(p_y\)</span> with income <span class="math inline">\(m\)</span>. Derive the Marshallian demand functions and the indirect utility function.</p>
+<p><strong>Option B</strong> (Intermediate Micro/Macro): A firm has production function <span class="math inline">\(f(L) = AL^{\alpha}\)</span> with <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span> and faces output price <span class="math inline">\(p\)</span> and wage <span class="math inline">\(w\)</span>. Find the profit-maximizing labor demand and show how it changes when the wage increases.</p>
+<p><strong>Option C</strong> (Econometrics): Show that the OLS estimator <span class="math inline">\(\hat{\beta} = (X'X)^{-1}X'y\)</span> is unbiased under the assumption <span class="math inline">\(E[\varepsilon \mid X] = 0\)</span>.</p>
+<p>Attempt the problem. Write out your steps. Note where you get stuck.</p>
+</section>
+<section id="part-2-ask-ai-to-solve-it-5-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-ask-ai-to-solve-it-5-min">Part 2: Ask AI to solve it (~5 min)</h3>
+<p>Paste the same problem into your AI tool. Compare:</p>
+<ul>
+<li>Did you and the AI take the same approach?</li>
+<li>Did AI include steps you skipped?</li>
+<li>Did you catch any errors in the AI’s solution?</li>
+<li>Did the AI skip any steps that you think are important (e.g., checking SOCs)?</li>
+</ul>
+</section>
+<section id="part-3-introduce-an-error-10-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-introduce-an-error-10-min">Part 3: Introduce an error (~10 min)</h3>
+<p>Now deliberately modify the problem in a subtle way and see if AI notices:</p>
+<ul>
+<li>Change a sign in the utility function (e.g., <span class="math inline">\(U(x,y) = \ln(x) - \ln(y)\)</span>) and see if AI comments on the unusual specification</li>
+<li>Give a production function that violates the standard assumptions (e.g., <span class="math inline">\(f(L) = AL^2\)</span>, which has increasing returns) and see if AI flags that the profit maximum doesn’t exist</li>
+<li>Ask AI to check a derivation where you’ve deliberately introduced a wrong step — does it catch the mistake?</li>
+</ul>
+</section>
+<section id="part-4-test-ai-as-a-checker-10-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-test-ai-as-a-checker-10-min">Part 4: Test AI as a checker (~10 min)</h3>
+<p>Write out a derivation with an intentional error somewhere in the middle. For example:</p>
+<blockquote class="blockquote">
+<p>“Here’s my derivation of the demand function from <span class="math inline">\(U = x^{0.5} y^{0.5}\)</span> with budget constraint <span class="math inline">\(p_x x + p_y y = m\)</span>. Is each step correct?”</p>
+<p>Step 1: <span class="math inline">\(\mathcal{L} = x^{0.5} y^{0.5} + \lambda(m - p_x x - p_y y)\)</span></p>
+<p>Step 2: <span class="math inline">\(\frac{\partial \mathcal{L}}{\partial x} = 0.5 x^{-0.5} y^{0.5} - \lambda p_x = 0\)</span></p>
+<p>Step 3: <span class="math inline">\(\frac{\partial \mathcal{L}}{\partial y} = 0.5 x^{0.5} y^{-0.5} - \lambda p_y = 0\)</span></p>
+<p>Step 4: Dividing: <span class="math inline">\(\frac{y}{x} = \frac{p_x}{p_y}\)</span> [<em>intentional error: should be <span class="math inline">\(\frac{p_y}{p_x}\)</span></em>… wait, actually should be <span class="math inline">\(\frac{p_x}{p_y}\)</span> — double-check your own error!]</p>
+<p>Step 5: Substituting into the budget constraint…</p>
+</blockquote>
+<p>The question: does AI catch your intentional mistake? In our experience, AI catches obvious errors (wrong formula entirely) but often misses sign and ratio errors — exactly the kind of errors that matter most.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What This Exercise Reveals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most students find that AI is a decent first-pass checker — it catches maybe half of intentional errors. But it also sometimes “finds” errors that aren’t there, suggesting corrections that would make the derivation wrong. This is because the model is pattern-matching, not proving. It’s useful, but it’s not a proof assistant.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion-questions" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h2>
+<ol type="1">
+<li><p>If AI can always produce the derivation for you, what does it mean to “know” the math? Is the ability to execute a derivation by hand still valuable, or is understanding the intuition and being able to verify results sufficient?</p></li>
+<li><p>Consider two students: one who does every derivation by hand and one who uses AI to generate solutions and then carefully verifies each step. Will they perform differently on an exam? In a research setting? Is one approach better, or does it depend on the context?</p></li>
+<li><p>AI is better at well-known derivations (textbook problems) than novel ones (research-level problems). What does this imply about the value of mathematical training as you move from coursework to original research?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>AI math looks confident whether or not it’s correct.</strong> The clean LaTeX and smooth step-by-step flow create an illusion of rigor. Every derivation — right or wrong — comes out looking like a textbook solution. You cannot use formatting quality as a signal of mathematical correctness.</p></li>
+<li><p><strong>AI is better at common problems than novel ones.</strong> Textbook derivations are usually right because the model has seen many versions. Non-standard problems are where errors creep in — and those are exactly the problems that matter most in research and advanced coursework.</p></li>
+<li><p><strong>Use AI for intuition, formatting, and first-pass checking — not as a proof verifier.</strong> The highest-value uses are explaining concepts, converting to LaTeX, and catching obvious errors. The lowest-value use is blindly trusting a full derivation.</p></li>
+<li><p><strong>Build verification habits now.</strong> Check boundary cases, check units, check special cases, work backwards, check signs. These habits will serve you whether you’re checking AI output, a coauthor’s work, or your own derivations at 2 AM before a deadline.</p></li>
+</ol>
+<div class="instructor-note">
+<p><strong>For instructors</strong>: This module works well as an in-class workshop where students interact with AI tools in real time. The exercise is designed so that Parts 3 and 4 produce unexpected results — AI will miss some deliberate errors and “find” some non-errors, and the class discussion about why is where the real learning happens.</p>
+<p><strong>Adaptation for intermediate micro</strong>: Focus on Examples 1 and 2 (consumer optimization, labor supply) and skip Example 3 (comparative statics with implicit function theorem) if students haven’t covered it. The verification framework is appropriate at any level.</p>
+<p><strong>Adaptation for econometrics</strong>: Replace the micro examples with matrix algebra and OLS derivations. The same failure modes apply — AI can typeset <span class="math inline">\(\hat{\beta} = (X'X)^{-1}X'y\)</span> beautifully but may mishandle the conditions under which it’s unbiased, consistent, or efficient.</p>
+<p><strong>Assessment idea</strong>: Have students submit a “verification report” for an AI-generated derivation. Give them a derivation that contains 2-3 subtle errors and ask them to identify and correct each one. Grade on the quality of their mathematical reasoning, not on whether they found all the errors.</p>
+<p><strong>Connection to other modules</strong>: This builds directly on A1 (why AI produces confident-but-wrong output) and C2 (the distinction between mechanical tasks and analytical judgment). The verification framework here parallels the code-checking framework in C2 — in both cases, the core skill is reading AI output critically rather than accepting it at face value.</p>
+<p><strong>Prerequisite math</strong>: Students should be comfortable with constrained optimization (Lagrangians), basic calculus (partial derivatives, chain rule), and ideally some exposure to comparative statics. The module is pitched at students in intermediate micro/macro or introductory econometrics.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

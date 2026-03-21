@@ -1,0 +1,309 @@
+---
+title: "C4: Writing & Revision"
+subtitle: "AI as copy editor, not ghostwriter"
+---
+
+::: {.module-meta}
+[~50 min]{.badge .badge-time}
+[Econ Workflows]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Distinguish between levels of AI writing assistance — from brainstorming to drafting — and assess the risks of each
+2. Use AI as a revision tool (reverse outlining, paragraph diagnostics, concision editing) while keeping your voice and argument intact
+3. Identify the telltale signs of AI-generated academic prose and explain why they undermine your work
+4. Apply AI effectively to economics-specific writing challenges (results descriptions, identification strategies, literature transitions)
+5. Articulate why writing is thinking — and why outsourcing the draft means outsourcing the thought
+
+## The Writing Spectrum
+
+AI can assist with writing at many different levels. The key question is not "can AI do this?" — it can attempt all of them — but "should AI do this?" The answer depends on how much thinking is embedded in the task.
+
+| Level of Assistance | What AI Does | Risk | Your Role |
+|---|---|---|---|
+| **Brainstorming & outlining** | Suggests structures, angles, counterarguments | Low | You select, rearrange, reject |
+| **Restructuring arguments** | Proposes reordering of your existing sections | Medium | Your argument, AI's organizational suggestions |
+| **Editing for clarity** | Tightens sentences, flags unclear passages | Low-Medium | You wrote it; AI sharpens it |
+| **Copyediting** | Grammar, spelling, style consistency, formatting | Low | Ideal AI task — mechanical, verifiable |
+| **Drafting from scratch** | Generates new text from a prompt | High | You lose your voice, your thinking, and your ability to defend what's on the page |
+
+The pattern: risk increases as AI moves from *responding to your text* toward *replacing your text*. The sweet spot is in the middle — editing and revision work where you've already done the thinking and AI helps you communicate it more clearly.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of AI assistance like a production function with diminishing returns to AI input. At low levels (copyediting, outlining), the marginal product of AI is high — it saves you time on mechanical tasks without affecting the quality of your ideas. As you increase AI's role toward drafting, the marginal product drops sharply and eventually turns negative: the output gets smoother but the ideas get thinner. You're substituting away from the input that actually matters — your own thinking.
+:::
+
+## Why "Write This for Me" Is the Wrong Approach
+
+### Writing IS thinking
+
+This is not a platitude. In economics specifically, the act of writing forces you to confront the gaps in your argument. When you sit down to write your identification strategy paragraph, you discover that you can't actually articulate why the exclusion restriction holds. When you draft your results section, you realize you're not sure which coefficient to emphasize or how to interpret the magnitude. When you write the introduction, you find out whether you actually know what your contribution is.
+
+These are not writing problems. They are thinking problems that become visible through writing. If AI writes the draft for you, those problems don't go away — they hide. You end up with smooth prose wrapped around an argument you haven't fully worked out.
+
+### AI prose is recognizable
+
+Experienced readers — your professors, journal referees, hiring committees — can usually spot AI-generated academic writing. The tells are consistent:
+
+- **Excessive hedging**: "It is important to note that..." "While there are many factors to consider..." "This is a complex issue that..."
+- **Generic transitions**: "Furthermore," "Moreover," "Additionally," — stacked one after another without adding meaning
+- **False balance**: Every point gets a "however" counterpoint, even when the evidence clearly favors one side
+- **Lack of specificity**: "Many studies have found that education improves outcomes" instead of "Duflo (2001) estimates that each additional year of schooling increases earnings by 8% in Indonesia"
+- **Uniform sentence rhythm**: AI tends to produce sentences of similar length and structure. Real writing has variety — short punchy sentences mixed with longer ones.
+- **Hollow confidence**: AI writes with authority about everything, including things it should be uncertain about. A real author says "I'm not sure this holds in the urban subsample" — AI says "This finding extends naturally to urban contexts."
+
+### You can't defend what you didn't write
+
+Here is the practical problem. Your advisor reads your draft and asks: "What do you mean by 'the treatment effect is economically meaningful'? Meaningful relative to what?" If you wrote the sentence, you have an answer — maybe imperfect, but you know what you were trying to say. If AI wrote it, you're stuck. You're reverse-engineering someone else's argument in real time.
+
+This happens in defenses, in referee responses, in job market presentations. Someone asks about a specific sentence or paragraph, and you need to explain the reasoning behind it. If AI did the reasoning, you don't have it.
+
+::: {.callout-important}
+## The Real Test
+Ask yourself: "If someone questioned any sentence in this paragraph, could I explain why I wrote it that way?" If the answer is no, you don't understand your own argument well enough — whether or not AI was involved.
+:::
+
+## Where AI Genuinely Helps Academic Writing
+
+Now for the good news. There are specific revision tasks where AI is not just useful but genuinely better than doing it yourself — because they require a kind of mechanical attention to text that humans find tedious and AI handles well.
+
+### Reverse outlining
+
+This is one of the most valuable AI writing tools and one of the least known. You've written a draft. You *think* you know what each paragraph is doing. But does the structure actually work?
+
+Paste your draft and ask:
+
+> "Read this draft and create a reverse outline: for each paragraph, write one sentence summarizing what the paragraph actually says (not what I probably intended it to say). Then identify any paragraphs that don't clearly serve one main point."
+
+The output is a mirror. You see the structure of what you *actually* wrote — which is often different from what you planned. Maybe your third paragraph is trying to do two things at once. Maybe your argument takes a detour in section 2 that doesn't connect to your thesis. Maybe your conclusion introduces a new idea instead of synthesizing existing ones.
+
+This works because AI is processing text you gave it. It's describing structure, not generating argument.
+
+### Paragraph diagnostics
+
+For individual paragraphs that feel "off" but you're not sure why:
+
+> "What is the main claim of this paragraph? Does every sentence support that claim? Are there any sentences that belong in a different paragraph?"
+
+This is the kind of feedback a writing center tutor would give. AI does it faster and without an appointment. The key: you evaluate the feedback and decide what to change.
+
+### Cutting for concision
+
+Economists write too many words. Referees complain. Advisors complain. You know you should cut, but everything feels necessary. AI is excellent at this:
+
+> "Reduce this paragraph by 30% without losing any substantive content. Show me what you cut and explain why each cut was justified."
+
+AI will strip hedging phrases, eliminate redundancy, and tighten constructions. It's good at this because concision is mechanical — you can verify that the meaning was preserved. And asking it to justify the cuts forces it to be conservative (it won't cut something it can't explain removing).
+
+### Transition assistance
+
+Transitions between sections are where writers get stuck. You've finished your literature review, and you need to pivot to your data section. You stare at the screen. AI can help:
+
+> "I'm transitioning from my literature review (which establishes that prior studies find mixed effects of cash transfers on labor supply) to my data section (where I describe a household panel from rural Ethiopia). Suggest 2-3 transition sentences that connect these sections."
+
+Pick the one that works, rewrite it in your voice, move on. AI unstuck you; you wrote the sentence.
+
+### Jargon and audience check
+
+You've been deep in your subfield for months. You've forgotten that "DID" means nothing to most people and that "identifying variation" is not self-explanatory. AI can flag this:
+
+> "Read this paragraph as if you were an economist outside of labor economics. Flag any jargon, undefined acronyms, or concepts that would need more explanation for a general economics audience."
+
+### Passive voice and hedging audit
+
+These two habits weaken academic writing more than almost anything else:
+
+> "In this paragraph, flag every instance of passive voice, unnecessary hedging ('it seems that,' 'it is possible that,' 'there may be'), and filler phrases ('it is important to note'). For each, suggest an active-voice or direct alternative."
+
+You decide which to accept. Some passive voice is appropriate — "the sample was restricted to..." is fine. But seeing every instance in one place lets you make conscious choices instead of defaulting to academic mush.
+
+::: {.callout-note}
+## A Note on "Voice"
+Your writing voice is the sum of your word choices, sentence patterns, argument structure, and the specific way you engage with evidence. It develops through practice. AI doesn't have a voice — it has a statistical average of all the text it's seen. When AI rewrites your prose, it replaces your emerging voice with that average. That's why editing (preserving your text, improving specific elements) is fundamentally different from rewriting (replacing your text entirely).
+:::
+
+## Maintaining Your Voice
+
+### The problem
+
+AI smooths everything. Give it rough, specific, opinionated prose and it returns polished, generic, noncommittal text. This is not a bug — the model is trained to produce the most likely next token, and the most likely academic prose is, by definition, average.
+
+### The solution
+
+Never ask AI to rewrite from scratch. Give it YOUR text and ask for specific, bounded edits.
+
+**Bad prompt**: "Rewrite this paragraph to be clearer."
+
+**Good prompt**: "In this paragraph, I want to keep my main argument and the specific evidence I cite. But the third sentence is too long and the transition from sentence 2 to sentence 3 is abrupt. Can you suggest fixes for just those two issues?"
+
+### Before and after: A demonstration
+
+**Student's original draft** (rough but has a point of view):
+
+> The results were surprising. Nobody expected that giving people information about job openings in the city would actually make them less likely to migrate. But that's what the data show — treated households were 4 percentage points less likely to send a migrant, significant at the 5% level. My best guess is that the information made the expected costs of migration more salient, not less.
+
+**AI full rewrite** (smooth but could have been written by anyone):
+
+> The findings present an unexpected result. Contrary to initial expectations, providing information about urban employment opportunities was associated with a statistically significant decrease in migration propensity. Specifically, treated households exhibited a 4 percentage point reduction in the likelihood of sending a migrant (p < 0.05). One possible explanation for this counterintuitive finding is that the informational intervention increased awareness of migration-related costs and challenges.
+
+**AI-assisted targeted edit** (student's voice, improved clarity):
+
+> The results were surprising. Providing information about job openings in the city actually made households *less* likely to send a migrant — a 4 percentage point reduction, significant at the 5% level. My best explanation is that the information made the expected costs of migration more salient. Knowing what the city job market actually looks like may have been discouraging, not encouraging.
+
+The third version is better than both. It keeps the student's directness and interpretive confidence while tightening the prose and strengthening the explanation. This is what AI-assisted revision should look like.
+
+::: {.callout-warning}
+## The Voice Erosion Problem
+If you habitually let AI rewrite your drafts, your writing voice atrophies. You stop developing the muscle of turning rough ideas into clear prose because the machine does it for you. Over four years of college, that's a significant skill gap. You graduate writing like an AI — or worse, unable to write without one.
+:::
+
+## Economics-Specific Writing Challenges
+
+Here are concrete prompts for the specific writing tasks that economics students struggle with. In each case, the approach is the same: you draft first, then use AI to improve specific elements.
+
+### Describing empirical results
+
+You've run your regression. Now you need to describe what the coefficient means in plain language. This is harder than it sounds.
+
+> "Here are my main regression results [paste table or key coefficients]. Help me write a precise interpretation of the coefficient on the treatment variable. I want to state the magnitude, the unit of measurement, the statistical significance, and one sentence on economic significance. Keep it factual — no hedging."
+
+Check every word. "A one-unit increase in X is associated with a 3.2 percentage point increase in Y" is precise. "X appears to have a positive effect on Y" is not.
+
+### Writing identification strategy paragraphs
+
+The identification strategy paragraph is the most important paragraph in an empirical paper, and the hardest to write clearly.
+
+> "I'm using a difference-in-differences design to estimate the effect of a state-level minimum wage increase on teen employment. Treatment states raised the minimum wage in 2018; control states did not. I have quarterly employment data from 2015-2021. Draft an identification strategy paragraph that clearly states: (1) the comparison being made, (2) the key identifying assumption (parallel trends), and (3) potential threats to identification. I will revise it heavily — I just need a structural starting point."
+
+The key phrase is "I will revise it heavily." You're asking for scaffolding, not a finished product.
+
+### Literature review transitions
+
+Connecting one paper to the next in a literature review often feels mechanical, and AI handles it well:
+
+> "I just summarized Chetty et al. (2014) on neighborhood effects on intergenerational mobility. My next paper is Derenoncourt (2022) on the Great Migration's long-run effects on upward mobility. Suggest a 1-2 sentence transition that connects these papers thematically."
+
+### Making tables and figures self-contained
+
+Your referee (or your professor) should be able to understand your table without reading the text. AI can draft table notes:
+
+> "Here is my regression table [paste or describe columns, dependent variables, controls, sample]. Draft a table note that explains what each column shows, what controls are included, how standard errors are clustered, and what the sample is. Follow the format: 'Notes: This table reports estimates from [specification]. The dependent variable is [Y]. Column (1) includes...'"
+
+### Abstract writing
+
+The abstract is a compression problem, and AI is good at compression — as long as it's compressing YOUR text, not inventing content:
+
+> "Here is the introduction and results section of my paper [paste]. Draft a 150-word abstract that covers the research question, the method, the main finding, and the implication. I will rewrite it in my own voice."
+
+Read the AI draft. Throw out at least half of it. Rewrite the rest. The value was in seeing one possible structure, not in the words themselves.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of AI writing assistance like a comparative advantage framework. You have a comparative advantage in ideas, argument, interpretation, and domain knowledge. AI has a comparative advantage in mechanical text processing — spotting passive voice, compressing sentences, flagging jargon, maintaining parallel structure. Efficient collaboration means each party does what they're relatively better at. When you ask AI to do the thinking, you're destroying the gains from trade.
+:::
+
+## What to Never Outsource
+
+Some parts of academic writing are too closely tied to your intellectual contribution to delegate — not even partially.
+
+### Your research question framing
+
+The way you frame the question determines everything downstream. "Does microfinance reduce poverty?" and "Under what conditions do microfinance borrowers invest in productive assets?" lead to fundamentally different papers. This framing reflects your understanding of the literature, your theoretical framework, and your judgment about what's interesting. AI can help you *refine* a question you've already drafted, but it shouldn't generate the question.
+
+### Your interpretation of results
+
+A coefficient is a number. The interpretation is economics. When you write "the 4 percentage point increase in enrollment is large relative to the baseline of 62%," you're making a judgment about economic significance that requires context AI doesn't have. When you write "this effect is concentrated among girls, suggesting that the program relaxed gender-specific constraints," you're proposing a mechanism grounded in your knowledge of the setting.
+
+### Your contribution statement
+
+"This paper contributes to the literature by..." is the sentence where you claim intellectual territory. It requires knowing the literature well enough to identify the gap and understanding your own work well enough to explain how it fills that gap. If AI writes this sentence, it will be generic: "This paper contributes to the growing literature on X by providing new evidence from Y." That describes every paper ever written.
+
+### Policy implications
+
+Translating empirical results into policy recommendations requires judgment about external validity, political feasibility, implementation costs, and ethical considerations. AI will generate plausible-sounding policy implications that may be wildly inappropriate for the context. "These results suggest that policymakers should expand the program" — to whom? Where? At what cost? With what evidence of external validity?
+
+::: {.callout-warning}
+## The Ghostwriting Line
+Here is a simple test: if you removed your name from the paper and put someone else's on it, would the text still make sense? If yes, AI wrote it. Your name on a paper means these are *your* ideas, *your* interpretations, *your* arguments expressed in *your* voice. That's what authorship means.
+:::
+
+## Exercise: AI as Revision Partner
+
+### Part 1: Write first (~10 min)
+
+Write a short paragraph (4-6 sentences) describing one of the following:
+
+- A research finding from a paper you've read this semester (state the finding, its magnitude, and why it matters)
+- A hypothetical policy evaluation: "A state expanded Medicaid eligibility in 2020. Using a difference-in-differences design comparing expansion and non-expansion states, I find that ER visits decreased by 12% in the first year."
+- The identification strategy for a research question you're interested in
+
+Write it yourself, in your own words, without AI. It doesn't need to be polished.
+
+### Part 2: AI-assisted improvement (~10 min)
+
+Now take your paragraph to an AI tool and try three different revision requests:
+
+**Request 1** (broad rewrite): "Rewrite this paragraph to be clearer and more professional."
+
+**Request 2** (specific edit): "In this paragraph, flag any vague language, unnecessary hedging, or passive voice. Suggest specific fixes but keep my overall structure and word choices."
+
+**Request 3** (concision): "Reduce this paragraph by 30% without losing any substantive content."
+
+Compare the three outputs:
+
+- Which version sounds most like *you*?
+- Which version is most precise about the economics?
+- Did the broad rewrite (Request 1) change your argument in any way? Did it add hedging or remove specificity?
+
+### Part 3: Reverse outlining (~15 min)
+
+Take a longer piece of your own writing — an essay introduction, a problem set write-up, a section of a research proposal (at least 3-4 paragraphs). Paste it into AI and ask:
+
+> "Create a reverse outline of this text. For each paragraph, write one sentence describing what it actually argues (not what I probably intended). Then tell me: Does the argument flow logically? Are there any paragraphs trying to do too much? Is anything missing?"
+
+Compare the reverse outline to your intended structure:
+
+- Does what you *wrote* match what you *meant*?
+- Where are the gaps between intention and execution?
+- Did AI catch a structural problem you hadn't noticed?
+
+### Part 4: Reflection (~5 min)
+
+Write 2-3 sentences answering: What is the most useful thing AI did for your writing in this exercise? What is one thing it did that you would reject or undo?
+
+## Discussion Questions
+
+1. Where is the line between "editing" and "ghostwriting"? If AI suggests restructuring your entire argument and you accept the suggestion, is that your work? What if you accept 80% of AI's sentence-level edits? What if AI drafts the paragraph and you revise it? Does the direction of the workflow (you→AI vs. AI→you) matter morally and pedagogically?
+
+2. A classmate says: "I'm not a good writer, so AI helps me express ideas I couldn't express on my own. How is that different from hiring a tutor?" What's the strongest version of this argument? What's the counter-argument about what happens to writing skills over time?
+
+3. Consider the economics of AI writing assistance. If everyone uses AI to polish their writing, does polished prose stop being a signal of quality? What new signals might emerge? How does this relate to the concept of credential inflation?
+
+4. You're 35 years old, writing policy briefs for a government agency. Is the calculus different than it is now, as a student? When (if ever) is it appropriate to let AI do more of the drafting?
+
+## Key Takeaways
+
+1. **The sweet spot is revision, not generation.** AI is most useful when it works on text you've already written — cutting, clarifying, flagging problems, checking structure. It is least useful (and most dangerous) when it generates text from scratch.
+
+2. **Writing is thinking, not just communication.** The struggle of turning rough ideas into clear prose is where you discover what you actually know and what you still need to figure out. Outsourcing the draft outsources the thinking.
+
+3. **Specificity preserves your voice.** Ask for specific, bounded edits ("tighten this sentence," "flag the passive voice," "suggest a transition") rather than open-ended rewrites ("make this better"). The more specific your request, the more the output sounds like you.
+
+4. **Some things are never AI tasks.** Your research question, your interpretation of results, your contribution statement, and your policy implications are intellectual work that defines your authorship. No amount of time pressure justifies outsourcing them.
+
+::: {.instructor-note}
+**For instructors**: This module works best when students bring their own writing — a problem set response, a paper draft, or even a polished paragraph from a previous course. The exercise is more compelling with real text than with hypothetical examples.
+
+**Live demo idea**: Take a single strong student paragraph (with permission), project it, and run the three revision requests (broad rewrite, specific edit, concision) in real time. Have the class discuss which output is best and why. The contrast between the broad rewrite (smooth but generic) and the targeted edit (still sounds like the student) is usually striking.
+
+**Assessment option**: Require students to submit a "revision log" alongside their final paper: for each AI interaction, document (1) what they asked, (2) what AI suggested, and (3) what they accepted, rejected, or modified. Grade the log alongside the paper. This makes AI use transparent without banning it.
+
+**Connection to other modules**: This module builds directly on A2 (prompting specificity) and pairs with C1 (where AI also works best as a processor of human-curated content, not a generator). The reverse outlining exercise can also serve as a bridge to any research paper assignment.
+
+**Common student pushback**: "But my first drafts are terrible." That's the point. First drafts are supposed to be rough — they're thinking on paper. The goal is not a perfect first draft; it's a first draft that you improve through revision. AI can help with that revision. It cannot replace the first draft without replacing the thinking.
+:::

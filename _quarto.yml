@@ -36,6 +36,10 @@ website:
             text: "C2: Code Assistance"
           - href: modules/c3-data-exploration.qmd
             text: "C3: Data Exploration & Cleaning"
+          - href: modules/c4-writing-revision.qmd
+            text: "C4: Writing & Revision"
+          - href: modules/c5-math-derivations.qmd
+            text: "C5: Math & Derivations"
       - href: about.qmd
         text: About
 

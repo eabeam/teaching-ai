@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/b1-terminal-basics.html</loc>
-    <lastmod>2026-03-21T18:11:13.236Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/c5-math-derivations.html</loc>
+    <lastmod>2026-03-21T20:43:51.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/c4-writing-revision.html</loc>
+    <lastmod>2026-03-21T20:43:20.665Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/a2-prompting.html</loc>
@@ -22,7 +26,7 @@
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/index.html</loc>
-    <lastmod>2026-03-21T20:38:14.203Z</lastmod>
+    <lastmod>2026-03-21T20:44:19.955Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/MODULE_CATALOG.html</loc>
@@ -47,5 +51,9 @@
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/c2-code-assistance.html</loc>
     <lastmod>2026-03-21T20:37:23.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/b1-terminal-basics.html</loc>
+    <lastmod>2026-03-21T18:11:13.236Z</lastmod>
   </url>
 </urlset>

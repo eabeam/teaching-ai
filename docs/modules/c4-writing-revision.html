@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>C4: Writing &amp; Revision – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="../modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="../modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="../modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#the-writing-spectrum" id="toc-the-writing-spectrum" class="nav-link" data-scroll-target="#the-writing-spectrum">The Writing Spectrum</a></li>
+  <li><a href="#why-write-this-for-me-is-the-wrong-approach" id="toc-why-write-this-for-me-is-the-wrong-approach" class="nav-link" data-scroll-target="#why-write-this-for-me-is-the-wrong-approach">Why “Write This for Me” Is the Wrong Approach</a>
+  <ul class="collapse">
+  <li><a href="#writing-is-thinking" id="toc-writing-is-thinking" class="nav-link" data-scroll-target="#writing-is-thinking">Writing IS thinking</a></li>
+  <li><a href="#ai-prose-is-recognizable" id="toc-ai-prose-is-recognizable" class="nav-link" data-scroll-target="#ai-prose-is-recognizable">AI prose is recognizable</a></li>
+  <li><a href="#you-cant-defend-what-you-didnt-write" id="toc-you-cant-defend-what-you-didnt-write" class="nav-link" data-scroll-target="#you-cant-defend-what-you-didnt-write">You can’t defend what you didn’t write</a></li>
+  </ul></li>
+  <li><a href="#where-ai-genuinely-helps-academic-writing" id="toc-where-ai-genuinely-helps-academic-writing" class="nav-link" data-scroll-target="#where-ai-genuinely-helps-academic-writing">Where AI Genuinely Helps Academic Writing</a>
+  <ul class="collapse">
+  <li><a href="#reverse-outlining" id="toc-reverse-outlining" class="nav-link" data-scroll-target="#reverse-outlining">Reverse outlining</a></li>
+  <li><a href="#paragraph-diagnostics" id="toc-paragraph-diagnostics" class="nav-link" data-scroll-target="#paragraph-diagnostics">Paragraph diagnostics</a></li>
+  <li><a href="#cutting-for-concision" id="toc-cutting-for-concision" class="nav-link" data-scroll-target="#cutting-for-concision">Cutting for concision</a></li>
+  <li><a href="#transition-assistance" id="toc-transition-assistance" class="nav-link" data-scroll-target="#transition-assistance">Transition assistance</a></li>
+  <li><a href="#jargon-and-audience-check" id="toc-jargon-and-audience-check" class="nav-link" data-scroll-target="#jargon-and-audience-check">Jargon and audience check</a></li>
+  <li><a href="#passive-voice-and-hedging-audit" id="toc-passive-voice-and-hedging-audit" class="nav-link" data-scroll-target="#passive-voice-and-hedging-audit">Passive voice and hedging audit</a></li>
+  </ul></li>
+  <li><a href="#maintaining-your-voice" id="toc-maintaining-your-voice" class="nav-link" data-scroll-target="#maintaining-your-voice">Maintaining Your Voice</a>
+  <ul class="collapse">
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem">The problem</a></li>
+  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution">The solution</a></li>
+  <li><a href="#before-and-after-a-demonstration" id="toc-before-and-after-a-demonstration" class="nav-link" data-scroll-target="#before-and-after-a-demonstration">Before and after: A demonstration</a></li>
+  </ul></li>
+  <li><a href="#economics-specific-writing-challenges" id="toc-economics-specific-writing-challenges" class="nav-link" data-scroll-target="#economics-specific-writing-challenges">Economics-Specific Writing Challenges</a>
+  <ul class="collapse">
+  <li><a href="#describing-empirical-results" id="toc-describing-empirical-results" class="nav-link" data-scroll-target="#describing-empirical-results">Describing empirical results</a></li>
+  <li><a href="#writing-identification-strategy-paragraphs" id="toc-writing-identification-strategy-paragraphs" class="nav-link" data-scroll-target="#writing-identification-strategy-paragraphs">Writing identification strategy paragraphs</a></li>
+  <li><a href="#literature-review-transitions" id="toc-literature-review-transitions" class="nav-link" data-scroll-target="#literature-review-transitions">Literature review transitions</a></li>
+  <li><a href="#making-tables-and-figures-self-contained" id="toc-making-tables-and-figures-self-contained" class="nav-link" data-scroll-target="#making-tables-and-figures-self-contained">Making tables and figures self-contained</a></li>
+  <li><a href="#abstract-writing" id="toc-abstract-writing" class="nav-link" data-scroll-target="#abstract-writing">Abstract writing</a></li>
+  </ul></li>
+  <li><a href="#what-to-never-outsource" id="toc-what-to-never-outsource" class="nav-link" data-scroll-target="#what-to-never-outsource">What to Never Outsource</a>
+  <ul class="collapse">
+  <li><a href="#your-research-question-framing" id="toc-your-research-question-framing" class="nav-link" data-scroll-target="#your-research-question-framing">Your research question framing</a></li>
+  <li><a href="#your-interpretation-of-results" id="toc-your-interpretation-of-results" class="nav-link" data-scroll-target="#your-interpretation-of-results">Your interpretation of results</a></li>
+  <li><a href="#your-contribution-statement" id="toc-your-contribution-statement" class="nav-link" data-scroll-target="#your-contribution-statement">Your contribution statement</a></li>
+  <li><a href="#policy-implications" id="toc-policy-implications" class="nav-link" data-scroll-target="#policy-implications">Policy implications</a></li>
+  </ul></li>
+  <li><a href="#exercise-ai-as-revision-partner" id="toc-exercise-ai-as-revision-partner" class="nav-link" data-scroll-target="#exercise-ai-as-revision-partner">Exercise: AI as Revision Partner</a>
+  <ul class="collapse">
+  <li><a href="#part-1-write-first-10-min" id="toc-part-1-write-first-10-min" class="nav-link" data-scroll-target="#part-1-write-first-10-min">Part 1: Write first (~10 min)</a></li>
+  <li><a href="#part-2-ai-assisted-improvement-10-min" id="toc-part-2-ai-assisted-improvement-10-min" class="nav-link" data-scroll-target="#part-2-ai-assisted-improvement-10-min">Part 2: AI-assisted improvement (~10 min)</a></li>
+  <li><a href="#part-3-reverse-outlining-15-min" id="toc-part-3-reverse-outlining-15-min" class="nav-link" data-scroll-target="#part-3-reverse-outlining-15-min">Part 3: Reverse outlining (~15 min)</a></li>
+  <li><a href="#part-4-reflection-5-min" id="toc-part-4-reflection-5-min" class="nav-link" data-scroll-target="#part-4-reflection-5-min">Part 4: Reflection (~5 min)</a></li>
+  </ul></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion Questions</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">C4: Writing &amp; Revision</h1>
+<p class="subtitle lead">AI as copy editor, not ghostwriter</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="module-meta">
+<p><span class="badge badge-time">~50 min</span> <span class="badge badge-track">Econ Workflows</span> <span class="badge badge-no-code">No coding required</span></p>
+</div>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ol type="1">
+<li>Distinguish between levels of AI writing assistance — from brainstorming to drafting — and assess the risks of each</li>
+<li>Use AI as a revision tool (reverse outlining, paragraph diagnostics, concision editing) while keeping your voice and argument intact</li>
+<li>Identify the telltale signs of AI-generated academic prose and explain why they undermine your work</li>
+<li>Apply AI effectively to economics-specific writing challenges (results descriptions, identification strategies, literature transitions)</li>
+<li>Articulate why writing is thinking — and why outsourcing the draft means outsourcing the thought</li>
+</ol>
+</section>
+<section id="the-writing-spectrum" class="level2">
+<h2 class="anchored" data-anchor-id="the-writing-spectrum">The Writing Spectrum</h2>
+<p>AI can assist with writing at many different levels. The key question is not “can AI do this?” — it can attempt all of them — but “should AI do this?” The answer depends on how much thinking is embedded in the task.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Level of Assistance</th>
+<th>What AI Does</th>
+<th>Risk</th>
+<th>Your Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Brainstorming &amp; outlining</strong></td>
+<td>Suggests structures, angles, counterarguments</td>
+<td>Low</td>
+<td>You select, rearrange, reject</td>
+</tr>
+<tr class="even">
+<td><strong>Restructuring arguments</strong></td>
+<td>Proposes reordering of your existing sections</td>
+<td>Medium</td>
+<td>Your argument, AI’s organizational suggestions</td>
+</tr>
+<tr class="odd">
+<td><strong>Editing for clarity</strong></td>
+<td>Tightens sentences, flags unclear passages</td>
+<td>Low-Medium</td>
+<td>You wrote it; AI sharpens it</td>
+</tr>
+<tr class="even">
+<td><strong>Copyediting</strong></td>
+<td>Grammar, spelling, style consistency, formatting</td>
+<td>Low</td>
+<td>Ideal AI task — mechanical, verifiable</td>
+</tr>
+<tr class="odd">
+<td><strong>Drafting from scratch</strong></td>
+<td>Generates new text from a prompt</td>
+<td>High</td>
+<td>You lose your voice, your thinking, and your ability to defend what’s on the page</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern: risk increases as AI moves from <em>responding to your text</em> toward <em>replacing your text</em>. The sweet spot is in the middle — editing and revision work where you’ve already done the thinking and AI helps you communicate it more clearly.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think of AI assistance like a production function with diminishing returns to AI input. At low levels (copyediting, outlining), the marginal product of AI is high — it saves you time on mechanical tasks without affecting the quality of your ideas. As you increase AI’s role toward drafting, the marginal product drops sharply and eventually turns negative: the output gets smoother but the ideas get thinner. You’re substituting away from the input that actually matters — your own thinking.</p>
+</div>
+</div>
+</section>
+<section id="why-write-this-for-me-is-the-wrong-approach" class="level2">
+<h2 class="anchored" data-anchor-id="why-write-this-for-me-is-the-wrong-approach">Why “Write This for Me” Is the Wrong Approach</h2>
+<section id="writing-is-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="writing-is-thinking">Writing IS thinking</h3>
+<p>This is not a platitude. In economics specifically, the act of writing forces you to confront the gaps in your argument. When you sit down to write your identification strategy paragraph, you discover that you can’t actually articulate why the exclusion restriction holds. When you draft your results section, you realize you’re not sure which coefficient to emphasize or how to interpret the magnitude. When you write the introduction, you find out whether you actually know what your contribution is.</p>
+<p>These are not writing problems. They are thinking problems that become visible through writing. If AI writes the draft for you, those problems don’t go away — they hide. You end up with smooth prose wrapped around an argument you haven’t fully worked out.</p>
+</section>
+<section id="ai-prose-is-recognizable" class="level3">
+<h3 class="anchored" data-anchor-id="ai-prose-is-recognizable">AI prose is recognizable</h3>
+<p>Experienced readers — your professors, journal referees, hiring committees — can usually spot AI-generated academic writing. The tells are consistent:</p>
+<ul>
+<li><strong>Excessive hedging</strong>: “It is important to note that…” “While there are many factors to consider…” “This is a complex issue that…”</li>
+<li><strong>Generic transitions</strong>: “Furthermore,” “Moreover,” “Additionally,” — stacked one after another without adding meaning</li>
+<li><strong>False balance</strong>: Every point gets a “however” counterpoint, even when the evidence clearly favors one side</li>
+<li><strong>Lack of specificity</strong>: “Many studies have found that education improves outcomes” instead of “Duflo (2001) estimates that each additional year of schooling increases earnings by 8% in Indonesia”</li>
+<li><strong>Uniform sentence rhythm</strong>: AI tends to produce sentences of similar length and structure. Real writing has variety — short punchy sentences mixed with longer ones.</li>
+<li><strong>Hollow confidence</strong>: AI writes with authority about everything, including things it should be uncertain about. A real author says “I’m not sure this holds in the urban subsample” — AI says “This finding extends naturally to urban contexts.”</li>
+</ul>
+</section>
+<section id="you-cant-defend-what-you-didnt-write" class="level3">
+<h3 class="anchored" data-anchor-id="you-cant-defend-what-you-didnt-write">You can’t defend what you didn’t write</h3>
+<p>Here is the practical problem. Your advisor reads your draft and asks: “What do you mean by ‘the treatment effect is economically meaningful’? Meaningful relative to what?” If you wrote the sentence, you have an answer — maybe imperfect, but you know what you were trying to say. If AI wrote it, you’re stuck. You’re reverse-engineering someone else’s argument in real time.</p>
+<p>This happens in defenses, in referee responses, in job market presentations. Someone asks about a specific sentence or paragraph, and you need to explain the reasoning behind it. If AI did the reasoning, you don’t have it.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>The Real Test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ask yourself: “If someone questioned any sentence in this paragraph, could I explain why I wrote it that way?” If the answer is no, you don’t understand your own argument well enough — whether or not AI was involved.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="where-ai-genuinely-helps-academic-writing" class="level2">
+<h2 class="anchored" data-anchor-id="where-ai-genuinely-helps-academic-writing">Where AI Genuinely Helps Academic Writing</h2>
+<p>Now for the good news. There are specific revision tasks where AI is not just useful but genuinely better than doing it yourself — because they require a kind of mechanical attention to text that humans find tedious and AI handles well.</p>
+<section id="reverse-outlining" class="level3">
+<h3 class="anchored" data-anchor-id="reverse-outlining">Reverse outlining</h3>
+<p>This is one of the most valuable AI writing tools and one of the least known. You’ve written a draft. You <em>think</em> you know what each paragraph is doing. But does the structure actually work?</p>
+<p>Paste your draft and ask:</p>
+<blockquote class="blockquote">
+<p>“Read this draft and create a reverse outline: for each paragraph, write one sentence summarizing what the paragraph actually says (not what I probably intended it to say). Then identify any paragraphs that don’t clearly serve one main point.”</p>
+</blockquote>
+<p>The output is a mirror. You see the structure of what you <em>actually</em> wrote — which is often different from what you planned. Maybe your third paragraph is trying to do two things at once. Maybe your argument takes a detour in section 2 that doesn’t connect to your thesis. Maybe your conclusion introduces a new idea instead of synthesizing existing ones.</p>
+<p>This works because AI is processing text you gave it. It’s describing structure, not generating argument.</p>
+</section>
+<section id="paragraph-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="paragraph-diagnostics">Paragraph diagnostics</h3>
+<p>For individual paragraphs that feel “off” but you’re not sure why:</p>
+<blockquote class="blockquote">
+<p>“What is the main claim of this paragraph? Does every sentence support that claim? Are there any sentences that belong in a different paragraph?”</p>
+</blockquote>
+<p>This is the kind of feedback a writing center tutor would give. AI does it faster and without an appointment. The key: you evaluate the feedback and decide what to change.</p>
+</section>
+<section id="cutting-for-concision" class="level3">
+<h3 class="anchored" data-anchor-id="cutting-for-concision">Cutting for concision</h3>
+<p>Economists write too many words. Referees complain. Advisors complain. You know you should cut, but everything feels necessary. AI is excellent at this:</p>
+<blockquote class="blockquote">
+<p>“Reduce this paragraph by 30% without losing any substantive content. Show me what you cut and explain why each cut was justified.”</p>
+</blockquote>
+<p>AI will strip hedging phrases, eliminate redundancy, and tighten constructions. It’s good at this because concision is mechanical — you can verify that the meaning was preserved. And asking it to justify the cuts forces it to be conservative (it won’t cut something it can’t explain removing).</p>
+</section>
+<section id="transition-assistance" class="level3">
+<h3 class="anchored" data-anchor-id="transition-assistance">Transition assistance</h3>
+<p>Transitions between sections are where writers get stuck. You’ve finished your literature review, and you need to pivot to your data section. You stare at the screen. AI can help:</p>
+<blockquote class="blockquote">
+<p>“I’m transitioning from my literature review (which establishes that prior studies find mixed effects of cash transfers on labor supply) to my data section (where I describe a household panel from rural Ethiopia). Suggest 2-3 transition sentences that connect these sections.”</p>
+</blockquote>
+<p>Pick the one that works, rewrite it in your voice, move on. AI unstuck you; you wrote the sentence.</p>
+</section>
+<section id="jargon-and-audience-check" class="level3">
+<h3 class="anchored" data-anchor-id="jargon-and-audience-check">Jargon and audience check</h3>
+<p>You’ve been deep in your subfield for months. You’ve forgotten that “DID” means nothing to most people and that “identifying variation” is not self-explanatory. AI can flag this:</p>
+<blockquote class="blockquote">
+<p>“Read this paragraph as if you were an economist outside of labor economics. Flag any jargon, undefined acronyms, or concepts that would need more explanation for a general economics audience.”</p>
+</blockquote>
+</section>
+<section id="passive-voice-and-hedging-audit" class="level3">
+<h3 class="anchored" data-anchor-id="passive-voice-and-hedging-audit">Passive voice and hedging audit</h3>
+<p>These two habits weaken academic writing more than almost anything else:</p>
+<blockquote class="blockquote">
+<p>“In this paragraph, flag every instance of passive voice, unnecessary hedging (‘it seems that,’ ‘it is possible that,’ ‘there may be’), and filler phrases (‘it is important to note’). For each, suggest an active-voice or direct alternative.”</p>
+</blockquote>
+<p>You decide which to accept. Some passive voice is appropriate — “the sample was restricted to…” is fine. But seeing every instance in one place lets you make conscious choices instead of defaulting to academic mush.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A Note on “Voice”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your writing voice is the sum of your word choices, sentence patterns, argument structure, and the specific way you engage with evidence. It develops through practice. AI doesn’t have a voice — it has a statistical average of all the text it’s seen. When AI rewrites your prose, it replaces your emerging voice with that average. That’s why editing (preserving your text, improving specific elements) is fundamentally different from rewriting (replacing your text entirely).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="maintaining-your-voice" class="level2">
+<h2 class="anchored" data-anchor-id="maintaining-your-voice">Maintaining Your Voice</h2>
+<section id="the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem">The problem</h3>
+<p>AI smooths everything. Give it rough, specific, opinionated prose and it returns polished, generic, noncommittal text. This is not a bug — the model is trained to produce the most likely next token, and the most likely academic prose is, by definition, average.</p>
+</section>
+<section id="the-solution" class="level3">
+<h3 class="anchored" data-anchor-id="the-solution">The solution</h3>
+<p>Never ask AI to rewrite from scratch. Give it YOUR text and ask for specific, bounded edits.</p>
+<p><strong>Bad prompt</strong>: “Rewrite this paragraph to be clearer.”</p>
+<p><strong>Good prompt</strong>: “In this paragraph, I want to keep my main argument and the specific evidence I cite. But the third sentence is too long and the transition from sentence 2 to sentence 3 is abrupt. Can you suggest fixes for just those two issues?”</p>
+</section>
+<section id="before-and-after-a-demonstration" class="level3">
+<h3 class="anchored" data-anchor-id="before-and-after-a-demonstration">Before and after: A demonstration</h3>
+<p><strong>Student’s original draft</strong> (rough but has a point of view):</p>
+<blockquote class="blockquote">
+<p>The results were surprising. Nobody expected that giving people information about job openings in the city would actually make them less likely to migrate. But that’s what the data show — treated households were 4 percentage points less likely to send a migrant, significant at the 5% level. My best guess is that the information made the expected costs of migration more salient, not less.</p>
+</blockquote>
+<p><strong>AI full rewrite</strong> (smooth but could have been written by anyone):</p>
+<blockquote class="blockquote">
+<p>The findings present an unexpected result. Contrary to initial expectations, providing information about urban employment opportunities was associated with a statistically significant decrease in migration propensity. Specifically, treated households exhibited a 4 percentage point reduction in the likelihood of sending a migrant (p &lt; 0.05). One possible explanation for this counterintuitive finding is that the informational intervention increased awareness of migration-related costs and challenges.</p>
+</blockquote>
+<p><strong>AI-assisted targeted edit</strong> (student’s voice, improved clarity):</p>
+<blockquote class="blockquote">
+<p>The results were surprising. Providing information about job openings in the city actually made households <em>less</em> likely to send a migrant — a 4 percentage point reduction, significant at the 5% level. My best explanation is that the information made the expected costs of migration more salient. Knowing what the city job market actually looks like may have been discouraging, not encouraging.</p>
+</blockquote>
+<p>The third version is better than both. It keeps the student’s directness and interpretive confidence while tightening the prose and strengthening the explanation. This is what AI-assisted revision should look like.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The Voice Erosion Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you habitually let AI rewrite your drafts, your writing voice atrophies. You stop developing the muscle of turning rough ideas into clear prose because the machine does it for you. Over four years of college, that’s a significant skill gap. You graduate writing like an AI — or worse, unable to write without one.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="economics-specific-writing-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="economics-specific-writing-challenges">Economics-Specific Writing Challenges</h2>
+<p>Here are concrete prompts for the specific writing tasks that economics students struggle with. In each case, the approach is the same: you draft first, then use AI to improve specific elements.</p>
+<section id="describing-empirical-results" class="level3">
+<h3 class="anchored" data-anchor-id="describing-empirical-results">Describing empirical results</h3>
+<p>You’ve run your regression. Now you need to describe what the coefficient means in plain language. This is harder than it sounds.</p>
+<blockquote class="blockquote">
+<p>“Here are my main regression results [paste table or key coefficients]. Help me write a precise interpretation of the coefficient on the treatment variable. I want to state the magnitude, the unit of measurement, the statistical significance, and one sentence on economic significance. Keep it factual — no hedging.”</p>
+</blockquote>
+<p>Check every word. “A one-unit increase in X is associated with a 3.2 percentage point increase in Y” is precise. “X appears to have a positive effect on Y” is not.</p>
+</section>
+<section id="writing-identification-strategy-paragraphs" class="level3">
+<h3 class="anchored" data-anchor-id="writing-identification-strategy-paragraphs">Writing identification strategy paragraphs</h3>
+<p>The identification strategy paragraph is the most important paragraph in an empirical paper, and the hardest to write clearly.</p>
+<blockquote class="blockquote">
+<p>“I’m using a difference-in-differences design to estimate the effect of a state-level minimum wage increase on teen employment. Treatment states raised the minimum wage in 2018; control states did not. I have quarterly employment data from 2015-2021. Draft an identification strategy paragraph that clearly states: (1) the comparison being made, (2) the key identifying assumption (parallel trends), and (3) potential threats to identification. I will revise it heavily — I just need a structural starting point.”</p>
+</blockquote>
+<p>The key phrase is “I will revise it heavily.” You’re asking for scaffolding, not a finished product.</p>
+</section>
+<section id="literature-review-transitions" class="level3">
+<h3 class="anchored" data-anchor-id="literature-review-transitions">Literature review transitions</h3>
+<p>Connecting one paper to the next in a literature review often feels mechanical, and AI handles it well:</p>
+<blockquote class="blockquote">
+<p>“I just summarized Chetty et al.&nbsp;(2014) on neighborhood effects on intergenerational mobility. My next paper is Derenoncourt (2022) on the Great Migration’s long-run effects on upward mobility. Suggest a 1-2 sentence transition that connects these papers thematically.”</p>
+</blockquote>
+</section>
+<section id="making-tables-and-figures-self-contained" class="level3">
+<h3 class="anchored" data-anchor-id="making-tables-and-figures-self-contained">Making tables and figures self-contained</h3>
+<p>Your referee (or your professor) should be able to understand your table without reading the text. AI can draft table notes:</p>
+<blockquote class="blockquote">
+<p>“Here is my regression table [paste or describe columns, dependent variables, controls, sample]. Draft a table note that explains what each column shows, what controls are included, how standard errors are clustered, and what the sample is. Follow the format: ‘Notes: This table reports estimates from [specification]. The dependent variable is [Y]. Column (1) includes…’”</p>
+</blockquote>
+</section>
+<section id="abstract-writing" class="level3">
+<h3 class="anchored" data-anchor-id="abstract-writing">Abstract writing</h3>
+<p>The abstract is a compression problem, and AI is good at compression — as long as it’s compressing YOUR text, not inventing content:</p>
+<blockquote class="blockquote">
+<p>“Here is the introduction and results section of my paper [paste]. Draft a 150-word abstract that covers the research question, the method, the main finding, and the implication. I will rewrite it in my own voice.”</p>
+</blockquote>
+<p>Read the AI draft. Throw out at least half of it. Rewrite the rest. The value was in seeing one possible structure, not in the words themselves.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think of AI writing assistance like a comparative advantage framework. You have a comparative advantage in ideas, argument, interpretation, and domain knowledge. AI has a comparative advantage in mechanical text processing — spotting passive voice, compressing sentences, flagging jargon, maintaining parallel structure. Efficient collaboration means each party does what they’re relatively better at. When you ask AI to do the thinking, you’re destroying the gains from trade.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="what-to-never-outsource" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-never-outsource">What to Never Outsource</h2>
+<p>Some parts of academic writing are too closely tied to your intellectual contribution to delegate — not even partially.</p>
+<section id="your-research-question-framing" class="level3">
+<h3 class="anchored" data-anchor-id="your-research-question-framing">Your research question framing</h3>
+<p>The way you frame the question determines everything downstream. “Does microfinance reduce poverty?” and “Under what conditions do microfinance borrowers invest in productive assets?” lead to fundamentally different papers. This framing reflects your understanding of the literature, your theoretical framework, and your judgment about what’s interesting. AI can help you <em>refine</em> a question you’ve already drafted, but it shouldn’t generate the question.</p>
+</section>
+<section id="your-interpretation-of-results" class="level3">
+<h3 class="anchored" data-anchor-id="your-interpretation-of-results">Your interpretation of results</h3>
+<p>A coefficient is a number. The interpretation is economics. When you write “the 4 percentage point increase in enrollment is large relative to the baseline of 62%,” you’re making a judgment about economic significance that requires context AI doesn’t have. When you write “this effect is concentrated among girls, suggesting that the program relaxed gender-specific constraints,” you’re proposing a mechanism grounded in your knowledge of the setting.</p>
+</section>
+<section id="your-contribution-statement" class="level3">
+<h3 class="anchored" data-anchor-id="your-contribution-statement">Your contribution statement</h3>
+<p>“This paper contributes to the literature by…” is the sentence where you claim intellectual territory. It requires knowing the literature well enough to identify the gap and understanding your own work well enough to explain how it fills that gap. If AI writes this sentence, it will be generic: “This paper contributes to the growing literature on X by providing new evidence from Y.” That describes every paper ever written.</p>
+</section>
+<section id="policy-implications" class="level3">
+<h3 class="anchored" data-anchor-id="policy-implications">Policy implications</h3>
+<p>Translating empirical results into policy recommendations requires judgment about external validity, political feasibility, implementation costs, and ethical considerations. AI will generate plausible-sounding policy implications that may be wildly inappropriate for the context. “These results suggest that policymakers should expand the program” — to whom? Where? At what cost? With what evidence of external validity?</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The Ghostwriting Line
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here is a simple test: if you removed your name from the paper and put someone else’s on it, would the text still make sense? If yes, AI wrote it. Your name on a paper means these are <em>your</em> ideas, <em>your</em> interpretations, <em>your</em> arguments expressed in <em>your</em> voice. That’s what authorship means.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-ai-as-revision-partner" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-ai-as-revision-partner">Exercise: AI as Revision Partner</h2>
+<section id="part-1-write-first-10-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-write-first-10-min">Part 1: Write first (~10 min)</h3>
+<p>Write a short paragraph (4-6 sentences) describing one of the following:</p>
+<ul>
+<li>A research finding from a paper you’ve read this semester (state the finding, its magnitude, and why it matters)</li>
+<li>A hypothetical policy evaluation: “A state expanded Medicaid eligibility in 2020. Using a difference-in-differences design comparing expansion and non-expansion states, I find that ER visits decreased by 12% in the first year.”</li>
+<li>The identification strategy for a research question you’re interested in</li>
+</ul>
+<p>Write it yourself, in your own words, without AI. It doesn’t need to be polished.</p>
+</section>
+<section id="part-2-ai-assisted-improvement-10-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-ai-assisted-improvement-10-min">Part 2: AI-assisted improvement (~10 min)</h3>
+<p>Now take your paragraph to an AI tool and try three different revision requests:</p>
+<p><strong>Request 1</strong> (broad rewrite): “Rewrite this paragraph to be clearer and more professional.”</p>
+<p><strong>Request 2</strong> (specific edit): “In this paragraph, flag any vague language, unnecessary hedging, or passive voice. Suggest specific fixes but keep my overall structure and word choices.”</p>
+<p><strong>Request 3</strong> (concision): “Reduce this paragraph by 30% without losing any substantive content.”</p>
+<p>Compare the three outputs:</p>
+<ul>
+<li>Which version sounds most like <em>you</em>?</li>
+<li>Which version is most precise about the economics?</li>
+<li>Did the broad rewrite (Request 1) change your argument in any way? Did it add hedging or remove specificity?</li>
+</ul>
+</section>
+<section id="part-3-reverse-outlining-15-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-reverse-outlining-15-min">Part 3: Reverse outlining (~15 min)</h3>
+<p>Take a longer piece of your own writing — an essay introduction, a problem set write-up, a section of a research proposal (at least 3-4 paragraphs). Paste it into AI and ask:</p>
+<blockquote class="blockquote">
+<p>“Create a reverse outline of this text. For each paragraph, write one sentence describing what it actually argues (not what I probably intended). Then tell me: Does the argument flow logically? Are there any paragraphs trying to do too much? Is anything missing?”</p>
+</blockquote>
+<p>Compare the reverse outline to your intended structure:</p>
+<ul>
+<li>Does what you <em>wrote</em> match what you <em>meant</em>?</li>
+<li>Where are the gaps between intention and execution?</li>
+<li>Did AI catch a structural problem you hadn’t noticed?</li>
+</ul>
+</section>
+<section id="part-4-reflection-5-min" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-reflection-5-min">Part 4: Reflection (~5 min)</h3>
+<p>Write 2-3 sentences answering: What is the most useful thing AI did for your writing in this exercise? What is one thing it did that you would reject or undo?</p>
+</section>
+</section>
+<section id="discussion-questions" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h2>
+<ol type="1">
+<li><p>Where is the line between “editing” and “ghostwriting”? If AI suggests restructuring your entire argument and you accept the suggestion, is that your work? What if you accept 80% of AI’s sentence-level edits? What if AI drafts the paragraph and you revise it? Does the direction of the workflow (you→AI vs.&nbsp;AI→you) matter morally and pedagogically?</p></li>
+<li><p>A classmate says: “I’m not a good writer, so AI helps me express ideas I couldn’t express on my own. How is that different from hiring a tutor?” What’s the strongest version of this argument? What’s the counter-argument about what happens to writing skills over time?</p></li>
+<li><p>Consider the economics of AI writing assistance. If everyone uses AI to polish their writing, does polished prose stop being a signal of quality? What new signals might emerge? How does this relate to the concept of credential inflation?</p></li>
+<li><p>You’re 35 years old, writing policy briefs for a government agency. Is the calculus different than it is now, as a student? When (if ever) is it appropriate to let AI do more of the drafting?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>The sweet spot is revision, not generation.</strong> AI is most useful when it works on text you’ve already written — cutting, clarifying, flagging problems, checking structure. It is least useful (and most dangerous) when it generates text from scratch.</p></li>
+<li><p><strong>Writing is thinking, not just communication.</strong> The struggle of turning rough ideas into clear prose is where you discover what you actually know and what you still need to figure out. Outsourcing the draft outsources the thinking.</p></li>
+<li><p><strong>Specificity preserves your voice.</strong> Ask for specific, bounded edits (“tighten this sentence,” “flag the passive voice,” “suggest a transition”) rather than open-ended rewrites (“make this better”). The more specific your request, the more the output sounds like you.</p></li>
+<li><p><strong>Some things are never AI tasks.</strong> Your research question, your interpretation of results, your contribution statement, and your policy implications are intellectual work that defines your authorship. No amount of time pressure justifies outsourcing them.</p></li>
+</ol>
+<div class="instructor-note">
+<p><strong>For instructors</strong>: This module works best when students bring their own writing — a problem set response, a paper draft, or even a polished paragraph from a previous course. The exercise is more compelling with real text than with hypothetical examples.</p>
+<p><strong>Live demo idea</strong>: Take a single strong student paragraph (with permission), project it, and run the three revision requests (broad rewrite, specific edit, concision) in real time. Have the class discuss which output is best and why. The contrast between the broad rewrite (smooth but generic) and the targeted edit (still sounds like the student) is usually striking.</p>
+<p><strong>Assessment option</strong>: Require students to submit a “revision log” alongside their final paper: for each AI interaction, document (1) what they asked, (2) what AI suggested, and (3) what they accepted, rejected, or modified. Grade the log alongside the paper. This makes AI use transparent without banning it.</p>
+<p><strong>Connection to other modules</strong>: This module builds directly on A2 (prompting specificity) and pairs with C1 (where AI also works best as a processor of human-curated content, not a generator). The reverse outlining exercise can also serve as a bridge to any research paper assignment.</p>
+<p><strong>Common student pushback</strong>: “But my first drafts are terrible.” That’s the point. First drafts are supposed to be rough — they’re thinking on paper. The goal is not a perfect first draft; it’s a first draft that you improve through revision. AI can help with that revision. It cannot replace the first draft without replacing the thinking.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
