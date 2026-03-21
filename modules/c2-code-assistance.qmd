@@ -1,0 +1,424 @@
+---
+title: "C2: Code Assistance"
+subtitle: "AI can write your Stata code — but should you let it?"
+---
+
+::: {.module-meta}
+[~50 min]{.badge .badge-time}
+[Econ Workflows]{.badge .badge-track}
+[Coding required]{.badge .badge-technical}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Identify the types of coding tasks where AI assistance is most and least appropriate
+2. Recognize "silent errors" — AI-generated code that runs without error but produces wrong results
+3. Apply a practical framework for when to use AI for code, when to verify carefully, and when to write it yourself
+4. Use AI effectively for debugging, translation, and code explanation without outsourcing your analytical judgment
+
+## Where AI Code Assistance Shines
+
+AI is genuinely good at certain kinds of coding tasks — the kinds where the goal is well-defined, the correctness is easy to verify, and the intellectual work is not in the code itself.
+
+### Debugging error messages
+
+You're running a do-file and Stata throws this at you:
+
+```stata
+. merge 1:1 hhid using "baseline_data.dta"
+variable hhid does not uniquely identify observations in the master data
+r(459)
+```
+
+You could spend 15 minutes searching the Stata manual, or you could paste the error into an AI tool:
+
+> "I'm running a 1:1 merge in Stata and getting error r(459). Here's my merge command: [paste]. What does this error mean and how do I diagnose it?"
+
+AI will correctly tell you that your key variable has duplicates in the master dataset, suggest `duplicates report hhid` to find them, and walk you through likely causes. This is a great use case: the error has a known, mechanical explanation, and the AI is functioning like a searchable Stata manual with better explanations.
+
+### Translating between languages
+
+Your coauthor works in R. You work in Stata. They sent you this:
+
+```r
+df <- df %>%
+  group_by(district) %>%
+  mutate(income_z = (income - mean(income, na.rm = TRUE)) / sd(income, na.rm = TRUE)) %>%
+  ungroup()
+```
+
+You can ask AI to translate it:
+
+> "Convert this R code to Stata. The dataset is already loaded."
+
+```stata
+bysort district: egen mean_inc = mean(income)
+bysort district: egen sd_inc = sd(income)
+gen income_z = (income - mean_inc) / sd_inc
+drop mean_inc sd_inc
+```
+
+This is mechanical translation — the logic doesn't change, and you can verify the output by checking a few values.
+
+### Explaining unfamiliar code
+
+You're reviewing a colleague's do-file and encounter this:
+
+```stata
+levelsof district, local(dlist)
+foreach d of local dlist {
+    qui reg income treatment if district == "`d'", robust
+    local b_`d' = _b[treatment]
+    local se_`d' = _se[treatment]
+}
+```
+
+Asking AI "What does this code do, step by step?" will get you a clear explanation: it loops over each unique district, runs a separate regression in each, and stores the coefficients. This saves you from reverse-engineering nested Stata macros on your own.
+
+### Writing boilerplate
+
+Import/export templates, file structures, standard data-cleaning scaffolds — these are repetitive and well-defined:
+
+> "Write Stata code to import all .csv files in a directory, append them, and save as a single .dta file. Add a variable indicating which source file each observation came from."
+
+The AI will produce something reasonable. You still need to verify it, but the skeleton saves time.
+
+### Generating documentation
+
+You have a 200-line do-file with zero comments. Ask AI to annotate it:
+
+> "Add comments to this Stata do-file explaining what each section does. Don't change any code — just add comments."
+
+This is low-risk (the code doesn't change) and high-value (future you will appreciate the documentation).
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of AI code assistance like hiring a research assistant. A good RA can clean data, format tables, and translate your instructions into code. But you wouldn't ask an RA who just started to *decide* your regression specification, choose your sample restrictions, or determine your identification strategy. The same boundary applies to AI.
+:::
+
+## Where AI Code Is Dangerous
+
+Now the harder part. AI can generate code that looks right, runs without errors, and produces numbers — but those numbers are wrong.
+
+### Silent errors: The real risk
+
+An error message is annoying but safe. You know something went wrong. The dangerous case is code that runs cleanly and produces plausible output that happens to be incorrect.
+
+**Example 1: The wrong merge type**
+
+You ask AI to merge two datasets. It writes:
+
+```stata
+merge 1:1 hhid using "followup.dta"
+```
+
+But your data actually has multiple observations per household (panel data). You needed `merge m:1 hhid using "followup.dta"`. The 1:1 merge silently drops observations that don't uniquely match, and you end up with a smaller sample than you should have — no error message, no warning, just missing data.
+
+**Example 2: Incorrect variable construction**
+
+You ask AI to create a per-capita income variable:
+
+```stata
+gen income_pc = income / hh_size
+```
+
+Seems fine. But what if `hh_size` has missing values? In Stata, dividing by missing produces missing — and now your analysis sample just shrank, silently. A more careful version:
+
+```stata
+assert hh_size != . & hh_size > 0
+gen income_pc = income / hh_size
+```
+
+AI rarely adds these safety checks unless you ask. It generates the "happy path" code — code that works when everything goes right.
+
+**Example 3: The specification that looks right**
+
+You ask AI: "Run a diff-in-diff regression of test scores on a school lunch program, with school and year fixed effects."
+
+```stata
+reg test_score treatment i.school i.year, cluster(school)
+```
+
+This *looks* like a diff-in-diff. But where's the interaction term? This is just a two-way fixed effects model with a treatment indicator — it's not the same thing as a proper diff-in-diff specification. The AI produced code that matches the *words* of your request but not the *econometric intent*.
+
+::: {.callout-important}
+## Key Insight
+The most dangerous AI-generated code is code that is *almost* right. It runs, it produces output, and the output looks reasonable. You have to know enough to spot what's wrong — which means you need to understand the code at least as well as if you'd written it yourself.
+:::
+
+### Stata-specific traps
+
+AI models are trained on lots of Python and R but comparatively less Stata. This means they make Stata-specific mistakes more often:
+
+| Trap | What Goes Wrong | Example |
+|---|---|---|
+| Sort-order dependence | Stata operations can depend on the current sort order; AI often forgets `sort` or `set seed` before operations that need them | `gen row_id = _n` without sorting first gives unpredictable results |
+| String vs. numeric encoding | AI may treat a string variable as numeric, or vice versa | `keep if district == 1` when `district` is a string variable (should be `"1"`) — Stata silently keeps nothing |
+| Value labels vs. actual values | AI reads the label, not the underlying number | Writing `keep if gender == "Female"` when the variable is numeric with a value label |
+| `egen` vs. `gen` | AI sometimes uses `gen` where `egen` is required, or misuses `egen` functions | `gen avg_income = mean(income)` does not work; needs `egen avg_income = mean(income)` |
+| Macro quoting | AI struggles with Stata's local/global macro syntax | Forgetting compound quotes around macro references in loops |
+
+### R-specific traps
+
+| Trap | What Goes Wrong | Example |
+|---|---|---|
+| Tidyverse vs. base R | AI mixes syntax in ways that break or behave unexpectedly | Using `$` column access inside a `dplyr` pipe instead of bare column names |
+| Silent type coercion | R silently converts types in ways that change results | Joining on a column that's character in one dataframe and numeric in another — R coerces without warning |
+| Factor level issues | Factors and strings behave differently in regressions and merges | A factor variable dropping unused levels after subsetting, changing your regression baseline |
+| Non-standard evaluation | AI-generated functions may not handle tidy evaluation correctly | Writing a function that uses `group_by(var)` instead of `group_by({{var}})` |
+
+::: {.callout-warning}
+## The Pattern
+Notice the common thread: these are all cases where the code runs without error but does something different from what you intended. AI can't catch these bugs because it doesn't know your data or your intent — only you do.
+:::
+
+## Good vs. Bad AI Code Help
+
+Not all requests for code help are equal. The difference usually comes down to whether the hard part is *mechanical* (AI is good at this) or *analytical* (AI is bad at this).
+
+### Side-by-side: When it works
+
+:::: {.columns}
+::: {.column width="48%"}
+**Good request:**
+
+> "This merge is throwing error r(459). Here's my code and the error message. The master data is a household panel with hhid and year. The using data is a cross-section with one row per hhid."
+
+AI diagnoses the problem: you need `merge m:1` because your master data has multiple observations per household. Clear, verifiable, mechanical.
+:::
+
+::: {.column width="48%"}
+**Good request:**
+
+> "Explain what this reshape command does, step by step:"
+> ```stata
+> reshape wide income, i(hhid) j(year)
+> ```
+
+AI explains: this converts long-format panel data to wide format, creating separate columns `income2018`, `income2019`, etc. for each year, with one row per household. You learn something.
+:::
+::::
+
+### Side-by-side: When it fails
+
+:::: {.columns}
+::: {.column width="48%"}
+**Bad request:**
+
+> "Write me a regression analysis of the effect of education on wages."
+
+AI will produce a regression with some controls, probably OLS. But the *entire intellectual challenge* — endogeneity, identification, variable selection, functional form — is exactly what you're supposed to be thinking about. The code is the easy part.
+:::
+
+::: {.column width="48%"}
+**Bad request:**
+
+> "Clean this dataset for me."
+
+AI will make decisions about missing values (drop them? impute?), outliers (winsorize? trim?), and variable coding (how to handle "refused" or "don't know"?) — all without understanding your research context. These are analytical decisions disguised as data cleaning.
+:::
+::::
+
+::: {.callout-tip}
+## Economist's Analogy
+The distinction maps onto the difference between **computation** and **identification**. AI is great at computation — getting Stata to execute the mechanics you've specified. It's bad at identification — deciding *what* to estimate and *how* to estimate it credibly. That's your job, and it's the part your degree is training you to do.
+:::
+
+## Case Study: AI-Powered Code Review in Research
+
+Here's a case where AI and code intersect in professional economics in a way you might not expect: **code review**.
+
+In professional research teams, a growing practice is using AI-assisted tools to *review* code — not to write it. These tools scan do-files and scripts looking for known risk patterns:
+
+**Silent failure detection:**
+
+- Merges without checking `_merge` (did all observations match? were some unmatched?)
+- Sorts before operations that depend on sort order (without `set seed` or `isid`)
+- Loops that overwrite results without checking for existing output
+
+**Reproducibility risks:**
+
+- Hardcoded file paths (`"C:/Users/john/data/survey.dta"` — works on John's machine, breaks on yours)
+- Missing `set seed` before random operations
+- Platform-dependent behavior (line endings, path separators)
+
+**Documentation gaps:**
+
+- Variables created without labels
+- Complex logic without comments
+- Missing value handling that isn't documented
+
+These review checklists draw on standards from [DIME Analytics](https://dimewiki.worldbank.org/), the [Gentzkow-Shapiro coding guide](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf), and the [AEA replication guidelines](https://www.aeaweb.org/journals/data/data-code-policy). They represent hard-won knowledge about what goes wrong in empirical research code.
+
+::: {.callout-important}
+## Key Insight
+AI is better at *reviewing* code than *writing* it. Why? Review is pattern-matching against known risks — "does this merge check `_merge`?" is a well-defined question. Writing code requires understanding intent — "what should I control for in this regression?" is not. This tells you something important about where to deploy AI in your own workflow.
+:::
+
+## A Practical Framework: When to Use AI for Code
+
+Here's a decision rule you can actually use:
+
+### Use freely
+
+- **Debugging error messages** — AI is a better error-message translator than the Stata manual
+- **Language translation** — Stata to R, R to Python, or vice versa
+- **Code explanation** — understanding what existing code does
+- **Boilerplate generation** — import/export, file management, standard templates
+- **Documentation** — adding comments, writing README descriptions of code
+
+### Use but verify carefully
+
+- **Mechanical data tasks** — reshape, merge, append — where the operation is well-defined but the details matter (merge type, key variables, handling of non-matches)
+- **Visualization code** — graphs and tables where you can visually verify the output
+- **Standard statistical procedures** — summary statistics, correlation matrices, basic tests — where you know what the output should look like
+
+### Do not outsource to AI
+
+- **Regression specifications** — what to control for, functional form, fixed effects structure
+- **Sample selection** — who to include/exclude and why
+- **Variable construction** — how to operationalize a concept (what counts as "income"? how to define "treatment exposure"?)
+- **Identification strategy** — the analytical decisions that determine whether your estimates are credible
+- **Interpretation** — what the results mean, not just what the numbers are
+
+::: {.callout-note}
+## The Gray Zone
+The middle category — "use but verify" — is where most of your day-to-day coding lives. The key discipline is: **never run AI-generated code without reading every line and understanding what it does.** If you can't explain a line of code, you don't get to use it.
+:::
+
+## Exercise: AI-Assisted Debugging
+
+This exercise puts the framework into practice. You'll work with a buggy script, try to debug it yourself, then compare your results with AI's suggestions.
+
+### The buggy code
+
+Here is a Stata do-file that is supposed to: (1) load a dataset of students, (2) create a standardized test score, (3) merge with school-level data, and (4) run a regression of test scores on class size, controlling for school fixed effects.
+
+```stata
+* analysis.do — Estimate effect of class size on test scores
+* Last modified: March 2026
+
+use "student_data.dta", clear
+
+* Standardize test scores
+gen test_z = test_score - mean(test_score) / sd(test_score)
+
+* Create log of class size
+gen log_classsize = log(class_size)
+
+* Merge with school characteristics
+merge hhid using "school_data.dta"
+keep if _merge == 3
+
+* Label variables
+label var test_z "Standardized test score"
+label var log_classsize "Log class size"
+
+* Run regression
+reg test_z log_classsize i.district, robust
+```
+
+### Step 1: Find the bugs yourself (10 minutes)
+
+Read the code carefully. Try to identify as many issues as you can before consulting AI. Write down what you find.
+
+::: {.callout-note collapse="true"}
+## Hints (click to expand)
+Think about:
+
+- Order of operations in the standardization formula
+- What function creates group means in Stata?
+- What's missing from the merge command?
+- Is the regression specification doing what the comments say?
+:::
+
+### Step 2: Ask AI to find the bugs
+
+Paste the code into your AI tool with a prompt like:
+
+> "This Stata do-file has several bugs. Can you identify them and explain what's wrong?"
+
+Compare: What did the AI catch that you missed? What did you catch that the AI missed?
+
+### Step 3: Ask AI to write a "better" version
+
+> "Rewrite this do-file to fix all the bugs and follow best practices."
+
+Now the critical step: **read the AI's version line by line.** For each change, ask:
+
+- Is this change correct?
+- Is this change necessary?
+- Did the AI introduce anything new that wasn't in my original intent?
+
+### Step 4: The subtle trap
+
+Look carefully at the AI's rewrite. In our experience, AI tools will correctly fix the obvious bugs (order of operations, merge syntax) but often introduce a subtle new issue — for example:
+
+- Changing the regression specification in a way that alters the research question
+- Adding controls that weren't in the original design
+- Dropping observations in a different way than intended
+- "Improving" the standardization by using a different method than you planned
+
+**The lesson**: AI is good at fixing *mechanical* errors. It's unreliable at preserving *analytical intent*. You have to be the one who knows what the code is supposed to do.
+
+::: {.callout-note collapse="true"}
+## Bugs in the original code (full answers)
+
+1. **Standardization formula is wrong**: `gen test_z = test_score - mean(test_score) / sd(test_score)` — order of operations means this computes `test_score - (mean/sd)` instead of `(test_score - mean) / sd`. Also, `mean()` and `sd()` are not valid Stata functions here — you need `egen` to compute summary statistics.
+
+   Correct version:
+   ```stata
+   egen mean_test = mean(test_score)
+   egen sd_test = sd(test_score)
+   gen test_z = (test_score - mean_test) / sd_test
+   drop mean_test sd_test
+   ```
+
+2. **Merge syntax is wrong**: `merge hhid using "school_data.dta"` — this is old Stata syntax. Modern Stata requires specifying the merge type. Also, `hhid` is a household identifier, not a school identifier — this is probably the wrong key variable.
+
+   Should be something like:
+   ```stata
+   merge m:1 school_id using "school_data.dta"
+   ```
+
+3. **No merge diagnostics**: The code keeps only `_merge == 3` without first checking the merge results with `tab _merge`. You should always inspect the merge before dropping non-matches.
+
+4. **Regression doesn't match the stated goal**: The comment says "controlling for school fixed effects" but the code uses `i.district`. District fixed effects and school fixed effects are very different — district FE control for time-invariant district characteristics, school FE control for time-invariant school characteristics. If you want school FE:
+   ```stata
+   reg test_z log_classsize i.school_id, robust
+   ```
+
+5. **`log()` with potential zeros or negatives**: If `class_size` has any zero or missing values, `log(class_size)` will produce missing values without warning.
+:::
+
+## Discussion Questions
+
+1. A classmate says "I always read through the AI's code before I run it, so I'm safe." What's the flaw in this reasoning? (Hint: think about what you need to know to evaluate code you didn't write.)
+
+2. Where is the line between using AI to help you code faster and using AI to avoid learning to code? How does this line shift as you move from an introductory course to a senior thesis to a professional research position?
+
+3. Consider two researchers: one who writes all their own code slowly, and one who uses AI to generate code quickly but reviews it carefully. Who produces more reliable research? Does your answer depend on the researcher's experience level?
+
+4. If AI tools keep getting better at writing code, should economics programs still require students to learn Stata and R? What would be lost if they didn't?
+
+## Key Takeaways
+
+1. **AI is a coding tool, not a thinking tool.** It's excellent for debugging, translation, explanation, and boilerplate — tasks where the hard work is mechanical. It's unreliable for analytical decisions like specifications, sample selection, and variable construction.
+
+2. **Silent errors are the real risk.** Code that crashes is safe — you know something went wrong. Code that runs but produces the wrong answer is dangerous. AI-generated code is especially prone to this because it optimizes for "code that runs" rather than "code that does what you intend."
+
+3. **AI is better at reviewing code than writing it.** Use this to your advantage: write the code yourself (or with AI's help for the mechanical parts), then use AI to review it for common pitfalls. This is how professional research teams are using these tools.
+
+4. **You must understand every line.** If you can't explain what a line of AI-generated code does and why it's correct for your specific analysis, you don't get to use it. This is not a rule about academic integrity — it's a rule about research quality.
+
+::: {.instructor-note}
+**For instructors**: This module works well as a workshop where students actually interact with AI tools during class. The debugging exercise is designed so that AI will catch some bugs students miss (and vice versa) — the comparison itself is the learning moment. If students don't have access to Stata, the exercise can be adapted to R with equivalent bugs.
+
+**Adaptation for intro courses**: If students are still learning basic Stata/R syntax, focus on the debugging and explanation use cases (Sections 1 and 3) and simplify the exercise. The framework in Section 5 is appropriate for any level. For advanced courses (econometrics, thesis seminars), lean into the case study and the distinction between computation and identification.
+
+**Assessment idea**: Have students submit a "code review report" where they paste AI-generated code for a task, annotate each line with whether it's correct, and flag any changes they would make. Grade on the quality of the review, not the code itself.
+
+**Connection to other modules**: This builds on A1 (understanding why AI produces plausible-but-wrong output), A2 (prompt quality determines code quality), and A3 (the danger zone for core skills). Consider assigning A3 as a prerequisite — the framework for "when AI helps vs. hurts learning" directly applies here.
+:::

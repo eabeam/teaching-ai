@@ -1,0 +1,341 @@
+---
+title: "C3: Data Exploration & Cleaning"
+subtitle: "Let AI help you understand your data — but never trust it to clean unsupervised"
+---
+
+::: {.module-meta}
+[~50 min]{.badge .badge-time}
+[Econ Workflows]{.badge .badge-track}
+[Coding required]{.badge .badge-technical}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Use AI to quickly explore and describe an unfamiliar dataset (variables, distributions, anomalies)
+2. Explain why data cleaning decisions are research decisions that require human judgment and documentation
+3. Distinguish between AI tasks that are purely descriptive (safe) and those that involve judgment calls (dangerous unsupervised)
+4. Apply a practical framework for AI's role at each stage of the data pipeline
+5. Critically evaluate AI-generated cleaning code before running it on your data
+
+## The Value Proposition
+
+You just got a dataset. Maybe it's a household survey from rural Tanzania with 847 variables. Maybe it's administrative data from a state Medicaid program with cryptic column names like `ELIG_CD_03` and `BEN_AMT_PD`. Maybe your advisor just emailed you a Stata `.dta` file and said "get familiar with this."
+
+In the old workflow, you'd open the data, scroll through variable names, run `describe`, run `summarize`, maybe `codebook` a few variables, and slowly build a mental picture. This works. It's also slow, and you'll miss things.
+
+AI can compress the first pass dramatically. Paste in a variable list with summary statistics, and within seconds you'll have:
+
+- A plain-language description of what the dataset appears to contain
+- Flags for variables with unusual missingness patterns
+- Notes on potential data quality issues (negative income, ages over 120, treatment variables that aren't binary)
+- Suggested next steps for exploration
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of AI-assisted data exploration like hiring a very fast, very literal research assistant to do first-pass data documentation. They'll count everything, flag the obvious problems, and write up a summary. But they won't know that a household reporting $500,000 in annual consumption in rural Kenya is implausible — unless you tell them the context. And they definitely won't know whether that observation should be dropped, winsorized, or investigated further. That's your job.
+:::
+
+## What AI Does Well: Exploration
+
+### Describing the unknown
+
+When you encounter a new dataset, AI is excellent at the mechanical work of describing what's there. Here's a workflow that works:
+
+**Step 1: Extract the basics**
+
+In Stata:
+```stata
+describe, short
+describe
+summarize
+```
+
+In R:
+```r
+str(df)
+summary(df)
+```
+
+**Step 2: Paste the output into AI with context**
+
+> "Here's the `describe` and `summarize` output from a household survey dataset collected in three rounds (2018, 2020, 2022) in rural Bangladesh. This is from an RCT evaluating a savings program. Can you:
+>
+> 1. Summarize what variables are available and how they're organized
+> 2. Flag any variables with unusual missingness patterns
+> 3. Identify potential data quality issues based on the summary statistics
+> 4. Suggest what I should look at more closely"
+
+**Step 3: Follow up on the flags**
+
+AI might say: "The variable `hh_income` has 340 missing values in a dataset of 2,400 observations (14% missing). The variable `treatment` has 3 unique values, which is unusual for a binary treatment indicator."
+
+Now *you* investigate: Is the missingness related to survey round? Is the third treatment value a "partial treatment" arm you forgot about? These are the questions AI surfaces but can't answer.
+
+### Generating exploratory code
+
+AI is also good at writing the initial exploratory code you'd write yourself — just faster:
+
+> "Write Stata code to: (1) tabulate missingness across all variables, (2) create a cross-tab of treatment status by survey round, (3) check for duplicate household IDs within each round, and (4) plot the distribution of household income by treatment status."
+
+```stata
+* Missingness across all variables
+misstable summarize
+
+* Treatment by survey round
+tab treatment survey_round, missing
+
+* Check for duplicate IDs within round
+duplicates report hhid survey_round
+duplicates list hhid survey_round if duplicate > 0
+
+* Income distribution by treatment
+histogram hh_income, by(treatment) ///
+    title("Household Income by Treatment Status") ///
+    note("Source: Bangladesh Savings RCT")
+```
+
+This is exploratory code. It's descriptive. If AI gets a command slightly wrong, the worst that happens is Stata throws an error and you fix it. Nobody's results are silently corrupted.
+
+::: {.callout-important}
+## Key Insight
+The reason AI works well for data exploration is that exploration is fundamentally *descriptive*. You're asking "what's in the data?" — not "what should I do about it?" Descriptive errors are visible (the code fails, the numbers look wrong, the table is empty). Judgment errors are silent.
+:::
+
+## The Data Cleaning Danger Zone
+
+Now we get to the hard part. You've explored the data. You know there are problems — missing values, outliers, inconsistent coding, duplicate observations. The next step is cleaning, and this is where AI goes from helpful to dangerous.
+
+### The problem with AI-driven cleaning
+
+When you ask AI to write a cleaning script, it will make decisions. It will make them confidently, silently, and without documentation. Here's what that looks like:
+
+> **Your prompt**: "Clean this dataset. Handle the missing values, remove outliers, and make the variables analysis-ready."
+
+> **What AI does**:
+>
+> - Drops all observations with *any* missing value (listwise deletion)
+> - Removes income values above the 99th percentile
+> - Recodes education from 6 categories to 3
+> - Converts string variables to numeric using its best guess at the encoding
+> - Fills missing consumption values with the district mean
+
+Every one of these is a research decision. Every one changes your estimates. None of them are documented with a justification. And the resulting dataset *looks clean* — which is the most dangerous part.
+
+### Why cleaning decisions are research decisions
+
+Consider outlier handling. You have a household reporting monthly income of 500,000 KES in a sample where the median is 35,000 KES. What should you do?
+
+| Option | Implication | When It's Right |
+|---|---|---|
+| Drop the observation | Reduces sample, may introduce selection bias | If you believe it's data entry error |
+| Winsorize at 99th percentile | Reduces influence of extreme values | If you believe the value is real but don't want it to dominate |
+| Keep it | Preserves the data as collected | If extreme values are economically meaningful |
+| Investigate and correct | Most thorough, most time-intensive | If you can verify against the original survey |
+| Log-transform the variable | Changes the functional form | If the skew is a feature, not a problem |
+
+AI will pick one of these without asking. It will probably pick "drop" or "winsorize" because those are common in the training data. It won't ask whether the outlier is a wealthy merchant in an otherwise subsistence-farming sample — which is economically interesting, not a data error.
+
+::: {.callout-warning}
+## The "It Looks Clean" Problem
+The most dangerous AI-cleaned dataset is one that looks right. The distributions are smooth, the missingness is gone, the outliers have been trimmed. A casual `summarize` reveals nothing wrong. But underneath, AI made dozens of undocumented decisions — each one reasonable in isolation, collectively capable of changing your results. You can't replicate what you can't see.
+:::
+
+### Recoding errors that change your results
+
+Here's a subtler failure. You have a variable `education` coded as:
+
+```
+1 = No formal education
+2 = Primary (incomplete)
+3 = Primary (complete)
+4 = Secondary (incomplete)
+5 = Secondary (complete)
+6 = Tertiary
+```
+
+You ask AI to "create a binary variable for whether the respondent completed secondary school." AI writes:
+
+```stata
+gen completed_secondary = (education >= 4)
+```
+
+But the correct code is:
+
+```stata
+gen completed_secondary = (education >= 5)
+```
+
+Category 4 is *incomplete* secondary. The AI's version includes people who started but didn't finish secondary school. This is exactly the kind of error that won't produce an error message, won't look wrong in a summary table, and will bias your estimates of the returns to secondary education.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of AI-generated cleaning code the way you'd think about a regression specification someone else wrote: you need to understand every decision it encodes, verify it matches your research design, and document why each choice was made. You wouldn't run a collaborator's code without reading it first. Don't run AI's code without reading it either.
+:::
+
+## Case Study: Automated Data Documentation
+
+Here's a use case where AI genuinely shines: generating codebooks.
+
+Researchers are building tools that auto-generate data documentation from datasets. You feed the tool a dataset, and it produces:
+
+- Variable names, types, and labels
+- Value labels for categorical variables
+- Summary statistics (mean, SD, min, max, percentiles)
+- Missingness rates and patterns
+- Unique value counts
+- Cross-variable consistency notes
+
+This works well because **it's purely descriptive**. The AI is reporting what's in the data, not making decisions about it. If it says a variable has 14% missing values, you can verify that. If it says the minimum value of `age` is -3, you can see that's a problem.
+
+### Example: Generating a data dictionary
+
+```stata
+* Export the information AI needs
+describe, replace clear
+codebook, compact
+```
+
+Then paste the output into AI:
+
+> "Generate a data dictionary for this dataset in markdown table format. For each variable, include: variable name, type, label, number of non-missing observations, mean (for numeric), number of unique values (for categorical), and any flags for potential data quality issues."
+
+The output is a starting point — a draft codebook that would have taken you an hour to write manually. You review it, correct any errors, and add the context that AI can't provide (what the variable *means* in your study, why certain values are coded the way they are, what the unit of observation is).
+
+The key insight: AI accelerated the *mechanical* part of documentation. The *intellectual* part — interpreting and contextualizing — remains yours.
+
+## Case Study: Adversarial Data Auditing
+
+A more advanced use of AI is what you might call "red-teaming" your own data pipeline. The idea: after *you* clean the data, have AI review the output looking for problems you might have missed.
+
+This inverts the typical AI workflow. Instead of asking AI to do the work, you do the work and ask AI to critique it.
+
+### What to ask AI to check
+
+**Duplicate IDs**: Are your unit-of-observation identifiers actually unique?
+
+> "Here's the output of `duplicates report hhid survey_round` from my cleaned panel dataset. Are there any remaining duplicates? If so, what patterns do you see?"
+
+**Unexpected missingness**: Why does missingness cluster in certain places?
+
+> "Here are the missingness rates for key outcome variables, broken down by survey round and treatment status. Do you see any patterns that might indicate systematic data problems rather than random missingness?"
+
+**Implausible values**: Things that survived cleaning but shouldn't have.
+
+> "Here are the percentile distributions for household consumption (monthly, in KES) in my cleaned dataset. The sample is rural farming households in western Kenya. Flag any values that seem implausible given this context."
+
+**Cross-file consistency**: Do files that should agree actually agree?
+
+> "In my baseline dataset, the treatment variable has 1,203 treated and 1,197 control households. In my endline dataset, it has 1,198 treated and 1,187 control. These should match (minus attrition). Can you help me think through what might explain the discrepancy?"
+
+::: {.callout-important}
+## The Adversarial Reviewer Insight
+AI is excellent as a second pair of eyes *after* you've done the work. It catches things you'd probably catch on a second careful read — but often miss on the first. This is the same logic behind having a co-author check your code, or a referee review your paper. The difference is that AI is available at 2 AM and doesn't judge you for the state of your do-file.
+:::
+
+### Why this works better than having AI clean the data
+
+When AI audits, you maintain control:
+
+- **You** made the cleaning decisions
+- **You** documented why
+- AI is checking whether the *output* is consistent and plausible
+- Any issue AI flags goes back to *you* for investigation
+
+This is fundamentally different from asking AI to clean the data, where AI makes decisions and you try to verify them after the fact.
+
+## A Practical Framework: AI's Role in the Data Pipeline
+
+Not all data tasks carry the same risk. Here's how to think about where AI fits:
+
+| Stage | AI Role | Risk Level | Why |
+|---|---|---|---|
+| **Exploration** (describe, summarize, visualize, flag anomalies) | Do freely | Low | Errors are visible — wrong summary stats or failed code are obvious |
+| **Documentation** (codebooks, variable dictionaries, metadata) | Do freely | Low | Purely descriptive; output is verifiable |
+| **Auditing** (post-cleaning verification, consistency checks) | Do freely | Low | AI is reviewing, not deciding; you evaluate its flags |
+| **Writing cleaning code** for well-defined mechanical tasks | Use but verify carefully | Medium | Code may contain subtle errors; every line needs review |
+| **Making cleaning decisions** (outlier handling, missingness treatment, recoding) | Do not delegate | High | These are research decisions; AI can't justify them and won't document them |
+
+The pattern: AI's reliability tracks inversely with the amount of *judgment* required. Descriptive tasks are safe. Judgment tasks are dangerous.
+
+::: {.callout-warning}
+## The Slippery Slope
+It's tempting to start with "just explore the data" and gradually slide into "and while you're at it, clean it up." Each incremental step feels small. But the line between "flag the outliers" and "remove the outliers" is the line between description and decision — and crossing it without noticing is how undocumented cleaning decisions accumulate.
+:::
+
+## Exercise: Evaluating AI Cleaning Code
+
+### The scenario
+
+You're working with data from a labor force survey. The dataset contains information on 5,000 individuals across two survey rounds. You need to prepare it for analysis of a job training program's effect on employment and earnings.
+
+### Step 1: Describe the data to AI
+
+Paste the following simulated `summarize` output into an AI tool:
+
+```
+Variable  |    Obs    Mean     Std. Dev.    Min      Max
+----------|------------------------------------------------
+person_id |  10,000   5000.5   2886.9       1        10000
+round     |  10,000   1.5      0.5          1        2
+treatment |  10,000   0.52     0.50         0        1
+employed  |   9,247   0.64     0.48         0        1
+earnings  |   6,891   2847     5234         -500     487000
+age       |  10,000   34.7     11.2         16       93
+female    |  10,000   0.53     0.50         0        1
+education |   9,812   3.4      1.6          1        6
+```
+
+Ask AI: "This is from a labor force survey with two rounds. The treatment variable indicates participation in a job training program. What potential data quality issues do you see?"
+
+### Step 2: Ask AI to write a cleaning script
+
+Ask AI: "Write a Stata do-file to clean this dataset for analysis. Handle the issues you identified."
+
+### Step 3: Critically evaluate the script
+
+Before running anything, answer these questions about the code AI produced:
+
+1. **What decisions did AI make about missing values?** Did it drop observations? Impute? For which variables? Is the approach justified for each?
+2. **What did it do with outliers?** The `earnings` variable has a min of -500 and a max of 487,000. What did AI decide about these? Is that what you would do?
+3. **What about the negative earnings value?** Is -500 in earnings a data error, or could it represent a net loss from self-employment? Did AI consider this?
+4. **What happened to the treatment variable?** 52% of observations are treated in a dataset of 10,000. If this is an RCT, is that a reasonable split? Did AI flag it or just accept it?
+5. **Is the person_id actually unique within round?** There are 10,000 observations and 10,000 unique person IDs across 2 rounds — that's 5,000 per round. Did AI check for duplicates?
+6. **What is not in the cleaning script that should be?** (Hint: documentation, `assert` statements, sample size checks before and after each cleaning step.)
+
+### Step 4: Document your decisions
+
+Write a brief cleaning memo (5-10 bullet points) describing what you would actually do with this data and *why*. This is the most important step — and the one AI can't do for you.
+
+::: {.callout-note}
+## Why Documentation Matters
+Six months from now, a referee will ask why you dropped 34% of earnings observations. Or your co-author will ask why you winsorized at the 99th percentile instead of the 95th. Or *you* will re-open this project and not remember what you did. The cleaning memo is not busywork — it's insurance against your future self's amnesia.
+:::
+
+## Discussion Questions
+
+1. A colleague says "I just let AI clean my data — it's faster and it makes the same decisions I would." What assumptions is this statement making? Under what conditions might those assumptions be wrong?
+
+2. Consider the distinction between *mechanical* tasks (renaming variables, reshaping data, merging files) and *judgment* tasks (handling outliers, coding missing values, defining the analysis sample). Is this distinction always clear? Can you think of tasks that seem mechanical but actually involve judgment?
+
+3. How does the use of AI in data cleaning relate to the reproducibility crisis in economics? Does AI make reproducibility easier (by generating code) or harder (by making undocumented decisions)?
+
+4. You're reviewing a replication package and the author says "Data cleaning was performed using ChatGPT." What questions would you want answered before you trust the results?
+
+## Key Takeaways
+
+1. **AI is excellent for data exploration.** Describing, summarizing, flagging anomalies, and generating exploratory code are low-risk tasks where AI adds genuine value. Use it freely.
+2. **Data cleaning decisions are research decisions.** How you handle outliers, missing values, and coding schemes affects your estimates. These decisions need human judgment and explicit documentation — not silent automation.
+3. **Use AI as an auditor, not a decision-maker.** The most powerful workflow is: you clean the data, then AI reviews the output for problems you missed. This preserves your control while leveraging AI's ability to catch inconsistencies.
+4. **Document everything.** If a cleaning step isn't documented and justified, it didn't happen responsibly — regardless of whether a human or AI wrote the code.
+
+::: {.instructor-note}
+**For instructors**: The exercise in this module works well as a structured in-class activity (30 min). Have students work through Steps 1-3 individually, then discuss their findings as a class. The most productive discussion usually emerges from Step 3, where students discover that different AI tools make different cleaning decisions — and none of them explain why.
+
+**Assessment idea**: Have students submit a "cleaning audit" — give them a dataset and an AI-generated cleaning script, and ask them to identify every decision the script makes, evaluate whether each is appropriate, and write a cleaning memo documenting what they would do differently and why.
+
+**Adaptation**: For students with less coding experience, focus on Steps 1-2 (exploration and reading AI code) and discuss Step 3 conceptually. For more advanced students, have them actually run the AI-generated cleaning script on simulated data and compare the resulting estimates to the "true" parameter values — demonstrating how cleaning decisions affect results.
+
+**Connection to other modules**: This module builds on A1 (understanding that AI predicts patterns, not truth) and A2 (specificity in prompts). It pairs naturally with C4/C5 on AI-assisted coding, where the same "verify before you trust" principle applies to analysis code.
+:::

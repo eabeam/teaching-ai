@@ -1,0 +1,301 @@
+---
+title: "C1: Literature Review & Synthesis"
+subtitle: "Using AI to survey a field — and catching what it gets wrong"
+---
+
+::: {.module-meta}
+[~50 min]{.badge .badge-time}
+[Econ Workflows]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Identify which parts of the literature review process AI can genuinely accelerate and which parts it cannot
+2. Implement a practical workflow that uses AI for synthesis while keeping humans in control of sourcing
+3. Detect hallucinated citations and misrepresented findings in AI output
+4. Use AI to organize, synthesize, and identify gaps in a set of papers you have already verified
+5. Articulate why "AI-assisted" is not the same as "AI-generated" in the context of scholarly review
+
+## The Promise (and the Trap)
+
+A literature review is one of the most time-consuming parts of any research project. You need to find relevant papers, read them, understand how they relate to each other, identify what's been established and what remains contested, and organize all of this into a coherent narrative. It can take weeks.
+
+AI can do something that *looks* like all of this in about 30 seconds. And that's exactly the problem.
+
+Ask any current-generation AI model to "review the literature on the effect of microfinance on poverty reduction," and you will get a polished, well-organized, thematic summary with citations. It will read like a perfectly adequate literature review section. Some of the citations will be real. Some will be fabricated. Some will be real papers attributed to the wrong authors. Some findings will be subtly misrepresented — a negative result described as mixed, a conditional finding stated as general.
+
+You will not be able to tell which is which by reading the AI output alone. That's the trap.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of AI-generated citations like survey data with measurement error. The data *looks* complete, and most of it might be fine, but you have no way to distinguish signal from noise without an independent verification source. You wouldn't publish results from an unvalidated survey instrument. Don't build your literature review on an unvalidated citation list.
+:::
+
+## What AI Is Actually Good At
+
+Let's be precise about where AI adds real value in the lit review process. The key insight: **AI is good at processing and organizing text you give it. It is bad at reliably retrieving facts about the world.**
+
+### 1. Brainstorming search terms and related concepts
+
+You're studying the effect of paid parental leave on female labor force participation. You know the core terms. But AI can help you think about what *else* to search for:
+
+> "I'm starting a literature review on the effect of paid parental leave on female labor force participation. What related search terms, concepts, and adjacent literatures should I consider? Think broadly across economics, sociology, and public policy."
+
+AI will likely suggest terms and literatures you hadn't considered — fertility decisions, employer-side costs, Nordic policy comparisons, child development spillovers, related terms like "family leave," "maternity benefits," "work-family policies." This is genuinely useful. It's drawing on patterns from an enormous amount of text about these topics.
+
+### 2. Summarizing papers you've already found
+
+This is where AI shines. Paste in an abstract — or better, a full introduction or even the complete paper — and ask:
+
+> "Summarize this paper's main research question, identification strategy, key findings, and limitations. Keep it to one paragraph."
+
+The model is working directly with text you've given it. It's doing what it's best at: processing and condensing language. The risk of hallucination drops substantially (though not to zero — always check that the summary matches what the paper actually says).
+
+### 3. Identifying tensions and gaps between papers
+
+Once you have summaries of several verified papers, AI can help you see the forest:
+
+> "Here are summaries of 8 papers on microfinance and poverty reduction. Identify the key areas of agreement, the main disagreements or tensions, and any gaps — topics or questions that none of these papers address."
+
+This is synthesis work that AI handles well because it's operating on text you've provided. It's pattern-matching across your inputs, not inventing content.
+
+### 4. Drafting thematic organization
+
+> "Given these paper summaries, suggest 3-4 thematic categories I could use to organize a literature review section. For each theme, identify which papers belong and what the key takeaway is."
+
+Again: AI is organizing *your* material. This is a strong use case.
+
+### 5. Suggesting adjacent fields
+
+> "My literature review focuses on conditional cash transfers and school enrollment in Sub-Saharan Africa. What related literatures from other subfields or disciplines might be relevant? For example, are there parallel findings in health economics, behavioral economics, or education research?"
+
+AI is good at drawing connections across large bodies of text. It may surface literatures you'd find through weeks of citation-chasing, or it may point you toward search terms for fields where you don't know the jargon.
+
+## What AI Is Bad At
+
+### 1. Generating reliable citation lists
+
+This is the big one, and it's worth repeating from Module A1: **AI hallucinates citations.** Not sometimes. Routinely.
+
+The model knows what citations *look like* — author names that publish in a field, journal names, plausible years, reasonable-sounding findings. It generates citations that are statistically consistent with the pattern of real citations. But it does not have a verified database of papers. It produces plausible sequences of tokens.
+
+The failure modes are varied and insidious:
+
+| Failure | Example | Why It's Hard to Catch |
+|---|---|---|
+| Completely fabricated paper | "Duflo & Banerjee (2019), *QJE*" — paper doesn't exist | Authors and journal are real, making it look credible |
+| Real paper, wrong authors | Correct title and journal, but attributed to the wrong researchers | You'd have to check the actual paper to notice |
+| Real paper, wrong findings | Cites a real study but describes results that differ from what the paper found | Requires having actually read the paper |
+| Composite citation | Blends elements from 2-3 real papers into one fabricated entry | Each piece sounds familiar, but the combination is fiction |
+| Outdated or retracted work | Cites a paper that was later corrected or retracted | Model's training data may not include the correction |
+
+::: {.callout-warning}
+## This Is Not Getting Better Fast Enough to Trust
+Yes, newer models hallucinate less than older ones. Yes, some tools now have web search built in. But "hallucinates less" is not "doesn't hallucinate." As of now, **you cannot trust any AI-generated citation without independent verification.** Full stop.
+:::
+
+### 2. Being comprehensive
+
+A lit review needs to be reasonably complete. AI has no mechanism for knowing whether it has covered the relevant literature. It generates text that *reads* as comprehensive, but it may miss entire strands of the literature, especially:
+
+- Working papers and pre-prints
+- Papers published after the model's training cutoff
+- Papers in regional or specialized journals
+- Dissertation research
+- Conflicting findings that are less prominent in the literature
+
+### 3. Evaluating methodological quality
+
+AI can describe an identification strategy, but it cannot evaluate whether it is *credible* the way a trained economist can. It won't notice that the instrument in a paper is implausible, that the parallel trends assumption is strained, or that the sample is too specific to generalize. Methodological judgment requires domain expertise that the model approximates but does not possess.
+
+### 4. Distinguishing central vs. peripheral contributions
+
+In any literature, some papers are foundational and others are incremental. AI treats all papers as roughly equal — it doesn't know that Card and Krueger (1994) reshaped the minimum wage debate while a follow-up working paper did not. You need field knowledge to weight contributions appropriately.
+
+::: {.callout-important}
+## The Core Principle
+Use AI to **process and organize** sources you have found and verified. Do not use AI to **find** sources. The division of labor is: you curate, AI synthesizes.
+:::
+
+## A Practical Workflow
+
+Here is a five-step workflow that gets the benefits of AI while avoiding the worst pitfalls. The key idea: **humans control the source list; AI helps with everything else.**
+
+### Step 1: Use AI to brainstorm search terms (NOT to find papers)
+
+Start a conversation with AI about your topic. Ask it to help you think about:
+
+- Key search terms and synonyms
+- Related concepts and adjacent literatures
+- Major debates in the field
+- Methodological approaches commonly used
+
+**What to do with the output**: Use the terms and concepts to search *real databases* yourself.
+
+**What NOT to do**: Ask AI to give you a list of papers to read.
+
+### Step 2: Search real databases yourself
+
+Take the search terms from Step 1 and go to:
+
+- **Google Scholar** — broad coverage, citation tracking, "cited by" feature
+- **EconLit** — economics-specific, structured metadata
+- **NBER Working Papers** — pre-publication research in economics
+- **SSRN** — working papers across social sciences
+- **Journal-specific archives** — AER, QJE, Econometrica, JDE, etc.
+
+Use citation chaining: find a key paper, check its references, check who has cited it since. This is how economists actually build literature reviews, and AI cannot replicate this process reliably.
+
+::: {.callout-note}
+## Why Not Just Use AI with Web Search?
+Some AI tools (like Bing Chat, Perplexity, or ChatGPT with browsing) can search the web in real time. This helps with recency and can reduce hallucination. But these tools still select and summarize in ways you can't fully control. They're useful as a *supplement* to database searching, not a *replacement*. And they often prioritize accessibility over academic rigor — surfacing blog posts and news coverage over the underlying papers.
+:::
+
+### Step 3: Use AI to summarize and synthesize verified papers
+
+Now that you have a stack of real papers, this is where AI earns its keep. For each paper:
+
+> "Here is the abstract [or introduction, or full text] of [Author, Year, Title]. Summarize: (1) the research question, (2) the data and identification strategy, (3) the main findings, and (4) key limitations or caveats."
+
+For a batch of papers:
+
+> "Here are summaries of 10 papers on [your topic]. Organize them thematically. Identify where they agree, where they disagree, and what questions remain unaddressed."
+
+### Step 4: Use AI to identify gaps and organize your review
+
+With your verified, AI-assisted summaries in hand:
+
+> "Based on these papers, what are the main gaps in this literature? What questions have not been adequately addressed? What methodological improvements could future research make?"
+
+> "Suggest an organizational structure for a literature review covering these papers. Should I organize by methodology, by outcome, by geographic context, or thematically?"
+
+### Step 5: Verify everything
+
+This step is non-negotiable.
+
+- **Every citation**: Confirm it exists. Check author names, title, journal, year.
+- **Every finding you attribute**: Go back to the source paper and confirm the AI's characterization.
+- **Every claim about the literature**: "The consensus in the literature is X" — is it actually? Based on what you've read?
+
+The verification step is where most of the real learning happens. It forces you to engage with the actual papers rather than consuming a pre-digested summary.
+
+## The Verification Imperative: A Demonstration
+
+Let's make this concrete. Here's what happens when you ask an AI for citations without verification.
+
+**Prompt**: "Give me 5 key citations on the effect of conditional cash transfers on school enrollment in developing countries."
+
+**A typical AI response** (reconstructed from common output patterns):
+
+1. Schultz (2004). "School Subsidies for the Poor: Evaluating the Mexican Progresa Poverty Program." *Journal of Development Economics*. — Found that Progresa increased enrollment by 3-4 percentage points.
+2. Fiszbein & Schady (2009). *Conditional Cash Transfers: Reducing Present and Future Poverty*. World Bank. — Comprehensive review of CCT programs across Latin America.
+3. Baird, McIntosh, & Ozler (2011). "Cash or Condition? Evidence from a Cash Transfer Experiment." *Quarterly Journal of Economics*. — Compared conditional and unconditional transfers in Malawi.
+4. Attanasio, Fitzsimons, & Gomez (2005). "The Impact of a Conditional Education Subsidy on School Enrollment in Colombia." *Economic Journal*. — Evaluated Familias en Accion.
+5. Behrman, Parker, & Todd (2009). "Schooling Impacts of Conditional Cash Transfers on Young Children: Evidence from Mexico." *Economic Development and Cultural Change*. — Longer-term effects of Progresa/Oportunidades.
+
+**Now let's verify.**
+
+Some of these are real papers — Schultz (2004) is a genuine landmark study, and Baird, McIntosh, & Ozler (2011) is well-known. But the details on others may be off: wrong year, wrong journal, wrong coauthors, or subtly misrepresented findings. The only way to know is to check each one in Google Scholar or EconLit.
+
+::: {.callout-warning}
+## The Insidious Part
+The citations that are *almost* right are more dangerous than the ones that are obviously wrong. If the model gives you a real author, a plausible journal, and a year that's off by one — you might not catch it unless you verify. And if you build your literature review on that slightly-wrong citation, your reader (or reviewer) might catch it for you. That's not a good outcome.
+:::
+
+This is not hypothetical. Researchers, lawyers, and journalists have all been caught submitting work with AI-fabricated citations. In 2023, a lawyer submitted a legal brief with six fabricated case citations generated by ChatGPT. In academia, the stakes are your credibility.
+
+## Structured AI-Assisted Review: An Emerging Practice
+
+Researchers are beginning to develop structured workflows for AI-assisted literature review that go beyond ad hoc prompting. The most effective approaches share a few key features:
+
+- **A master source list** maintained by the human researcher, with every paper independently verified
+- **Standardized synthesis notes** for each paper (research question, method, findings, limitations), often AI-drafted but human-reviewed
+- **Gap analysis** that systematically compares what the literature has covered against the research questions of interest
+- **Continuation logs** that track what has been reviewed, what remains, and what new search terms have emerged
+
+The principle behind all of these: **the human controls what goes in, and AI helps process what's there.** The researcher maintains editorial authority over the source list; AI accelerates the synthesis and organization work.
+
+This is analogous to how you might use a research assistant. You wouldn't send an RA to "find all the relevant papers" without supervision. You'd give them search criteria, review what they found, and iterate. AI works the same way — it's a tool that needs direction, not a replacement for your judgment about what belongs in your review.
+
+::: {.callout-tip}
+## Economist's Analogy
+Think of a structured AI-assisted lit review like a well-designed survey. You control the sampling frame (which papers are included), the instrument (what you ask AI to extract from each paper), and the analysis (how you organize and synthesize). AI is the enumerator — it can collect and process information efficiently, but the research design is yours.
+:::
+
+## Exercise: AI-Assisted Lit Review in Practice
+
+Pick one of the following research questions (or use one from your own coursework):
+
+- What is the effect of teacher quality on long-run student outcomes?
+- How do immigration shocks affect wages in receiving communities?
+- What is the evidence on the effectiveness of microfinance for poverty reduction?
+
+### Part 1: Brainstorm with AI (~10 min)
+
+Ask AI to help you identify:
+
+- Key search terms and related concepts
+- Major debates or tensions in this literature
+- Related literatures from other subfields
+
+Write down the search terms you'll use.
+
+### Part 2: Find real papers (~15 min)
+
+Using the search terms from Part 1, find **3 real papers** on your topic in Google Scholar. For each paper, record:
+
+- Full citation (authors, year, title, journal)
+- Verified that it exists (you can see it in Google Scholar or the journal website)
+
+### Part 3: AI-assisted synthesis (~10 min)
+
+Paste the abstracts of your 3 papers into an AI tool and ask:
+
+> "Here are abstracts from three papers on [topic]. Provide a thematic synthesis: what are the main findings, where do these papers agree, and where do they differ?"
+
+### Part 4: Compare and evaluate (~10 min)
+
+Now answer these questions:
+
+1. **How good was the AI synthesis?** Did it accurately characterize each paper's findings?
+2. **What did the AI miss?** Are there nuances in the abstracts that the synthesis glossed over?
+3. **How does it compare to what you'd write?** Would you organize the same themes differently? Emphasize different findings?
+4. **Could you have skipped Parts 1-2?** If you had asked AI to generate the citations directly, what might have gone wrong?
+
+::: {.callout-note}
+## For the Ambitious
+If you have time, try the anti-pattern: ask AI to "give you 3 key papers" on the same topic, then verify whether those citations are real. Compare the experience of finding-then-synthesizing vs. asking AI to do everything.
+:::
+
+## Discussion Questions
+
+1. A classmate argues: "Once AI tools get better at citations, this whole verification step will be unnecessary." What's the strongest version of this argument? What's the counter-argument based on what you know about how LLMs work (from Module A1)?
+
+2. In economics, building on someone else's work without proper attribution is a serious norm violation. How does the risk of AI-hallucinated citations change the ethical landscape of academic writing? Who bears responsibility if a fabricated citation ends up in a published paper?
+
+3. Consider the difference between using AI as a *starting point* for a literature review and using it as a *substitute*. Where exactly is the line? How would you explain it to a first-year graduate student?
+
+4. How might AI-assisted literature review affect the distribution of research productivity? Could it be equalizing (helping researchers at smaller institutions access more literature) or could it widen gaps (benefiting those who already have the expertise to use it well)?
+
+## Key Takeaways
+
+1. **AI is a synthesis tool, not a sourcing tool.** Use it to summarize, organize, and identify gaps in papers you've found. Do not use it to generate citation lists.
+
+2. **Hallucinated citations are the biggest concrete risk.** They look right, they sound right, and they can end up in your work if you don't verify independently. Every single citation must be checked.
+
+3. **The best workflow separates finding from processing.** Search real databases yourself; use AI to help you make sense of what you've found. Humans curate, AI synthesizes.
+
+4. **Verification is where the learning happens.** Checking AI's work against the original papers forces you to actually engage with the literature — which is the point of doing a lit review in the first place.
+
+::: {.instructor-note}
+**For instructors**: This module pairs well with a research paper assignment. Consider requiring students to submit both their final literature review *and* a source verification log showing that each citation was independently confirmed.
+
+**Live demo idea**: Run the verification exercise in real time — ask AI for 5 citations in your subfield, then fact-check them together using Google Scholar. The mix of real and fabricated citations is very instructive.
+
+**Assessment option**: Have students submit a "lit review process document" that includes: (1) their AI-generated search terms, (2) the databases they searched, (3) the papers they found, (4) the AI synthesis of those papers, and (5) their own evaluation of the AI synthesis. Grade the process, not just the final product.
+
+**Scaffolding**: For students new to literature review, this module works well *after* a traditional introduction to scholarly databases and citation practices. AI assistance is most productive when students already know what a good literature review looks like.
+:::

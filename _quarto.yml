@@ -31,7 +31,11 @@ website:
       - text: Econ Workflows
         menu:
           - href: modules/c1-lit-review.qmd
-            text: "C1: Literature Review (coming soon)"
+            text: "C1: Literature Review & Synthesis"
+          - href: modules/c2-code-assistance.qmd
+            text: "C2: Code Assistance"
+          - href: modules/c3-data-exploration.qmd
+            text: "C3: Data Exploration & Cleaning"
       - href: about.qmd
         text: About
 

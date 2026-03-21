@@ -28,12 +28,13 @@ A growing collection of self-contained modules for teaching economics students h
 | [B1: Terminal Basics](modules/b1-terminal-basics.qmd) | What is a shell, navigating files, basic commands, and why reproducibility matters | ~75 min |
 | [B2: Git & GitHub Essentials](modules/b2-git-github.qmd) | Version control for economists — clone, commit, push, and why you should care | ~75 min |
 
-### AI for Economics Workflows (coming soon)
+### AI for Economics Workflows
 
 | Module | Description | Time |
 |--------|-------------|------|
-| C1: Literature Review & Synthesis | Using AI to survey a field — and catching what it gets wrong | ~50 min |
-| C2: Code Assistance (Stata/R) | Debugging, translation, documentation — and when AI code is dangerous | ~50 min |
+| [C1: Literature Review & Synthesis](modules/c1-lit-review.qmd) | Using AI to survey a field — and catching what it gets wrong | ~50 min |
+| [C2: Code Assistance (Stata/R)](modules/c2-code-assistance.qmd) | Debugging, translation, documentation — and when AI code is dangerous | ~50 min |
+| [C3: Data Exploration & Cleaning](modules/c3-data-exploration.qmd) | Describing datasets, flagging anomalies — and why cleaning decisions are yours | ~50 min |
 
 ## Design Philosophy
 

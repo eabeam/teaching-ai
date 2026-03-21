@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>C2: Code Assistance – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="../modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="../modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="../modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#where-ai-code-assistance-shines" id="toc-where-ai-code-assistance-shines" class="nav-link" data-scroll-target="#where-ai-code-assistance-shines">Where AI Code Assistance Shines</a>
+  <ul class="collapse">
+  <li><a href="#debugging-error-messages" id="toc-debugging-error-messages" class="nav-link" data-scroll-target="#debugging-error-messages">Debugging error messages</a></li>
+  <li><a href="#translating-between-languages" id="toc-translating-between-languages" class="nav-link" data-scroll-target="#translating-between-languages">Translating between languages</a></li>
+  <li><a href="#explaining-unfamiliar-code" id="toc-explaining-unfamiliar-code" class="nav-link" data-scroll-target="#explaining-unfamiliar-code">Explaining unfamiliar code</a></li>
+  <li><a href="#writing-boilerplate" id="toc-writing-boilerplate" class="nav-link" data-scroll-target="#writing-boilerplate">Writing boilerplate</a></li>
+  <li><a href="#generating-documentation" id="toc-generating-documentation" class="nav-link" data-scroll-target="#generating-documentation">Generating documentation</a></li>
+  </ul></li>
+  <li><a href="#where-ai-code-is-dangerous" id="toc-where-ai-code-is-dangerous" class="nav-link" data-scroll-target="#where-ai-code-is-dangerous">Where AI Code Is Dangerous</a>
+  <ul class="collapse">
+  <li><a href="#silent-errors-the-real-risk" id="toc-silent-errors-the-real-risk" class="nav-link" data-scroll-target="#silent-errors-the-real-risk">Silent errors: The real risk</a></li>
+  <li><a href="#stata-specific-traps" id="toc-stata-specific-traps" class="nav-link" data-scroll-target="#stata-specific-traps">Stata-specific traps</a></li>
+  <li><a href="#r-specific-traps" id="toc-r-specific-traps" class="nav-link" data-scroll-target="#r-specific-traps">R-specific traps</a></li>
+  </ul></li>
+  <li><a href="#good-vs.-bad-ai-code-help" id="toc-good-vs.-bad-ai-code-help" class="nav-link" data-scroll-target="#good-vs.-bad-ai-code-help">Good vs.&nbsp;Bad AI Code Help</a>
+  <ul class="collapse">
+  <li><a href="#side-by-side-when-it-works" id="toc-side-by-side-when-it-works" class="nav-link" data-scroll-target="#side-by-side-when-it-works">Side-by-side: When it works</a></li>
+  <li><a href="#side-by-side-when-it-fails" id="toc-side-by-side-when-it-fails" class="nav-link" data-scroll-target="#side-by-side-when-it-fails">Side-by-side: When it fails</a></li>
+  </ul></li>
+  <li><a href="#case-study-ai-powered-code-review-in-research" id="toc-case-study-ai-powered-code-review-in-research" class="nav-link" data-scroll-target="#case-study-ai-powered-code-review-in-research">Case Study: AI-Powered Code Review in Research</a></li>
+  <li><a href="#a-practical-framework-when-to-use-ai-for-code" id="toc-a-practical-framework-when-to-use-ai-for-code" class="nav-link" data-scroll-target="#a-practical-framework-when-to-use-ai-for-code">A Practical Framework: When to Use AI for Code</a>
+  <ul class="collapse">
+  <li><a href="#use-freely" id="toc-use-freely" class="nav-link" data-scroll-target="#use-freely">Use freely</a></li>
+  <li><a href="#use-but-verify-carefully" id="toc-use-but-verify-carefully" class="nav-link" data-scroll-target="#use-but-verify-carefully">Use but verify carefully</a></li>
+  <li><a href="#do-not-outsource-to-ai" id="toc-do-not-outsource-to-ai" class="nav-link" data-scroll-target="#do-not-outsource-to-ai">Do not outsource to AI</a></li>
+  </ul></li>
+  <li><a href="#exercise-ai-assisted-debugging" id="toc-exercise-ai-assisted-debugging" class="nav-link" data-scroll-target="#exercise-ai-assisted-debugging">Exercise: AI-Assisted Debugging</a>
+  <ul class="collapse">
+  <li><a href="#the-buggy-code" id="toc-the-buggy-code" class="nav-link" data-scroll-target="#the-buggy-code">The buggy code</a></li>
+  <li><a href="#step-1-find-the-bugs-yourself-10-minutes" id="toc-step-1-find-the-bugs-yourself-10-minutes" class="nav-link" data-scroll-target="#step-1-find-the-bugs-yourself-10-minutes">Step 1: Find the bugs yourself (10 minutes)</a></li>
+  <li><a href="#step-2-ask-ai-to-find-the-bugs" id="toc-step-2-ask-ai-to-find-the-bugs" class="nav-link" data-scroll-target="#step-2-ask-ai-to-find-the-bugs">Step 2: Ask AI to find the bugs</a></li>
+  <li><a href="#step-3-ask-ai-to-write-a-better-version" id="toc-step-3-ask-ai-to-write-a-better-version" class="nav-link" data-scroll-target="#step-3-ask-ai-to-write-a-better-version">Step 3: Ask AI to write a “better” version</a></li>
+  <li><a href="#step-4-the-subtle-trap" id="toc-step-4-the-subtle-trap" class="nav-link" data-scroll-target="#step-4-the-subtle-trap">Step 4: The subtle trap</a></li>
+  </ul></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion Questions</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">C2: Code Assistance</h1>
+<p class="subtitle lead">AI can write your Stata code — but should you let it?</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="module-meta">
+<p><span class="badge badge-time">~50 min</span> <span class="badge badge-track">Econ Workflows</span> <span class="badge badge-technical">Coding required</span></p>
+</div>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ol type="1">
+<li>Identify the types of coding tasks where AI assistance is most and least appropriate</li>
+<li>Recognize “silent errors” — AI-generated code that runs without error but produces wrong results</li>
+<li>Apply a practical framework for when to use AI for code, when to verify carefully, and when to write it yourself</li>
+<li>Use AI effectively for debugging, translation, and code explanation without outsourcing your analytical judgment</li>
+</ol>
+</section>
+<section id="where-ai-code-assistance-shines" class="level2">
+<h2 class="anchored" data-anchor-id="where-ai-code-assistance-shines">Where AI Code Assistance Shines</h2>
+<p>AI is genuinely good at certain kinds of coding tasks — the kinds where the goal is well-defined, the correctness is easy to verify, and the intellectual work is not in the code itself.</p>
+<section id="debugging-error-messages" class="level3">
+<h3 class="anchored" data-anchor-id="debugging-error-messages">Debugging error messages</h3>
+<p>You’re running a do-file and Stata throws this at you:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>. <span class="kw">merge</span> 1:1 hhid <span class="kw">using</span> <span class="st">"baseline_data.dta"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">variable</span> hhid does <span class="kw">not</span> uniquely identify observations <span class="kw">in</span> the master <span class="kw">data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span>(459)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You could spend 15 minutes searching the Stata manual, or you could paste the error into an AI tool:</p>
+<blockquote class="blockquote">
+<p>“I’m running a 1:1 merge in Stata and getting error r(459). Here’s my merge command: [paste]. What does this error mean and how do I diagnose it?”</p>
+</blockquote>
+<p>AI will correctly tell you that your key variable has duplicates in the master dataset, suggest <code>duplicates report hhid</code> to find them, and walk you through likely causes. This is a great use case: the error has a known, mechanical explanation, and the AI is functioning like a searchable Stata manual with better explanations.</p>
+</section>
+<section id="translating-between-languages" class="level3">
+<h3 class="anchored" data-anchor-id="translating-between-languages">Translating between languages</h3>
+<p>Your coauthor works in R. You work in Stata. They sent you this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(district) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_z =</span> (income <span class="sc">-</span> <span class="fu">mean</span>(income, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">/</span> <span class="fu">sd</span>(income, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can ask AI to translate it:</p>
+<blockquote class="blockquote">
+<p>“Convert this R code to Stata. The dataset is already loaded.”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> district: <span class="kw">egen</span> mean_inc = <span class="kw">mean</span>(income)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> district: <span class="kw">egen</span> sd_inc = <span class="fu">sd</span>(income)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> income_z = (income - mean_inc) / sd_inc</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> mean_inc sd_inc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is mechanical translation — the logic doesn’t change, and you can verify the output by checking a few values.</p>
+</section>
+<section id="explaining-unfamiliar-code" class="level3">
+<h3 class="anchored" data-anchor-id="explaining-unfamiliar-code">Explaining unfamiliar code</h3>
+<p>You’re reviewing a colleague’s do-file and encounter this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">levelsof</span> district, <span class="kw">local</span>(dlist)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="kw">d</span> <span class="kw">of</span> <span class="kw">local</span> dlist {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">qui</span> <span class="kw">reg</span> income treatment <span class="kw">if</span> district == <span class="st">"`d'"</span>, <span class="kw">robust</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> b_<span class="ot">`d'</span> = _b[treatment]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> se_<span class="ot">`d'</span> = _se[treatment]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Asking AI “What does this code do, step by step?” will get you a clear explanation: it loops over each unique district, runs a separate regression in each, and stores the coefficients. This saves you from reverse-engineering nested Stata macros on your own.</p>
+</section>
+<section id="writing-boilerplate" class="level3">
+<h3 class="anchored" data-anchor-id="writing-boilerplate">Writing boilerplate</h3>
+<p>Import/export templates, file structures, standard data-cleaning scaffolds — these are repetitive and well-defined:</p>
+<blockquote class="blockquote">
+<p>“Write Stata code to import all .csv files in a directory, append them, and save as a single .dta file. Add a variable indicating which source file each observation came from.”</p>
+</blockquote>
+<p>The AI will produce something reasonable. You still need to verify it, but the skeleton saves time.</p>
+</section>
+<section id="generating-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="generating-documentation">Generating documentation</h3>
+<p>You have a 200-line do-file with zero comments. Ask AI to annotate it:</p>
+<blockquote class="blockquote">
+<p>“Add comments to this Stata do-file explaining what each section does. Don’t change any code — just add comments.”</p>
+</blockquote>
+<p>This is low-risk (the code doesn’t change) and high-value (future you will appreciate the documentation).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think of AI code assistance like hiring a research assistant. A good RA can clean data, format tables, and translate your instructions into code. But you wouldn’t ask an RA who just started to <em>decide</em> your regression specification, choose your sample restrictions, or determine your identification strategy. The same boundary applies to AI.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="where-ai-code-is-dangerous" class="level2">
+<h2 class="anchored" data-anchor-id="where-ai-code-is-dangerous">Where AI Code Is Dangerous</h2>
+<p>Now the harder part. AI can generate code that looks right, runs without errors, and produces numbers — but those numbers are wrong.</p>
+<section id="silent-errors-the-real-risk" class="level3">
+<h3 class="anchored" data-anchor-id="silent-errors-the-real-risk">Silent errors: The real risk</h3>
+<p>An error message is annoying but safe. You know something went wrong. The dangerous case is code that runs cleanly and produces plausible output that happens to be incorrect.</p>
+<p><strong>Example 1: The wrong merge type</strong></p>
+<p>You ask AI to merge two datasets. It writes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">merge</span> 1:1 hhid <span class="kw">using</span> <span class="st">"followup.dta"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But your data actually has multiple observations per household (panel data). You needed <code>merge m:1 hhid using "followup.dta"</code>. The 1:1 merge silently drops observations that don’t uniquely match, and you end up with a smaller sample than you should have — no error message, no warning, just missing data.</p>
+<p><strong>Example 2: Incorrect variable construction</strong></p>
+<p>You ask AI to create a per-capita income variable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> income_pc = income / hh_size</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Seems fine. But what if <code>hh_size</code> has missing values? In Stata, dividing by missing produces missing — and now your analysis sample just shrank, silently. A more careful version:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">assert</span> hh_size != . &amp; hh_size &gt; 0</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> income_pc = income / hh_size</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>AI rarely adds these safety checks unless you ask. It generates the “happy path” code — code that works when everything goes right.</p>
+<p><strong>Example 3: The specification that looks right</strong></p>
+<p>You ask AI: “Run a diff-in-diff regression of test scores on a school lunch program, with school and year fixed effects.”</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">reg</span> test_score treatment i.school i.<span class="fu">year</span>, <span class="kw">cluster</span>(school)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This <em>looks</em> like a diff-in-diff. But where’s the interaction term? This is just a two-way fixed effects model with a treatment indicator — it’s not the same thing as a proper diff-in-diff specification. The AI produced code that matches the <em>words</em> of your request but not the <em>econometric intent</em>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Insight
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The most dangerous AI-generated code is code that is <em>almost</em> right. It runs, it produces output, and the output looks reasonable. You have to know enough to spot what’s wrong — which means you need to understand the code at least as well as if you’d written it yourself.</p>
+</div>
+</div>
+</section>
+<section id="stata-specific-traps" class="level3">
+<h3 class="anchored" data-anchor-id="stata-specific-traps">Stata-specific traps</h3>
+<p>AI models are trained on lots of Python and R but comparatively less Stata. This means they make Stata-specific mistakes more often:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trap</th>
+<th>What Goes Wrong</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sort-order dependence</td>
+<td>Stata operations can depend on the current sort order; AI often forgets <code>sort</code> or <code>set seed</code> before operations that need them</td>
+<td><code>gen row_id = _n</code> without sorting first gives unpredictable results</td>
+</tr>
+<tr class="even">
+<td>String vs.&nbsp;numeric encoding</td>
+<td>AI may treat a string variable as numeric, or vice versa</td>
+<td><code>keep if district == 1</code> when <code>district</code> is a string variable (should be <code>"1"</code>) — Stata silently keeps nothing</td>
+</tr>
+<tr class="odd">
+<td>Value labels vs.&nbsp;actual values</td>
+<td>AI reads the label, not the underlying number</td>
+<td>Writing <code>keep if gender == "Female"</code> when the variable is numeric with a value label</td>
+</tr>
+<tr class="even">
+<td><code>egen</code> vs.&nbsp;<code>gen</code></td>
+<td>AI sometimes uses <code>gen</code> where <code>egen</code> is required, or misuses <code>egen</code> functions</td>
+<td><code>gen avg_income = mean(income)</code> does not work; needs <code>egen avg_income = mean(income)</code></td>
+</tr>
+<tr class="odd">
+<td>Macro quoting</td>
+<td>AI struggles with Stata’s local/global macro syntax</td>
+<td>Forgetting compound quotes around macro references in loops</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r-specific-traps" class="level3">
+<h3 class="anchored" data-anchor-id="r-specific-traps">R-specific traps</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trap</th>
+<th>What Goes Wrong</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tidyverse vs.&nbsp;base R</td>
+<td>AI mixes syntax in ways that break or behave unexpectedly</td>
+<td>Using <code>$</code> column access inside a <code>dplyr</code> pipe instead of bare column names</td>
+</tr>
+<tr class="even">
+<td>Silent type coercion</td>
+<td>R silently converts types in ways that change results</td>
+<td>Joining on a column that’s character in one dataframe and numeric in another — R coerces without warning</td>
+</tr>
+<tr class="odd">
+<td>Factor level issues</td>
+<td>Factors and strings behave differently in regressions and merges</td>
+<td>A factor variable dropping unused levels after subsetting, changing your regression baseline</td>
+</tr>
+<tr class="even">
+<td>Non-standard evaluation</td>
+<td>AI-generated functions may not handle tidy evaluation correctly</td>
+<td>Writing a function that uses <code>group_by(var)</code> instead of <code>group_by({{var}})</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The Pattern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice the common thread: these are all cases where the code runs without error but does something different from what you intended. AI can’t catch these bugs because it doesn’t know your data or your intent — only you do.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="good-vs.-bad-ai-code-help" class="level2">
+<h2 class="anchored" data-anchor-id="good-vs.-bad-ai-code-help">Good vs.&nbsp;Bad AI Code Help</h2>
+<p>Not all requests for code help are equal. The difference usually comes down to whether the hard part is <em>mechanical</em> (AI is good at this) or <em>analytical</em> (AI is bad at this).</p>
+<section id="side-by-side-when-it-works" class="level3">
+<h3 class="anchored" data-anchor-id="side-by-side-when-it-works">Side-by-side: When it works</h3>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Good request:</strong></p>
+<blockquote class="blockquote">
+<p>“This merge is throwing error r(459). Here’s my code and the error message. The master data is a household panel with hhid and year. The using data is a cross-section with one row per hhid.”</p>
+</blockquote>
+<p>AI diagnoses the problem: you need <code>merge m:1</code> because your master data has multiple observations per household. Clear, verifiable, mechanical.</p>
+</div><div class="column" style="width:48%;">
+<p><strong>Good request:</strong></p>
+<blockquote class="blockquote">
+<p>“Explain what this reshape command does, step by step:”</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">reshape</span> <span class="kw">wide</span> income, i(hhid) j(<span class="fu">year</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</blockquote>
+<p>AI explains: this converts long-format panel data to wide format, creating separate columns <code>income2018</code>, <code>income2019</code>, etc. for each year, with one row per household. You learn something.</p>
+</div>
+</div>
+</section>
+<section id="side-by-side-when-it-fails" class="level3">
+<h3 class="anchored" data-anchor-id="side-by-side-when-it-fails">Side-by-side: When it fails</h3>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Bad request:</strong></p>
+<blockquote class="blockquote">
+<p>“Write me a regression analysis of the effect of education on wages.”</p>
+</blockquote>
+<p>AI will produce a regression with some controls, probably OLS. But the <em>entire intellectual challenge</em> — endogeneity, identification, variable selection, functional form — is exactly what you’re supposed to be thinking about. The code is the easy part.</p>
+</div><div class="column" style="width:48%;">
+<p><strong>Bad request:</strong></p>
+<blockquote class="blockquote">
+<p>“Clean this dataset for me.”</p>
+</blockquote>
+<p>AI will make decisions about missing values (drop them? impute?), outliers (winsorize? trim?), and variable coding (how to handle “refused” or “don’t know”?) — all without understanding your research context. These are analytical decisions disguised as data cleaning.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Economist’s Analogy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The distinction maps onto the difference between <strong>computation</strong> and <strong>identification</strong>. AI is great at computation — getting Stata to execute the mechanics you’ve specified. It’s bad at identification — deciding <em>what</em> to estimate and <em>how</em> to estimate it credibly. That’s your job, and it’s the part your degree is training you to do.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="case-study-ai-powered-code-review-in-research" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-ai-powered-code-review-in-research">Case Study: AI-Powered Code Review in Research</h2>
+<p>Here’s a case where AI and code intersect in professional economics in a way you might not expect: <strong>code review</strong>.</p>
+<p>In professional research teams, a growing practice is using AI-assisted tools to <em>review</em> code — not to write it. These tools scan do-files and scripts looking for known risk patterns:</p>
+<p><strong>Silent failure detection:</strong></p>
+<ul>
+<li>Merges without checking <code>_merge</code> (did all observations match? were some unmatched?)</li>
+<li>Sorts before operations that depend on sort order (without <code>set seed</code> or <code>isid</code>)</li>
+<li>Loops that overwrite results without checking for existing output</li>
+</ul>
+<p><strong>Reproducibility risks:</strong></p>
+<ul>
+<li>Hardcoded file paths (<code>"C:/Users/john/data/survey.dta"</code> — works on John’s machine, breaks on yours)</li>
+<li>Missing <code>set seed</code> before random operations</li>
+<li>Platform-dependent behavior (line endings, path separators)</li>
+</ul>
+<p><strong>Documentation gaps:</strong></p>
+<ul>
+<li>Variables created without labels</li>
+<li>Complex logic without comments</li>
+<li>Missing value handling that isn’t documented</li>
+</ul>
+<p>These review checklists draw on standards from <a href="https://dimewiki.worldbank.org/">DIME Analytics</a>, the <a href="https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf">Gentzkow-Shapiro coding guide</a>, and the <a href="https://www.aeaweb.org/journals/data/data-code-policy">AEA replication guidelines</a>. They represent hard-won knowledge about what goes wrong in empirical research code.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Insight
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AI is better at <em>reviewing</em> code than <em>writing</em> it. Why? Review is pattern-matching against known risks — “does this merge check <code>_merge</code>?” is a well-defined question. Writing code requires understanding intent — “what should I control for in this regression?” is not. This tells you something important about where to deploy AI in your own workflow.</p>
+</div>
+</div>
+</section>
+<section id="a-practical-framework-when-to-use-ai-for-code" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-framework-when-to-use-ai-for-code">A Practical Framework: When to Use AI for Code</h2>
+<p>Here’s a decision rule you can actually use:</p>
+<section id="use-freely" class="level3">
+<h3 class="anchored" data-anchor-id="use-freely">Use freely</h3>
+<ul>
+<li><strong>Debugging error messages</strong> — AI is a better error-message translator than the Stata manual</li>
+<li><strong>Language translation</strong> — Stata to R, R to Python, or vice versa</li>
+<li><strong>Code explanation</strong> — understanding what existing code does</li>
+<li><strong>Boilerplate generation</strong> — import/export, file management, standard templates</li>
+<li><strong>Documentation</strong> — adding comments, writing README descriptions of code</li>
+</ul>
+</section>
+<section id="use-but-verify-carefully" class="level3">
+<h3 class="anchored" data-anchor-id="use-but-verify-carefully">Use but verify carefully</h3>
+<ul>
+<li><strong>Mechanical data tasks</strong> — reshape, merge, append — where the operation is well-defined but the details matter (merge type, key variables, handling of non-matches)</li>
+<li><strong>Visualization code</strong> — graphs and tables where you can visually verify the output</li>
+<li><strong>Standard statistical procedures</strong> — summary statistics, correlation matrices, basic tests — where you know what the output should look like</li>
+</ul>
+</section>
+<section id="do-not-outsource-to-ai" class="level3">
+<h3 class="anchored" data-anchor-id="do-not-outsource-to-ai">Do not outsource to AI</h3>
+<ul>
+<li><strong>Regression specifications</strong> — what to control for, functional form, fixed effects structure</li>
+<li><strong>Sample selection</strong> — who to include/exclude and why</li>
+<li><strong>Variable construction</strong> — how to operationalize a concept (what counts as “income”? how to define “treatment exposure”?)</li>
+<li><strong>Identification strategy</strong> — the analytical decisions that determine whether your estimates are credible</li>
+<li><strong>Interpretation</strong> — what the results mean, not just what the numbers are</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The Gray Zone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The middle category — “use but verify” — is where most of your day-to-day coding lives. The key discipline is: <strong>never run AI-generated code without reading every line and understanding what it does.</strong> If you can’t explain a line of code, you don’t get to use it.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-ai-assisted-debugging" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-ai-assisted-debugging">Exercise: AI-Assisted Debugging</h2>
+<p>This exercise puts the framework into practice. You’ll work with a buggy script, try to debug it yourself, then compare your results with AI’s suggestions.</p>
+<section id="the-buggy-code" class="level3">
+<h3 class="anchored" data-anchor-id="the-buggy-code">The buggy code</h3>
+<p>Here is a Stata do-file that is supposed to: (1) load a dataset of students, (2) create a standardized test score, (3) merge with school-level data, and (4) run a regression of test scores on class size, controlling for school fixed effects.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>* analysis.<span class="kw">do</span> — Estimate effect <span class="kw">of</span> <span class="kw">class</span> <span class="kw">size</span> <span class="kw">on</span> <span class="kw">test</span> scores</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>* Last modified: March 2026</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="st">"student_data.dta"</span>, <span class="kw">clear</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>* Standardize <span class="kw">test</span> scores</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> test_z = test_score - <span class="kw">mean</span>(test_score) / <span class="fu">sd</span>(test_score)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>* Create <span class="fu">log</span> <span class="kw">of</span> <span class="kw">class</span> <span class="kw">size</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> log_classsize = <span class="fu">log</span>(class_size)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>* Merge with school characteristics</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="kw">merge</span> hhid <span class="kw">using</span> <span class="st">"school_data.dta"</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> <span class="dt">_merge</span> == 3</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>* Label variables</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span> <span class="kw">var</span> test_z <span class="st">"Standardized test score"</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span> <span class="kw">var</span> log_classsize <span class="st">"Log class size"</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>* Run regression</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="kw">reg</span> test_z log_classsize i.district, <span class="kw">robust</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-1-find-the-bugs-yourself-10-minutes" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-find-the-bugs-yourself-10-minutes">Step 1: Find the bugs yourself (10 minutes)</h3>
+<p>Read the code carefully. Try to identify as many issues as you can before consulting AI. Write down what you find.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hints (click to expand)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Think about:</p>
+<ul>
+<li>Order of operations in the standardization formula</li>
+<li>What function creates group means in Stata?</li>
+<li>What’s missing from the merge command?</li>
+<li>Is the regression specification doing what the comments say?</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-ask-ai-to-find-the-bugs" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-ask-ai-to-find-the-bugs">Step 2: Ask AI to find the bugs</h3>
+<p>Paste the code into your AI tool with a prompt like:</p>
+<blockquote class="blockquote">
+<p>“This Stata do-file has several bugs. Can you identify them and explain what’s wrong?”</p>
+</blockquote>
+<p>Compare: What did the AI catch that you missed? What did you catch that the AI missed?</p>
+</section>
+<section id="step-3-ask-ai-to-write-a-better-version" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-ask-ai-to-write-a-better-version">Step 3: Ask AI to write a “better” version</h3>
+<blockquote class="blockquote">
+<p>“Rewrite this do-file to fix all the bugs and follow best practices.”</p>
+</blockquote>
+<p>Now the critical step: <strong>read the AI’s version line by line.</strong> For each change, ask:</p>
+<ul>
+<li>Is this change correct?</li>
+<li>Is this change necessary?</li>
+<li>Did the AI introduce anything new that wasn’t in my original intent?</li>
+</ul>
+</section>
+<section id="step-4-the-subtle-trap" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-the-subtle-trap">Step 4: The subtle trap</h3>
+<p>Look carefully at the AI’s rewrite. In our experience, AI tools will correctly fix the obvious bugs (order of operations, merge syntax) but often introduce a subtle new issue — for example:</p>
+<ul>
+<li>Changing the regression specification in a way that alters the research question</li>
+<li>Adding controls that weren’t in the original design</li>
+<li>Dropping observations in a different way than intended</li>
+<li>“Improving” the standardization by using a different method than you planned</li>
+</ul>
+<p><strong>The lesson</strong>: AI is good at fixing <em>mechanical</em> errors. It’s unreliable at preserving <em>analytical intent</em>. You have to be the one who knows what the code is supposed to do.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Bugs in the original code (full answers)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p><strong>Standardization formula is wrong</strong>: <code>gen test_z = test_score - mean(test_score) / sd(test_score)</code> — order of operations means this computes <code>test_score - (mean/sd)</code> instead of <code>(test_score - mean) / sd</code>. Also, <code>mean()</code> and <code>sd()</code> are not valid Stata functions here — you need <code>egen</code> to compute summary statistics.</p>
+<p>Correct version:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">egen</span> mean_test = <span class="kw">mean</span>(test_score)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">egen</span> sd_test = <span class="fu">sd</span>(test_score)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> test_z = (test_score - mean_test) / sd_test</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> mean_test sd_test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Merge syntax is wrong</strong>: <code>merge hhid using "school_data.dta"</code> — this is old Stata syntax. Modern Stata requires specifying the merge type. Also, <code>hhid</code> is a household identifier, not a school identifier — this is probably the wrong key variable.</p>
+<p>Should be something like:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">merge</span> <span class="fu">m</span>:1 school_id <span class="kw">using</span> <span class="st">"school_data.dta"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>No merge diagnostics</strong>: The code keeps only <code>_merge == 3</code> without first checking the merge results with <code>tab _merge</code>. You should always inspect the merge before dropping non-matches.</p></li>
+<li><p><strong>Regression doesn’t match the stated goal</strong>: The comment says “controlling for school fixed effects” but the code uses <code>i.district</code>. District fixed effects and school fixed effects are very different — district FE control for time-invariant district characteristics, school FE control for time-invariant school characteristics. If you want school FE:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">reg</span> test_z log_classsize i.school_id, <span class="kw">robust</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong><code>log()</code> with potential zeros or negatives</strong>: If <code>class_size</code> has any zero or missing values, <code>log(class_size)</code> will produce missing values without warning.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion-questions" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h2>
+<ol type="1">
+<li><p>A classmate says “I always read through the AI’s code before I run it, so I’m safe.” What’s the flaw in this reasoning? (Hint: think about what you need to know to evaluate code you didn’t write.)</p></li>
+<li><p>Where is the line between using AI to help you code faster and using AI to avoid learning to code? How does this line shift as you move from an introductory course to a senior thesis to a professional research position?</p></li>
+<li><p>Consider two researchers: one who writes all their own code slowly, and one who uses AI to generate code quickly but reviews it carefully. Who produces more reliable research? Does your answer depend on the researcher’s experience level?</p></li>
+<li><p>If AI tools keep getting better at writing code, should economics programs still require students to learn Stata and R? What would be lost if they didn’t?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>AI is a coding tool, not a thinking tool.</strong> It’s excellent for debugging, translation, explanation, and boilerplate — tasks where the hard work is mechanical. It’s unreliable for analytical decisions like specifications, sample selection, and variable construction.</p></li>
+<li><p><strong>Silent errors are the real risk.</strong> Code that crashes is safe — you know something went wrong. Code that runs but produces the wrong answer is dangerous. AI-generated code is especially prone to this because it optimizes for “code that runs” rather than “code that does what you intend.”</p></li>
+<li><p><strong>AI is better at reviewing code than writing it.</strong> Use this to your advantage: write the code yourself (or with AI’s help for the mechanical parts), then use AI to review it for common pitfalls. This is how professional research teams are using these tools.</p></li>
+<li><p><strong>You must understand every line.</strong> If you can’t explain what a line of AI-generated code does and why it’s correct for your specific analysis, you don’t get to use it. This is not a rule about academic integrity — it’s a rule about research quality.</p></li>
+</ol>
+<div class="instructor-note">
+<p><strong>For instructors</strong>: This module works well as a workshop where students actually interact with AI tools during class. The debugging exercise is designed so that AI will catch some bugs students miss (and vice versa) — the comparison itself is the learning moment. If students don’t have access to Stata, the exercise can be adapted to R with equivalent bugs.</p>
+<p><strong>Adaptation for intro courses</strong>: If students are still learning basic Stata/R syntax, focus on the debugging and explanation use cases (Sections 1 and 3) and simplify the exercise. The framework in Section 5 is appropriate for any level. For advanced courses (econometrics, thesis seminars), lean into the case study and the distinction between computation and identification.</p>
+<p><strong>Assessment idea</strong>: Have students submit a “code review report” where they paste AI-generated code for a task, annotate each line with whether it’s correct, and flag any changes they would make. Grade on the quality of the review, not the code itself.</p>
+<p><strong>Connection to other modules</strong>: This builds on A1 (understanding why AI produces plausible-but-wrong output), A2 (prompt quality determines code quality), and A3 (the danger zone for core skills). Consider assigning A3 as a prerequisite — the framework for “when AI helps vs.&nbsp;hurts learning” directly applies here.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
