@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/a2-prompting.html</loc>
-    <lastmod>2026-03-14T19:57:26.300Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/b1-terminal-basics.html</loc>
+    <lastmod>2026-03-21T18:11:13.236Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/a3-when-to-use-ai.html</loc>
-    <lastmod>2026-03-14T19:58:28.044Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/a1-what-llms-do.html</loc>
+    <lastmod>2026-03-14T19:56:23.676Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/index.html</loc>
-    <lastmod>2026-03-14T19:55:03.206Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/b2-git-github.html</loc>
+    <lastmod>2026-03-21T18:11:49.065Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/about.html</loc>
     <lastmod>2026-03-14T19:55:14.539Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/a1-what-llms-do.html</loc>
-    <lastmod>2026-03-14T19:56:23.676Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/MODULE_CATALOG.html</loc>
+    <lastmod>2026-03-14T20:33:24.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/index.html</loc>
+    <lastmod>2026-03-21T18:13:17.742Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/NEXT_SESSION_PROMPT.html</loc>
+    <lastmod>2026-03-14T20:40:19.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/a3-when-to-use-ai.html</loc>
+    <lastmod>2026-03-14T19:58:28.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/a2-prompting.html</loc>
+    <lastmod>2026-03-14T19:57:26.300Z</lastmod>
   </url>
 </urlset>

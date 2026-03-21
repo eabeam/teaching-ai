@@ -25,7 +25,9 @@ website:
       - text: Technical
         menu:
           - href: modules/b1-terminal-basics.qmd
-            text: "B1: Terminal Basics (coming soon)"
+            text: "B1: Terminal Basics"
+          - href: modules/b2-git-github.qmd
+            text: "B2: Git & GitHub Essentials"
       - text: Econ Workflows
         menu:
           - href: modules/c1-lit-review.qmd

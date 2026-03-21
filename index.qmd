@@ -21,12 +21,12 @@ A growing collection of self-contained modules for teaching economics students h
 | [A2: Prompting as Problem Specification](modules/a2-prompting.qmd) | Clear prompts = clear thinking. The prompt is your identification strategy | ~50 min |
 | [A3: When AI Helps vs. Hurts Your Learning](modules/a3-when-to-use-ai.qmd) | Metacognition for the AI era — when to use it, when to struggle | ~30 min |
 
-### Technical Foundations (coming soon)
+### Technical Foundations
 
 | Module | Description | Time |
 |--------|-------------|------|
-| B1: Terminal Basics | What is a shell, navigating files, basic commands, and why reproducibility matters | ~75 min |
-| B2: Git & GitHub Essentials | Version control for economists — clone, commit, push, and why you should care | ~75 min |
+| [B1: Terminal Basics](modules/b1-terminal-basics.qmd) | What is a shell, navigating files, basic commands, and why reproducibility matters | ~75 min |
+| [B2: Git & GitHub Essentials](modules/b2-git-github.qmd) | Version control for economists — clone, commit, push, and why you should care | ~75 min |
 
 ### AI for Economics Workflows (coming soon)
 
