@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>instructor_guide – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="./modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="./modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="./modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructor-guide-adopting-ai-literacy-for-economists" id="toc-instructor-guide-adopting-ai-literacy-for-economists" class="nav-link active" data-scroll-target="#instructor-guide-adopting-ai-literacy-for-economists">Instructor Guide: Adopting AI Literacy for Economists</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#module-dependency-graph" id="toc-module-dependency-graph" class="nav-link" data-scroll-target="#module-dependency-graph">Module Dependency Graph</a>
+  <ul class="collapse">
+  <li><a href="#what-the-arrows-mean" id="toc-what-the-arrows-mean" class="nav-link" data-scroll-target="#what-the-arrows-mean">What the arrows mean</a></li>
+  <li><a href="#the-bottom-line" id="toc-the-bottom-line" class="nav-link" data-scroll-target="#the-bottom-line">The bottom line</a></li>
+  </ul></li>
+  <li><a href="#suggested-sequencing-by-course-type" id="toc-suggested-sequencing-by-course-type" class="nav-link" data-scroll-target="#suggested-sequencing-by-course-type">Suggested Sequencing by Course Type</a>
+  <ul class="collapse">
+  <li><a href="#principles-of-micromacro-12-sessions" id="toc-principles-of-micromacro-12-sessions" class="nav-link" data-scroll-target="#principles-of-micromacro-12-sessions">Principles of Micro/Macro (1–2 sessions)</a></li>
+  <li><a href="#intermediate-micromacro-23-sessions" id="toc-intermediate-micromacro-23-sessions" class="nav-link" data-scroll-target="#intermediate-micromacro-23-sessions">Intermediate Micro/Macro (2–3 sessions)</a></li>
+  <li><a href="#econometrics-35-sessions" id="toc-econometrics-35-sessions" class="nav-link" data-scroll-target="#econometrics-35-sessions">Econometrics (3–5 sessions)</a></li>
+  <li><a href="#senior-seminar-research-methods-46-sessions" id="toc-senior-seminar-research-methods-46-sessions" class="nav-link" data-scroll-target="#senior-seminar-research-methods-46-sessions">Senior Seminar / Research Methods (4–6 sessions)</a></li>
+  <li><a href="#standalone-ai-workshop-full-day-6-hours" id="toc-standalone-ai-workshop-full-day-6-hours" class="nav-link" data-scroll-target="#standalone-ai-workshop-full-day-6-hours">Standalone AI Workshop (full day, ~6 hours)</a></li>
+  </ul></li>
+  <li><a href="#minimum-viable-subsets" id="toc-minimum-viable-subsets" class="nav-link" data-scroll-target="#minimum-viable-subsets">Minimum Viable Subsets</a></li>
+  <li><a href="#software-account-requirements" id="toc-software-account-requirements" class="nav-link" data-scroll-target="#software-account-requirements">Software &amp; Account Requirements</a></li>
+  <li><a href="#pre-class-setup-checklist" id="toc-pre-class-setup-checklist" class="nav-link" data-scroll-target="#pre-class-setup-checklist">Pre-Class Setup Checklist</a>
+  <ul class="collapse">
+  <li><a href="#before-b1-terminal-basics" id="toc-before-b1-terminal-basics" class="nav-link" data-scroll-target="#before-b1-terminal-basics">Before B1 (Terminal Basics)</a></li>
+  <li><a href="#before-b2-git-github" id="toc-before-b2-git-github" class="nav-link" data-scroll-target="#before-b2-git-github">Before B2 (Git &amp; GitHub)</a></li>
+  </ul></li>
+  <li><a href="#customizing-institutional-references" id="toc-customizing-institutional-references" class="nav-link" data-scroll-target="#customizing-institutional-references">Customizing Institutional References</a>
+  <ul class="collapse">
+  <li><a href="#how-to-swap-the-uvm-copilot-reference" id="toc-how-to-swap-the-uvm-copilot-reference" class="nav-link" data-scroll-target="#how-to-swap-the-uvm-copilot-reference">How to swap the UVM Copilot reference</a></li>
+  <li><a href="#other-institution-specific-content" id="toc-other-institution-specific-content" class="nav-link" data-scroll-target="#other-institution-specific-content">Other institution-specific content</a></li>
+  </ul></li>
+  <li><a href="#how-exercises-work" id="toc-how-exercises-work" class="nav-link" data-scroll-target="#how-exercises-work">How Exercises Work</a>
+  <ul class="collapse">
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#delivery-formats" id="toc-delivery-formats" class="nav-link" data-scroll-target="#delivery-formats">Delivery formats</a></li>
+  <li><a href="#tips-for-in-class-exercises" id="toc-tips-for-in-class-exercises" class="nav-link" data-scroll-target="#tips-for-in-class-exercises">Tips for in-class exercises</a></li>
+  </ul></li>
+  <li><a href="#module-quick-reference" id="toc-module-quick-reference" class="nav-link" data-scroll-target="#module-quick-reference">Module Quick Reference</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="instructor-guide-adopting-ai-literacy-for-economists" class="level1">
+<h1>Instructor Guide: Adopting AI Literacy for Economists</h1>
+<p><strong>Who this is for</strong>: Economics instructors at any institution who want to incorporate AI literacy modules into their courses. You do not need to be at UVM, use Stata, or teach any particular course. These modules are open (CC-BY 4.0) and designed to be mixed and matched.</p>
+<p><strong>Time to read</strong>: ~15 minutes.</p>
+<hr>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This site provides 10 self-contained modules organized into three tracks:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Track</th>
+<th>Modules</th>
+<th>Focus</th>
+<th>Coding?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A: Foundations</strong></td>
+<td>A1, A2, A3</td>
+<td>What AI is, how to use it, when to use it</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td><strong>B: Technical</strong></td>
+<td>B1, B2</td>
+<td>Terminal and Git skills for economists</td>
+<td>Hands-on</td>
+</tr>
+<tr class="odd">
+<td><strong>C: Econ Workflows</strong></td>
+<td>C1, C2, C3, C4, C5</td>
+<td>AI applied to lit review, code, data, writing, math</td>
+<td>Varies</td>
+</tr>
+</tbody>
+</table>
+<p>Every module can stand alone. There are no hard prerequisites. But if you’re assigning multiple modules, the dependency graph below will help you sequence them effectively.</p>
+<hr>
+</section>
+<section id="module-dependency-graph" class="level2">
+<h2 class="anchored" data-anchor-id="module-dependency-graph">Module Dependency Graph</h2>
+<pre><code>A1: What LLMs Do
+  ↓ (recommended)
+A2: Prompting
+  ↓ (recommended)
+A3: When AI Helps/Hurts
+
+B1: Terminal Basics
+  ↓ (recommended)
+B2: Git &amp; GitHub
+
+A1 or A3 ─ ─ ─ (soft prereq) ─ ─ ─→ C1, C2, C3, C4, C5</code></pre>
+<section id="what-the-arrows-mean" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-arrows-mean">What the arrows mean</h3>
+<ul>
+<li><p><strong>A1 → A2 → A3</strong>: These build on each other conceptually. A1 explains the mechanism (token prediction), A2 builds on that to teach prompting, and A3 uses both to develop metacognitive judgment. Teaching them in order is recommended but not required. Each module recaps the essential ideas from prior modules.</p></li>
+<li><p><strong>B1 → B2</strong>: B2 (Git) assumes students can navigate a terminal. If students have never used the command line, teach B1 first. If your students are comfortable opening a terminal and typing <code>cd</code>, <code>ls</code>, and <code>pwd</code>, you can skip B1 or assign it as pre-work.</p></li>
+<li><p><strong>A1 or A3 as soft prerequisites for C-track</strong>: The C-track modules (lit review, code, data, writing, math) all apply AI to economics workflows. They are more effective when students already understand why AI produces confident-but-wrong output (A1) and when AI use helps vs.&nbsp;hurts learning (A3). But each C module re-introduces these ideas in its domain-specific context, so students who missed A1/A3 will still follow along.</p></li>
+</ul>
+</section>
+<section id="the-bottom-line" class="level3">
+<h3 class="anchored" data-anchor-id="the-bottom-line">The bottom line</h3>
+<p>Every module <strong>can</strong> stand alone. If you only have one class session, pick any module that fits your course. The dependency graph helps you sequence, but it does not create gatekeeping.</p>
+<hr>
+</section>
+</section>
+<section id="suggested-sequencing-by-course-type" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-sequencing-by-course-type">Suggested Sequencing by Course Type</h2>
+<section id="principles-of-micromacro-12-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="principles-of-micromacro-12-sessions">Principles of Micro/Macro (1–2 sessions)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Module</th>
+<th>Time</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A1: What LLMs Do</td>
+<td>50 min</td>
+<td>Build accurate mental models before students use AI all semester</td>
+</tr>
+<tr class="even">
+<td>1 or 2</td>
+<td>A3: When AI Helps/Hurts</td>
+<td>30 min</td>
+<td>Set norms for AI use in the course early</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total</strong>: ~80 min (fits in two 50-min classes or one 75-min session + homework).</p>
+<p><strong>Why these</strong>: Principles students need to understand what AI is and develop judgment about when to use it. They don’t need code assistance or technical skills yet.</p>
+</section>
+<section id="intermediate-micromacro-23-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="intermediate-micromacro-23-sessions">Intermediate Micro/Macro (2–3 sessions)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Module</th>
+<th>Time</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A1: What LLMs Do</td>
+<td>50 min</td>
+<td>Foundation</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>A3: When AI Helps/Hurts</td>
+<td>30 min</td>
+<td>Metacognition</td>
+</tr>
+<tr class="odd">
+<td>2 or 3</td>
+<td>C5: Math &amp; Derivations</td>
+<td>50 min</td>
+<td>Directly relevant: using AI to check optimization, comparative statics</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total</strong>: ~130 min.</p>
+<p><strong>Why C5</strong>: Intermediate courses are math-heavy. C5 teaches students to use AI for intuition and LaTeX formatting while building verification habits for derivations.</p>
+</section>
+<section id="econometrics-35-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="econometrics-35-sessions">Econometrics (3–5 sessions)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Module</th>
+<th>Time</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A1: What LLMs Do</td>
+<td>50 min</td>
+<td>Foundation</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>A2: Prompting</td>
+<td>50 min</td>
+<td>Prompt quality is critical for code generation</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>A3: When AI Helps/Hurts</td>
+<td>30 min</td>
+<td>Set norms</td>
+</tr>
+<tr class="even">
+<td>3 or 4</td>
+<td>C2: Code Assistance</td>
+<td>50 min</td>
+<td>Core module: debugging, translation, silent errors</td>
+</tr>
+<tr class="odd">
+<td>5 (optional)</td>
+<td>C3: Data Exploration</td>
+<td>50 min</td>
+<td>AI for data documentation and cleaning audits</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optional add-ons</strong> (if you have more time):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Module</th>
+<th>Time</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>B1: Terminal Basics</td>
+<td>75 min</td>
+<td>If students need command-line skills for the course</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>B2: Git &amp; GitHub</td>
+<td>75 min</td>
+<td>If students will collaborate on code or submit replication packages</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total</strong>: 180–380 min depending on selections.</p>
+</section>
+<section id="senior-seminar-research-methods-46-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="senior-seminar-research-methods-46-sessions">Senior Seminar / Research Methods (4–6 sessions)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Module</th>
+<th>Time</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A1: What LLMs Do</td>
+<td>50 min</td>
+<td>Foundation</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>A2: Prompting</td>
+<td>50 min</td>
+<td>Essential for research-oriented AI use</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>A3: When AI Helps/Hurts</td>
+<td>30 min</td>
+<td>Critical for students writing theses</td>
+</tr>
+<tr class="even">
+<td>3 or 4</td>
+<td>C1: Lit Review &amp; Synthesis</td>
+<td>50 min</td>
+<td>Verification-first approach to AI-assisted literature review</td>
+</tr>
+<tr class="odd">
+<td>4 or 5</td>
+<td>C2: Code Assistance</td>
+<td>50 min</td>
+<td>Debugging and code review for research code</td>
+</tr>
+<tr class="even">
+<td>5 or 6</td>
+<td>C4: Writing &amp; Revision</td>
+<td>50 min</td>
+<td>AI as revision partner, maintaining voice</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total</strong>: ~280 min.</p>
+<p><strong>Why this set</strong>: Research-oriented students need the full foundation (A1–A3), plus the three C-track modules most relevant to producing a research paper: finding literature, writing code, and revising prose.</p>
+</section>
+<section id="standalone-ai-workshop-full-day-6-hours" class="level3">
+<h3 class="anchored" data-anchor-id="standalone-ai-workshop-full-day-6-hours">Standalone AI Workshop (full day, ~6 hours)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>Module</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Morning 1</td>
+<td>A1: What LLMs Do</td>
+<td>50 min</td>
+</tr>
+<tr class="even">
+<td>Morning 2</td>
+<td>A2: Prompting</td>
+<td>50 min</td>
+</tr>
+<tr class="odd">
+<td>Morning 3</td>
+<td>A3: When AI Helps/Hurts</td>
+<td>30 min</td>
+</tr>
+<tr class="even">
+<td><em>Break</em></td>
+<td></td>
+<td>15 min</td>
+</tr>
+<tr class="odd">
+<td>Afternoon 1</td>
+<td>Pick 2 from C-track based on audience</td>
+<td>50 min each</td>
+</tr>
+<tr class="even">
+<td>Afternoon 2</td>
+<td>Discussion and personal AI policy development</td>
+<td>30 min</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to choose the C modules</strong>: Pick based on your audience’s primary work: - Applied micro / empirical researchers → C1 (Lit Review) + C2 (Code Assistance) - Theory-oriented → C4 (Writing) + C5 (Math) - Methods / econometrics → C2 (Code Assistance) + C3 (Data Exploration) - Mixed → C1 (Lit Review) + C4 (Writing)</p>
+<hr>
+</section>
+</section>
+<section id="minimum-viable-subsets" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-viable-subsets">Minimum Viable Subsets</h2>
+<p>If you have limited time, here are the smallest useful combinations:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Available time</th>
+<th>Modules</th>
+<th>What students get</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>One session</strong> (50–80 min)</td>
+<td>A1 + A3</td>
+<td>Mental model for AI + metacognitive framework for when to use it</td>
+</tr>
+<tr class="even">
+<td><strong>Two sessions</strong> (~130 min)</td>
+<td>A1 + A3 + one C module</td>
+<td>Foundation + one applied domain (pick the C module most relevant to your course)</td>
+</tr>
+<tr class="odd">
+<td><strong>Three sessions</strong> (~180 min)</td>
+<td>A1 + A2 + A3 + one C module</td>
+<td>Full foundations + one applied domain</td>
+</tr>
+<tr class="even">
+<td><strong>One session, applied focus</strong></td>
+<td>Any single C module</td>
+<td>If students already have AI experience, jump straight to a workflow module. Each C module recaps enough foundation to work standalone.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="software-account-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="software-account-requirements">Software &amp; Account Requirements</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 22%">
+<col style="width: 15%">
+<col style="width: 7%">
+<col style="width: 18%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>AI Tool Access</th>
+<th>Terminal</th>
+<th>Git</th>
+<th>Stata or R</th>
+<th>GitHub Account</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1: What LLMs Do</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>A2: Prompting</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>A3: When AI Helps/Hurts</td>
+<td>Helpful but not required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>B1: Terminal Basics</td>
+<td>–</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>B2: Git &amp; GitHub</td>
+<td>–</td>
+<td>Required</td>
+<td>Required</td>
+<td>–</td>
+<td>Required</td>
+</tr>
+<tr class="even">
+<td>C1: Lit Review</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>C2: Code Assistance</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>Helpful (examples in Stata; R section included)</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>C3: Data Exploration</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>Helpful (examples in Stata; R alternatives shown)</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>C4: Writing &amp; Revision</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>C5: Math &amp; Derivations</td>
+<td>Required</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AI tool access</strong>: Any general-purpose LLM will work: ChatGPT, Claude, Gemini, Microsoft Copilot, institutional AI tools, etc. Students do not need paid accounts; free tiers are sufficient for all exercises.</p>
+<hr>
+</section>
+<section id="pre-class-setup-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="pre-class-setup-checklist">Pre-Class Setup Checklist</h2>
+<section id="before-b1-terminal-basics" class="level3">
+<h3 class="anchored" data-anchor-id="before-b1-terminal-basics">Before B1 (Terminal Basics)</h3>
+<p><strong>Mac students</strong>: - [ ] Locate Terminal.app (Applications &gt; Utilities, or Cmd+Space and type “Terminal”) - [ ] Open it and type <code>pwd</code> to verify it works - No installation required – macOS ships with a terminal.</p>
+<p><strong>Windows students</strong> (choose one): - [ ] <strong>Option A – Git Bash</strong> (easier): Install <a href="https://gitforwindows.org/">Git for Windows</a>. This provides both Git and a Unix-like terminal. - [ ] <strong>Option B – WSL</strong> (more powerful): Install Windows Subsystem for Linux via <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Microsoft’s guide</a>. Recommended for students who plan to do more computational work.</p>
+<p><strong>Suggestion</strong>: Send setup instructions at least one week before the session. Budget 5–10 minutes of class time for troubleshooting.</p>
+</section>
+<section id="before-b2-git-github" class="level3">
+<h3 class="anchored" data-anchor-id="before-b2-git-github">Before B2 (Git &amp; GitHub)</h3>
+<ul class="task-list">
+<li><p><label><input type="checkbox">Complete B1 setup (terminal access)</label></p></li>
+<li><p><label><input type="checkbox">Install Git:</label></p>
+<ul>
+<li>Mac: Run <code>xcode-select --install</code> in the terminal (installs Git with Xcode Command Line Tools)</li>
+<li>Windows: Comes with Git for Windows (if using Git Bash) or install via <code>sudo apt install git</code> in WSL</li>
+</ul></li>
+<li><p><label><input type="checkbox">Verify: run <code>git --version</code> in the terminal</label></p></li>
+<li><p><label><input type="checkbox">Create a free <a href="https://github.com">GitHub</a> account</label></p></li>
+<li><p><label><input type="checkbox">Configure Git identity:</label></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your.email@university.edu"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+<p><strong>Authentication note</strong>: Students will need to authenticate with GitHub to push commits. The simplest approach is a personal access token (Settings &gt; Developer settings &gt; Personal access tokens on GitHub). SSH keys are more permanent but harder to set up in class. Consider a brief setup guide or office hours session before the B2 module.</p>
+<hr>
+</section>
+</section>
+<section id="customizing-institutional-references" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-institutional-references">Customizing Institutional References</h2>
+<section id="how-to-swap-the-uvm-copilot-reference" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-swap-the-uvm-copilot-reference">How to swap the UVM Copilot reference</h3>
+<p>Module A1 contains a reference to UVM’s institutional AI tool in the exercise section:</p>
+<blockquote class="blockquote">
+<p>Try each of these with your preferred AI tool (UVM Copilot at <a href="https://go.uvm.edu/copilot">go.uvm.edu/copilot</a>, or another tool)</p>
+</blockquote>
+<p><strong>To adapt</strong>: Replace the parenthetical with your institution’s equivalent. For example:</p>
+<blockquote class="blockquote">
+<p>Try each of these with your preferred AI tool ([YourUniversity]’s [ToolName] at [URL], or another tool such as ChatGPT or Claude)</p>
+</blockquote>
+<p>If your institution does not provide an enterprise AI tool, simply remove the institutional reference:</p>
+<blockquote class="blockquote">
+<p>Try each of these with your preferred AI tool (ChatGPT, Claude, Gemini, or another tool)</p>
+</blockquote>
+<p>The <code>about.qmd</code> page also has a “UVM Context” section describing UVM’s enterprise Microsoft Copilot setup. Replace or remove this section to describe your own institution’s AI tool landscape.</p>
+</section>
+<section id="other-institution-specific-content" class="level3">
+<h3 class="anchored" data-anchor-id="other-institution-specific-content">Other institution-specific content</h3>
+<ul>
+<li>The <code>about.qmd</code> page lists Emily Beam / University of Vermont as the creator. Add your own attribution alongside or fork the project.</li>
+<li>B2 (Git) uses <code>your.email@uvm.edu</code> in the Git config example. Replace with your institution’s email domain.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="how-exercises-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-exercises-work">How Exercises Work</h2>
+<p>Every module includes at least one exercise. Exercise materials are stored in <code>exercises/&lt;module&gt;/</code> (e.g., <code>exercises/a1/</code>, <code>exercises/c2/</code>).</p>
+<section id="structure" class="level3">
+<h3 class="anchored" data-anchor-id="structure">Structure</h3>
+<ul>
+<li>Exercises are embedded in the module text with clear step-by-step instructions.</li>
+<li>Where exercises require downloadable materials (datasets, code files, worksheets), they are in the corresponding <code>exercises/</code> subdirectory.</li>
+<li>Answer keys and instructor notes are provided where applicable.</li>
+</ul>
+</section>
+<section id="delivery-formats" class="level3">
+<h3 class="anchored" data-anchor-id="delivery-formats">Delivery formats</h3>
+<p>Exercises can be run in any of these modes:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 40%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th>Best for</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Individual</strong></td>
+<td>Homework, pre-class prep</td>
+<td>Students work through at their own pace</td>
+</tr>
+<tr class="even">
+<td><strong>Pairs</strong></td>
+<td>In-class workshops</td>
+<td>Think-pair-share; one person drives, one evaluates</td>
+</tr>
+<tr class="odd">
+<td><strong>Instructor-led demo</strong></td>
+<td>Large lectures, time-constrained sessions</td>
+<td>Instructor projects the AI tool and walks through the exercise with class input</td>
+</tr>
+<tr class="even">
+<td><strong>Small group</strong></td>
+<td>Discussion-heavy modules (A3, C4)</td>
+<td>Groups of 3–4 compare their AI outputs and discuss</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tips-for-in-class-exercises" class="level3">
+<h3 class="anchored" data-anchor-id="tips-for-in-class-exercises">Tips for in-class exercises</h3>
+<ul>
+<li><strong>A1 exercises</strong> (failure mode tests): Work well as live demos. The “aha moment” when a fabricated citation looks real is very effective projected on screen.</li>
+<li><strong>A2 exercises</strong> (prompt makeover): Have students bring a real question from their coursework. Comparing “before” and “after” prompts with live AI output is compelling.</li>
+<li><strong>B1/B2 exercises</strong> (terminal and Git): These require students to follow along on their own machines. Go slowly. Budget time for troubleshooting.</li>
+<li><strong>C1 exercises</strong> (lit review): The verification step is the learning moment. Have students actually check citations in Google Scholar during class.</li>
+<li><strong>C2 exercises</strong> (debugging): Designed so that AI catches some bugs students miss and vice versa. The comparison is the point.</li>
+<li><strong>C3 exercises</strong> (data cleaning evaluation): The class discussion about different AI tools making different cleaning decisions is usually the most productive part.</li>
+<li><strong>C4 exercises</strong> (writing revision): Most effective when students bring their own writing. The contrast between broad rewrite and targeted edit is striking.</li>
+<li><strong>C5 exercises</strong> (math verification): Parts 3–4 (introducing intentional errors) consistently produce surprising results that drive good discussion.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="module-quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="module-quick-reference">Module Quick Reference</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 16%">
+<col style="width: 24%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>Time</th>
+<th>Coding?</th>
+<th>Key Takeaway</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1: What LLMs Do</td>
+<td>50 min</td>
+<td>No</td>
+<td>LLMs predict tokens, not truth. Failure modes follow from the mechanism.</td>
+</tr>
+<tr class="even">
+<td>A2: Prompting</td>
+<td>50 min</td>
+<td>No</td>
+<td>Clear prompts = clear thinking. Iterate, don’t optimize.</td>
+</tr>
+<tr class="odd">
+<td>A3: When AI Helps/Hurts</td>
+<td>30 min</td>
+<td>No</td>
+<td>Use the 2x2: core skill vs.&nbsp;not, can do vs.&nbsp;can’t yet. Be deliberate.</td>
+</tr>
+<tr class="even">
+<td>B1: Terminal Basics</td>
+<td>75 min</td>
+<td>Yes (terminal)</td>
+<td><code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>grep</code>, pipes. The foundation for everything else.</td>
+</tr>
+<tr class="odd">
+<td>B2: Git &amp; GitHub</td>
+<td>75 min</td>
+<td>Yes (terminal + Git)</td>
+<td>Clone, add, commit, push, pull. Version control is a research integrity tool.</td>
+</tr>
+<tr class="even">
+<td>C1: Lit Review</td>
+<td>50 min</td>
+<td>No</td>
+<td>AI is a synthesis tool, not a sourcing tool. Verify every citation.</td>
+</tr>
+<tr class="odd">
+<td>C2: Code Assistance</td>
+<td>50 min</td>
+<td>Yes (Stata/R)</td>
+<td>AI is better at reviewing code than writing it. Silent errors are the real risk.</td>
+</tr>
+<tr class="even">
+<td>C3: Data Exploration</td>
+<td>50 min</td>
+<td>Yes (Stata/R)</td>
+<td>Exploration = safe. Cleaning decisions = yours. Use AI as auditor, not decision-maker.</td>
+</tr>
+<tr class="odd">
+<td>C4: Writing &amp; Revision</td>
+<td>50 min</td>
+<td>No</td>
+<td>The sweet spot is revision, not generation. Writing is thinking.</td>
+</tr>
+<tr class="even">
+<td>C5: Math &amp; Derivations</td>
+<td>50 min</td>
+<td>No (math)</td>
+<td>AI math looks confident whether or not it’s correct. Build verification habits.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>All materials are licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. You are free to use, adapt, and redistribute with attribution.</p>
+<p>Suggested citation:</p>
+<blockquote class="blockquote">
+<p>Beam, Emily. (2026). <em>AI Literacy for Economists</em>. University of Vermont. https://github.com/eabeam/teaching-ai. Licensed CC-BY 4.0.</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

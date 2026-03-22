@@ -1,0 +1,7 @@
+school_id,district,school_type,num_teachers
+101,1,public,12
+102,1,public,8
+103,2,private,15
+104,2,public,10
+105,3,public,9
+106,3,private,20

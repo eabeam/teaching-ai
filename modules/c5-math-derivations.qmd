@@ -330,7 +330,9 @@ Now deliberately modify the problem in a subtle way and see if AI notices:
 
 ### Part 4: Test AI as a checker (~10 min)
 
-Write out a derivation with an intentional error somewhere in the middle. For example:
+Write out a derivation with one deliberate error — for example, swap two terms in a key equation. Paste it into AI and ask "Is each step in this derivation correct?" Record whether AI catches your error, misses it, or incorrectly flags a correct step as wrong.
+
+For example, you might write:
 
 > "Here's my derivation of the demand function from $U = x^{0.5} y^{0.5}$ with budget constraint $p_x x + p_y y = m$. Is each step correct?"
 >
@@ -340,7 +342,7 @@ Write out a derivation with an intentional error somewhere in the middle. For ex
 >
 > Step 3: $\frac{\partial \mathcal{L}}{\partial y} = 0.5 x^{0.5} y^{-0.5} - \lambda p_y = 0$
 >
-> Step 4: Dividing: $\frac{y}{x} = \frac{p_x}{p_y}$ [*intentional error: should be $\frac{p_y}{p_x}$*... wait, actually should be $\frac{p_x}{p_y}$ — double-check your own error!]
+> Step 4: Dividing: $\frac{y}{x} = \frac{p_y}{p_x}$ *(this is the deliberate error — the ratio should be flipped)*
 >
 > Step 5: Substituting into the budget constraint...
 

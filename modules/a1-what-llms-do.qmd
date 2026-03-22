@@ -72,7 +72,7 @@ The model has no internal model of truth. It has a model of *what text tends to 
 
 ### Step 4: Fine-tuning and RLHF
 
-Modern chat models like GPT-4 and Claude go through additional training:
+Modern chat models — like those from OpenAI, Anthropic, and Google — go through additional training:
 
 - **Instruction fine-tuning**: Trained on examples of helpful question-answer pairs so the model responds conversationally instead of just continuing text
 - **RLHF (Reinforcement Learning from Human Feedback)**: Human raters evaluate model outputs, and the model is further trained to produce responses humans rate as helpful, harmless, and honest
@@ -133,7 +133,12 @@ The model does not express calibrated uncertainty. It produces text in the same 
 
 ## Exercise: Test the Failure Modes
 
-Try each of these with your preferred AI tool (UVM Copilot at [go.uvm.edu/copilot](https://go.uvm.edu/copilot), or another tool):
+::: {.callout-note}
+## Which AI tool to use
+Your instructor will tell you which AI tool to use for these exercises. Many universities provide enterprise-protected AI access — check with your institution. At UVM, this is [Copilot Chat](https://go.uvm.edu/copilot).
+:::
+
+Try each of these with your preferred AI tool:
 
 ### 1. Hallucination test
 > "Give me three academic citations on the effect of cash transfers on educational outcomes in Sub-Saharan Africa."

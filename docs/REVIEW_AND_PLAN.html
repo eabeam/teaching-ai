@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>review_and_plan – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="./modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="./modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="./modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#teaching-ai-modules-review-and-improvement-plan" id="toc-teaching-ai-modules-review-and-improvement-plan" class="nav-link active" data-scroll-target="#teaching-ai-modules-review-and-improvement-plan">Teaching AI Modules: Review and Improvement Plan</a>
+  <ul class="collapse">
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link" data-scroll-target="#executive-summary">1. Executive Summary</a></li>
+  <li><a href="#module-by-module-review" id="toc-module-by-module-review" class="nav-link" data-scroll-target="#module-by-module-review">2. Module-by-Module Review</a>
+  <ul class="collapse">
+  <li><a href="#a1-what-llms-actually-do" id="toc-a1-what-llms-actually-do" class="nav-link" data-scroll-target="#a1-what-llms-actually-do">A1: What LLMs Actually Do</a></li>
+  <li><a href="#a2-prompting-as-problem-specification" id="toc-a2-prompting-as-problem-specification" class="nav-link" data-scroll-target="#a2-prompting-as-problem-specification">A2: Prompting as Problem Specification</a></li>
+  <li><a href="#a3-when-ai-helps-vs.-hurts-your-learning" id="toc-a3-when-ai-helps-vs.-hurts-your-learning" class="nav-link" data-scroll-target="#a3-when-ai-helps-vs.-hurts-your-learning">A3: When AI Helps vs.&nbsp;Hurts Your Learning</a></li>
+  <li><a href="#b1-terminal-basics" id="toc-b1-terminal-basics" class="nav-link" data-scroll-target="#b1-terminal-basics">B1: Terminal Basics</a></li>
+  <li><a href="#b2-git-github-essentials" id="toc-b2-git-github-essentials" class="nav-link" data-scroll-target="#b2-git-github-essentials">B2: Git &amp; GitHub Essentials</a></li>
+  <li><a href="#c1-literature-review-synthesis" id="toc-c1-literature-review-synthesis" class="nav-link" data-scroll-target="#c1-literature-review-synthesis">C1: Literature Review &amp; Synthesis</a></li>
+  <li><a href="#c2-code-assistance" id="toc-c2-code-assistance" class="nav-link" data-scroll-target="#c2-code-assistance">C2: Code Assistance</a></li>
+  <li><a href="#c3-data-exploration-cleaning" id="toc-c3-data-exploration-cleaning" class="nav-link" data-scroll-target="#c3-data-exploration-cleaning">C3: Data Exploration &amp; Cleaning</a></li>
+  <li><a href="#c4-writing-revision" id="toc-c4-writing-revision" class="nav-link" data-scroll-target="#c4-writing-revision">C4: Writing &amp; Revision</a></li>
+  <li><a href="#c5-math-derivations" id="toc-c5-math-derivations" class="nav-link" data-scroll-target="#c5-math-derivations">C5: Math &amp; Derivations</a></li>
+  </ul></li>
+  <li><a href="#cross-cutting-themes" id="toc-cross-cutting-themes" class="nav-link" data-scroll-target="#cross-cutting-themes">3. Cross-Cutting Themes</a>
+  <ul class="collapse">
+  <li><a href="#theme-1-the-exercise-gap" id="toc-theme-1-the-exercise-gap" class="nav-link" data-scroll-target="#theme-1-the-exercise-gap">Theme 1: The exercise gap</a></li>
+  <li><a href="#theme-2-no-materials-for-instructors-who-dont-use-stata" id="toc-theme-2-no-materials-for-instructors-who-dont-use-stata" class="nav-link" data-scroll-target="#theme-2-no-materials-for-instructors-who-dont-use-stata">Theme 2: No materials for instructors who don’t use Stata</a></li>
+  <li><a href="#theme-3-the-economists-analogy-pattern-works-protect-it" id="toc-theme-3-the-economists-analogy-pattern-works-protect-it" class="nav-link" data-scroll-target="#theme-3-the-economists-analogy-pattern-works-protect-it">Theme 3: The “economist’s analogy” pattern works – protect it</a></li>
+  <li><a href="#theme-4-timelessness-is-generally-strong-with-a-few-exceptions" id="toc-theme-4-timelessness-is-generally-strong-with-a-few-exceptions" class="nav-link" data-scroll-target="#theme-4-timelessness-is-generally-strong-with-a-few-exceptions">Theme 4: Timelessness is generally strong, with a few exceptions</a></li>
+  <li><a href="#theme-5-missing-scaffolding-for-semester-long-integration" id="toc-theme-5-missing-scaffolding-for-semester-long-integration" class="nav-link" data-scroll-target="#theme-5-missing-scaffolding-for-semester-long-integration">Theme 5: Missing scaffolding for semester-long integration</a></li>
+  </ul></li>
+  <li><a href="#improvement-plan" id="toc-improvement-plan" class="nav-link" data-scroll-target="#improvement-plan">4. Improvement Plan</a>
+  <ul class="collapse">
+  <li><a href="#criterion-1-specifics-and-relevance" id="toc-criterion-1-specifics-and-relevance" class="nav-link" data-scroll-target="#criterion-1-specifics-and-relevance">Criterion 1: Specifics and Relevance</a></li>
+  <li><a href="#criterion-2-timelessness" id="toc-criterion-2-timelessness" class="nav-link" data-scroll-target="#criterion-2-timelessness">Criterion 2: Timelessness</a></li>
+  <li><a href="#criterion-3-hands-on-and-real-world-practice" id="toc-criterion-3-hands-on-and-real-world-practice" class="nav-link" data-scroll-target="#criterion-3-hands-on-and-real-world-practice">Criterion 3: Hands-On and Real-World Practice</a></li>
+  <li><a href="#criterion-4-portability" id="toc-criterion-4-portability" class="nav-link" data-scroll-target="#criterion-4-portability">Criterion 4: Portability</a></li>
+  </ul></li>
+  <li><a href="#instructor-adoption-kit-proposal" id="toc-instructor-adoption-kit-proposal" class="nav-link" data-scroll-target="#instructor-adoption-kit-proposal">5. Instructor Adoption Kit Proposal</a>
+  <ul class="collapse">
+  <li><a href="#tier-1-essential-needed-for-basic-portability" id="toc-tier-1-essential-needed-for-basic-portability" class="nav-link" data-scroll-target="#tier-1-essential-needed-for-basic-portability">5.1 Tier 1: Essential (needed for basic portability)</a></li>
+  <li><a href="#tier-2-enhanced-significantly-improves-teachability" id="toc-tier-2-enhanced-significantly-improves-teachability" class="nav-link" data-scroll-target="#tier-2-enhanced-significantly-improves-teachability">5.2 Tier 2: Enhanced (significantly improves teachability)</a></li>
+  <li><a href="#tier-3-polished-for-wide-adoption" id="toc-tier-3-polished-for-wide-adoption" class="nav-link" data-scroll-target="#tier-3-polished-for-wide-adoption">5.3 Tier 3: Polished (for wide adoption)</a></li>
+  <li><a href="#priority-sequencing" id="toc-priority-sequencing" class="nav-link" data-scroll-target="#priority-sequencing">Priority Sequencing</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="teaching-ai-modules-review-and-improvement-plan" class="level1">
+<h1>Teaching AI Modules: Review and Improvement Plan</h1>
+<p><strong>Date</strong>: 2026-03-21 <strong>Reviewer</strong>: Claude (requested by Emily Beam) <strong>Scope</strong>: All 10 modules (A1-A3, B1-B2, C1-C5) <strong>Criteria</strong>: Specifics/Relevance, Timelessness, Hands-On Practice, Portability</p>
+<hr>
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">1. Executive Summary</h2>
+<ul>
+<li><p><strong>Biggest strength: Conceptual framing.</strong> Every module grounds AI use in economics-specific reasoning. The “economist’s analogies” are consistently strong – identification strategy for prompting (A2), measurement error for hallucinated citations (C1), computation vs.&nbsp;identification for code assistance (C2). These are genuinely illuminating, not forced.</p></li>
+<li><p><strong>Biggest strength: Honest about limitations.</strong> The modules avoid both techno-hype and Luddism. The 2x2 in A3, the “silent errors” framing in C2, the “you curate, AI synthesizes” principle in C1 – these are durable frameworks that will age well regardless of which models exist.</p></li>
+<li><p><strong>Biggest gap: No downloadable exercise materials.</strong> Every module describes exercises in-line, but none provide downloadable files – no buggy <code>.do</code> files, no sample datasets, no handout PDFs, no starter code. Instructors would need to build all exercise materials from scratch.</p></li>
+<li><p><strong>Biggest gap: The C-track modules are conceptually dense but exercise-light.</strong> C1, C3, C4, and C5 have thorough “what to do / what not to do” frameworks but the exercises are mostly “go try this with AI and reflect.” Students need more structured, verifiable tasks with concrete deliverables.</p></li>
+<li><p><strong>Risk: UVM Copilot reference.</strong> A1 links to <code>go.uvm.edu/copilot</code>. This is the only institution-specific reference, but it appears in the first module students encounter. Other instructors will hit this immediately.</p></li>
+<li><p><strong>Gap: No instructor-facing infrastructure.</strong> The <code>instructor-note</code> divs are helpful but brief. There are no lesson plans, no timing guides, no slide decks, no answer keys, no setup checklists. An instructor at another university would need to do significant prep work to teach any module.</p></li>
+<li><p><strong>Opportunity: The B-track modules are the most hands-on and closest to “ready to teach.”</strong> B1 and B2 have structured, step-by-step exercises with sample output. The C-track should adopt the same pattern.</p></li>
+</ul>
+<hr>
+</section>
+<section id="module-by-module-review" class="level2">
+<h2 class="anchored" data-anchor-id="module-by-module-review">2. Module-by-Module Review</h2>
+<section id="a1-what-llms-actually-do" class="level3">
+<h3 class="anchored" data-anchor-id="a1-what-llms-actually-do">A1: What LLMs Actually Do</h3>
+<p><strong>Current strengths</strong>: The one-sentence framing (“predicts the next token”) is effective and repeated well. The “Good vs.&nbsp;Dangerous mental models” tables are immediately usable teaching tools. The failure mode taxonomy (hallucination, sycophancy, anchoring, confident wrongness) is well-structured with economics-relevant examples. The p-hacking analogy for hallucination in Discussion Q2 is sharp. Further reading list is well-curated.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The exercises are “try this with AI and see what happens” – observational, not evaluative. Students paste prompts and observe outputs but have no structured framework for recording, comparing, or evaluating what they see. There is no deliverable beyond “notice that this happens.”</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p>Add a <strong>structured worksheet</strong> for the failure-mode exercises. For the hallucination test: provide a table where students record each citation, then columns for “Author exists? (Y/N)”, “Paper exists? (Y/N)”, “Journal correct? (Y/N)”, “Finding accurate? (Y/N)”, and a notes column. For the sycophancy test: a side-by-side comparison template where students paste both responses and highlight where the AI agrees with each contradictory premise. This turns “observe” into “document and evaluate.”</p></li>
+<li><p>Replace the generic cash-transfers citation prompt with a <strong>specific subfield prompt bank</strong> – 3-4 options across different economics fields (labor, development, health, trade) so students can pick something closer to their interests, and instructors in different subfields can choose the most relevant one.</p></li>
+<li><p>Add a <strong>live demo script</strong> for instructors: “Ask the model for 5 citations on [your subfield]. Project the output. Open Google Scholar. Check each one aloud with the class. Tally the results on the board.” The instructor note hints at this but doesn’t script it.</p></li>
+</ol>
+<hr>
+</section>
+<section id="a2-prompting-as-problem-specification" class="level3">
+<h3 class="anchored" data-anchor-id="a2-prompting-as-problem-specification">A2: Prompting as Problem Specification</h3>
+<p><strong>Current strengths</strong>: The identification-strategy analogy is the best in the series – it reframes prompting as a research skill rather than a tech trick. The ROCS framework is simple, memorable, and genuinely useful. The three-version IV example (vague / better / specific) is concrete and progressively builds the point. The “Prompting Paradox” callout is an important insight that is often missing from prompting guides. The iterative prompting section is practical and realistic.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The “Prompt Makeover” exercise gives four before-prompts but no rubric, no sample rewrites, and no systematic way for students to evaluate which rewrite is better. It is a good idea executed loosely.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p>For the Prompt Makeover exercise, add <strong>sample “good” rewrites</strong> in a collapsible section (like the bug answers in C2), plus a <strong>simple rubric</strong>: “Does your rewrite specify R (role/context)? O (objective)? C (constraints)? S (specifics)? Rate each 0-2.” This makes the exercise self-assessable and discussion-ready.</p></li>
+<li><p>Add a <strong>“prompt log” template</strong> that students can use for any homework assignment going forward – columns for: original prompt, AI output quality (1-5), what was missing (R/O/C/S), revised prompt, improved output quality. This connects the module to ongoing practice rather than being a one-off exercise.</p></li>
+<li><p>Replace or supplement the generic “Help me find a topic” exercise with a <strong>paired prompt competition</strong>: students each write a prompt for the same task (e.g., “explain the difference between fixed and random effects”), compare AI outputs side by side, and vote on which prompt produced the more useful output. Then discuss why. This adds a social/competitive element and makes the quality difference vivid.</p></li>
+</ol>
+<hr>
+</section>
+<section id="a3-when-ai-helps-vs.-hurts-your-learning" class="level3">
+<h3 class="anchored" data-anchor-id="a3-when-ai-helps-vs.-hurts-your-learning">A3: When AI Helps vs.&nbsp;Hurts Your Learning</h3>
+<p><strong>Current strengths</strong>: The 2x2 framework (core skill vs.&nbsp;not / can do vs.&nbsp;can’t yet) is the strongest single framework in the entire module set – it is simple, memorable, and genuinely decision-relevant. The “desirable difficulty” grounding in learning science is well-done and gives the module intellectual weight beyond “be careful with AI.” The warning signs section is specific and honest. The “personal policy” template is a practical output students can actually use.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The “Your AI Audit” exercise is reflective but entirely self-reported and unstructured. There is no mechanism for students to test their own assessments – they could fill out the table and learn nothing if they are not honest or self-aware.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p>Add a <strong>concrete “can you still do it?” self-test</strong>. Pick 3-5 specific tasks that students in the target course should be able to do (e.g., “Set up a Lagrangian for a constrained optimization problem,” “Interpret a diff-in-diff coefficient,” “Write a Stata merge command from memory”). Have students attempt each for 3 minutes without AI, then rate their confidence. This makes the audit tangible and sometimes uncomfortable – which is the point.</p></li>
+<li><p>Pair the personal policy exercise with a <strong>“policy swap”</strong>: students write their policy, trade with a partner, and each person identifies one place where the other’s policy is too permissive or too restrictive. This adds external accountability.</p></li>
+<li><p>Add a <strong>“one week later” follow-up prompt</strong>: after students write their personal AI policies, suggest instructors revisit in 1-2 weeks with the question “Did you follow your policy? Where did you deviate? Why?” This connects the module to actual behavior change rather than being a one-time reflection.</p></li>
+</ol>
+<hr>
+</section>
+<section id="b1-terminal-basics" class="level3">
+<h3 class="anchored" data-anchor-id="b1-terminal-basics">B1: Terminal Basics</h3>
+<p><strong>Current strengths</strong>: This is the most “ready to teach” module in the set. The progression from <code>pwd</code> through pipes is well-scaffolded. The Stata analogies are effective (terminal as Stata’s command window, <code>cat</code>/<code>head</code>/<code>less</code> mapped to <code>list</code>). The exercise includes setup commands to create practice data, sample solutions, and a logical progression of tasks. The instructor note is the most detailed of any module, including common student issues and a shorter-session adaptation. The <code>rm</code> warning is well-placed and appropriately alarming.</p>
+<p><strong>Weakest criterion: Specifics and relevance.</strong> The example data (household survey in Kenya) is good but could be richer. The exercise creates a 4-row CSV, which limits what students can meaningfully explore. With slightly more rows and variables, students could answer more interesting questions with pipes.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Provide a downloadable sample CSV</strong> with 50-100 rows and 6-8 variables (e.g., a simulated household survey with hhid, district, treatment, income, n_children, female_head, survey_round, consumption). Host it in the repo at <code>exercises/b1/household_survey.csv</code>. This replaces the <code>echo</code> commands in the setup and gives students enough data to make <code>grep | wc -l</code> and pipes feel genuinely useful. Include a <code>README.md</code> in the exercise folder describing the simulated data.</p></li>
+<li><p>Add a <strong>“scavenger hunt” exercise variant</strong>: give students a list of 8-10 questions about a dataset or project folder that can each be answered with 1-2 terminal commands (e.g., “How many .do files are in the code/ directory?”, “What is the last line of the log file?”, “Which files mention the variable <code>consumption</code>?”). Students race to answer them all. This is more engaging than the current sequential walkthrough and works well as a timed in-class activity.</p></li>
+<li><p>Add a <strong>Windows setup guide</strong> as a separate downloadable document. The module mentions Git Bash and WSL but doesn’t walk through installation. Windows students will be blocked if setup instructions aren’t sent in advance. A one-page PDF with screenshots would prevent the most common first-day problem.</p></li>
+</ol>
+<hr>
+</section>
+<section id="b2-git-github-essentials" class="level3">
+<h3 class="anchored" data-anchor-id="b2-git-github-essentials">B2: Git &amp; GitHub Essentials</h3>
+<p><strong>Current strengths</strong>: The opening (the <code>analysis_v2_final_REAL_oct12_after_meeting.do</code> list) is the best hook in any module – every student and instructor has lived this. The “missing data problem” analogy is creative and accurate. The staged workflow diagram is clear. The commit message good/bad table is immediately usable. The “What We’re Not Covering” table is honest and well-scoped. The diff-reading section is practical and often skipped in Git tutorials aimed at economists.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The exercise asks students to clone the <code>teaching-ai</code> repo itself, which is clever but creates a problem: students can’t push to it. Parts 1-3 work, but Part 4 (“push if you have a remote”) is hand-wavy. Students don’t create their own repo, so they don’t experience the full workflow. The exercise also doesn’t involve any collaboration, which is Git’s primary value proposition for economists.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Restructure the exercise so each student creates their own repo.</strong> Step 1: <code>git init my-research-project &amp;&amp; cd my-research-project</code>. Step 2: Create a simple <code>analysis.do</code> file. Step 3: <code>git add</code>, <code>git commit</code>. Step 4: Edit the file, <code>git diff</code>, <code>git add</code>, <code>git commit</code>. Step 5 (optional, requires GitHub account): Create a repo on GitHub, add remote, push. This gives students ownership and a repo they can keep using. Provide exact commands for each step.</p></li>
+<li><p>Add a <strong>“time travel” mini-exercise</strong>: after students have 3+ commits, have them use <code>git log --oneline</code>, then <code>git show &lt;hash&gt;:analysis.do</code> to see an earlier version, then <code>git diff &lt;hash1&gt; &lt;hash2&gt;</code> to compare two versions. This demonstrates the core value proposition (you can always go back) in a way students can feel.</p></li>
+<li><p>Create a <strong>downloadable <code>.gitignore</code> template for economics projects</strong> (ignores <code>.dta</code>, <code>.csv</code>, <code>.log</code>, <code>.pdf</code>, <code>*.aux</code>, <code>*.synctex.gz</code>, <code>.DS_Store</code>, etc.) and include it in the exercise. The module mentions <code>.gitignore</code> as “skipped” but it’s essential for economics projects where students will immediately try to commit 500MB data files. A ready-made template removes this friction point.</p></li>
+</ol>
+<hr>
+</section>
+<section id="c1-literature-review-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="c1-literature-review-synthesis">C1: Literature Review &amp; Synthesis</h3>
+<p><strong>Current strengths</strong>: The “AI is good at processing text you give it, bad at retrieving facts” principle is the sharpest framing in the module set for this topic. The five-step workflow (brainstorm terms, search databases, summarize verified papers, identify gaps, verify everything) is practical and well-sequenced. The hallucination failure-mode table (fabricated, wrong authors, wrong findings, composite, outdated) is comprehensive. The citation verification exercise is well-designed with realistic prompts.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The exercise asks students to find 3 papers and paste abstracts, which is good, but it’s entirely open-ended – there’s no way to know if students did it well or poorly. The “For the Ambitious” anti-pattern exercise is the most valuable part and should be required, not optional.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Make the anti-pattern exercise mandatory and structured.</strong> Provide a specific prompt: “Ask your AI tool: ‘Give me 5 key citations on [the topic you chose].’ For each citation, fill in this verification table: Author(s), Year, Title, Journal, Exists? (Y/N), Finding Accurate? (Y/N), Notes.” Then compare: How many of the 5 were real? How many had accurate findings? This produces a concrete, gradeable artifact and viscerally demonstrates the hallucination problem. Provide a blank downloadable verification table as a PDF/Word doc.</p></li>
+<li><p>Add a <strong>curated list of 3-4 real papers for each of the three suggested topics</strong> (teacher quality, immigration, microfinance) so that instructors who want a more structured exercise can distribute actual abstracts rather than having students search. This also enables a standardized “compare your AI synthesis to the actual abstracts” evaluation.</p></li>
+<li><p>Add a section on <strong>AI-powered search tools</strong> (Semantic Scholar, Elicit, Consensus, Connected Papers) with a brief honest assessment of each: what they do well, what they miss, how they compare to Google Scholar + EconLit. These tools sit between “ask ChatGPT for citations” and “search databases yourself” and students will encounter them. The module should acknowledge they exist and help students evaluate them critically.</p></li>
+</ol>
+<hr>
+</section>
+<section id="c2-code-assistance" class="level3">
+<h3 class="anchored" data-anchor-id="c2-code-assistance">C2: Code Assistance</h3>
+<p><strong>Current strengths</strong>: The debugging exercise is the best single exercise in the entire module set. It has a concrete buggy do-file, specific bugs at multiple difficulty levels, a “find bugs yourself first” step, an “ask AI” comparison step, and a collapsible answer key. The silent-errors framing is important and well-illustrated. The Stata-specific and R-specific trap tables are practical and fill a real gap – most AI-and-code guides ignore language-specific pitfalls. The “computation vs.&nbsp;identification” distinction is the key idea and it’s articulated clearly.</p>
+<p><strong>Weakest criterion: Portability.</strong> The exercise is embedded in the module text rather than being a standalone file. There’s no downloadable <code>buggy_analysis.do</code> that students could open in their editor and actually run. The answer key is in a collapsible div, which works on the web but not as a handout. An instructor would need to extract the code, create the do-file, and format the answer key separately.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Create a downloadable exercise package</strong> at <code>exercises/c2/</code>:</p>
+<ul>
+<li><code>buggy_analysis.do</code> – the buggy code from the exercise, ready to open in Stata</li>
+<li><code>student_data.dta</code> and <code>school_data.dta</code> – small simulated datasets (20-30 obs) so students can actually <em>run</em> the buggy code and see errors/silent failures</li>
+<li><code>bug_hunt_worksheet.md</code> – a structured worksheet: “Bug 1: Line <strong><em>, Issue: </em></strong>, Fix: ___” for each bug, plus space for “Bugs I found” vs.&nbsp;“Bugs AI found”</li>
+<li><code>answer_key.md</code> – instructor-only answer key with all 5 bugs explained This transforms a conceptual exercise into one students can actually execute.</li>
+</ul></li>
+<li><p>Add a <strong>second exercise focused on code review</strong> (the module argues AI is better at reviewing than writing). Give students a 30-line do-file that runs correctly but has 3-4 best-practice violations (hardcoded path, missing <code>_merge</code> check, no <code>set seed</code> before a random operation, unlabeled variables). Task: “Use AI to review this code for reproducibility risks. Then evaluate: did AI catch the real issues, or did it flag irrelevant things?” This exercises the “AI as code reviewer” concept that the module advocates.</p></li>
+<li><p><strong>Add an R version of the buggy code exercise.</strong> The module covers R-specific traps but the exercise is Stata-only. A parallel <code>buggy_analysis.R</code> with equivalent bugs (wrong join type, silent type coercion, factor issues, ungrouped mutate) would make the module usable in R-based courses. Store at <code>exercises/c2/buggy_analysis.R</code>.</p></li>
+</ol>
+<hr>
+</section>
+<section id="c3-data-exploration-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="c3-data-exploration-cleaning">C3: Data Exploration &amp; Cleaning</h3>
+<p><strong>Current strengths</strong>: The distinction between exploration (safe, descriptive) and cleaning (dangerous, judgment-laden) is the core insight and it’s well-argued. The “adversarial data auditing” concept – having AI review your work rather than doing the work – is sophisticated and genuinely useful advice for research practice. The outlier-handling options table (drop, winsorize, keep, investigate, log-transform) maps decisions to justifications, which is exactly what students need. The cleaning exercise with simulated <code>summarize</code> output is well-designed.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The exercise asks students to paste simulated summary statistics into AI, which is good for demonstrating the concept, but students never touch actual data. They read a table of numbers, ask AI to comment on it, and evaluate the AI’s comments. There’s no moment where a student runs code, sees output, and makes a decision.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Create a simulated dataset</strong> at <code>exercises/c3/labor_survey.dta</code> (and <code>.csv</code>) containing the exact data described in the exercise – 10,000 obs, two rounds, the negative earnings value, the suspicious treatment split, the missingness patterns. Include a <code>README.md</code> describing the data-generating process (so instructors know the “ground truth”). This lets students actually run <code>summarize</code>, actually see the missingness, actually confront the -500 earnings value in their own Stata/R session. The ground truth README lets instructors create answer keys.</p></li>
+<li><p>Add a <strong>“cleaning decision log” template</strong> – a structured document where students record each cleaning decision: What did you find? What did you decide? Why? What is the alternative you rejected? How does this affect your sample size? This is the “cleaning memo” mentioned in passing but should be a formal, downloadable template that students fill in. Format: markdown or Word doc at <code>exercises/c3/cleaning_decision_log.md</code>.</p></li>
+<li><p>Add a <strong>before/after comparison exercise</strong>: provide the same simulated dataset with and without a set of undocumented cleaning decisions applied (different <code>.dta</code> files: <code>labor_survey_raw.dta</code> and <code>labor_survey_cleaned.dta</code>). Task: “Compare the raw and cleaned datasets. What changed? Can you reverse-engineer what cleaning decisions were made? Do you agree with all of them?” This makes the “undocumented cleaning is dangerous” argument visceral rather than hypothetical.</p></li>
+</ol>
+<hr>
+</section>
+<section id="c4-writing-revision" class="level3">
+<h3 class="anchored" data-anchor-id="c4-writing-revision">C4: Writing &amp; Revision</h3>
+<p><strong>Current strengths</strong>: The “writing IS thinking” argument is the strongest conceptual point in the C-track. The writing spectrum table (brainstorming through drafting, with risk levels) is a practical decision framework. The before/after/targeted-edit demonstration is excellent pedagogy – students can see exactly how a broad rewrite destroys voice while a targeted edit preserves it. The economics-specific writing prompts (results description, identification strategy paragraph, table notes, abstract) are immediately usable. The reverse outlining technique is genuinely valuable and undersold in most writing guides.</p>
+<p><strong>Weakest criterion: Specifics and relevance.</strong> The module is somewhat generic in its writing examples. The migration finding example is good but it’s the only fully-worked economics example. The identification strategy prompt uses a minimum-wage DID that is fine but could be more specific (real states, real years, real data sources). The table notes prompt is described but no example table is shown.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Add 2-3 more before/after/targeted-edit demonstrations</strong> using different economics writing genres: (a) a results paragraph from a regression table, showing how AI rewrites lose precision about magnitudes and significance while the targeted edit sharpens them; (b) a literature review transition that connects two specific real papers; (c) a policy implications paragraph where AI’s version adds unwarranted generalization. Store these as downloadable examples at <code>exercises/c4/</code>.</p></li>
+<li><p><strong>Provide a sample regression table</strong> (even a mock one) for the “table notes” exercise, so students can actually practice writing notes for a concrete table rather than imagining one. Include the table as an image or formatted markdown, plus a sample AI-generated note and an instructor-written note for comparison.</p></li>
+<li><p>Add a <strong>“spot the AI” exercise</strong>: provide 4 short paragraphs (2 student-written, 2 AI-generated) on the same economics topic and have students identify which are AI-generated and why. Then discuss: what features gave it away? This makes the “AI prose is recognizable” claim testable and helps students internalize the tells (excessive hedging, generic transitions, false balance, lack of specificity).</p></li>
+</ol>
+<hr>
+</section>
+<section id="c5-math-derivations" class="level3">
+<h3 class="anchored" data-anchor-id="c5-math-derivations">C5: Math &amp; Derivations</h3>
+<p><strong>Current strengths</strong>: The three worked examples (Cobb-Douglas demand, labor supply elasticity, comparative statics with SOC) are progressively more difficult and each illustrates a different failure mode. The verification framework (boundary cases, dimensional analysis, special cases, work backwards, check signs) is practical and transferable. The “introduce an error and see if AI catches it” exercise is clever and produces genuinely surprising results. The distinction between “AI gets the algebra right but the interpretation wrong” is an important insight specific to economics.</p>
+<p><strong>Weakest criterion: Hands-on practice.</strong> The exercise is well-structured (solve yourself, ask AI, introduce error, test AI as checker) but all four parts happen in the same session and there’s no deliverable. Students do the work but produce nothing an instructor can evaluate or that they can refer back to. The “introduce an error” instruction in Part 4 is confusing – the example walks itself into a correction mid-sentence, which will confuse students.</p>
+<p><strong>Top improvements</strong>:</p>
+<ol type="1">
+<li><p><strong>Create a downloadable “verification report” template</strong> at <code>exercises/c5/verification_report.md</code> with structured sections: “Problem Statement”, “My Solution (key steps)”, “AI’s Solution (key steps)”, “Discrepancies”, “Verification Checks Performed” (with checkboxes for boundary cases, units, special cases, work backward, sign checks), “Conclusion: Is the AI solution correct?” This makes the exercise produce a gradeable artifact.</p></li>
+<li><p><strong>Provide 2-3 pre-made “AI derivations with errors”</strong> that students can evaluate. For example: (a) a Cobb-Douglas derivation with a sign error in the MRS step; (b) a profit maximization where the SOC is not checked and the production function actually has increasing returns; (c) an elasticity derivation that gets the formula right but misinterprets income vs.&nbsp;substitution effects. Provide these as formatted PDFs at <code>exercises/c5/</code>. This standardizes the exercise and ensures every student encounters meaningful errors, rather than depending on what AI happens to produce in real time.</p></li>
+<li><p><strong>Clean up the Part 4 exercise text.</strong> The current text includes a parenthetical that corrects itself mid-sentence: <code>"[*intentional error: should be $\frac{p_y}{p_x}$*... wait, actually should be $\frac{p_x}{p_y}$ -- double-check your own error!]"</code>. This is confusing. Replace with a clean instruction: “Write out a derivation with one deliberate error – for example, swap two terms in the MRS condition. Paste it into AI and ask ‘Is each step correct?’ Record whether AI catches your error, misses it, or incorrectly flags a correct step.”</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="cross-cutting-themes" class="level2">
+<h2 class="anchored" data-anchor-id="cross-cutting-themes">3. Cross-Cutting Themes</h2>
+<section id="theme-1-the-exercise-gap" class="level3">
+<h3 class="anchored" data-anchor-id="theme-1-the-exercise-gap">Theme 1: The exercise gap</h3>
+<p>Every module has exercises, but the C-track modules (C1-C5) rely heavily on “paste something into AI and evaluate the output.” This is a legitimate exercise format, but it produces highly variable results depending on which AI tool, which session, and which prompt the student uses. There is no standardized baseline for comparison or grading.</p>
+<p>The B-track modules (B1, B2) show a better pattern: structured tasks with specific commands, expected outputs, and verifiable results. The C-track should adopt this pattern by providing downloadable exercise materials with known “ground truth” answers.</p>
+</section>
+<section id="theme-2-no-materials-for-instructors-who-dont-use-stata" class="level3">
+<h3 class="anchored" data-anchor-id="theme-2-no-materials-for-instructors-who-dont-use-stata">Theme 2: No materials for instructors who don’t use Stata</h3>
+<p>The modules reference Stata throughout (A2, B1, B2, C2, C3, C5 all have Stata-specific content). R appears in C2’s trap table and occasionally elsewhere, but there are no R-equivalent exercises. Python is absent entirely. An instructor teaching in R or Python would need to translate every code example and exercise.</p>
+</section>
+<section id="theme-3-the-economists-analogy-pattern-works-protect-it" class="level3">
+<h3 class="anchored" data-anchor-id="theme-3-the-economists-analogy-pattern-works-protect-it">Theme 3: The “economist’s analogy” pattern works – protect it</h3>
+<p>Every module uses economics-specific analogies to explain AI concepts, and they are consistently the strongest element. The identification-strategy analogy for prompting, the measurement-error analogy for hallucination, the computation-vs-identification distinction for code – these are what make the modules distinctive and valuable. Any revision should preserve and extend this pattern, not dilute it with generic tech-focused framing.</p>
+</section>
+<section id="theme-4-timelessness-is-generally-strong-with-a-few-exceptions" class="level3">
+<h3 class="anchored" data-anchor-id="theme-4-timelessness-is-generally-strong-with-a-few-exceptions">Theme 4: Timelessness is generally strong, with a few exceptions</h3>
+<p>The modules avoid naming specific models or tools in most places. The references to “GPT-4 and Claude” in A1 (Step 4: Fine-tuning and RLHF) and the <code>go.uvm.edu/copilot</code> link in A1’s exercise section are the main exceptions. The conceptual frameworks (next-token prediction, hallucination, sycophancy, the 2x2, computation vs.&nbsp;identification) are durable. The biggest timelessness risk is actually in C1, where the claim that “AI hallucinates citations routinely” may become less true as tools improve – but the module wisely addresses this with the “not getting better fast enough to trust” callout, which can be updated as needed.</p>
+</section>
+<section id="theme-5-missing-scaffolding-for-semester-long-integration" class="level3">
+<h3 class="anchored" data-anchor-id="theme-5-missing-scaffolding-for-semester-long-integration">Theme 5: Missing scaffolding for semester-long integration</h3>
+<p>Each module is designed as a standalone session, but there’s no guidance on sequencing, cumulative skill-building, or semester-long integration. An instructor who wants to weave these into an existing course (rather than teaching them as a standalone workshop) gets no help with: Which modules are prerequisites for others? What’s the minimum viable subset? How do these connect to specific points in an econometrics or micro syllabus?</p>
+<hr>
+</section>
+</section>
+<section id="improvement-plan" class="level2">
+<h2 class="anchored" data-anchor-id="improvement-plan">4. Improvement Plan</h2>
+<section id="criterion-1-specifics-and-relevance" class="level3">
+<h3 class="anchored" data-anchor-id="criterion-1-specifics-and-relevance">Criterion 1: Specifics and Relevance</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action Item</th>
+<th>Module(s)</th>
+<th>Effort</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create a downloadable 50-100 row simulated household survey CSV for B1 exercises</td>
+<td>B1</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Create simulated <code>labor_survey.dta</code>/<code>.csv</code> with known data quality issues for C3</td>
+<td>C3</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Create <code>buggy_analysis.do</code> + simulated <code>.dta</code> files so students can run the C2 exercise</td>
+<td>C2</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Create parallel <code>buggy_analysis.R</code> with equivalent R-specific bugs</td>
+<td>C2</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Add 2-3 subfield-specific citation prompt options to A1 hallucination exercise</td>
+<td>A1</td>
+<td>Quick fix</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Add 2-3 more before/after/targeted-edit writing examples for C4</td>
+<td>C4</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Add a sample regression table for the C4 “table notes” exercise</td>
+<td>C4</td>
+<td>Quick fix</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Provide curated real-paper lists for C1’s three suggested topics</td>
+<td>C1</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Add a section on AI-powered literature search tools (Semantic Scholar, Elicit, etc.) to C1</td>
+<td>C1</td>
+<td>Half-day</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Create pre-made “AI derivations with errors” for C5 exercises</td>
+<td>C5</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="criterion-2-timelessness" class="level3">
+<h3 class="anchored" data-anchor-id="criterion-2-timelessness">Criterion 2: Timelessness</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action Item</th>
+<th>Module(s)</th>
+<th>Effort</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Replace “GPT-4 and Claude” in A1 Step 4 with generic phrasing: “Modern chat models go through additional training”</td>
+<td>A1</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Move the UVM Copilot link from inline text to a configurable callout: “Your institution may provide an AI tool – check with your instructor. At UVM, this is go.uvm.edu/copilot.” Make the callout easy for other instructors to swap.</td>
+<td>A1</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Add a “last reviewed” date and a note about which claims may change (e.g., citation hallucination rates) to C1</td>
+<td>C1</td>
+<td>Quick fix</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>In C1’s “This Is Not Getting Better Fast Enough to Trust” callout, add language that acknowledges improvement trajectory: “Check the latest evidence on hallucination rates for the tool you’re using, but verify citations regardless.”</td>
+<td>C1</td>
+<td>Quick fix</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Review the 2023 lawyer anecdote in C1 – it’s already 3 years old. Consider framing as “early examples” rather than recent news</td>
+<td>C1</td>
+<td>Quick fix</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Ensure all further-reading citations in A1 include enough info to find them if URLs change (author, year, title, publication)</td>
+<td>A1</td>
+<td>Quick fix</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="criterion-3-hands-on-and-real-world-practice" class="level3">
+<h3 class="anchored" data-anchor-id="criterion-3-hands-on-and-real-world-practice">Criterion 3: Hands-On and Real-World Practice</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action Item</th>
+<th>Module(s)</th>
+<th>Effort</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create structured worksheets for A1 failure-mode exercises (hallucination verification table, sycophancy comparison template)</td>
+<td>A1</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Make C1’s anti-pattern exercise (ask AI for citations, then verify) required instead of optional; add downloadable verification table</td>
+<td>C1</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Add sample “good” rewrites to A2’s Prompt Makeover exercise in collapsible sections, plus a self-assessment rubric</td>
+<td>A2</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Create “can you still do it?” self-test with 3-5 timed micro-tasks for A3</td>
+<td>A3</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Build a “scavenger hunt” exercise variant for B1 with 8-10 terminal-answerable questions</td>
+<td>B1</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Restructure B2 exercise so students create their own repo + add “time travel” mini-exercise</td>
+<td>B2</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Add a code-review exercise to C2 (clean but non-reproducible do-file for students to review with AI)</td>
+<td>C2</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Create before/after dataset comparison exercise for C3 (raw vs.&nbsp;undocumented-cleaned)</td>
+<td>C3</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Add “spot the AI” exercise to C4 (4 paragraphs, identify which are AI-generated)</td>
+<td>C4</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Create downloadable verification report template for C5</td>
+<td>C5</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Clean up C5 Part 4 exercise text (remove the confusing self-correcting parenthetical)</td>
+<td>C5</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Add a prompt log template (reusable across modules) for A2 that students use all semester</td>
+<td>A2</td>
+<td>Quick fix</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Add a “policy swap” pair activity to A3</td>
+<td>A3</td>
+<td>Quick fix</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="criterion-4-portability" class="level3">
+<h3 class="anchored" data-anchor-id="criterion-4-portability">Criterion 4: Portability</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action Item</th>
+<th>Module(s)</th>
+<th>Effort</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create a master “Instructor Setup Guide” covering: prerequisites, software needed, accounts needed, suggested sequencing, minimum viable module subsets, and how to adapt for R vs.&nbsp;Stata</td>
+<td>All</td>
+<td>Multi-session</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Create a <code>.gitignore</code> template for economics projects (downloadable, referenced in B2)</td>
+<td>B2</td>
+<td>Quick fix</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Create a Windows terminal setup guide (Git Bash installation with screenshots) as a standalone PDF</td>
+<td>B1</td>
+<td>Half-day</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>For each module, extract exercises into standalone downloadable files (worksheets, handouts, starter code) in <code>exercises/&lt;module&gt;/</code></td>
+<td>All</td>
+<td>Multi-session</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Create answer keys / discussion guides for each module’s exercises (instructor-only, could be distributed via a separate repo or gated folder)</td>
+<td>All</td>
+<td>Multi-session</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Add timing estimates to each exercise step (not just the module total)</td>
+<td>All</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Create a “Module Adaptation Guide” for each module: 3 variants (50-min lecture, 75-min workshop, take-home assignment) with different exercise selections</td>
+<td>All</td>
+<td>Multi-session</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Create a suggested syllabus integration document: “If you’re teaching Intro Micro, use modules A1-A3 + C5 in weeks 2, 4, 6, 10. If you’re teaching Econometrics, use A1-A3 + B1-B2 + C2-C3 in weeks 1-3 + 5-6.”</td>
+<td>All</td>
+<td>Half-day</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Add R-equivalent examples alongside Stata examples in C2, C3, and C5 (either inline with tabs or as separate downloadable files)</td>
+<td>C2, C3, C5</td>
+<td>Multi-session</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Create slide decks (or at minimum, slide outlines) for the 5 most commonly taught modules (A1, A2, A3, C1, C2)</td>
+<td>A1-A3, C1, C2</td>
+<td>Multi-session</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="instructor-adoption-kit-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="instructor-adoption-kit-proposal">5. Instructor Adoption Kit Proposal</h2>
+<p>To make these modules maximally portable – teachable by any economics instructor at any university with minimal prep – the following supplementary materials should be created.</p>
+<section id="tier-1-essential-needed-for-basic-portability" class="level3">
+<h3 class="anchored" data-anchor-id="tier-1-essential-needed-for-basic-portability">5.1 Tier 1: Essential (needed for basic portability)</h3>
+<p><strong>File: <code>INSTRUCTOR_GUIDE.md</code></strong> - Module dependency graph (A1 -&gt; A2 -&gt; A3 as a sequence; B1 -&gt; B2 as a sequence; A1-A3 as prerequisites for all C modules) - Suggested sequencing for different course types (principles, intermediate micro, econometrics, senior seminar) - Minimum viable subsets: “If you only have one class session, teach A1+A3. If you have three, add A2+C1 or A2+C2.” - Software/account requirements per module (terminal, Git, GitHub account, AI tool access, Stata or R) - Pre-class setup checklist (what students need to install/configure before each module) - How to swap out the UVM Copilot reference for your institution’s tool</p>
+<p><strong>Folder: <code>exercises/</code> with per-module subfolders</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>exercises/a1/</code></td>
+<td><code>hallucination_verification_table.pdf</code>, <code>sycophancy_comparison_template.pdf</code>, <code>failure_modes_worksheet.pdf</code></td>
+</tr>
+<tr class="even">
+<td><code>exercises/a2/</code></td>
+<td><code>prompt_makeover_worksheet.pdf</code> (with rubric), <code>prompt_log_template.md</code> (reusable)</td>
+</tr>
+<tr class="odd">
+<td><code>exercises/a3/</code></td>
+<td><code>ai_audit_worksheet.pdf</code>, <code>personal_ai_policy_template.md</code>, <code>self_test_tasks.pdf</code> (3-5 timed micro-tasks, with versions for micro, metrics, and principles)</td>
+</tr>
+<tr class="even">
+<td><code>exercises/b1/</code></td>
+<td><code>household_survey.csv</code> (50-100 rows), <code>scavenger_hunt.pdf</code> (8-10 questions + answer key), <code>windows_setup_guide.pdf</code></td>
+</tr>
+<tr class="odd">
+<td><code>exercises/b2/</code></td>
+<td><code>git_exercise_walkthrough.pdf</code> (create-your-own-repo version), <code>econ_gitignore_template</code> (ready to copy), <code>git_cheatsheet.pdf</code> (one-page reference)</td>
+</tr>
+<tr class="even">
+<td><code>exercises/c1/</code></td>
+<td><code>citation_verification_table.pdf</code>, <code>curated_paper_lists/</code> (3-4 topics with real citations and abstracts)</td>
+</tr>
+<tr class="odd">
+<td><code>exercises/c2/</code></td>
+<td><code>buggy_analysis.do</code>, <code>student_data.dta</code>, <code>school_data.dta</code>, <code>bug_hunt_worksheet.pdf</code>, <code>answer_key.pdf</code>, <code>buggy_analysis.R</code> (R equivalent)</td>
+</tr>
+<tr class="even">
+<td><code>exercises/c3/</code></td>
+<td><code>labor_survey.dta</code>, <code>labor_survey.csv</code>, <code>cleaning_decision_log.md</code>, <code>data_readme.md</code> (ground truth), <code>labor_survey_cleaned.dta</code> (for before/after exercise)</td>
+</tr>
+<tr class="odd">
+<td><code>exercises/c4/</code></td>
+<td><code>writing_examples/</code> (3 before/after/targeted-edit sets), <code>spot_the_ai.pdf</code> (4 paragraphs exercise), <code>sample_regression_table.pdf</code></td>
+</tr>
+<tr class="even">
+<td><code>exercises/c5/</code></td>
+<td><code>verification_report_template.md</code>, <code>ai_derivations_with_errors/</code> (2-3 PDF problem sets with planted errors), <code>answer_keys/</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tier-2-enhanced-significantly-improves-teachability" class="level3">
+<h3 class="anchored" data-anchor-id="tier-2-enhanced-significantly-improves-teachability">5.2 Tier 2: Enhanced (significantly improves teachability)</h3>
+<p><strong>File: Per-module lesson plans</strong> (<code>lesson_plans/&lt;module&gt;_lesson_plan.md</code>) - Minute-by-minute timing for a 50-min and 75-min version - Which sections to skip in a shorter session - Suggested live-demo scripts (what to type/show, what to expect) - “If students ask…” FAQ with 3-5 common questions and suggested responses - How to run the exercise: individual vs.&nbsp;pairs vs.&nbsp;groups, timing per step, what to discuss after</p>
+<p><strong>File: <code>ASSESSMENT_MENU.md</code></strong> - For each module: 2-3 assessment options at different levels of effort - Low: participation/reflection (submit the completed worksheet) - Medium: process document (submit prompt log, verification table, cleaning memo) - High: portfolio piece (code review report, lit review process document, writing revision log) - Sample rubrics for the medium and high options - How to grade process, not just output</p>
+<p><strong>File: <code>ADAPTATION_GUIDE.md</code></strong> - How to teach the C-track modules in R instead of Stata (specific code translations) - How to adapt for principles-level students (what to cut, what to simplify, what to add) - How to adapt for graduate students (what to cut as too basic, what to extend) - How to teach as a standalone workshop vs.&nbsp;embedded in a semester-long course</p>
+</section>
+<section id="tier-3-polished-for-wide-adoption" class="level3">
+<h3 class="anchored" data-anchor-id="tier-3-polished-for-wide-adoption">5.3 Tier 3: Polished (for wide adoption)</h3>
+<p><strong>Slide decks</strong> (<code>slides/&lt;module&gt;_slides.qmd</code>) - Quarto-based slides matching the site theme - Key figures and tables from each module - Speaker notes embedded - 5 modules minimum: A1, A2, A3, C1, C2</p>
+<p><strong>Video walkthroughs</strong> (linked, not hosted in repo) - 5-10 min screencasts for B1 and B2 exercises (terminal and Git are hardest to learn from text alone) - Live demo recordings of the A1 hallucination exercise and C2 debugging exercise</p>
+<p><strong>Pre-configured student environments</strong> - A GitHub Classroom template repo for B2 exercises - A Codespace or cloud-based terminal option for B1 (for students who can’t install anything)</p>
+</section>
+<section id="priority-sequencing" class="level3">
+<h3 class="anchored" data-anchor-id="priority-sequencing">Priority Sequencing</h3>
+<p>If implementing in phases:</p>
+<ol type="1">
+<li><strong>Phase 1</strong> (1-2 working days): Quick fixes across all modules (timelessness edits, exercise text cleanup, UVM reference handling) + create <code>INSTRUCTOR_GUIDE.md</code> + downloadable exercise files for the 3 most-taught modules (A1, C2, B1)</li>
+<li><strong>Phase 2</strong> (3-4 working days): Exercise materials for remaining modules + lesson plans for A1-A3 + C1-C2 + <code>ASSESSMENT_MENU.md</code></li>
+<li><strong>Phase 3</strong> (1-2 weeks): R equivalents for C-track exercises + <code>ADAPTATION_GUIDE.md</code> + slide decks for top 5 modules</li>
+<li><strong>Phase 4</strong> (ongoing): Video walkthroughs, GitHub Classroom integration, community feedback incorporation</li>
+</ol>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

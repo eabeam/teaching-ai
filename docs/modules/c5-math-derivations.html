@@ -617,13 +617,14 @@ window.Quarto = {
 </section>
 <section id="part-4-test-ai-as-a-checker-10-min" class="level3">
 <h3 class="anchored" data-anchor-id="part-4-test-ai-as-a-checker-10-min">Part 4: Test AI as a checker (~10 min)</h3>
-<p>Write out a derivation with an intentional error somewhere in the middle. For example:</p>
+<p>Write out a derivation with one deliberate error — for example, swap two terms in a key equation. Paste it into AI and ask “Is each step in this derivation correct?” Record whether AI catches your error, misses it, or incorrectly flags a correct step as wrong.</p>
+<p>For example, you might write:</p>
 <blockquote class="blockquote">
 <p>“Here’s my derivation of the demand function from <span class="math inline">\(U = x^{0.5} y^{0.5}\)</span> with budget constraint <span class="math inline">\(p_x x + p_y y = m\)</span>. Is each step correct?”</p>
 <p>Step 1: <span class="math inline">\(\mathcal{L} = x^{0.5} y^{0.5} + \lambda(m - p_x x - p_y y)\)</span></p>
 <p>Step 2: <span class="math inline">\(\frac{\partial \mathcal{L}}{\partial x} = 0.5 x^{-0.5} y^{0.5} - \lambda p_x = 0\)</span></p>
 <p>Step 3: <span class="math inline">\(\frac{\partial \mathcal{L}}{\partial y} = 0.5 x^{0.5} y^{-0.5} - \lambda p_y = 0\)</span></p>
-<p>Step 4: Dividing: <span class="math inline">\(\frac{y}{x} = \frac{p_x}{p_y}\)</span> [<em>intentional error: should be <span class="math inline">\(\frac{p_y}{p_x}\)</span></em>… wait, actually should be <span class="math inline">\(\frac{p_x}{p_y}\)</span> — double-check your own error!]</p>
+<p>Step 4: Dividing: <span class="math inline">\(\frac{y}{x} = \frac{p_y}{p_x}\)</span> <em>(this is the deliberate error — the ratio should be flipped)</em></p>
 <p>Step 5: Substituting into the budget constraint…</p>
 </blockquote>
 <p>The question: does AI catch your intentional mistake? In our experience, AI catches obvious errors (wrong formula entirely) but often misses sign and ratio errors — exactly the kind of errors that matter most.</p>

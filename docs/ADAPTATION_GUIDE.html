@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>adaptation_guide – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="./modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="./modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="./modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#adaptation-guide" id="toc-adaptation-guide" class="nav-link active" data-scroll-target="#adaptation-guide">Adaptation Guide</a>
+  <ul class="collapse">
+  <li><a href="#for-r-instead-of-stata" id="toc-for-r-instead-of-stata" class="nav-link" data-scroll-target="#for-r-instead-of-stata">For R Instead of Stata</a>
+  <ul class="collapse">
+  <li><a href="#c2-code-assistance" id="toc-c2-code-assistance" class="nav-link" data-scroll-target="#c2-code-assistance">C2: Code Assistance</a></li>
+  <li><a href="#c3-data-exploration-cleaning" id="toc-c3-data-exploration-cleaning" class="nav-link" data-scroll-target="#c3-data-exploration-cleaning">C3: Data Exploration &amp; Cleaning</a></li>
+  <li><a href="#c5-math-derivations" id="toc-c5-math-derivations" class="nav-link" data-scroll-target="#c5-math-derivations">C5: Math &amp; Derivations</a></li>
+  </ul></li>
+  <li><a href="#for-principles-level-students" id="toc-for-principles-level-students" class="nav-link" data-scroll-target="#for-principles-level-students">For Principles-Level Students</a>
+  <ul class="collapse">
+  <li><a href="#general-adjustments" id="toc-general-adjustments" class="nav-link" data-scroll-target="#general-adjustments">General adjustments</a></li>
+  <li><a href="#module-specific-cuts-and-simplifications" id="toc-module-specific-cuts-and-simplifications" class="nav-link" data-scroll-target="#module-specific-cuts-and-simplifications">Module-specific cuts and simplifications</a></li>
+  <li><a href="#recommended-subset-for-principles" id="toc-recommended-subset-for-principles" class="nav-link" data-scroll-target="#recommended-subset-for-principles">Recommended subset for principles</a></li>
+  </ul></li>
+  <li><a href="#for-graduate-students" id="toc-for-graduate-students" class="nav-link" data-scroll-target="#for-graduate-students">For Graduate Students</a>
+  <ul class="collapse">
+  <li><a href="#what-is-too-basic" id="toc-what-is-too-basic" class="nav-link" data-scroll-target="#what-is-too-basic">What is too basic</a></li>
+  <li><a href="#what-to-extend" id="toc-what-to-extend" class="nav-link" data-scroll-target="#what-to-extend">What to extend</a></li>
+  <li><a href="#additional-readings-for-graduate-courses" id="toc-additional-readings-for-graduate-courses" class="nav-link" data-scroll-target="#additional-readings-for-graduate-courses">Additional readings for graduate courses</a></li>
+  </ul></li>
+  <li><a href="#for-a-standalone-workshop-vs.-semester-long-integration" id="toc-for-a-standalone-workshop-vs.-semester-long-integration" class="nav-link" data-scroll-target="#for-a-standalone-workshop-vs.-semester-long-integration">For a Standalone Workshop vs.&nbsp;Semester-Long Integration</a>
+  <ul class="collapse">
+  <li><a href="#standalone-workshop-half-day-or-full-day" id="toc-standalone-workshop-half-day-or-full-day" class="nav-link" data-scroll-target="#standalone-workshop-half-day-or-full-day">Standalone workshop (half day or full day)</a></li>
+  <li><a href="#semester-long-integration" id="toc-semester-long-integration" class="nav-link" data-scroll-target="#semester-long-integration">Semester-long integration</a></li>
+  <li><a href="#sequencing-across-multiple-weeks" id="toc-sequencing-across-multiple-weeks" class="nav-link" data-scroll-target="#sequencing-across-multiple-weeks">Sequencing across multiple weeks</a></li>
+  </ul></li>
+  <li><a href="#for-non-us-institutions" id="toc-for-non-us-institutions" class="nav-link" data-scroll-target="#for-non-us-institutions">For Non-US Institutions</a>
+  <ul class="collapse">
+  <li><a href="#what-is-us-specific" id="toc-what-is-us-specific" class="nav-link" data-scroll-target="#what-is-us-specific">What is US-specific</a></li>
+  <li><a href="#what-is-already-international" id="toc-what-is-already-international" class="nav-link" data-scroll-target="#what-is-already-international">What is already international</a></li>
+  <li><a href="#language-considerations" id="toc-language-considerations" class="nav-link" data-scroll-target="#language-considerations">Language considerations</a></li>
+  <li><a href="#regulatory-and-policy-differences" id="toc-regulatory-and-policy-differences" class="nav-link" data-scroll-target="#regulatory-and-policy-differences">Regulatory and policy differences</a></li>
+  </ul></li>
+  <li><a href="#quick-reference-adaptation-checklist" id="toc-quick-reference-adaptation-checklist" class="nav-link" data-scroll-target="#quick-reference-adaptation-checklist">Quick Reference: Adaptation Checklist</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="adaptation-guide" class="level1">
+<h1>Adaptation Guide</h1>
+<p>How to customize these modules for different statistical software, student levels, institutional contexts, and delivery formats.</p>
+<hr>
+<section id="for-r-instead-of-stata" class="level2">
+<h2 class="anchored" data-anchor-id="for-r-instead-of-stata">For R Instead of Stata</h2>
+<p>Three modules use Stata in their primary examples: <strong>C2 (Code Assistance)</strong>, <strong>C3 (Data Exploration &amp; Cleaning)</strong>, and to a lesser extent <strong>C5 (Math &amp; Derivations)</strong> in its discussion of code verification. Here is what to change and what stays the same.</p>
+<section id="c2-code-assistance" class="level3">
+<h3 class="anchored" data-anchor-id="c2-code-assistance">C2: Code Assistance</h3>
+<p><strong>What changes</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 63%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stata concept in module</th>
+<th>R equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>merge 1:1 hhid using "file.dta"</code></td>
+<td><code>left_join(df1, df2, by = "hhid")</code> (or <code>inner_join</code>, <code>full_join</code>)</td>
+</tr>
+<tr class="even">
+<td><code>egen mean_inc = mean(income), by(district)</code></td>
+<td><code>df %&gt;% group_by(district) %&gt;% mutate(mean_inc = mean(income, na.rm = TRUE))</code></td>
+</tr>
+<tr class="odd">
+<td><code>gen log_classsize = log(class_size)</code></td>
+<td><code>df &lt;- df %&gt;% mutate(log_classsize = log(class_size))</code></td>
+</tr>
+<tr class="even">
+<td><code>reg y x1 x2, robust</code></td>
+<td><code>lm_robust(y ~ x1 + x2, data = df)</code> (estimatr) or <code>coeftest(lm(y ~ x1 + x2), vcov = vcovHC)</code></td>
+</tr>
+<tr class="odd">
+<td><code>i.school</code> (factor notation)</td>
+<td><code>factor(school)</code> or <code>as.factor(school)</code></td>
+</tr>
+<tr class="even">
+<td>Stata error messages (r(459), etc.)</td>
+<td>R tracebacks and warning messages</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What stays the same</strong>: The entire framework (Section 5: “When to Use AI for Code”) is language-agnostic. The categories – use freely, use but verify, do not outsource – apply identically to R. The distinction between computation and identification does not depend on the language.</p>
+<p><strong>The debugging exercise</strong>: Rewrite the buggy do-file as a buggy R script with equivalent errors:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buggy R equivalent for the C2 exercise</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"student_data.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize test scores (</span><span class="al">BUG</span><span class="co">: wrong formula)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">test_z =</span> test_score <span class="sc">-</span> <span class="fu">mean</span>(test_score) <span class="sc">/</span> <span class="fu">sd</span>(test_score))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Log of class size</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">log_classsize =</span> <span class="fu">log</span>(class_size))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge with school data (</span><span class="al">BUG</span><span class="co">: wrong join type or key)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>school <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"school_data.csv"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(df, school, <span class="at">by =</span> <span class="st">"hhid"</span>)  <span class="co"># wrong key</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression (</span><span class="al">BUG</span><span class="co">: district FE instead of school FE)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(test_z <span class="sc">~</span> log_classsize <span class="sc">+</span> <span class="fu">factor</span>(district), <span class="at">data =</span> df)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>R-specific failure modes to add</strong>: The module already includes a table of R-specific traps (tidyverse vs.&nbsp;base R confusion, silent type coercion, factor level issues, non-standard evaluation). Expand these with examples relevant to your course.</p>
+</section>
+<section id="c3-data-exploration-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="c3-data-exploration-cleaning">C3: Data Exploration &amp; Cleaning</h3>
+<p><strong>What changes</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stata in module</th>
+<th>R equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>describe</code> / <code>summarize</code></td>
+<td><code>str(df)</code> / <code>summary(df)</code> or <code>skimr::skim(df)</code></td>
+</tr>
+<tr class="even">
+<td><code>misstable summarize</code></td>
+<td><code>naniar::miss_var_summary(df)</code> or <code>colSums(is.na(df))</code></td>
+</tr>
+<tr class="odd">
+<td><code>tab treatment survey_round, missing</code></td>
+<td><code>table(df$treatment, df$survey_round, useNA = "always")</code></td>
+</tr>
+<tr class="even">
+<td><code>duplicates report</code></td>
+<td><code>df %&gt;% group_by(hhid, survey_round) %&gt;% filter(n() &gt; 1)</code></td>
+</tr>
+<tr class="odd">
+<td><code>histogram hh_income, by(treatment)</code></td>
+<td><code>ggplot(df, aes(x = hh_income)) + geom_histogram() + facet_wrap(~treatment)</code></td>
+</tr>
+<tr class="even">
+<td><code>codebook, compact</code></td>
+<td><code>Hmisc::describe(df)</code> or <code>labelled::look_for(df)</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>What stays the same</strong>: The entire framework (exploration = safe, cleaning decisions = yours, use AI as auditor not decision-maker) is language-agnostic.</p>
+</section>
+<section id="c5-math-derivations" class="level3">
+<h3 class="anchored" data-anchor-id="c5-math-derivations">C5: Math &amp; Derivations</h3>
+<p><strong>Minimal changes needed.</strong> This module is primarily about mathematical reasoning, not coding. The only software-dependent content is a brief mention of Stata-specific verification. Replace any Stata references with R equivalents for verifying formulas computationally (e.g., using <code>deriv()</code> or the <code>Deriv</code> package for symbolic differentiation).</p>
+<hr>
+</section>
+</section>
+<section id="for-principles-level-students" class="level2">
+<h2 class="anchored" data-anchor-id="for-principles-level-students">For Principles-Level Students</h2>
+<p>The modules are written for advanced undergraduates with some economics background. Here is how to adapt for intro students.</p>
+<section id="general-adjustments" class="level3">
+<h3 class="anchored" data-anchor-id="general-adjustments">General adjustments</h3>
+<ul>
+<li><strong>Remove or simplify econometric references.</strong> Modules frequently use instrumental variables, diff-in-diff, and causal inference as examples. For principles students, replace these with supply/demand, elasticity, and basic market analysis examples.</li>
+<li><strong>Replace “research” framing with “learning” framing.</strong> Instead of “for your research paper,” say “for your problem set” or “for understanding this concept.”</li>
+<li><strong>Slow down the math.</strong> C5 (Math &amp; Derivations) assumes comfort with constrained optimization. For principles, reframe around algebra and graphical analysis – e.g., AI checking whether a supply/demand equilibrium calculation is correct.</li>
+</ul>
+</section>
+<section id="module-specific-cuts-and-simplifications" class="level3">
+<h3 class="anchored" data-anchor-id="module-specific-cuts-and-simplifications">Module-specific cuts and simplifications</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 23%">
+<col style="width: 36%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>What to cut</th>
+<th>What to simplify</th>
+<th>What to add</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A1</strong></td>
+<td>The <span class="math inline">\(P(\text{next token} \mid \cdot)\)</span> notation. The RLHF details.</td>
+<td>Lean harder on the “autocomplete” analogy. Simplify the training description to “it learned patterns from lots of text.”</td>
+<td>More relatable examples: ask AI about a concept from their current chapter.</td>
+</tr>
+<tr class="even">
+<td><strong>A2</strong></td>
+<td>The identification strategy analogy. The ROCS acronym can stay but simplify examples.</td>
+<td>Replace econometrics examples with principles examples: “Explain supply and demand to me” vs.&nbsp;“Explain why the demand curve for gasoline is relatively inelastic, using a real-world example a college student would understand.”</td>
+<td>Scaffold the rewriting exercise more heavily – provide example rewrites, not just prompts.</td>
+</tr>
+<tr class="odd">
+<td><strong>A3</strong></td>
+<td>The research-oriented examples in the 2x2 (IV estimates, coding exercises).</td>
+<td>Reframe the 2x2 with principles examples: “Understanding why price floors cause surplus” (core skill) vs.&nbsp;“Formatting a graph in Excel” (not core).</td>
+<td>Add more concrete examples of the fluency trap from intro-level studying.</td>
+</tr>
+<tr class="even">
+<td><strong>C1</strong></td>
+<td>The entire module may be too advanced. Consider skipping or doing a 15-minute version focused on “always verify citations.”</td>
+<td>If using: cut the structured review workflow and focus on the verification demonstration.</td>
+<td>Replace the research-oriented exercise with “ask AI to explain a concept from this week’s reading and check whether it’s accurate.”</td>
+</tr>
+<tr class="odd">
+<td><strong>C2</strong></td>
+<td>The debugging exercise assumes intermediate coding. Skip or replace.</td>
+<td>Focus only on the “explaining code” use case: paste in code from the textbook or problem set, ask AI to explain it.</td>
+<td>Replace with a simpler exercise: “Use AI to explain what this Excel formula does” or “Ask AI to help you interpret a regression table from your textbook.”</td>
+</tr>
+<tr class="even">
+<td><strong>C3</strong></td>
+<td>Too advanced for principles. Skip.</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td><strong>C4</strong></td>
+<td>The economics-specific writing sections (identification strategy paragraphs, results descriptions).</td>
+<td>Focus on the general revision techniques: reverse outlining, concision editing, paragraph diagnostics. These apply to any writing assignment.</td>
+<td>Add an exercise using a 5-paragraph essay or short response rather than a research paper.</td>
+</tr>
+<tr class="even">
+<td><strong>C5</strong></td>
+<td>Too advanced for principles unless your course is calculus-based.</td>
+<td>If your principles course uses calculus: simplify to “check my derivative” and “verify my optimization” with basic supply/demand problems.</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="recommended-subset-for-principles" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-subset-for-principles">Recommended subset for principles</h3>
+<p><strong>Minimum</strong> (1 session): A1 + A3 – every principles student benefits from understanding what AI is and developing judgment about when to use it.</p>
+<p><strong>With more time</strong> (2–3 sessions): A1 + A2 + A3 + C4 (simplified). Prompting skills and writing revision are immediately useful regardless of level.</p>
+<hr>
+</section>
+</section>
+<section id="for-graduate-students" class="level2">
+<h2 class="anchored" data-anchor-id="for-graduate-students">For Graduate Students</h2>
+<section id="what-is-too-basic" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-too-basic">What is too basic</h3>
+<ul>
+<li><strong>A1 (What LLMs Do)</strong>: The content is fine but the pacing may feel slow. Consider assigning A1 as pre-reading and spending class time on discussion questions only. Graduate students can handle the mechanism explanation in 10 minutes instead of 50.</li>
+<li><strong>A2 (Prompting)</strong>: The ROCS framework is useful but the “Prompt Makeover” exercise with “Help me find a topic for my econ research paper” is undergraduate-coded. Replace with prompts from graduate-level tasks: “Help me think about the exclusion restriction for this IV,” “Suggest robustness checks for this RDD.”</li>
+<li><strong>A3 (When AI Helps/Hurts)</strong>: The 2x2 framework is fine. The homework examples need upgrading to qualifier prep, paper writing, and refereeing.</li>
+</ul>
+</section>
+<section id="what-to-extend" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-extend">What to extend</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>Extension for graduate students</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A1</strong></td>
+<td>Add a discussion of attention mechanisms, transformer architecture, and scale laws. Assign Vaswani et al.&nbsp;(2017) or a summary. Discuss: what are the implications of the training data composition for AI’s knowledge of economics?</td>
+</tr>
+<tr class="even">
+<td><strong>A2</strong></td>
+<td>Teach system prompts / custom instructions. Discuss building reusable prompt templates for recurring research tasks (literature summaries, code review, LaTeX formatting).</td>
+</tr>
+<tr class="odd">
+<td><strong>C1</strong></td>
+<td>Assign as a serious component of the qualifying exam or field paper process. Require students to compare AI-generated literature maps to their own reading lists. Discuss: how would a referee evaluate a literature review they suspect was AI-assisted?</td>
+</tr>
+<tr class="even">
+<td><strong>C2</strong></td>
+<td>Add a section on using AI for structural estimation code, simulation design, and replication verification. Discuss AI-assisted code review in the context of co-author collaboration and pre-publication auditing.</td>
+</tr>
+<tr class="odd">
+<td><strong>C3</strong></td>
+<td>Extend to include AI-assisted data pipeline documentation for replication packages. Discuss the AEA Data Editor’s requirements and how AI tools can help meet them.</td>
+</tr>
+<tr class="even">
+<td><strong>C4</strong></td>
+<td>Focus on referee response drafting, grant writing, and job market paper revision. Add exercises using real (anonymized) referee reports.</td>
+</tr>
+<tr class="odd">
+<td><strong>C5</strong></td>
+<td>Extend to proofs, not just derivations. Discuss AI’s limitations with novel mathematical arguments – relevant for theory papers. Add a section on formal proof assistants (Lean, Coq) vs.&nbsp;LLMs for verification.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="additional-readings-for-graduate-courses" class="level3">
+<h3 class="anchored" data-anchor-id="additional-readings-for-graduate-courses">Additional readings for graduate courses</h3>
+<ul>
+<li>Korinek, A. (2023). “Generative AI for Economic Research: Use Cases and Implications for Economists.” <em>Journal of Economic Literature</em>.</li>
+<li>Dell, M. (2024). “Deep Learning for Economists.” Working paper.</li>
+<li>Agrawal, A., Gans, J., &amp; Goldfarb, A. (2018). <em>Prediction Machines</em>. (For the economics of AI framing.)</li>
+<li>Bender et al.&nbsp;(2021). “On the Dangers of Stochastic Parrots.” (Already in A1 further reading.)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="for-a-standalone-workshop-vs.-semester-long-integration" class="level2">
+<h2 class="anchored" data-anchor-id="for-a-standalone-workshop-vs.-semester-long-integration">For a Standalone Workshop vs.&nbsp;Semester-Long Integration</h2>
+<section id="standalone-workshop-half-day-or-full-day" class="level3">
+<h3 class="anchored" data-anchor-id="standalone-workshop-half-day-or-full-day">Standalone workshop (half day or full day)</h3>
+<p><strong>Pacing</strong>: Move faster through content, slower through exercises. The exercises are where learning happens.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Duration</th>
+<th>Schedule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Half day (3 hours)</strong></td>
+<td>A1 (30 min, condensed) + A3 (20 min) + one C module (50 min) + discussion (20 min)</td>
+</tr>
+<tr class="even">
+<td><strong>Full day (6 hours)</strong></td>
+<td>See the schedule in INSTRUCTOR_GUIDE.md. Morning: A1 + A2 + A3. Afternoon: two C modules + wrap-up.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What to cut for time</strong>: - In A1: Skip the “Further Reading” section and the 4th discussion question. Condense the RLHF explanation. - In A2: Skip the “Kitchen Sink” and “Leading Question” failure examples. Keep “Blank Canvas” and “Implicit Assumption” – they land hardest. - In A3: Skip the “Developing Your Personal Policy” template. Use the 2x2 as the main takeaway. - In C modules: Do the exercise as an instructor-led demo rather than having each participant work independently. This cuts 15–20 minutes per module.</p>
+<p><strong>Logistics</strong>: - Ensure wifi access and AI tool access before the workshop starts. - For B1/B2 workshops: send setup instructions 1 week in advance and offer a 30-minute drop-in setup session the day before. - Provide a single-page “cheat sheet” handout for each module – key frameworks, commands, or checklists that participants can take with them.</p>
+</section>
+<section id="semester-long-integration" class="level3">
+<h3 class="anchored" data-anchor-id="semester-long-integration">Semester-long integration</h3>
+<p><strong>Pacing</strong>: One module every 1–2 weeks, with homework exercises between sessions.</p>
+<p><strong>Recommended semester arc</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weeks</th>
+<th>Modules</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1–2</td>
+<td>A1 + A3</td>
+<td>Set norms early. Students understand what AI is and develop their AI use policy before the first problem set.</td>
+</tr>
+<tr class="even">
+<td>3–4</td>
+<td>A2</td>
+<td>Prompting skills, useful immediately for homework.</td>
+</tr>
+<tr class="odd">
+<td>5–6</td>
+<td>B1 (if needed)</td>
+<td>Terminal skills, prerequisite for B2 or useful in its own right for data work.</td>
+</tr>
+<tr class="even">
+<td>7–8</td>
+<td>One C module</td>
+<td>Pick the one most aligned with current course content.</td>
+</tr>
+<tr class="odd">
+<td>9–10</td>
+<td>A second C module</td>
+<td>Reinforce the framework with a different domain.</td>
+</tr>
+<tr class="even">
+<td>11–12</td>
+<td>B2 or a third C module</td>
+<td>If students are doing a final project, B2 (Git) is valuable. Otherwise, another C module.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Integration tips</strong>: - Assign A3’s “Personal AI Policy” in week 2 and revisit it in week 8 – students’ views will have changed. - Use module exercises as graded homework, not just in-class activities. - Reference the module frameworks when giving feedback on other assignments: “This is a case where the 2x2 from A3 applies – you used AI for a core skill.”</p>
+</section>
+<section id="sequencing-across-multiple-weeks" class="level3">
+<h3 class="anchored" data-anchor-id="sequencing-across-multiple-weeks">Sequencing across multiple weeks</h3>
+<p>If you’re teaching multiple modules over a semester, here are natural pairings by week:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 16%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pairing</th>
+<th>Time</th>
+<th>Why they work together</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1 + A3</td>
+<td>80 min</td>
+<td>Mental model + metacognition in one block</td>
+</tr>
+<tr class="even">
+<td>B1 + B2</td>
+<td>150 min</td>
+<td>Terminal + Git in the same week (or back-to-back sessions)</td>
+</tr>
+<tr class="odd">
+<td>A2 + C2</td>
+<td>100 min</td>
+<td>Prompt quality matters most when generating code</td>
+</tr>
+<tr class="even">
+<td>C1 + C4</td>
+<td>100 min</td>
+<td>Both are about AI processing YOUR text, not generating from scratch</td>
+</tr>
+<tr class="odd">
+<td>C3 + C2</td>
+<td>100 min</td>
+<td>Data exploration flows naturally into code assistance</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="for-non-us-institutions" class="level2">
+<h2 class="anchored" data-anchor-id="for-non-us-institutions">For Non-US Institutions</h2>
+<section id="what-is-us-specific" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-us-specific">What is US-specific</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 39%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Content</th>
+<th>Where it appears</th>
+<th>How to localize</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>UVM Copilot</strong> reference</td>
+<td>A1 exercise section, about.qmd</td>
+<td>Replace with your institution’s AI tool or a generic reference (see INSTRUCTOR_GUIDE.md)</td>
+</tr>
+<tr class="even">
+<td><strong>UVM email</strong> in Git config</td>
+<td>B2 setup instructions</td>
+<td>Replace <code>your.email@uvm.edu</code> with your institution’s email domain</td>
+</tr>
+<tr class="odd">
+<td><strong>AEA / NBER / SSRN</strong> references</td>
+<td>C1 (Lit Review), C2 (Code Assistance)</td>
+<td>AEA and NBER are international resources, but add your region’s equivalents: CEPR (Europe), BREAD (development), IZA (labor), your national economics association’s working paper series</td>
+</tr>
+<tr class="even">
+<td><strong>Google Scholar</strong></td>
+<td>C1 (Lit Review)</td>
+<td>Google Scholar is available globally but may have different coverage by region. Add any regional databases your students use.</td>
+</tr>
+<tr class="odd">
+<td><strong>US-centric examples</strong></td>
+<td>Various: Medicaid, state minimum wage, ACS data, EITC</td>
+<td>Replace with locally relevant policy examples. The economics is the same – swap the institutional context.</td>
+</tr>
+<tr class="even">
+<td><strong>Dollar amounts</strong></td>
+<td>C3 (Data Exploration: income in KES), C2 (income thresholds)</td>
+<td>Already somewhat international (Kenya shillings appear in several examples). Adjust currency and magnitudes to your context.</td>
+</tr>
+<tr class="odd">
+<td><strong>Stata/R dominance</strong></td>
+<td>C2, C3</td>
+<td>Stata is standard in US economics but less universal elsewhere. Some programs emphasize R, Python, or Julia. See the “For R Instead of Stata” section above.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-is-already-international" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-already-international">What is already international</h3>
+<p>Most of the content is not US-specific:</p>
+<ul>
+<li>The mechanism of LLMs (A1) is universal.</li>
+<li>Prompting skills (A2) are language-agnostic (though all examples are in English – translate exercises if teaching in another language).</li>
+<li>The metacognitive framework (A3) applies everywhere.</li>
+<li>Terminal and Git (B1, B2) are identical across countries.</li>
+<li>The lit review workflow (C1) works for any field and any database.</li>
+<li>The code assistance framework (C2) applies to any language and any coding environment.</li>
+<li>Writing and math (C4, C5) are universal skills.</li>
+</ul>
+</section>
+<section id="language-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="language-considerations">Language considerations</h3>
+<p>All modules are written in English. If teaching in another language:</p>
+<ul>
+<li>The conceptual content translates directly.</li>
+<li>Exercises that involve prompting AI may work differently in non-English languages (LLMs perform best in English; performance in other languages varies by model and language).</li>
+<li>Consider adding a discussion of how AI performance varies across languages – this is a real limitation students should understand.</li>
+</ul>
+</section>
+<section id="regulatory-and-policy-differences" class="level3">
+<h3 class="anchored" data-anchor-id="regulatory-and-policy-differences">Regulatory and policy differences</h3>
+<ul>
+<li><strong>Data privacy</strong>: B6 (Data Privacy, not yet drafted) will reference FERPA, which is US-specific. European institutions should reference GDPR instead. Other regions have their own frameworks.</li>
+<li><strong>Academic integrity norms</strong>: Institutional AI policies vary widely. The A3 framework (be deliberate about your AI use) is universal, but the specific rules students must follow depend on your institution.</li>
+<li><strong>Access to AI tools</strong>: In some countries, certain AI tools are blocked or restricted. Survey your students’ access before assigning modules that require AI interaction. Free-tier availability also varies by region.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="quick-reference-adaptation-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference-adaptation-checklist">Quick Reference: Adaptation Checklist</h2>
+<p>Before teaching any module, run through this checklist:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Software</strong>: Do students have access to the required tools? (See INSTRUCTOR_GUIDE.md requirements table)</label></li>
+<li><label><input type="checkbox"><strong>Level</strong>: Is the module pitched at the right level for your students? (See principles/graduate sections above)</label></li>
+<li><label><input type="checkbox"><strong>Examples</strong>: Are the economics examples familiar to your students? Swap if needed.</label></li>
+<li><label><input type="checkbox"><strong>Institutional references</strong>: Have you replaced UVM-specific content with your own institution’s information?</label></li>
+<li><label><input type="checkbox"><strong>Language/region</strong>: Are there currency, data source, or policy references that need localizing?</label></li>
+<li><label><input type="checkbox"><strong>Time</strong>: Do you have enough class time for the full module, or do you need to cut? (See workshop section for what to cut)</label></li>
+<li><label><input type="checkbox"><strong>Assessment</strong>: Have you chosen an assessment from the ASSESSMENT_MENU.md that fits your course?</label></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
