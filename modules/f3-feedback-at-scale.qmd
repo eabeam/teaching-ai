@@ -1,0 +1,152 @@
+---
+title: "F3: Feedback at Scale"
+subtitle: "Better feedback, less grading dread"
+---
+
+::: {.module-meta}
+[~20 min]{.badge .badge-time}
+[Faculty Quick Start]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Distinguish feedback support from auto-grading — and explain the difference to students and colleagues
+2. Generate reusable feedback language anchored to your rubric dimensions
+3. Use AI to identify recurring patterns across student submissions
+4. Recognize privacy and transparency constraints before uploading student work
+
+## What You Need
+
+- A rubric, assignment description, or set of sample feedback comments
+- One or a few pieces of student work you are permitted to share with the tool (check your institution's policy)
+- A clear understanding of your institution's data privacy rules
+
+## What This Is Not
+
+Let's be direct about the boundaries:
+
+- **Not score assignment.** AI does not decide what grade a student gets. You do.
+- **Not unsupervised grading.** AI does not read a paper and return a verdict. You read the paper. AI helps you articulate your assessment.
+- **Not outsourcing judgment about student learning.** You know what "demonstrates understanding of identification strategies" looks like in your course. AI doesn't.
+
+If you're looking for a tool to grade papers while you sleep, this isn't it. If you're looking for a tool that helps you write better feedback faster, keep reading.
+
+## What This Is
+
+You already know what you want to say to students. The bottleneck is usually articulation and consistency — writing the same feedback for the fifteenth time, making sure your comments on paper #3 are as thoughtful as your comments on paper #1, translating a rubric score into something a student can actually act on.
+
+AI helps with exactly these mechanical bottlenecks:
+
+- Turning rubric dimensions into reusable comment banks
+- Drafting feedback starters that you customize per student
+- Spotting recurring issues across a set of submissions
+- Creating follow-up guidance for common problems
+
+## Generate Feedback Templates from Your Rubric
+
+Start with the rubric itself. Attach it and ask:
+
+> "For each dimension on this rubric, generate feedback comment stems for three performance levels: strong, developing, and needs improvement. The tone should be specific, respectful, and action-oriented — tell the student what they did well or what to work on next, not just that they scored a 3 out of 5."
+
+What you'll get: a comment bank organized by rubric dimension, with language you can copy-paste-and-customize during grading.
+
+**Why this works:** The comment stems are anchored to *your* rubric, so they match the criteria you're actually evaluating. And because they cover the range (strong to weak), you're not writing from scratch every time — you're editing a template.
+
+**What to watch for:** AI tends toward vague encouragement. "Great work on your analysis!" is not useful feedback. Push for specificity: "Your identification of the omitted variable bias was precise and clearly connected to the regression specification" is useful feedback. If the first draft is too generic, tell the AI: "These are too vague. Rewrite with specific references to what strong vs. weak work looks like on this dimension."
+
+## Draft Individualized Feedback Starters
+
+For longer assignments where each student needs a personalized comment, the rubric-to-comment-bank approach can be extended:
+
+> "Here is my rubric with this student's scores by dimension: [Argument: 4/5, Evidence: 3/5, Writing: 4/5, Methodology: 2/5]. Draft a feedback paragraph that addresses the strongest and weakest dimensions. Be specific about what earned the high score and what needs improvement. Suggest one concrete next step for the methodology dimension."
+
+You then edit the draft — adding your own observations, referencing specific parts of the student's work, adjusting the tone. The AI gave you a starting structure; you make it accurate and personal.
+
+::: {.callout-tip}
+## Preserving Your Voice
+If you've written feedback before that you were proud of, give the AI an example. "Here's a feedback comment I wrote last semester that captures the tone I want. Use this as a model." AI is good at matching a style example — much better than generating a style from scratch.
+:::
+
+## Identify Common Patterns Across Assignments
+
+This is one of the highest-value uses of AI for feedback, and one of the least obvious.
+
+After grading (or partway through), you notice patterns: everyone misidentified the instrument, most students confused correlation with causation in section 3, the graph interpretations are consistently weak. AI can systematize this:
+
+> "Here are my rubric scores for 25 students across 5 dimensions [attach or describe]. What are the most common patterns? Which dimensions had the widest spread? Where did the class as a whole struggle most?"
+
+Or, if privacy allows:
+
+> "Here are anonymized excerpts from 10 student papers, all answering the same question about identification strategy [attach]. What are the most common misunderstandings? Categorize the errors by type."
+
+This is also a **teaching diagnostic.** If 60% of students miss the same thing, that's not just a grading problem — it's a signal about your instruction or materials. Maybe the concept wasn't covered clearly enough, maybe the assignment prompt was ambiguous, maybe the reading didn't prepare them for this task. AI can surface the pattern; you decide what it means.
+
+::: {.callout-warning}
+## Watch for Overstatement
+AI tends to describe patterns with more confidence than the data supports. "Students consistently failed to..." might really be "A few students struggled with..." Look at the actual distribution before accepting AI's characterization.
+:::
+
+## Create "What to Review" Guides
+
+Once you've identified common issues, turn them into something students can use:
+
+> "Based on the patterns above, create a short 'what to review before the next assignment' guide. Focus on the two most common issues: [list them]. For each, explain the concept briefly, give one concrete example of the error and the correct version, and suggest what students should practice."
+
+This closes the feedback loop: students get collective guidance without you writing an essay in every comment box.
+
+## The Ethical Line
+
+Using AI to help you give feedback is not the same as using AI to grade. But the distinction is worth being explicit about — with yourself, with your TAs, and in some cases with your students.
+
+**For yourself**: Faculty judgment remains central. AI organizes your feedback, drafts language, and spots patterns. You decide what's accurate, what's fair, and what's useful.
+
+**For TAs**: If TAs use AI in grading, set clear expectations. Which parts of the workflow are AI-assisted? Where is human review required? What does "check the AI's output" actually mean?
+
+**For students**: Transparency norms are evolving. You don't necessarily need to announce "I used AI to draft some of these comments." But if a student asks, you should be able to describe your process honestly. "I used AI to create comment templates from the rubric, then customized them for each paper" is perfectly defensible. "AI graded your paper" is not.
+
+## FERPA and Privacy
+
+Not all tools are equally appropriate for student work. The key distinction is between **enterprise or education agreements** and **consumer tools**:
+
+- **Enterprise/education agreements** mean your institution has negotiated terms: student data is not used for model training, access is restricted to institutional users, and data handling complies with applicable regulations.
+- **Consumer tools** (free-tier accounts on most platforms) generally offer fewer guarantees about how uploaded data is stored, processed, or used.
+
+**Check whether your institution has an enterprise agreement.** For example, UVM Copilot has enterprise protections through Microsoft's education agreement. A personal free ChatGPT account does not have comparable protections.
+
+**When in doubt:**
+
+- De-identify student work before uploading: remove names, student IDs, course section identifiers
+- Use rubric scores and your summary notes rather than raw student text when possible
+- If the privacy status is unclear, do not upload student materials until you verify policy with your institution's IT or compliance office
+
+This is not a reason to avoid AI for feedback. It's a reason to use the right tool.
+
+::: {.callout-important}
+## The Practical Rule
+If you wouldn't email a student's paper to a stranger, don't paste it into a consumer AI tool. If you're using an institutionally approved, enterprise-protected tool, you have the same protections as any other university-provisioned software.
+:::
+
+## Try It Now
+
+1. Take one rubric and generate a feedback comment bank for three performance levels across each dimension.
+2. If privacy rules allow: test one anonymized submission. Give the AI the rubric scores and ask it to draft a feedback paragraph. Edit it heavily — keep what works, throw out what doesn't.
+3. Draft one class-wide "what to review before the next assignment" note based on patterns you've noticed (or patterns AI identified).
+
+## Discussion Questions for Departments
+
+If you're discussing this in a department meeting or faculty workshop:
+
+1. Where is the line between AI-assisted feedback and AI-generated grades? Does the distinction matter to students?
+2. Should departments have a shared policy on AI use in grading, or is this an individual instructor decision?
+3. What would transparent disclosure of AI-assisted feedback look like in practice?
+
+::: {.instructor-note}
+**For workshop facilitators**: The most productive exercise is having faculty bring a real rubric and generate a comment bank live. The "aha" moment happens when they see comment stems that are 80% right and realize that editing them takes 2 minutes per student instead of 10 minutes of writing from scratch.
+
+**Sensitive topic**: Some faculty will feel uncomfortable with any AI involvement in feedback. That's legitimate. This module frames AI as a drafting tool, not a grading tool, but the line genuinely is blurry. Make space for that conversation rather than dismissing the concern.
+
+**Connection to F4**: Faculty who are thinking about AI in grading are often simultaneously thinking about AI policies for students. Point them to [F4: Make Your Course AI-Ready](f4-course-ai-ready.qmd).
+:::

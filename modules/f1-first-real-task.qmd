@@ -1,0 +1,149 @@
+---
+title: "F1: Your First Real Task"
+subtitle: "Stop copy-pasting. Start pointing."
+---
+
+::: {.module-meta}
+[~15 min]{.badge .badge-time}
+[Faculty Quick Start]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Explain why file-based AI workflows beat copy-paste for everyday faculty tasks
+2. Use the basic moves: attach a file, drag-and-drop, ask for a revision
+3. Complete one real teaching task from start to finish using an AI desktop app
+4. Identify the quality-control checks needed before using any AI-generated output
+
+## What You Need
+
+- One AI desktop app installed (Claude, Codex, ChatGPT, or similar)
+- One real file you already use for teaching — an exam, a syllabus, a reading, student evaluations
+- 15 uninterrupted minutes
+
+## The Copy-Paste Trap
+
+If you've used AI at all, you probably started by copying text into a browser chat window. It works — sort of. You paste a few paragraphs, ask a question, get a response. But the workflow breaks down fast:
+
+- **Formatting disappears.** Your carefully structured exam becomes a wall of text. Tables, equations, numbered lists — gone or garbled.
+- **Context gets lost.** You can paste a few questions from page 2, but the AI has no idea what's on pages 1, 3, and 4. It doesn't know the course level, the topic progression, or how the questions relate to each other.
+- **Iteration is painful.** Want to revise the output? You're re-pasting, re-explaining, re-formatting. Every follow-up feels like starting over.
+- **Long documents don't fit.** A 10-page syllabus, a 30-page paper, a semester of evaluations — you can't paste all of that into a chat box.
+
+The copy-paste workflow puts *you* in the role of translator between your files and the AI. That's backwards.
+
+## What "Point It at Your Files" Means
+
+Desktop AI apps solve this in a simple way: instead of copying text *into* the AI, you give the AI the file itself.
+
+The mechanics vary by app, but the pattern is the same:
+
+::: {.panel-tabset}
+## Claude (desktop)
+
+- Click the attachment icon (paperclip) in the chat input
+- Select a file from your computer, or drag and drop it into the conversation
+- Claude reads the full document — formatting, structure, and all
+
+## Codex
+
+- Open a project folder or attach files when starting a task
+- Codex reads the files in context and can work across multiple documents
+- Ask questions or request changes referencing specific parts of your materials
+
+## ChatGPT (desktop)
+
+- Click the paperclip icon or drag a file directly into the chat
+- ChatGPT processes the document and can reference specific sections
+- Works with PDFs, Word docs, spreadsheets, and more
+:::
+
+You don't need to understand anything technical about how this works. The practical rule is simple: **if the file matters, give the app the file instead of a mangled excerpt.**
+
+## Pick One and Go
+
+Here are four tasks faculty actually do. Pick the one closest to something on your to-do list and try it.
+
+### Example 1: Turn an old exam into a study guide
+
+You have last semester's midterm. You want a study guide students can use to prepare.
+
+::: {.callout-note collapse="true"}
+## See the before/after
+
+**Browser chat (copy-paste):**
+You paste a few exam questions, lose the formatting, and type "make a study guide." The AI has no idea about the course level, the other questions, or how topics connect across the exam. You get a generic bulleted list that could apply to any introductory course.
+
+**Desktop app (file-based):**
+You attach the full exam PDF and say:
+
+> "Create a study guide for students preparing for this exam. Organize by topic, flag which questions test application vs. recall, and suggest what to review for each section."
+
+The AI sees the whole document — structure, notation, difficulty progression — and produces something you can actually hand out. It groups questions by theme, identifies the harder application problems, and creates a topic checklist tied to the actual exam content.
+:::
+
+### Example 2: Generate a rubric from an assignment description
+
+You have a paper assignment prompt. You need a rubric before the TAs start grading.
+
+> Attach the assignment description and say: "Create a grading rubric for this assignment. Include 4-5 dimensions, with descriptors for excellent, satisfactory, and needs improvement. Align the rubric to the skills this assignment is actually testing."
+
+### Example 3: Draft discussion questions from a reading
+
+You assigned a journal article. You need five discussion questions for Tuesday.
+
+> Attach the PDF and say: "Generate 5 discussion questions for an undergraduate economics seminar based on this paper. Mix factual comprehension questions with questions that push students to evaluate the methodology or connect the findings to other contexts."
+
+### Example 4: Summarize student evaluations into themes
+
+You have a semester of student comments. You want to know what the main themes are without reading 200 freeform responses.
+
+> Attach the evaluation file and say: "Summarize the main themes in these student comments. Group by positive feedback, constructive criticism, and specific suggestions. Quote representative comments for each theme."
+
+## What Just Happened
+
+If you tried one of those, notice what was different:
+
+- **Better context led to better output.** You didn't write a fancier prompt. You gave the AI the actual file. That's it. The output was more specific, more useful, and more directly connected to your course because the AI could see the whole document.
+- **Revision was natural.** You could say "make section 3 harder" or "add a question about elasticity" without re-explaining what the document was. The app kept the file in view.
+- **The copy-paste tax was gone.** No reformatting, no truncation, no "here's the rest of the document I couldn't fit last time."
+
+This is not a trick. It's the reason these apps exist. The workflow shift from copy-paste to file-based is the single biggest unlock for faculty who want AI to be genuinely useful rather than merely interesting.
+
+## What Can Go Wrong
+
+AI does not understand your course. It has your file, but it doesn't have your pedagogical goals, your students' preparation level, or the specific things you emphasized in lecture. Watch for:
+
+- **Overgeneralization.** The AI produces a study guide that could apply to any intro course, not *your* intro course. If the output feels generic, tell it what's specific: "These students have not yet covered game theory" or "Emphasize the applied problems over the definitions."
+- **Missed nuance.** A rubric dimension that technically makes sense but doesn't match how you actually evaluate student work. A discussion question that's too easy or targets something the paper doesn't actually address well.
+- **Flattened tone.** AI tends toward a polished, impersonal style. If you want something that sounds like you, say so: "Match the tone of my assignment description — direct, slightly informal."
+- **Confident errors.** Especially with quantitative content — check any numbers, formulas, or specific claims the AI includes.
+
+**The rule: you review everything before it reaches students.** AI produces first drafts. You produce final versions.
+
+## Try It Now
+
+1. Pick one file from this semester — an exam, a syllabus section, a reading, a set of evaluations.
+2. Open your AI desktop app and attach the file.
+3. Ask for something you would actually use this week.
+4. Revise once: ask for a different format, tone, or level of detail.
+5. Decide honestly: did this save real time? Was the output worth editing, or did you have to start over?
+
+If the answer is yes, you've found your workflow. If the answer is no, try a different task — not all faculty work benefits equally from AI, and that's fine.
+
+::: {.callout-tip}
+## What's Next?
+This module showed you the basic move: point the app at your files. The rest of the F-track builds on this:
+
+- **Prepping a course?** → [F2: Course Prep Power Hour](f2-course-prep.qmd)
+- **Grading season?** → [F3: Feedback at Scale](f3-feedback-at-scale.qmd)
+- **Need a policy?** → [F4: Make Your Course AI-Ready](f4-course-ai-ready.qmd)
+- **Curious about the terminal?** → [When to Move to the Terminal](terminal-transition.qmd)
+:::
+
+::: {.instructor-note}
+**For instructors sharing this with colleagues**: This module is designed as a gentle entry point. It assumes no prior AI experience beyond basic chat. The best way to use it is in a workshop or informal session where faculty bring their own files and try one task live — the "aha" moment comes from seeing their own materials transformed, not from reading about it.
+:::

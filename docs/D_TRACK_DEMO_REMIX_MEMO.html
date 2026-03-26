@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>d_track_demo_remix_memo – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="./modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="./modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="./modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-faculty-quick-start" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Faculty Quick Start</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-faculty-quick-start">    
+        <li>
+    <a class="dropdown-item" href="./modules/f1-first-real-task.html">
+ <span class="dropdown-text">F1: Your First Real Task</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/f2-course-prep.html">
+ <span class="dropdown-text">F2: Course Prep Power Hour</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/f3-feedback-at-scale.html">
+ <span class="dropdown-text">F3: Feedback at Scale</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/f4-course-ai-ready.html">
+ <span class="dropdown-text">F4: Make Your Course AI-Ready</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./modules/terminal-transition.html">
+ <span class="dropdown-text">When to Move to the Terminal</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./modules/resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#d-track-interactive-feature-memo" id="toc-d-track-interactive-feature-memo" class="nav-link active" data-scroll-target="#d-track-interactive-feature-memo">D-Track Interactive Feature Memo</a>
+  <ul class="collapse">
+  <li><a href="#feature" id="toc-feature" class="nav-link" data-scroll-target="#feature">Feature</a></li>
+  <li><a href="#why-this-feature" id="toc-why-this-feature" class="nav-link" data-scroll-target="#why-this-feature">Why This Feature</a></li>
+  <li><a href="#core-user-story" id="toc-core-user-story" class="nav-link" data-scroll-target="#core-user-story">Core User Story</a></li>
+  <li><a href="#proposed-interaction" id="toc-proposed-interaction" class="nav-link" data-scroll-target="#proposed-interaction">Proposed Interaction</a>
+  <ul class="collapse">
+  <li><a href="#topic" id="toc-topic" class="nav-link" data-scroll-target="#topic">1. Topic</a></li>
+  <li><a href="#teaching-goal" id="toc-teaching-goal" class="nav-link" data-scroll-target="#teaching-goal">2. Teaching goal</a></li>
+  <li><a href="#format" id="toc-format" class="nav-link" data-scroll-target="#format">3. Format</a></li>
+  </ul></li>
+  <li><a href="#example-output" id="toc-example-output" class="nav-link" data-scroll-target="#example-output">Example Output</a></li>
+  <li><a href="#why-it-fits-d1" id="toc-why-it-fits-d1" class="nav-link" data-scroll-target="#why-it-fits-d1">Why It Fits D1</a></li>
+  <li><a href="#mvp-scope" id="toc-mvp-scope" class="nav-link" data-scroll-target="#mvp-scope">MVP Scope</a>
+  <ul class="collapse">
+  <li><a href="#mvp-inputs" id="toc-mvp-inputs" class="nav-link" data-scroll-target="#mvp-inputs">MVP inputs</a></li>
+  <li><a href="#mvp-outputs" id="toc-mvp-outputs" class="nav-link" data-scroll-target="#mvp-outputs">MVP outputs</a></li>
+  <li><a href="#mvp-technical-approach" id="toc-mvp-technical-approach" class="nav-link" data-scroll-target="#mvp-technical-approach">MVP technical approach</a></li>
+  </ul></li>
+  <li><a href="#why-this-is-better-than-a-static-template" id="toc-why-this-is-better-than-a-static-template" class="nav-link" data-scroll-target="#why-this-is-better-than-a-static-template">Why This Is Better Than a Static Template</a></li>
+  <li><a href="#design-guardrails" id="toc-design-guardrails" class="nav-link" data-scroll-target="#design-guardrails">Design Guardrails</a></li>
+  <li><a href="#risks" id="toc-risks" class="nav-link" data-scroll-target="#risks">Risks</a></li>
+  <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation">Recommendation</a></li>
+  <li><a href="#next-build-step" id="toc-next-build-step" class="nav-link" data-scroll-target="#next-build-step">Next Build Step</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="d-track-interactive-feature-memo" class="level1">
+<h1>D-Track Interactive Feature Memo</h1>
+<section id="feature" class="level2">
+<h2 class="anchored" data-anchor-id="feature">Feature</h2>
+<p><strong>Demo Remix Workshop</strong></p>
+<p>A lightweight interactive builder for instructors who want to create or adapt an economics teaching demo with AI support, without starting from a blank page.</p>
+</section>
+<section id="why-this-feature" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-feature">Why This Feature</h2>
+<p>The D-track should help faculty do pedagogy work, not just read about it. A remix tool fits that goal because it turns a broad idea like “I want an AI-generated class demo” into a structured design workflow:</p>
+<ul>
+<li>choose a topic</li>
+<li>choose a teaching goal</li>
+<li>choose an interaction style</li>
+<li>get a tailored demo concept plus a strong build prompt</li>
+</ul>
+<p>This is more useful than a static gallery alone because it helps instructors map from their own course need to a concrete prototype.</p>
+</section>
+<section id="core-user-story" class="level2">
+<h2 class="anchored" data-anchor-id="core-user-story">Core User Story</h2>
+<p>An instructor teaching economics wants a quick in-class interactive or student-facing demo. They do not want to invent the whole thing from scratch, and they do not want generic ed-tech advice. They want a scaffold they can adapt.</p>
+</section>
+<section id="proposed-interaction" class="level2">
+<h2 class="anchored" data-anchor-id="proposed-interaction">Proposed Interaction</h2>
+<p>The page presents three sets of choices:</p>
+<section id="topic" class="level3">
+<h3 class="anchored" data-anchor-id="topic">1. Topic</h3>
+<ul>
+<li>Supply and demand</li>
+<li>Externalities</li>
+<li>Comparative advantage</li>
+<li>Game theory</li>
+<li>Regression intuition</li>
+<li>Elasticity</li>
+</ul>
+</section>
+<section id="teaching-goal" class="level3">
+<h3 class="anchored" data-anchor-id="teaching-goal">2. Teaching goal</h3>
+<ul>
+<li>Concept introduction</li>
+<li>In-class activity</li>
+<li>Homework extension</li>
+<li>Exam review</li>
+<li>Student self-test</li>
+</ul>
+</section>
+<section id="format" class="level3">
+<h3 class="anchored" data-anchor-id="format">3. Format</h3>
+<ul>
+<li>Slider-based visualization</li>
+<li>Click-through scenario</li>
+<li>Prediction check</li>
+<li>Parameter manipulation</li>
+<li>Mini simulation</li>
+</ul>
+<p>Once the user selects one option from each set, the page generates:</p>
+<ul>
+<li>a demo concept</li>
+<li>a short teaching rationale</li>
+<li>a list of what students would do</li>
+<li>a suggested implementation path</li>
+<li>a prompt for building the demo with AI</li>
+</ul>
+</section>
+</section>
+<section id="example-output" class="level2">
+<h2 class="anchored" data-anchor-id="example-output">Example Output</h2>
+<p><strong>Topic</strong>: Externalities <strong>Teaching goal</strong>: In-class activity <strong>Format</strong>: Slider-based visualization</p>
+<p><strong>Generated concept</strong>: “Build a classroom demo where students adjust the size of a pollution tax and watch the gap between private and social marginal cost shrink. Ask students to predict what happens to equilibrium quantity before they move the slider.”</p>
+<p><strong>Teaching rationale</strong>: “This makes the welfare logic visible and gives students a concrete way to connect the diagram to policy intervention.”</p>
+<p><strong>AI build prompt</strong>: “Create a simple browser-based teaching demo for an undergraduate economics course. The demo should show a market with a negative production externality. Include a slider for the per-unit tax and update the private equilibrium, socially efficient quantity, and deadweight loss visually as the slider changes. Keep the interface simple enough for classroom projection and include one prediction question for students.”</p>
+</section>
+<section id="why-it-fits-d1" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-fits-d1">Why It Fits D1</h2>
+<p>This feature belongs naturally in <code>D1: Building Interactive Demos with AI</code> because it:</p>
+<ul>
+<li>gives faculty a structured on-ramp to demo creation</li>
+<li>connects pedagogy choices to technical output</li>
+<li>avoids requiring coding knowledge up front</li>
+<li>produces something reusable: a prompt, a concept, and a build plan</li>
+</ul>
+</section>
+<section id="mvp-scope" class="level2">
+<h2 class="anchored" data-anchor-id="mvp-scope">MVP Scope</h2>
+<p>The first version can be simple and still useful.</p>
+<section id="mvp-inputs" class="level3">
+<h3 class="anchored" data-anchor-id="mvp-inputs">MVP inputs</h3>
+<ul>
+<li>4-6 topic options</li>
+<li>4-5 teaching goals</li>
+<li>3-5 format options</li>
+</ul>
+</section>
+<section id="mvp-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="mvp-outputs">MVP outputs</h3>
+<ul>
+<li>one paragraph demo concept</li>
+<li>one paragraph teaching rationale</li>
+<li>3 bullet points for classroom use</li>
+<li>one copy-pasteable AI prompt</li>
+</ul>
+</section>
+<section id="mvp-technical-approach" class="level3">
+<h3 class="anchored" data-anchor-id="mvp-technical-approach">MVP technical approach</h3>
+<ul>
+<li>Quarto page with client-side JavaScript</li>
+<li>simple selection controls</li>
+<li>prewritten lookup table or structured content object</li>
+<li>no backend required</li>
+</ul>
+</section>
+</section>
+<section id="why-this-is-better-than-a-static-template" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-is-better-than-a-static-template">Why This Is Better Than a Static Template</h2>
+<p>A static template says, “Here are some demos.”</p>
+<p>This feature says, “Here is the demo idea that fits your topic, course use, and classroom format.”</p>
+<p>That is a much better faculty experience because it starts from instructional intent rather than from a pile of examples.</p>
+</section>
+<section id="design-guardrails" class="level2">
+<h2 class="anchored" data-anchor-id="design-guardrails">Design Guardrails</h2>
+<ul>
+<li>Keep the interface fast and plainspoken</li>
+<li>Do not pretend the tool is generating infinite originality; it is a scaffold generator</li>
+<li>Keep outputs specific enough to be useful, but simple enough that faculty can edit them</li>
+<li>Avoid overengineering the first version</li>
+</ul>
+</section>
+<section id="risks" class="level2">
+<h2 class="anchored" data-anchor-id="risks">Risks</h2>
+<ul>
+<li>If the combinations feel too generic, instructors will not trust it</li>
+<li>If there are too many options, the tool becomes fiddly</li>
+<li>If the output sounds too much like prompt boilerplate, it loses pedagogical value</li>
+</ul>
+</section>
+<section id="recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="recommendation">Recommendation</h2>
+<p>Build this as a small MVP first, not as a large demo library.</p>
+<p>The right first goal is: “Can an instructor leave this page with one plausible interactive-demo idea and a prompt they would actually use?”</p>
+<p>If yes, the feature is working.</p>
+</section>
+<section id="next-build-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-build-step">Next Build Step</h2>
+<p>If this moves forward, the next artifact should be a content spec with:</p>
+<ul>
+<li>the exact option lists</li>
+<li>8-12 curated output combinations</li>
+<li>one standard output template</li>
+<li>a decision about whether to generate outputs combinatorially or from hand-authored cases</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

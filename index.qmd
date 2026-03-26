@@ -11,6 +11,8 @@ A growing collection of self-contained modules for teaching economics students h
 
 **For instructors**: Each module is a standalone lesson (~30–75 min) you can adopt as-is or adapt for your course. No sequence required.
 
+**For faculty getting started with AI**: The [Faculty Quick Start](#faculty-quick-start) track gives you practical wins in 15–25 minutes — no terminal, no coding, just your files and a desktop app.
+
 ## Modules
 
 ### Foundations (no coding required)
@@ -37,6 +39,19 @@ A growing collection of self-contained modules for teaching economics students h
 | [C3: Data Exploration & Cleaning](modules/c3-data-exploration.qmd) | Describing datasets, flagging anomalies — and why cleaning decisions are yours | ~50 min |
 | [C4: Writing & Revision](modules/c4-writing-revision.qmd) | AI as copy editor, not ghostwriter — maintaining your voice | ~50 min |
 | [C5: Math & Derivations](modules/c5-math-derivations.qmd) | Checking proofs, working through optimization — and verifying every step | ~50 min |
+
+### Faculty Quick Start
+
+Short, app-first modules for faculty who want practical value fast. No terminal, no coding — just your files and a desktop AI app.
+
+| Module | Description | Time |
+|--------|-------------|------|
+| [F1: Your First Real Task](modules/f1-first-real-task.qmd) | Stop copy-pasting — point the app at your files and see the difference | ~15 min |
+| [F2: Course Prep Power Hour](modules/f2-course-prep.qmd) | Turn last semester's materials into working drafts in minutes | ~25 min |
+| [F3: Feedback at Scale](modules/f3-feedback-at-scale.qmd) | Better feedback, less grading dread — scaffold, don't automate | ~20 min |
+| [F4: Make Your Course AI-Ready](modules/f4-course-ai-ready.qmd) | Use AI to audit your syllabus, test assignments, and draft policy | ~25 min |
+
+See also: [When to Move to the Terminal](modules/terminal-transition.qmd) | [Resources](modules/resources.qmd)
 
 ## Design Philosophy
 

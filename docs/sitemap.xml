@@ -5,84 +5,100 @@
     <lastmod>2026-03-22T00:13:35.683Z</lastmod>
   </url>
   <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/resources.html</loc>
+    <lastmod>2026-03-24T23:20:35.632Z</lastmod>
+  </url>
+  <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/b1-terminal-basics.html</loc>
     <lastmod>2026-03-21T18:11:13.236Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/f4-course-ai-ready.html</loc>
+    <lastmod>2026-03-24T23:19:19.900Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/c2-code-assistance.html</loc>
     <lastmod>2026-03-21T20:37:23.051Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/a1-what-llms-do.html</loc>
-    <lastmod>2026-03-22T00:10:25.564Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/a2-prompting.html</loc>
+    <lastmod>2026-03-14T19:57:26.300Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/c1-lit-review.html</loc>
-    <lastmod>2026-03-22T00:10:42.030Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/a3-when-to-use-ai.html</loc>
+    <lastmod>2026-03-14T19:58:28.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/terminal-transition.html</loc>
+    <lastmod>2026-03-24T23:19:54.057Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/b2-git-github.html</loc>
     <lastmod>2026-03-21T18:11:49.065Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c2/bug_hunt_worksheet.html</loc>
-    <lastmod>2026-03-22T00:14:59.658Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c2/answer_key.html</loc>
+    <lastmod>2026-03-22T00:15:41.032Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/ai_derivations_with_errors/problem2_profit_max.html</loc>
-    <lastmod>2026-03-22T00:19:50.006Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c2/answer_key_r.html</loc>
+    <lastmod>2026-03-22T00:16:16.003Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/ai_derivations_with_errors/problem1_cobb_douglas.html</loc>
-    <lastmod>2026-03-22T00:19:26.037Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/ai_derivations_with_errors/problem3_elasticity.html</loc>
+    <lastmod>2026-03-22T00:20:22.749Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/spot_the_ai_exercise.html</loc>
-    <lastmod>2026-03-22T00:17:33.635Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/verification_report_template.html</loc>
+    <lastmod>2026-03-22T00:18:56.767Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/writing_examples/results_paragraph.html</loc>
-    <lastmod>2026-03-22T00:17:51.534Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/writing_examples/lit_review_transition.html</loc>
+    <lastmod>2026-03-22T00:18:09.885Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c3/cleaning_decision_log.html</loc>
-    <lastmod>2026-03-22T00:16:45.874Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/writing_examples/policy_implications.html</loc>
+    <lastmod>2026-03-22T00:18:28.552Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/subfield_prompt_bank.html</loc>
-    <lastmod>2026-03-22T00:11:51.616Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/sycophancy_comparison_worksheet.html</loc>
+    <lastmod>2026-03-22T00:11:28.414Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/hallucination_verification_worksheet.html</loc>
-    <lastmod>2026-03-22T00:11:16.168Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/anchoring_comparison_worksheet.html</loc>
+    <lastmod>2026-03-22T00:11:37.833Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/b1/scavenger_hunt.html</loc>
-    <lastmod>2026-03-22T00:15:52.791Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/b1/windows_setup_guide.html</loc>
+    <lastmod>2026-03-22T00:13:07.772Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/curated_papers/microfinance.html</loc>
-    <lastmod>2026-03-22T00:13:59.754Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/citation_verification_table.html</loc>
+    <lastmod>2026-03-22T00:12:50.232Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/curated_papers/teacher_quality.html</loc>
-    <lastmod>2026-03-22T00:13:12.479Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/curated_papers/immigration_wages.html</loc>
+    <lastmod>2026-03-22T00:13:36.130Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a2/prompt_log_template.html</loc>
-    <lastmod>2026-03-22T00:12:34.814Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a2/prompt_makeover_worksheet.html</loc>
+    <lastmod>2026-03-22T00:12:23.954Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/b2/git_exercise_walkthrough.html</loc>
-    <lastmod>2026-03-22T00:13:56.424Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/b2/good_commit_messages.html</loc>
+    <lastmod>2026-03-22T00:14:53.992Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a3/self_test_tasks.html</loc>
-    <lastmod>2026-03-22T00:13:11.561Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/b2/git_cheatsheet.html</loc>
+    <lastmod>2026-03-22T00:14:27.080Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a3/ai_audit_worksheet.html</loc>
-    <lastmod>2026-03-22T00:12:47.942Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a3/personal_ai_policy_template.html</loc>
+    <lastmod>2026-03-22T00:13:29.771Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/NEXT_SESSION_PROMPT.html</loc>
+    <lastmod>2026-03-14T20:40:19.632Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/about.html</loc>
@@ -90,11 +106,11 @@
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/index.html</loc>
-    <lastmod>2026-03-21T20:44:19.955Z</lastmod>
+    <lastmod>2026-03-24T23:21:04.503Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/MODULE_CATALOG.html</loc>
-    <lastmod>2026-03-14T20:33:24.461Z</lastmod>
+    <lastmod>2026-03-24T22:14:20.351Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/lesson_plans/a3_lesson_plan.html</loc>
@@ -107,6 +123,10 @@
   <url>
     <loc>https://eabeam.github.io/teaching-ai/lesson_plans/c2_lesson_plan.html</loc>
     <lastmod>2026-03-22T00:19:20.478Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/D_TRACK_DEMO_REMIX_CONTENT_SPEC.html</loc>
+    <lastmod>2026-03-24T22:36:31.435Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/lesson_plans/c1_lesson_plan.html</loc>
@@ -129,80 +149,92 @@
     <lastmod>2026-03-22T00:15:29.137Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/NEXT_SESSION_PROMPT.html</loc>
-    <lastmod>2026-03-14T20:40:19.632Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/D_TRACK_DEMO_REMIX_MEMO.html</loc>
+    <lastmod>2026-03-24T22:33:49.425Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a3/personal_ai_policy_template.html</loc>
-    <lastmod>2026-03-22T00:13:29.771Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a3/ai_audit_worksheet.html</loc>
+    <lastmod>2026-03-22T00:12:47.942Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/b2/git_cheatsheet.html</loc>
-    <lastmod>2026-03-22T00:14:27.080Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a3/self_test_tasks.html</loc>
+    <lastmod>2026-03-22T00:13:11.561Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/b2/good_commit_messages.html</loc>
-    <lastmod>2026-03-22T00:14:53.992Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/b2/git_exercise_walkthrough.html</loc>
+    <lastmod>2026-03-22T00:13:56.424Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a2/prompt_makeover_worksheet.html</loc>
-    <lastmod>2026-03-22T00:12:23.954Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a2/prompt_log_template.html</loc>
+    <lastmod>2026-03-22T00:12:34.814Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/curated_papers/immigration_wages.html</loc>
-    <lastmod>2026-03-22T00:13:36.130Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/curated_papers/teacher_quality.html</loc>
+    <lastmod>2026-03-22T00:13:12.479Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/citation_verification_table.html</loc>
-    <lastmod>2026-03-22T00:12:50.232Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c1/curated_papers/microfinance.html</loc>
+    <lastmod>2026-03-22T00:13:59.754Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/b1/windows_setup_guide.html</loc>
-    <lastmod>2026-03-22T00:13:07.772Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/b1/scavenger_hunt.html</loc>
+    <lastmod>2026-03-22T00:15:52.791Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/anchoring_comparison_worksheet.html</loc>
-    <lastmod>2026-03-22T00:11:37.833Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/hallucination_verification_worksheet.html</loc>
+    <lastmod>2026-03-22T00:11:16.168Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/sycophancy_comparison_worksheet.html</loc>
-    <lastmod>2026-03-22T00:11:28.414Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/a1/subfield_prompt_bank.html</loc>
+    <lastmod>2026-03-22T00:11:51.616Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/writing_examples/policy_implications.html</loc>
-    <lastmod>2026-03-22T00:18:28.552Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c3/cleaning_decision_log.html</loc>
+    <lastmod>2026-03-22T00:16:45.874Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/writing_examples/lit_review_transition.html</loc>
-    <lastmod>2026-03-22T00:18:09.885Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/writing_examples/results_paragraph.html</loc>
+    <lastmod>2026-03-22T00:17:51.534Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/verification_report_template.html</loc>
-    <lastmod>2026-03-22T00:18:56.767Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c4/spot_the_ai_exercise.html</loc>
+    <lastmod>2026-03-22T00:17:33.635Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/ai_derivations_with_errors/problem3_elasticity.html</loc>
-    <lastmod>2026-03-22T00:20:22.749Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/ai_derivations_with_errors/problem1_cobb_douglas.html</loc>
+    <lastmod>2026-03-22T00:19:26.037Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c2/answer_key_r.html</loc>
-    <lastmod>2026-03-22T00:16:16.003Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c5/ai_derivations_with_errors/problem2_profit_max.html</loc>
+    <lastmod>2026-03-22T00:19:50.006Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/exercises/c2/answer_key.html</loc>
-    <lastmod>2026-03-22T00:15:41.032Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/exercises/c2/bug_hunt_worksheet.html</loc>
+    <lastmod>2026-03-22T00:14:59.658Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/f3-feedback-at-scale.html</loc>
+    <lastmod>2026-03-24T23:18:11.544Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/c3-data-exploration.html</loc>
     <lastmod>2026-03-21T20:37:40.498Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/a3-when-to-use-ai.html</loc>
-    <lastmod>2026-03-14T19:58:28.044Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/c1-lit-review.html</loc>
+    <lastmod>2026-03-22T00:10:42.030Z</lastmod>
   </url>
   <url>
-    <loc>https://eabeam.github.io/teaching-ai/modules/a2-prompting.html</loc>
-    <lastmod>2026-03-14T19:57:26.300Z</lastmod>
+    <loc>https://eabeam.github.io/teaching-ai/modules/a1-what-llms-do.html</loc>
+    <lastmod>2026-03-22T00:10:25.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/f1-first-real-task.html</loc>
+    <lastmod>2026-03-24T23:16:09.535Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/modules/f2-course-prep.html</loc>
+    <lastmod>2026-03-24T23:17:04.883Z</lastmod>
   </url>
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/c4-writing-revision.html</loc>
@@ -211,5 +243,9 @@
   <url>
     <loc>https://eabeam.github.io/teaching-ai/modules/c5-math-derivations.html</loc>
     <lastmod>2026-03-22T00:10:57.805Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eabeam.github.io/teaching-ai/F_TRACK_OUTLINE.html</loc>
+    <lastmod>2026-03-24T22:25:11.478Z</lastmod>
   </url>
 </urlset>

@@ -40,6 +40,21 @@ website:
             text: "C4: Writing & Revision"
           - href: modules/c5-math-derivations.qmd
             text: "C5: Math & Derivations"
+      - text: Faculty Quick Start
+        menu:
+          - href: modules/f1-first-real-task.qmd
+            text: "F1: Your First Real Task"
+          - href: modules/f2-course-prep.qmd
+            text: "F2: Course Prep Power Hour"
+          - href: modules/f3-feedback-at-scale.qmd
+            text: "F3: Feedback at Scale"
+          - href: modules/f4-course-ai-ready.qmd
+            text: "F4: Make Your Course AI-Ready"
+          - text: "---"
+          - href: modules/terminal-transition.qmd
+            text: "When to Move to the Terminal"
+      - href: modules/resources.qmd
+        text: Resources
       - href: about.qmd
         text: About
 

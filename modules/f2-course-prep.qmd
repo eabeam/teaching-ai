@@ -1,0 +1,128 @@
+---
+title: "F2: Course Prep Power Hour"
+subtitle: "First drafts in minutes, not hours"
+---
+
+::: {.module-meta}
+[~25 min]{.badge .badge-time}
+[Faculty Quick Start]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Use AI to generate working drafts of course materials from your existing files
+2. Adapt old materials across semesters, sections, or textbooks without starting from scratch
+3. Build lightweight quality-control checks into your prep workflow
+4. Recognize the most common ways AI-generated course materials go wrong
+
+## What You Need
+
+- One set of existing course materials (lecture notes, old problem sets, learning objectives, a reading)
+- An AI desktop app that can see multiple files in the same conversation
+- A willingness to edit aggressively — you're generating first drafts, not final products
+
+## The Right Mindset: Directing, Not Delegating
+
+You are the subject-matter expert. You know what your students need, what they've already covered, and how questions at your institution differ from questions at a generic intro course. AI doesn't know any of that.
+
+The right mental model: **AI is a fast intern.** Useful for momentum, not trusted for judgment. It can produce a working draft of a problem set in two minutes, but that draft will need your expertise to become something you'd actually hand out.
+
+A "working draft you can edit" is the right success standard. If you're expecting a finished product, you'll be disappointed. If you're expecting raw material that saves you from staring at a blank page, you'll be impressed.
+
+## Build a Problem Set from Objectives and Notes
+
+This is the highest-value faculty use case for AI, and it's straightforward.
+
+**Step 1:** Attach your lecture notes and learning objectives for the relevant unit.
+
+**Step 2:** Be specific about what you want:
+
+> "Create a problem set with 6 questions for an intermediate microeconomics course. These students have just finished the unit on consumer theory. Include a mix of: 2 conceptual questions (explain/define), 2 applied problems (calculate), and 2 questions that require students to interpret a graph or table. Difficulty: appropriate for a second-year economics major."
+
+**Step 3:** Review the output against your actual course:
+
+- Are the questions at the right level? Not too easy, not too advanced?
+- Do they use the notation and terminology you taught?
+- Do the applied problems use realistic numbers and units?
+
+::: {.callout-tip}
+## The Specificity Payoff
+Compare "write me some practice questions" with the prompt above. The more specific you are about quantity, type, difficulty, and audience, the less editing you'll need. Two minutes of prompt specificity saves twenty minutes of revision.
+:::
+
+## Create an Answer Key with Common Mistakes
+
+Once you have a draft problem set, use it as input for the next step:
+
+> "For each question in this problem set, provide: (1) the correct answer with a clear solution path, (2) two common mistakes students make on this type of problem, and (3) partial credit guidance — what would earn half credit vs. no credit."
+
+This is where AI earns its keep. Generating the common-mistakes list is tedious work that AI handles well, and it makes your TAs' grading dramatically more consistent.
+
+**But verify every solution.** AI will occasionally get its own questions wrong — especially on multi-step calculations, graph interpretation, and anything involving specific economic intuition. This is not hypothetical; it happens regularly.
+
+::: {.callout-important}
+## The Self-Check
+Ask the AI to solve the problem set you just generated. Compare its solutions to your answer key. If the AI gets its own questions wrong, students will too — and not in the way you intended. This takes two minutes and catches errors that eyeballing misses.
+:::
+
+## Adapt Materials Across Sections, Semesters, or Textbooks
+
+You taught this course last spring. Now it's fall, you have a different textbook, and you want fresh examples. This is a perfect AI task.
+
+> "Here is last semester's problem set on supply and demand [attach file]. Adapt it for a new section that uses Mankiw instead of Acemoglu. Keep the same structure and difficulty, but update the examples and references to match Mankiw's approach and notation."
+
+Or simpler:
+
+> "Create a new version of this problem set with different numbers and contexts so I can use it as a makeup exam. Preserve the difficulty and the skills being tested."
+
+Or scale-shifting:
+
+> "I'm teaching this material to an MBA class instead of undergraduates. Adjust the difficulty and framing — more emphasis on business applications, less on formal derivations."
+
+## Turn a Paper into a "Read This for Class" Guide
+
+You assigned Chetty et al. (2014) for next week's discussion. You want students to come prepared, but a 60-page paper intimidates them into not reading at all.
+
+Attach the PDF and ask:
+
+> "Create a reading guide for undergraduate economics students about to discuss this paper in a seminar. Include: (1) a one-paragraph summary of the research question and main finding, (2) a section-by-section roadmap that tells students what to focus on and what they can skim, (3) 5 key terms or concepts they should understand, and (4) 3-4 discussion questions that connect the paper to broader themes in economics."
+
+This reduces prep friction without replacing the reading. You're giving students a map, not a substitute.
+
+## Quality Control
+
+Before you use any AI-generated material, run through this checklist:
+
+- [ ] **Difficulty check**: Are the questions at the level you actually teach, or has AI defaulted to generic intro-level material?
+- [ ] **Terminology check**: Does the material use the notation, terminology, and conventions from *your* course?
+- [ ] **Accuracy check**: Are all answers, solutions, and explanations correct? (Have AI solve its own problems as a cross-check.)
+- [ ] **Fit check**: Do the questions test what you actually want students to practice, or has AI drifted toward what's easiest to generate?
+- [ ] **Tone check**: Does the material sound like something from your course, or does it read like a generic textbook supplement?
+
+## Red Flags
+
+These are the most common ways AI course prep goes wrong:
+
+- **Wrong level of difficulty.** AI tends to default to introductory-level material unless you're very specific. An "intermediate" problem set may read like a principles-level worksheet.
+- **Generic voice.** The output sounds like no one in particular wrote it. If your course has a distinctive character — informal, rigorous, applied, theoretical — you need to tell the AI.
+- **Plausible-but-incorrect answers.** AI is confident about wrong answers, especially in multi-step problems. Check the math.
+- **Methods you haven't taught yet.** AI may produce correct answers that use Lagrangians when you taught substitution, or reference concepts from next month's unit. This is the sneakiest failure mode — the answer is right, but the method is wrong for your course.
+- **Misalignment with learning goals.** AI generates questions that are answerable but don't test the skills your objectives specify. A problem set about consumer theory that's really just arithmetic.
+
+## Try It Now
+
+1. Load one lecture note file and one assignment or learning objective file into your AI app.
+2. Ask for a 20-minute in-class activity or a short problem set (4-6 questions).
+3. Run the quality control checklist above.
+4. Edit the result until it feels like something you would actually hand out — or decide it's not worth the effort and note what went wrong.
+
+The goal is not perfection from the AI. The goal is a starting point that gets you to a finished product faster than starting from a blank page.
+
+::: {.instructor-note}
+**For workshop facilitators**: This module works best when faculty bring two files — one set of learning objectives and one existing document (old exam, lecture slides, syllabus). Have them generate one artifact live, then spend 10 minutes editing it. The editing phase is where the "this is actually useful" realization happens — when they see that 5 minutes of editing turns a rough AI draft into something they'd use, compared to 45 minutes of writing from scratch.
+
+**Common concern**: "Won't all my problem sets start sounding the same?" Yes, if you accept AI output without editing. The quality control step is not optional — it's where your expertise makes the material yours.
+:::

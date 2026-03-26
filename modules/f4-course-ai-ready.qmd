@@ -1,0 +1,152 @@
+---
+title: "F4: Make Your Course AI-Ready"
+subtitle: "Use AI to think about AI in your course"
+---
+
+::: {.module-meta}
+[~25 min]{.badge .badge-time}
+[Faculty Quick Start]{.badge .badge-track}
+[No coding required]{.badge .badge-no-code}
+:::
+
+## Learning Objectives
+
+By the end of this module, you should be able to:
+
+1. Audit your syllabus and assignment descriptions for missing or unclear AI guidance
+2. Use AI to test whether your current assignments are vulnerable to shallow AI completion
+3. Draft AI use policy language in your own voice — not boilerplate
+4. Decide whether a given assignment should become more AI-resistant, more AI-integrated, or stay as-is
+
+## What You Need
+
+- Your current syllabus or a recent assignment sheet
+- One assignment you'd like to pressure-test
+- A willingness to revise — either policy language or assignment design
+
+## The Meta-Move
+
+This module is deliberately meta: you're going to use AI to think about AI in your course. Whether you're enthusiastic about AI, skeptical of it, or somewhere in between, your course needs a clear position. And AI is genuinely useful for helping you figure out what that position should be — faster than staring at a blank policy section.
+
+## Audit Your Syllabus
+
+Start with what you've already got. Attach your syllabus and ask:
+
+> "Read this syllabus as a student who wants to understand the rules about AI use. What's missing? What's vague? Where could a student reasonably say 'I didn't know that wasn't allowed'? Be specific about which sections need clarification."
+
+Common findings:
+
+- **No AI policy at all.** Many syllabi written before 2023 simply don't address it. Students are left guessing.
+- **Vague prohibitions.** "Academic integrity applies to all assignments" doesn't tell a student whether they can use AI to brainstorm an outline.
+- **Inconsistent signals.** The syllabus says one thing, but assignments imply another. If your final project instructions say "use any resources available to you," that includes AI — whether you meant it to or not.
+- **No guidance on what's allowed.** Even if you state what's *not* allowed, students need to know what *is* allowed. "Don't use AI to write your paper" leaves open: Can I use it to proofread? To check my citations? To brainstorm?
+
+## The Policy Spectrum
+
+There is no single correct AI policy. The right policy depends on your course goals, your students' level, and what you're trying to assess.
+
+| Approach | What It Means | Best For |
+|---|---|---|
+| **Ban** | No AI tools on any assignment. All work must be fully student-generated. | Courses where the *process* of doing the work is the learning goal (first-year writing, foundational methods courses) |
+| **Permit with disclosure** | Students may use AI but must document what they used and how. | Most courses — teaches responsible use while maintaining transparency |
+| **Require** | Students are expected to use AI as part of specific assignments. | Courses that explicitly teach AI literacy, or advanced courses where AI is a professional tool |
+| **Mixed** | Different policies for different assignments within the same course. | Courses with varied assessment types (exams vs. projects vs. problem sets) |
+
+Most faculty land somewhere in the middle. A complete ban is hard to enforce and misses an opportunity to teach responsible use. A blanket requirement may not fit courses where unassisted work is the point. Mixed policies are often the most honest — because the appropriate role of AI genuinely varies by task.
+
+Ask your AI app:
+
+> "Here are my course learning objectives [attach or list them]. For each objective, suggest whether an AI-ban, AI-permitted, or AI-required policy makes the most sense, and explain why. Consider what I'm actually trying to assess in each case."
+
+You won't agree with everything the AI suggests, but it's a useful starting point for thinking through the rationale assignment by assignment.
+
+## Test Your Assignments
+
+This is the part that often surprises faculty. Take one assignment and put it to the test:
+
+> "Here is an assignment from my undergraduate economics course [attach]. A student copies this prompt into an AI chat and submits whatever the AI produces with minimal editing. What grade would that submission likely earn on my rubric? What would be obviously AI-generated, and what might pass as student work?"
+
+Then look at the result honestly:
+
+- If AI produces a B+ paper, your assignment is testing something AI can already do. That's not necessarily a problem — but it's something you should know.
+- If AI produces a C paper, your assignment already has built-in AI resistance. You might be fine as-is.
+- If AI produces an A paper... that's a clear signal that the assignment needs redesign, or that you need a different way to assess whether students understand the material.
+
+::: {.callout-important}
+## The Flip Side
+Some assignments are *fine* to be AI-assisted — and recognizing that is part of the exercise. If AI can produce a strong first draft of a literature summary, maybe the assessment should focus on what students do *with* the summary (critique it, extend it, connect it to their research question) rather than on the summarizing itself. Not everything needs to be AI-proof. The goal is intentional design, not blanket resistance.
+:::
+
+## Redesign One Assignment
+
+Pick one assignment and decide: should it become more AI-resistant, more AI-integrated, or stay as-is?
+
+### AI-Resistant Options
+
+These make it harder for students to substitute AI for thinking:
+
+- **Process evidence.** Require intermediate deliverables: outlines, annotated bibliographies, draft-to-final comparisons.
+- **Oral defense.** Students present and defend their work verbally. Hard to fake understanding.
+- **Local or personal data.** "Analyze data from this specific case" or "interview a local business owner" — AI can't do fieldwork.
+- **Staged drafts with instructor feedback.** If you see the work develop, you know it's real.
+- **Reflection on methodology choices.** "Explain why you chose this specification, what alternatives you considered, and why you rejected them."
+
+### AI-Enhanced Options
+
+These make AI use explicit and productive:
+
+- **Generate-then-evaluate.** "Use AI to produce a draft analysis of this data. Then write a 500-word critique: what did the AI get right? What did it miss? What would you change?"
+- **Verification logs.** Students use AI to generate a first draft and submit a log documenting every AI interaction, what they kept, what they changed, and why.
+- **Critique-and-revise.** Give students an AI-generated essay with deliberate flaws. They identify errors, explain why they're wrong, and produce a corrected version.
+- **AI as opponent.** "Use AI to argue *against* your thesis. Then strengthen your argument in response."
+
+Most existing resources lean heavily on AI-resistant strategies. The AI-enhanced path is underexplored and often more honest about how students will actually work. If they're going to use AI anyway, designing assignments that make AI use visible and productive is more realistic than designing assignments that pretend AI doesn't exist.
+
+## Draft Guidelines in Your Voice
+
+Now write the actual policy language. Here's how to get AI to help without producing generic boilerplate:
+
+> "Here is my current syllabus [attach]. Match the tone and voice of my existing writing. Draft a 2-3 paragraph AI use policy for this course that covers: (1) what students may and may not use AI for, (2) the disclosure requirement if they use AI, and (3) the consequences of undisclosed AI use. Be direct and specific — avoid legalistic language."
+
+If the first draft sounds like a corporate compliance document, push back:
+
+> "This is too formal. My syllabus tone is direct and slightly informal. Rewrite to match. Use specific examples of what's allowed and what's not rather than abstract rules."
+
+## Common Objections and Responses
+
+If you discuss AI policy with colleagues, you'll hear these:
+
+**"Students will use it anyway, so what's the point of a policy?"**
+A policy doesn't prevent AI use — it sets expectations and creates a framework for accountability. Speed limits don't prevent speeding, but they establish norms. The same logic applies.
+
+**"I don't have time to redesign everything."**
+You don't have to. Redesign one assignment this semester. Add a disclosure requirement to the rest. That's enough for now.
+
+**"This will vary too much by course to have a department standard."**
+True — and that's fine. The goal is not a department-wide mandate but individual faculty making intentional choices. Even "I haven't decided yet, so use at your own risk" is better than silence.
+
+**"If AI can do the assignment, maybe the assignment was bad to begin with."**
+Sometimes yes, sometimes no. Some tasks are valuable precisely *because* they're routine — students need to practice mechanics before they can do creative work. The question isn't "can AI do this?" but "is doing it yourself the learning goal?"
+
+## What Can Go Wrong
+
+- **Overly broad policy language.** "AI use is prohibited except where explicitly allowed" sounds clear but creates ambiguity on every assignment that doesn't explicitly mention AI.
+- **Rules that are impossible to enforce.** "Students must not use AI at any point in the writing process" — you can't verify this, and students know it.
+- **Assignment redesigns that add busywork.** Requiring process documentation is useful; requiring five intermediate drafts for a one-page response is not. Match the documentation requirement to the stakes.
+- **Generic AI-generated policy text.** Ironic but common. If you use AI to draft your AI policy, edit it until it actually sounds like you and references your specific course.
+
+## Try It Now
+
+1. Attach one syllabus or assignment sheet to your AI app.
+2. Ask the AI to identify the three biggest ambiguity points in your current AI guidance.
+3. Pick one: either revise a paragraph of policy language, or redesign one assignment element to be more AI-aware.
+
+You don't need to solve everything today. One clear policy paragraph and one intentionally designed assignment puts you ahead of most courses.
+
+::: {.instructor-note}
+**For workshop facilitators**: The assignment-testing exercise (Section 3) is the most eye-opening part of this module. Faculty are often surprised by how well AI performs on their assignments. Run this live — have faculty paste an assignment into AI and watch the result together. The conversation about what to do next practically runs itself.
+
+**Department-level use**: This module can structure a department retreat. Have each faculty member audit one assignment and one syllabus section. Pool the results: what patterns emerge? Where does the department need shared norms, and where should individual judgment rule?
+
+**Connection to other modules**: Faculty who want to go deeper on assessment design should look at [D2: Assessment Design in an AI World](../about.qmd) when it's available. Faculty thinking about student feedback should see [F3: Feedback at Scale](f3-feedback-at-scale.qmd).
+:::

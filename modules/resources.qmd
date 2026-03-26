@@ -1,0 +1,93 @@
+---
+title: "Resources"
+subtitle: "Annotated links to AI tools, policies, and further reading"
+---
+
+::: {.callout-note}
+## Living Document
+This page is updated each semester. Tools, pricing, and policies change frequently. If you find a broken link or outdated information, [open an issue on GitHub](https://github.com/eabeam/teaching-ai/issues).
+
+*Last reviewed: March 2026*
+:::
+
+## AI Desktop Apps
+
+Desktop apps can read your files directly — no copy-paste needed. This is the workflow described in the [F-track modules](f1-first-real-task.qmd).
+
+| Tool | What It Is | Cost | When to Use |
+|---|---|---|---|
+| **Claude** (Anthropic) | Desktop app + web. Strong at long documents, writing, and careful reasoning. | Free tier available; Pro plan ~$20/mo | Course prep, feedback drafting, document analysis |
+| **ChatGPT** (OpenAI) | Desktop app + web. Broad capabilities, large user base. | Free tier (GPT-4o); Plus ~$20/mo | General-purpose tasks, brainstorming, quick Q&A |
+| **Codex** (OpenAI) | Code-focused agent; can work with project folders. | Requires ChatGPT Pro ($200/mo) or API access | Building tools, simulations, course websites |
+| **GitHub Copilot** | AI code assistant integrated into editors. | Free for educators (apply via GitHub Education) | Writing and debugging code in Stata, R, Python |
+
+## Web-Based AI Tools
+
+No installation needed. Good for quick tasks and when you don't need file access.
+
+| Tool | What It Is | When to Use |
+|---|---|---|
+| **UVM Copilot** | Microsoft Copilot with enterprise protections. GPT-4 access. Sign in with UVM credentials. | FERPA-appropriate tasks with student data; your institutionally protected option |
+| **Claude.ai** | Browser version of Claude. | Quick tasks where you don't need the desktop app |
+| **ChatGPT (web)** | Browser version of ChatGPT. | Quick tasks, brainstorming |
+| **Gemini** (Google) | Google's AI assistant. | Google Workspace integration, general tasks |
+| **Perplexity** | AI-powered search with citations. | Quick factual lookups, when you want sourced answers |
+
+## Academic AI Tools
+
+Specialized tools for research and literature work. See [C1: Literature Review & Synthesis](c1-lit-review.qmd) for detailed guidance.
+
+| Tool | What It Is | When to Use |
+|---|---|---|
+| **Elicit** | AI research assistant. Searches papers, extracts findings, builds literature tables. | Systematic lit review, finding relevant papers quickly |
+| **Consensus** | AI search engine for academic papers. Answers questions with evidence from peer-reviewed sources. | Quick evidence checks, "what does the literature say about X" |
+| **Semantic Scholar** | Academic search engine with AI-powered recommendations. | Finding papers, citation tracking, related work |
+| **Connected Papers** | Visual graph of related papers based on citation networks. | Mapping a literature, finding seminal and recent work in a subfield |
+| **Research Rabbit** | Similar to Connected Papers with collaborative features. | Literature mapping, discovery |
+
+## AI Policy Resources
+
+For faculty developing course AI policies. See [F4: Make Your Course AI-Ready](f4-course-ai-ready.qmd).
+
+| Resource | What It Is |
+|---|---|
+| **UVM AI Resources** (uvm.edu/ai) | Institutional guidance, Copilot access, AI Academy events |
+| **UVM Copilot Cafe** | Drop-in sessions: 1st Wed 12pm, 3rd Thu 9:30am. Informal help with AI tools. |
+| **AEA Guidelines** | American Economic Association guidance on AI use in research and publishing |
+| **Lance Eaton's Syllabi Policies Collection** | Crowdsourced database of AI syllabus language from across disciplines |
+| **UNESCO AI and Education** | International framework for AI in education policy |
+
+## Privacy and Data
+
+Before uploading student work or sensitive data, know what protections each tool offers. See the [FERPA section in F3](f3-feedback-at-scale.qmd#ferpa-and-privacy).
+
+| Protection Level | What It Means | Examples |
+|---|---|---|
+| **Enterprise/education agreement** | Data not used for training. Institutional access controls. Contractual data handling terms. | UVM Copilot, institutionally provisioned tools |
+| **Paid consumer plan** | Varies by provider. Some paid plans offer opt-out from training. Read the terms. | Claude Pro, ChatGPT Plus (check current policies) |
+| **Free consumer plan** | Fewest guarantees. Data may be used for model improvement unless you opt out. Check settings. | Free tiers of most tools |
+
+**The practical rule:** Match the sensitivity of the data to the protection level of the tool. Student work and identifying information require enterprise-level protections or de-identification.
+
+## Further Reading
+
+### AI in Higher Education
+
+- **Mollick, E. (2024). *Co-Intelligence: Living and Working with AI*.** Accessible overview for non-technical readers. Good on practical use cases and mental models.
+- **Bowen & Watson (2024). *Teaching with AI*.** Practical guide for instructors. Covers assessment redesign, policy development, and classroom integration.
+- **UNESCO (2023). *Guidance for Generative AI in Education and Research*.** International policy framework. Useful for institutional context.
+
+### AI Literacy and Critical Thinking
+
+- **Crawford, K. (2021). *Atlas of AI*.** Critical perspective on AI's social and environmental costs. Good counterbalance to enthusiasm.
+- **Bender et al. (2021). "On the Dangers of Stochastic Parrots."** Foundational paper on risks of large language models. Accessible to non-CS audiences.
+
+### Economics and AI
+
+- **Autor, D. (2024). "Applying AI to Rebuild Middle Class Jobs."** NBER working paper on AI's labor market implications.
+- **Brynjolfsson et al. (2023). "Generative AI at Work."** NBER paper on AI's effect on customer service worker productivity — one of the first rigorous empirical studies.
+- **Korinek, A. (2023). "Generative AI for Economic Research."** Practical guide for economists using AI in research workflows.
+
+::: {.instructor-note}
+**Maintenance note**: This page requires a semester-level refresh. Tool pricing, data policies, and institutional agreements change. AEA and institutional guidance evolves. Schedule a 30-minute review at the start of each semester to update links, pricing, and policy references.
+:::

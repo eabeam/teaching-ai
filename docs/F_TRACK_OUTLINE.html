@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>f_track_outline – AI Literacy for Economists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b51d0b760ed1df9002165a882b93113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AI Literacy for Economists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-foundations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Foundations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-foundations">    
+        <li>
+    <a class="dropdown-item" href="./modules/a1-what-llms-do.html">
+ <span class="dropdown-text">A1: What LLMs Actually Do</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a2-prompting.html">
+ <span class="dropdown-text">A2: Prompting as Problem Specification</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/a3-when-to-use-ai.html">
+ <span class="dropdown-text">A3: When AI Helps vs.&nbsp;Hurts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical">    
+        <li>
+    <a class="dropdown-item" href="./modules/b1-terminal-basics.html">
+ <span class="dropdown-text">B1: Terminal Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/b2-git-github.html">
+ <span class="dropdown-text">B2: Git &amp; GitHub Essentials</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-econ-workflows" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Econ Workflows</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-econ-workflows">    
+        <li>
+    <a class="dropdown-item" href="./modules/c1-lit-review.html">
+ <span class="dropdown-text">C1: Literature Review &amp; Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c2-code-assistance.html">
+ <span class="dropdown-text">C2: Code Assistance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c3-data-exploration.html">
+ <span class="dropdown-text">C3: Data Exploration &amp; Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c4-writing-revision.html">
+ <span class="dropdown-text">C4: Writing &amp; Revision</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/c5-math-derivations.html">
+ <span class="dropdown-text">C5: Math &amp; Derivations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-faculty-quick-start" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Faculty Quick Start</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-faculty-quick-start">    
+        <li>
+    <a class="dropdown-item" href="./modules/f1-first-real-task.html">
+ <span class="dropdown-text">F1: Your First Real Task</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/f2-course-prep.html">
+ <span class="dropdown-text">F2: Course Prep Power Hour</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/f3-feedback-at-scale.html">
+ <span class="dropdown-text">F3: Feedback at Scale</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/f4-course-ai-ready.html">
+ <span class="dropdown-text">F4: Make Your Course AI-Ready</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./modules/terminal-transition.html">
+ <span class="dropdown-text">When to Move to the Terminal</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./modules/resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#f-track-outline-faculty-quick-start" id="toc-f-track-outline-faculty-quick-start" class="nav-link active" data-scroll-target="#f-track-outline-faculty-quick-start">F-Track Outline: Faculty Quick Start</a>
+  <ul class="collapse">
+  <li><a href="#positioning" id="toc-positioning" class="nav-link" data-scroll-target="#positioning">Positioning</a></li>
+  <li><a href="#start-here" id="toc-start-here" class="nav-link" data-scroll-target="#start-here">Start Here</a></li>
+  <li><a href="#track-wide-design-rules" id="toc-track-wide-design-rules" class="nav-link" data-scroll-target="#track-wide-design-rules">Track-wide Design Rules</a></li>
+  <li><a href="#f1-your-first-real-task" id="toc-f1-your-first-real-task" class="nav-link" data-scroll-target="#f1-your-first-real-task">F1: Your First Real Task</a>
+  <ul class="collapse">
+  <li><a href="#the-copy-paste-trap" id="toc-the-copy-paste-trap" class="nav-link" data-scroll-target="#the-copy-paste-trap">1. The copy-paste trap</a></li>
+  <li><a href="#what-point-it-at-your-files-means" id="toc-what-point-it-at-your-files-means" class="nav-link" data-scroll-target="#what-point-it-at-your-files-means">2. What “point it at your files” means</a></li>
+  <li><a href="#pick-one-and-go" id="toc-pick-one-and-go" class="nav-link" data-scroll-target="#pick-one-and-go">3. Pick one and go</a></li>
+  <li><a href="#what-just-happened" id="toc-what-just-happened" class="nav-link" data-scroll-target="#what-just-happened">4. What just happened</a></li>
+  <li><a href="#what-can-go-wrong" id="toc-what-can-go-wrong" class="nav-link" data-scroll-target="#what-can-go-wrong">5. What can go wrong</a></li>
+  </ul></li>
+  <li><a href="#f2-course-prep-power-hour" id="toc-f2-course-prep-power-hour" class="nav-link" data-scroll-target="#f2-course-prep-power-hour">F2: Course Prep Power Hour</a>
+  <ul class="collapse">
+  <li><a href="#the-right-mindset-directing-not-delegating" id="toc-the-right-mindset-directing-not-delegating" class="nav-link" data-scroll-target="#the-right-mindset-directing-not-delegating">1. The right mindset: directing, not delegating</a></li>
+  <li><a href="#build-a-problem-set-from-objectives-plus-notes" id="toc-build-a-problem-set-from-objectives-plus-notes" class="nav-link" data-scroll-target="#build-a-problem-set-from-objectives-plus-notes">2. Build a problem set from objectives plus notes</a></li>
+  <li><a href="#create-an-answer-key-with-common-mistakes-and-partial-credit-notes" id="toc-create-an-answer-key-with-common-mistakes-and-partial-credit-notes" class="nav-link" data-scroll-target="#create-an-answer-key-with-common-mistakes-and-partial-credit-notes">3. Create an answer key with common mistakes and partial-credit notes</a></li>
+  <li><a href="#adapt-materials-across-sections-semesters-or-textbooks" id="toc-adapt-materials-across-sections-semesters-or-textbooks" class="nav-link" data-scroll-target="#adapt-materials-across-sections-semesters-or-textbooks">4. Adapt materials across sections, semesters, or textbooks</a></li>
+  <li><a href="#turn-a-paper-into-a-read-this-for-class-guide" id="toc-turn-a-paper-into-a-read-this-for-class-guide" class="nav-link" data-scroll-target="#turn-a-paper-into-a-read-this-for-class-guide">5. Turn a paper into a “read this for class” guide</a></li>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">6. Quality control</a></li>
+  <li><a href="#red-flags" id="toc-red-flags" class="nav-link" data-scroll-target="#red-flags">7. Red flags</a></li>
+  </ul></li>
+  <li><a href="#f3-feedback-at-scale" id="toc-f3-feedback-at-scale" class="nav-link" data-scroll-target="#f3-feedback-at-scale">F3: Feedback at Scale</a>
+  <ul class="collapse">
+  <li><a href="#what-this-is-not" id="toc-what-this-is-not" class="nav-link" data-scroll-target="#what-this-is-not">1. What this is not</a></li>
+  <li><a href="#what-this-is" id="toc-what-this-is" class="nav-link" data-scroll-target="#what-this-is">2. What this is</a></li>
+  <li><a href="#generate-feedback-templates-from-your-rubric" id="toc-generate-feedback-templates-from-your-rubric" class="nav-link" data-scroll-target="#generate-feedback-templates-from-your-rubric">3. Generate feedback templates from your rubric</a></li>
+  <li><a href="#draft-individualized-feedback-starters" id="toc-draft-individualized-feedback-starters" class="nav-link" data-scroll-target="#draft-individualized-feedback-starters">4. Draft individualized feedback starters</a></li>
+  <li><a href="#identify-common-patterns-across-assignments" id="toc-identify-common-patterns-across-assignments" class="nav-link" data-scroll-target="#identify-common-patterns-across-assignments">5. Identify common patterns across assignments</a></li>
+  <li><a href="#create-what-to-review-guides" id="toc-create-what-to-review-guides" class="nav-link" data-scroll-target="#create-what-to-review-guides">6. Create “what to review” guides</a></li>
+  <li><a href="#the-ethical-line" id="toc-the-ethical-line" class="nav-link" data-scroll-target="#the-ethical-line">7. The ethical line</a></li>
+  <li><a href="#ferpa-and-privacy" id="toc-ferpa-and-privacy" class="nav-link" data-scroll-target="#ferpa-and-privacy">8. FERPA and privacy</a></li>
+  </ul></li>
+  <li><a href="#f4-make-your-course-ai-ready" id="toc-f4-make-your-course-ai-ready" class="nav-link" data-scroll-target="#f4-make-your-course-ai-ready">F4: Make Your Course AI-Ready</a>
+  <ul class="collapse">
+  <li><a href="#audit-your-syllabus" id="toc-audit-your-syllabus" class="nav-link" data-scroll-target="#audit-your-syllabus">1. Audit your syllabus</a></li>
+  <li><a href="#the-policy-spectrum" id="toc-the-policy-spectrum" class="nav-link" data-scroll-target="#the-policy-spectrum">2. The policy spectrum</a></li>
+  <li><a href="#test-your-assignments" id="toc-test-your-assignments" class="nav-link" data-scroll-target="#test-your-assignments">3. Test your assignments</a></li>
+  <li><a href="#redesign-one-assignment" id="toc-redesign-one-assignment" class="nav-link" data-scroll-target="#redesign-one-assignment">4. Redesign one assignment</a></li>
+  <li><a href="#draft-guidelines-in-your-voice" id="toc-draft-guidelines-in-your-voice" class="nav-link" data-scroll-target="#draft-guidelines-in-your-voice">5. Draft guidelines in your voice</a></li>
+  <li><a href="#common-objections-and-responses" id="toc-common-objections-and-responses" class="nav-link" data-scroll-target="#common-objections-and-responses">6. Common objections and responses</a></li>
+  <li><a href="#what-can-go-wrong-1" id="toc-what-can-go-wrong-1" class="nav-link" data-scroll-target="#what-can-go-wrong-1">7. What can go wrong</a></li>
+  </ul></li>
+  <li><a href="#companion-page-when-to-move-to-the-terminal" id="toc-companion-page-when-to-move-to-the-terminal" class="nav-link" data-scroll-target="#companion-page-when-to-move-to-the-terminal">Companion Page: When to Move to the Terminal</a>
+  <ul class="collapse">
+  <li><a href="#the-app-is-enough" id="toc-the-app-is-enough" class="nav-link" data-scroll-target="#the-app-is-enough">1. The app is enough</a></li>
+  <li><a href="#signs-you-might-want-more" id="toc-signs-you-might-want-more" class="nav-link" data-scroll-target="#signs-you-might-want-more">2. Signs you might want more</a></li>
+  <li><a href="#signs-the-app-is-the-right-choice" id="toc-signs-the-app-is-the-right-choice" class="nav-link" data-scroll-target="#signs-the-app-is-the-right-choice">3. Signs the app is the right choice</a></li>
+  <li><a href="#the-bridge-to-b1" id="toc-the-bridge-to-b1" class="nav-link" data-scroll-target="#the-bridge-to-b1">4. The bridge to B1</a></li>
+  <li><a href="#what-terminal-based-ai-looks-like" id="toc-what-terminal-based-ai-looks-like" class="nav-link" data-scroll-target="#what-terminal-based-ai-looks-like">5. What terminal-based AI looks like</a></li>
+  </ul></li>
+  <li><a href="#implementation-notes-for-build-phase" id="toc-implementation-notes-for-build-phase" class="nav-link" data-scroll-target="#implementation-notes-for-build-phase">Implementation Notes for Build Phase</a>
+  <ul class="collapse">
+  <li><a href="#tabsets" id="toc-tabsets" class="nav-link" data-scroll-target="#tabsets">Tabsets</a></li>
+  <li><a href="#companion-resources-page" id="toc-companion-resources-page" class="nav-link" data-scroll-target="#companion-resources-page">Companion Resources Page</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="f-track-outline-faculty-quick-start" class="level1">
+<h1>F-Track Outline: Faculty Quick Start</h1>
+<section id="positioning" class="level2">
+<h2 class="anchored" data-anchor-id="positioning">Positioning</h2>
+<p><strong>Audience</strong>: Faculty who have already installed an AI desktop app and want practical payoff quickly.</p>
+<p><strong>What this track is for</strong>: Personal productivity with real course files and documents.</p>
+<p><strong>What this track is not</strong>: A pedagogy sequence, a policy course, or a terminal tutorial.</p>
+<p><strong>Core promise</strong>: You do not need terminal skills to get substantial value. The app-first workflow is enough for most faculty use cases.</p>
+</section>
+<section id="start-here" class="level2">
+<h2 class="anchored" data-anchor-id="start-here">Start Here</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Your situation</th>
+<th>Start with</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I have 15 minutes and want to see what the fuss is about</td>
+<td><strong>F1: Your First Real Task</strong></td>
+</tr>
+<tr class="even">
+<td>I’m prepping a course and drowning in materials</td>
+<td><strong>F2: Course Prep Power Hour</strong></td>
+</tr>
+<tr class="odd">
+<td>It’s grading season and I’m behind on feedback</td>
+<td><strong>F3: Feedback at Scale</strong></td>
+</tr>
+<tr class="even">
+<td>I need an AI policy before students ask about it</td>
+<td><strong>F4: Make Your Course AI-Ready</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommended entry point</strong>: F1 — it takes 15 minutes and changes how you think about the rest.</p>
+<hr>
+</section>
+<section id="track-wide-design-rules" class="level2">
+<h2 class="anchored" data-anchor-id="track-wide-design-rules">Track-wide Design Rules</h2>
+<ul>
+<li>Platform-neutral by default; tool-specific steps appear only in tabsets or side notes</li>
+<li>App-first; no terminal required</li>
+<li>Short modules: 15-30 minutes</li>
+<li>Action-oriented; every module ends with a real task using the reader’s own files</li>
+<li>Honest about failure modes, privacy limits, and review responsibility</li>
+</ul>
+<hr>
+</section>
+<section id="f1-your-first-real-task" class="level2">
+<h2 class="anchored" data-anchor-id="f1-your-first-real-task">F1: Your First Real Task</h2>
+<p><strong>Subtitle</strong>: Stop copy-pasting. Start pointing.</p>
+<p><strong>Premise</strong>: The first real unlock of a desktop AI app is that it can work from your files directly. This module gives faculty one concrete success experience so the difference from browser chat is immediately obvious.</p>
+<p><strong>This is the recommended entry point for the F-track.</strong></p>
+<p><strong>Time estimate</strong>: 15 minutes</p>
+<p><strong>What you need</strong>: - One AI desktop app installed - One real file you already use for teaching - 15 uninterrupted minutes</p>
+<p><strong>Learning objectives</strong>: - See why file-based workflows beat copy-paste for ordinary faculty tasks - Learn the basic moves: attach a file, attach a folder, drag-and-drop, ask for a revision - Complete one real teaching task from start to finish - Notice the quality-control checks needed before using the output</p>
+<p><strong>Section structure</strong>:</p>
+<section id="the-copy-paste-trap" class="level3">
+<h3 class="anchored" data-anchor-id="the-copy-paste-trap">1. The copy-paste trap</h3>
+<ul>
+<li>Browser chat feels useful at first, but the workflow breaks down once formatting, multiple documents, or longer files enter the picture</li>
+<li>Copy-paste strips context, introduces formatting errors, and makes iteration tedious</li>
+<li>The key shift is simple: stop moving text into the AI; point the AI at the file instead</li>
+</ul>
+</section>
+<section id="what-point-it-at-your-files-means" class="level3">
+<h3 class="anchored" data-anchor-id="what-point-it-at-your-files-means">2. What “point it at your files” means</h3>
+<ul>
+<li>Show the three common patterns: file picker, drag-and-drop, opening a project folder</li>
+<li>Explain that the reader does not need to understand anything technical about “context”</li>
+<li>Define the practical rule: if the file matters, give the app the file instead of a mangled excerpt</li>
+</ul>
+</section>
+<section id="pick-one-and-go" class="level3">
+<h3 class="anchored" data-anchor-id="pick-one-and-go">3. Pick one and go</h3>
+<ul>
+<li>Four concrete examples, each with a before/after comparison:
+<ol type="1">
+<li>Turn an old exam into a study guide</li>
+<li>Generate a rubric from an assignment description</li>
+<li>Draft discussion questions from a reading PDF</li>
+<li>Summarize student evaluations into themes</li>
+</ol></li>
+<li>At least one example shows a concrete before/after prompt pair. For instance:
+<ul>
+<li><strong>Browser chat (copy-paste)</strong>: You paste a few exam questions, lose the formatting, and type “make a study guide.” The AI has no idea about the course level, the other questions, or how topics connect across the exam.</li>
+<li><strong>Desktop app (file-based)</strong>: You attach the full exam PDF and say: “Create a study guide for students preparing for this exam. Organize by topic, flag which questions test application vs.&nbsp;recall, and suggest what to review for each section.” The AI sees the whole document — structure, notation, difficulty progression — and produces something you can actually hand out.</li>
+</ul></li>
+<li>Each example should make the quality gap obvious, not just the convenience gap</li>
+</ul>
+</section>
+<section id="what-just-happened" class="level3">
+<h3 class="anchored" data-anchor-id="what-just-happened">4. What just happened</h3>
+<ul>
+<li>The core lesson: <strong>better context → better output</strong>. You didn’t write a fancier prompt. You gave the AI the actual file. That’s it.</li>
+<li>Revision was easier because the app kept the file in view — you could say “make section 3 harder” without re-explaining what section 3 was</li>
+<li>The workflow killed the copy-paste tax: no reformatting, no truncation, no “here’s the rest of the document”</li>
+<li>This is not a trick. It’s the reason these apps exist.</li>
+</ul>
+</section>
+<section id="what-can-go-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="what-can-go-wrong">5. What can go wrong</h3>
+<ul>
+<li>The AI may overgeneralize, miss course-specific nuance, or flatten tone</li>
+<li>Summaries can miss edge cases or overstate a pattern</li>
+<li>The reader still checks for accuracy, emphasis, and appropriateness</li>
+</ul>
+<p><strong>Try it now</strong>: - Pick one file from this semester and ask the app to produce something you would actually use this week - Revise once by asking for a different format, tone, or level of detail - Keep or discard the result based on whether it saved real time</p>
+<p><strong>Tool-specific note</strong>: Use tabsets in the eventual <code>.qmd</code> for attaching files in Claude Code, Codex, and ChatGPT desktop.</p>
+<hr>
+</section>
+</section>
+<section id="f2-course-prep-power-hour" class="level2">
+<h2 class="anchored" data-anchor-id="f2-course-prep-power-hour">F2: Course Prep Power Hour</h2>
+<p><strong>Subtitle</strong>: First drafts in minutes, not hours</p>
+<p><strong>Premise</strong>: Faculty course prep often starts from a pile of half-reusable materials. AI is most helpful here as a fast first-draft engine that works from last semester’s files, learning goals, and readings.</p>
+<p><strong>Time estimate</strong>: 25 minutes</p>
+<p><strong>What you need</strong>: - One set of existing course materials - A few learning objectives, notes, or a reading assignment - An AI app that can see multiple files in the same conversation</p>
+<p><strong>Learning objectives</strong>: - Use AI to generate a working draft from existing teaching materials - Adapt old materials rather than starting from a blank page - Build lightweight quality-control checks into prep workflows - Recognize the most common ways AI course prep drifts off target</p>
+<p><strong>Section structure</strong>:</p>
+<section id="the-right-mindset-directing-not-delegating" class="level3">
+<h3 class="anchored" data-anchor-id="the-right-mindset-directing-not-delegating">1. The right mindset: directing, not delegating</h3>
+<ul>
+<li>Faculty remain the subject-matter expert and final editor</li>
+<li>The AI is a fast intern: useful for momentum, not trusted judgment</li>
+<li>A “working draft you can edit” is the right success standard</li>
+</ul>
+</section>
+<section id="build-a-problem-set-from-objectives-plus-notes" class="level3">
+<h3 class="anchored" data-anchor-id="build-a-problem-set-from-objectives-plus-notes">2. Build a problem set from objectives plus notes</h3>
+<ul>
+<li>Attach lecture notes and learning objectives</li>
+<li>Ask for questions at a specified level of difficulty</li>
+<li>Request variety: conceptual, applied, short-answer, computation</li>
+</ul>
+</section>
+<section id="create-an-answer-key-with-common-mistakes-and-partial-credit-notes" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-answer-key-with-common-mistakes-and-partial-credit-notes">3. Create an answer key with common mistakes and partial-credit notes</h3>
+<ul>
+<li>Use the draft problem set as input</li>
+<li>Ask for common misconceptions, partial-credit logic, and brief explanations</li>
+<li>Emphasize that the instructor verifies every solution before use</li>
+</ul>
+</section>
+<section id="adapt-materials-across-sections-semesters-or-textbooks" class="level3">
+<h3 class="anchored" data-anchor-id="adapt-materials-across-sections-semesters-or-textbooks">4. Adapt materials across sections, semesters, or textbooks</h3>
+<ul>
+<li>Turn last semester’s worksheet into a new version</li>
+<li>Swap examples, change readings, or raise/lower difficulty</li>
+<li>Preserve structure while updating content</li>
+</ul>
+</section>
+<section id="turn-a-paper-into-a-read-this-for-class-guide" class="level3">
+<h3 class="anchored" data-anchor-id="turn-a-paper-into-a-read-this-for-class-guide">5. Turn a paper into a “read this for class” guide</h3>
+<ul>
+<li>Attach a PDF and ask for discussion prompts, a reading roadmap, and key terms</li>
+<li>Ask for the output in a student-facing format</li>
+<li>Use this to reduce prep friction, not to replace reading the paper</li>
+</ul>
+</section>
+<section id="quality-control" class="level3">
+<h3 class="anchored" data-anchor-id="quality-control">6. Quality control</h3>
+<ul>
+<li>Check difficulty, terminology, answer accuracy, and fit with course goals</li>
+<li>Watch for invented details, wrong emphasis, and unhelpful verbosity</li>
+<li>Compare the draft against what students actually need to practice</li>
+<li><strong>Concrete check</strong>: Ask the AI to solve the problem set you just generated. Compare its solutions to your answer key. If the AI gets its own questions wrong, students will too — and not in the way you intended</li>
+</ul>
+</section>
+<section id="red-flags" class="level3">
+<h3 class="anchored" data-anchor-id="red-flags">7. Red flags</h3>
+<ul>
+<li>Wrong level of difficulty</li>
+<li>Generic wording that ignores your course voice</li>
+<li>Plausible-but-incorrect answers</li>
+<li>Answers that are correct but use methods, notation, or concepts you haven’t taught yet</li>
+<li>Misalignment between learning goals and generated tasks</li>
+</ul>
+<p><strong>Try it now</strong>: - Load one lecture note file and one assignment or objective file - Ask for a 20-minute in-class activity or short problem set - Edit the result until it feels like something you would actually hand out</p>
+<p><strong>Tool-specific note</strong>: Use tabsets in the eventual <code>.qmd</code> for loading multiple course files into the app.</p>
+<hr>
+</section>
+</section>
+<section id="f3-feedback-at-scale" class="level2">
+<h2 class="anchored" data-anchor-id="f3-feedback-at-scale">F3: Feedback at Scale</h2>
+<p><strong>Subtitle</strong>: Better feedback, less grading dread</p>
+<p><strong>Premise</strong>: Faculty do not need AI to assign grades. They can use it to organize, standardize, and accelerate feedback so comments are more useful and less exhausting to produce.</p>
+<p><strong>Time estimate</strong>: 20 minutes</p>
+<p><strong>What you need</strong>: - A rubric, assignment instructions, or sample feedback comments - One or a few pieces of student work you are allowed to share with the tool - A clear understanding of your institution’s privacy rules</p>
+<p><strong>Learning objectives</strong>: - Distinguish feedback support from auto-grading - Generate reusable feedback language anchored to rubric dimensions - Use AI to identify recurring patterns across submissions - Recognize privacy and transparency constraints before uploading student work</p>
+<p><strong>Section structure</strong>:</p>
+<section id="what-this-is-not" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-is-not">1. What this is not</h3>
+<ul>
+<li>Not score assignment</li>
+<li>Not unsupervised grading</li>
+<li>Not outsourcing judgment about student learning</li>
+</ul>
+</section>
+<section id="what-this-is" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-is">2. What this is</h3>
+<ul>
+<li>Drafting feedback starters</li>
+<li>Turning rubrics into reusable comment banks</li>
+<li>Spotting recurring problems across a set of assignments</li>
+<li>Producing follow-up guidance for students</li>
+</ul>
+</section>
+<section id="generate-feedback-templates-from-your-rubric" class="level3">
+<h3 class="anchored" data-anchor-id="generate-feedback-templates-from-your-rubric">3. Generate feedback templates from your rubric</h3>
+<ul>
+<li>Attach the rubric and ask for comment stems by dimension</li>
+<li>Request versions for strong, mixed, and weak performance</li>
+<li>Keep the tone specific and respectful rather than canned</li>
+</ul>
+</section>
+<section id="draft-individualized-feedback-starters" class="level3">
+<h3 class="anchored" data-anchor-id="draft-individualized-feedback-starters">4. Draft individualized feedback starters</h3>
+<ul>
+<li>Use rubric dimensions plus a short summary of the student’s work</li>
+<li>Generate a first paragraph or two that you then edit</li>
+<li>Preserve instructor voice and course priorities</li>
+</ul>
+</section>
+<section id="identify-common-patterns-across-assignments" class="level3">
+<h3 class="anchored" data-anchor-id="identify-common-patterns-across-assignments">5. Identify common patterns across assignments</h3>
+<ul>
+<li>Ask for themes: what are students consistently misunderstanding</li>
+<li>Use those patterns to plan reteaching, FAQs, or a review sheet</li>
+<li>This is also a <strong>teaching diagnostic</strong>: if 60% of students miss the same thing, that’s a signal about your instruction or materials, not just their preparation. AI can surface the pattern; you decide what it means.</li>
+<li>Keep an eye out for the AI overstating how common a pattern is</li>
+</ul>
+</section>
+<section id="create-what-to-review-guides" class="level3">
+<h3 class="anchored" data-anchor-id="create-what-to-review-guides">6. Create “what to review” guides</h3>
+<ul>
+<li>Turn repeated issues into a short study guide or class announcement</li>
+<li>Focus on next-step advice students can act on</li>
+</ul>
+</section>
+<section id="the-ethical-line" class="level3">
+<h3 class="anchored" data-anchor-id="the-ethical-line">7. The ethical line</h3>
+<ul>
+<li>Be clear with yourself and, where appropriate, with students about your process</li>
+<li>Faculty judgment remains central</li>
+<li>If the institution has guidance, follow it</li>
+</ul>
+</section>
+<section id="ferpa-and-privacy" class="level3">
+<h3 class="anchored" data-anchor-id="ferpa-and-privacy">8. FERPA and privacy</h3>
+<ul>
+<li>Not all tools are equally appropriate for student work. The key distinction: <strong>enterprise/education agreements</strong> (your data is not used for training, access is restricted) vs.&nbsp;<strong>consumer tools</strong> (fewer guarantees).</li>
+<li>Check whether your institution has an enterprise agreement. For example, UVM Copilot has enterprise protections; a free ChatGPT account does not.</li>
+<li>When in doubt: de-identify student work before uploading (remove names, IDs, course section identifiers)</li>
+<li>If the privacy status is unclear, do not upload student materials until you verify policy</li>
+<li>This is not a reason to avoid AI for feedback — it’s a reason to use the right tool</li>
+</ul>
+<p><strong>Try it now</strong>: - Use one rubric to generate a small feedback bank for three common performance patterns - If privacy rules allow it, test one anonymized submission and edit the result heavily - Draft one class-wide “what to review before the next assignment” note</p>
+<p><strong>Tool-specific note</strong>: Use tabsets in the eventual <code>.qmd</code> for sharing rubrics and anonymized student work in different apps.</p>
+<hr>
+</section>
+</section>
+<section id="f4-make-your-course-ai-ready" class="level2">
+<h2 class="anchored" data-anchor-id="f4-make-your-course-ai-ready">F4: Make Your Course AI-Ready</h2>
+<p><strong>Subtitle</strong>: Use AI to think about AI in your course</p>
+<p><strong>Premise</strong>: This module is meta by design. Faculty can use AI to pressure-test their own syllabus, assignment design, and policy language before students do it for them.</p>
+<p><strong>Time estimate</strong>: 25 minutes</p>
+<p><strong>What you need</strong>: - Your syllabus or assignment sheet - One assignment you currently use - A willingness to revise policy language or assignment structure</p>
+<p><strong>Learning objectives</strong>: - Audit course documents for missing or unclear AI guidance - Use AI to test whether current assignments are vulnerable to shallow AI completion - Draft policy language in your own voice - Decide whether a given assignment should become more AI-resistant or more AI-integrated</p>
+<p><strong>Section structure</strong>:</p>
+<section id="audit-your-syllabus" class="level3">
+<h3 class="anchored" data-anchor-id="audit-your-syllabus">1. Audit your syllabus</h3>
+<ul>
+<li>Ask the AI what is missing, vague, or contradictory in the current policy language</li>
+<li>Look for places where students could reasonably say they did not know the rules</li>
+</ul>
+</section>
+<section id="the-policy-spectrum" class="level3">
+<h3 class="anchored" data-anchor-id="the-policy-spectrum">2. The policy spectrum</h3>
+<ul>
+<li>Ban, permit, require</li>
+<li>Clarify that the choice depends on course goals, not ideology</li>
+<li>Ask the AI to compare what each approach would imply in practice</li>
+</ul>
+</section>
+<section id="test-your-assignments" class="level3">
+<h3 class="anchored" data-anchor-id="test-your-assignments">3. Test your assignments</h3>
+<ul>
+<li>Paste or attach one assignment and ask: could a student get a strong grade from a shallow AI workflow?</li>
+<li>Identify where the current task invites generic output</li>
+<li>Use the answer as a diagnostic, not as an accusation</li>
+<li>Important flip side: some assignments are <em>fine</em> to be AI-assisted — and recognizing that is part of the exercise. Not everything needs to be AI-proof. The goal is intentional design, not blanket resistance</li>
+</ul>
+</section>
+<section id="redesign-one-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="redesign-one-assignment">4. Redesign one assignment</h3>
+<ul>
+<li>Choose either AI-resistant or AI-enhanced (both are valid — the choice depends on the learning goal)</li>
+<li>AI-resistant options: process evidence, oral defense, local data, staged drafts, reflection on decisions</li>
+<li>AI-enhanced options: explicit AI-use documentation, verification logs, critique-and-revise tasks, “use AI to generate X, then evaluate whether X is correct”</li>
+<li>Most existing resources lean heavily on AI-resistant strategies. The AI-enhanced path is underexplored and often more honest about how students will actually work</li>
+</ul>
+</section>
+<section id="draft-guidelines-in-your-voice" class="level3">
+<h3 class="anchored" data-anchor-id="draft-guidelines-in-your-voice">5. Draft guidelines in your voice</h3>
+<ul>
+<li>Use your current syllabus tone as a model</li>
+<li>Ask for short, direct language rather than policy boilerplate</li>
+<li>Keep room for course-specific examples</li>
+</ul>
+</section>
+<section id="common-objections-and-responses" class="level3">
+<h3 class="anchored" data-anchor-id="common-objections-and-responses">6. Common objections and responses</h3>
+<ul>
+<li>“Students will use it anyway”</li>
+<li>“I do not have time to redesign everything”</li>
+<li>“This will vary too much by course”</li>
+<li>Use the AI to brainstorm tradeoffs without letting it decide for you</li>
+</ul>
+</section>
+<section id="what-can-go-wrong-1" class="level3">
+<h3 class="anchored" data-anchor-id="what-can-go-wrong-1">7. What can go wrong</h3>
+<ul>
+<li>Overly broad policy language</li>
+<li>Rules that are impossible to enforce</li>
+<li>Assignment redesign that adds busywork rather than learning value</li>
+<li>Letting the AI produce generic policy text with no connection to your course</li>
+</ul>
+<p><strong>Try it now</strong>: - Attach one syllabus or assignment sheet - Ask the AI to identify the three biggest ambiguity points in your current AI guidance - Revise one paragraph of policy or redesign one assignment element</p>
+<hr>
+</section>
+</section>
+<section id="companion-page-when-to-move-to-the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="companion-page-when-to-move-to-the-terminal">Companion Page: When to Move to the Terminal</h2>
+<p><strong>Type</strong>: Standalone reference page, not a full module</p>
+<p><strong>Tone</strong>: Reassuring, not recruiting</p>
+<p><strong>Purpose</strong>: Help faculty understand that the desktop app is enough for most use cases while naming the situations where terminal workflows become worthwhile.</p>
+<p><strong>Structure</strong>:</p>
+<section id="the-app-is-enough" class="level3">
+<h3 class="anchored" data-anchor-id="the-app-is-enough">1. The app is enough</h3>
+<ul>
+<li>Lead with the main reassurance: most faculty do not need the terminal</li>
+<li>Name the common app-first wins: document drafting, summarizing, course prep, brainstorming, feedback support</li>
+</ul>
+</section>
+<section id="signs-you-might-want-more" class="level3">
+<h3 class="anchored" data-anchor-id="signs-you-might-want-more">2. Signs you might want more</h3>
+<ul>
+<li>“I keep doing the same thing to dozens of files” -&gt; batch processing</li>
+<li>“I wish this were part of my Stata or R workflow” -&gt; command-line integration</li>
+<li>“I want to track what changed and why” -&gt; version control</li>
+<li>“I’m building something students will use” -&gt; development tools</li>
+<li>“I want finer control over what the AI sees” -&gt; context management</li>
+</ul>
+</section>
+<section id="signs-the-app-is-the-right-choice" class="level3">
+<h3 class="anchored" data-anchor-id="signs-the-app-is-the-right-choice">3. Signs the app is the right choice</h3>
+<ul>
+<li>One-off document tasks</li>
+<li>Anything centered in Word or Google Docs</li>
+<li>Quick Q&amp;A and brainstorming</li>
+<li>Tasks where file picker or drag-and-drop already works well</li>
+</ul>
+</section>
+<section id="the-bridge-to-b1" class="level3">
+<h3 class="anchored" data-anchor-id="the-bridge-to-b1">4. The bridge to B1</h3>
+<ul>
+<li>If the “want more” list feels familiar, start with <code>B1: Terminal Basics</code></li>
+<li>Set expectations honestly: one module is enough to tell whether the terminal is worth pursuing</li>
+<li>The goal is not conversion; it is informed choice</li>
+</ul>
+</section>
+<section id="what-terminal-based-ai-looks-like" class="level3">
+<h3 class="anchored" data-anchor-id="what-terminal-based-ai-looks-like">5. What terminal-based AI looks like</h3>
+<ul>
+<li>Focus on the <strong>workflow</strong>, not the interface: “You type a question in plain English. The AI reads your project files, suggests edits, and you approve or reject each one. It’s a conversation — just in text instead of a chat window. The difference is that it can touch your files directly, run your code, and remember the whole project structure.”</li>
+<li>Brief description plus 2-3 screenshots or annotated examples later in the <code>.qmd</code> build</li>
+<li>Emphasize that it is not “harder” — it is different, and it pays off for different tasks</li>
+</ul>
+<p><strong>Try it now</strong>: - Ask yourself whether you have a real repeat task that the app handles poorly - If yes, queue <code>B1: Terminal Basics</code>; if not, keep using the app without guilt</p>
+<hr>
+</section>
+</section>
+<section id="implementation-notes-for-build-phase" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-notes-for-build-phase">Implementation Notes for Build Phase</h2>
+<section id="tabsets" class="level3">
+<h3 class="anchored" data-anchor-id="tabsets">Tabsets</h3>
+<p>Use Quarto <code>panel-tabset</code> blocks only where click-by-click steps genuinely diverge:</p>
+<ul>
+<li>F1: attaching files / opening folders</li>
+<li>F2: loading multiple course materials</li>
+<li>F3: sharing rubrics and anonymized student work</li>
+</ul>
+<p>F4 should stay mostly tool-agnostic and avoid interface detail unless clearly needed.</p>
+</section>
+<section id="companion-resources-page" class="level3">
+<h3 class="anchored" data-anchor-id="companion-resources-page">Companion Resources Page</h3>
+<p>Build <code>modules/resources.qmd</code> later as a living, annotated link page with these categories:</p>
+<ul>
+<li>AI desktop apps</li>
+<li>Web-based AI tools</li>
+<li>Academic AI tools</li>
+<li>AI policy resources</li>
+<li>Learning more</li>
+<li>Privacy and data</li>
+</ul>
+<p>Each entry should include: - Name - One-sentence description - Link - One-line “when to use this” note</p>
+<p>Flag the page clearly as a semester-refresh item.</p>
+<p>Cross-link back to F-track modules where relevant (e.g., “AI desktop apps” section links to F1; “AI policy resources” links to F4; “Privacy and data” links to F3’s FERPA section).</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/eabeam\.github\.io\/teaching-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. Built by <a href="https://eabeam.github.io">Emily Beam</a>, University of Vermont.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eabeam/teaching-ai/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

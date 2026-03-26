@@ -255,9 +255,9 @@ AI-assisted causal inference: using LLMs to brainstorm identification strategies
 
 ---
 
-## Track D: Instructor Resources
+## Track D: Instructor Pedagogy and Course Design
 
-Modules designed for faculty/instructors who want to use AI in their teaching or adapt their courses. These are inherently slower to develop and depend on demand.
+Modules designed for faculty/instructors who want to use AI in their teaching, assessment design, and course policies. These are pedagogy-facing resources, distinct from the app-first personal productivity work in Track F.
 
 ### D1: Building Interactive Demos with AI
 **Stability: Fast-moving**
@@ -304,6 +304,57 @@ Step-by-step guides for building specific demonstrations: elasticity calculator,
 - Format: Gallery of working demos with source code
 - *Why fast-moving*: The tools for building these change rapidly. But the demos themselves, once built, are relatively stable if they use simple tech (HTML/JS).
 - *Strategy*: Build in simple, durable tech stacks (plain JS, no heavy frameworks) so demos age well even if the build process changes
+
+---
+
+## Track F: Faculty Quick Start
+
+Short, app-first modules for faculty who have installed an AI desktop app and want practical value quickly. This track is about personal productivity with real teaching files, not pedagogy theory and not terminal workflows.
+
+### F1: Your First Real Task
+**Stability: Slow-moving**
+
+Stop copy-pasting and start pointing the app at your files. A 15-minute, one-task quick win showing how desktop AI apps differ from browser chat once real documents enter the workflow.
+
+- ~15 min, app-first
+- *Why slow-moving*: The specific app interfaces will change, but the underlying workflow shift from copy-paste to file-based context is durable.
+- *Update trigger*: Refresh screenshots and tool-specific steps each semester
+
+### F2: Course Prep Power Hour
+**Stability: Slow-moving**
+
+Using existing course materials, learning objectives, and readings to generate first drafts of problem sets, answer keys, and class prep documents.
+
+- ~25 min, app-first
+- *Why slow-moving*: The course-prep workflow is stable, but examples, tool affordances, and quality-control guidance will need periodic refreshes.
+- *Update trigger*: Refresh examples and interface notes annually
+
+### F3: Feedback at Scale
+**Stability: Slow-moving**
+
+Using AI to scaffold feedback workflows without automating grading: comment banks, individualized feedback starters, pattern spotting across assignments, and review guides.
+
+- ~20 min, app-first
+- *Why slow-moving*: The feedback use case is durable, but privacy guidance and tool capabilities will evolve.
+- *Update trigger*: Review alongside institutional privacy guidance and tool policies
+
+### F4: Make Your Course AI-Ready
+**Stability: Slow-moving**
+
+Using AI to audit syllabus language, test assignment vulnerability, and draft policy language in the instructor's own voice.
+
+- ~25 min, app-first
+- *Why slow-moving*: Course-policy questions and assignment redesign principles move more slowly than tools, but they are still evolving.
+- *Update trigger*: Refresh for new institutional norms, policy examples, and common objections
+
+### Companion Reference: When to Move to the Terminal
+**Stability: Slow-moving**
+
+Short reference page, not a full module. Reassures faculty that the desktop app is enough for most use cases while naming the situations where terminal workflows become worth learning.
+
+- ~10 min read
+- *Why slow-moving*: The transition signals are durable, but tool examples and screenshots will need updates.
+- *Update trigger*: Refresh examples when the app/terminal boundary changes materially
 
 ---
 
@@ -403,7 +454,8 @@ AI as an economic phenomenon: market structure of AI industry, labor market effe
 | C10: Text Data/NLP | Fast-moving | Research frontier — exciting but high maintenance |
 | C11: Causal Inference + AI | Fast-moving | Research frontier |
 | E4: Advanced Prompting | Fast-moving | Will need constant revision |
-| D1-D5: Instructor modules | Mixed | Build after student modules prove their value |
+| F1-F4: Faculty Quick Start | Slow-moving | High practical value for instructor adoption; shorter and easier to pilot than D-track modules |
+| D1-D5: Instructor pedagogy modules | Mixed | Build after student modules and F-track prove their value |
 | E1-E6: Special topics | Mixed | Opportunistic |
 
 ---
@@ -412,7 +464,7 @@ AI as an economic phenomenon: market structure of AI industry, labor market effe
 
 | Frequency | What to review |
 |---|---|
-| **Every semester** | B3 (tool landscape), B4 (terminal AI), C10-C11 (research frontiers), D1/D5 (demos), E4-E5 (advanced prompting, TA tools) |
+| **Every semester** | B3 (tool landscape), B4 (terminal AI), C10-C11 (research frontiers), D1/D5 (demos), E4-E5 (advanced prompting, TA tools), F1-F4 + terminal transition page (screenshots, tool-specific tabs, privacy notes) |
 | **Annually** | C1-C5, C7-C9 (workflow modules — refresh examples, update tool recommendations), A5/A7 (ethics/integrity — check for policy changes), D2-D4, E1-E3, E6 |
 | **Rarely** | A1-A4 (foundations), B1-B2 (terminal/git), C6 (writing) — review every 2-3 years or on major paradigm shift |
 
@@ -422,9 +474,10 @@ AI as an economic phenomenon: market structure of AI industry, labor market effe
 
 | Track | Count | Stability Mix |
 |---|---|---|
-| A: Foundations | 7 | 4 stable, 2 slow, 1 slow |
+| A: Foundations | 7 | 5 stable, 2 slow, 0 fast |
 | B: Technical | 6 | 2 stable, 2 slow, 2 fast |
 | C: Econ Workflows | 11 | 1 stable, 8 slow, 2 fast |
 | D: Instructor | 5 | 0 stable, 3 slow, 2 fast |
+| F: Faculty Quick Start | 4 modules + 1 reference page | 0 stable, 5 slow, 0 fast |
 | E: Special Topics | 6 | 0 stable, 4 slow, 2 fast |
-| **Total** | **35** | **7 stable, 19 slow, 9 fast** |
+| **Total** | **39 modules + 1 reference page** | **8 stable, 24 slow, 8 fast** |
