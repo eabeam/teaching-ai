@@ -88,6 +88,10 @@ Before uploading student work or sensitive data, know what protections each tool
 - **Brynjolfsson et al. (2023). "Generative AI at Work."** NBER paper on AI's effect on customer service worker productivity — one of the first rigorous empirical studies.
 - **Korinek, A. (2023). "Generative AI for Economic Research."** Practical guide for economists using AI in research workflows.
 
+### AI Coding Tools for Researchers
+
+- **Goldsmith-Pinkham, P. (2026). ["Getting Started with Claude Code."](https://paulgp.substack.com/p/getting-started-with-claude-code)** Excellent walkthrough by a Yale finance professor (Markus Academy series). Covers the hierarchy of AI coding tools (browser chat → IDE agents → terminal agents), context window management, and data privacy for researchers. Includes clear diagrams of how LLM conversations work internally, plus practical tool recommendations: [Ghostty](https://ghostty.org) (GPU-accelerated terminal), [Zellij](https://zellij.dev) (terminal multiplexer), and Oh My Zsh. Key insight: treat Claude Code like "a very capable RA that lives on your computer." Pairs well with modules B1, B3, and C2.
+
 ::: {.instructor-note}
 **Maintenance note**: This page requires a semester-level refresh. Tool pricing, data policies, and institutional agreements change. AEA and institutional guidance evolves. Schedule a 30-minute review at the start of each semester to update links, pricing, and policy references.
 :::
