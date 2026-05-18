@@ -1,4 +1,4 @@
-/* Module metadata badges */
+/* Module metadata badges — parchment palette */
 .module-meta {
   display: flex;
   gap: 0.75rem;
@@ -9,34 +9,34 @@
 
 .module-meta .badge {
   padding: 0.25rem 0.6rem;
-  border-radius: 4px;
+  border-radius: 3px;
   font-weight: 500;
 }
 
 .badge-time {
-  background-color: #e8f4f8;
-  color: #1a6b8a;
+  background-color: #F5F0E8;
+  color: #999;
 }
 
 .badge-track {
-  background-color: #f0e8f8;
-  color: #6b1a8a;
+  background-color: #FFF8F5;
+  color: #E07A52;
 }
 
 .badge-no-code {
-  background-color: #e8f8e8;
-  color: #1a6b3a;
+  background-color: #F0F5F1;
+  color: #5C7A66;
 }
 
 .badge-technical {
-  background-color: #f8ece8;
-  color: #8a3a1a;
+  background-color: #F0F3F7;
+  color: #5A7B9E;
 }
 
-/* Instructor adoption box */
+/* Instructor note — warm parchment with persimmon accent */
 .instructor-note {
-  background-color: #fdf6e3;
-  border-left: 4px solid #b58900;
+  background-color: #FFF8F5;
+  border-left: 4px solid #E07A52;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   border-radius: 0 4px 4px 0;

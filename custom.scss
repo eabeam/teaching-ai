@@ -1,0 +1,394 @@
+/*-- scss:defaults --*/
+
+/* Palette — The Curated Collection */
+$primary:         #1E1E2A;
+$secondary:       #E07A52;
+$body-color:      #555;
+$body-bg:         #FDFAF5;
+$link-color:      #E07A52;
+$link-hover-color: #C4604A;
+$code-color:      #1E1E2A;
+
+/* Typography — Cormorant Garamond + Source Sans 3 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+$font-family-sans-serif: 'Source Sans 3', sans-serif;
+$headings-font-family:   'Cormorant Garamond', serif;
+$headings-font-weight:   600;
+$headings-color:         #1E1E2A;
+
+/*-- scss:rules --*/
+
+/* ─── Dark ink navbar ─── */
+.navbar {
+  background: #1E1E2A !important;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.85rem;
+  border-bottom: none;
+}
+
+.navbar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9) !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-nav .nav-link {
+  color: rgba(255,255,255,0.55) !important;
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 0.3rem 0.75rem;
+
+  &:hover {
+    color: #E07A52 !important;
+  }
+
+  &.active {
+    color: rgba(255,255,255,0.85) !important;
+  }
+}
+
+.navbar .dropdown-toggle::after {
+  opacity: 0.4;
+}
+
+/* ─── Dropdown menus ─── */
+.navbar .dropdown-menu {
+  background: #1E1E2A;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: 2px solid #E07A52;
+  border-radius: 0 0 4px 4px;
+  padding: 0.4rem 0;
+  margin-top: 0;
+}
+
+.navbar .dropdown-item {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.82rem;
+  padding: 0.4rem 1rem;
+
+  &:hover, &:focus {
+    background: rgba(224, 122, 82, 0.1);
+    color: #E07A52;
+  }
+}
+
+.navbar .dropdown-divider {
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* ─── Landing page: suppress Quarto chrome ─── */
+.landing-page {
+  #title-block-header,
+  .quarto-title-block,
+  header.quarto-title-block {
+    display: none !important;
+  }
+
+  #quarto-document-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  #quarto-content > * {
+    padding-top: 0;
+  }
+
+  .content {
+    padding-top: 0;
+  }
+}
+
+/* ─── Hero ─── */
+.landing-hero {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #FDFAF5;
+  padding: 3.5rem 2rem 2.5rem;
+  border-bottom: 2px solid #1E1E2A;
+}
+
+.landing-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #E07A52;
+  margin-bottom: 0.75rem;
+}
+
+.landing-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #1E1E2A;
+  line-height: 1.08;
+  margin-bottom: 0.6rem;
+  border-bottom: none;
+}
+
+.hero-subtitle {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.hero-credit {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem;
+  color: #bbb;
+  margin-top: 1rem;
+
+  strong {
+    color: #1E1E2A;
+    font-weight: 600;
+  }
+
+  a {
+    color: #1E1E2A;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #E07A52;
+    transition: color 0.15s;
+
+    &:hover {
+      color: #E07A52;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-hero {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .landing-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ─── Dashed divider ─── */
+.dashed-divider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  border: none;
+  border-top: 1px dashed #DDD7CC;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ─── How-to strip ─── */
+.how-strip {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #FDFAF5;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.25rem 2rem;
+}
+
+.how-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.how-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #E07A52;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.how-text {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.4;
+
+  strong {
+    color: #1E1E2A;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .how-strip {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    align-items: flex-start;
+  }
+}
+
+/* ─── Landing content ─── */
+.landing-content {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2rem;
+}
+
+/* ─── Track sections ─── */
+.track-section {
+  margin-bottom: 2.5rem;
+}
+
+.track-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1E1E2A;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #EDE6DB;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.track-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Module cards ─── */
+.module-card {
+  background: #fff;
+  border: 1px solid #EDE6DB;
+  border-radius: 5px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.15s ease;
+  text-decoration: none !important;
+
+  &:hover {
+    border-color: #E07A52;
+  }
+}
+
+.module-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.module-card-body a {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1E1E2A;
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover {
+    color: #E07A52;
+  }
+}
+
+.module-desc {
+  font-size: 0.88rem;
+  color: #999;
+  margin-top: 0.15rem;
+}
+
+.module-arrow {
+  font-size: 1rem;
+  color: #ddd;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.module-card:hover .module-arrow {
+  color: #E07A52;
+}
+
+/* ─── Also-see links ─── */
+.also-see {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.also-see a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #EDE6DB;
+  border-radius: 4px;
+  text-decoration: none !important;
+  color: #1E1E2A;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.15s, background-color 0.15s;
+
+  &:hover {
+    border-color: #E07A52;
+    background: #FFF8F5;
+    color: #1E1E2A;
+  }
+}
+
+/* ─── Section dividers ─── */
+.section-divider {
+  border: none;
+  border-top: 1px dashed #DDD7CC;
+  margin: 2.5rem 0;
+}
+
+/* ─── Landing prose sections ─── */
+.landing-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1E1E2A;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #EDE6DB;
+}
+
+.landing-content ol,
+.landing-content ul {
+  padding-left: 1.25rem;
+}
+
+.landing-content ol li,
+.landing-content ul li {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+/* ─── Footer ─── */
+.nav-footer {
+  background: #F5F0E8;
+  border-top: 1px solid #EDE6DB;
+  font-size: 0.82rem;
+  color: #999;
+}
