@@ -30,6 +30,10 @@ The University of Vermont provides enterprise-protected [Microsoft Copilot](http
 
 [Emily Beam](https://eabeam.github.io) · Department of Economics · University of Vermont · emily.beam@uvm.edu
 
+## Related
+
+This project is part of [Thinking with Agents](https://thinkingwithagents.github.io), a collaboration with [Erkmen Aslim](https://sites.google.com/view/erkmenaslim/) that includes workshops, webinars, and additional resources for economists and social scientists.
+
 ## Acknowledgments
 
 This project was developed with the assistance of AI tools (Claude, Copilot), which felt appropriate.
