@@ -148,7 +148,8 @@ This *looks* like a diff-in-diff. But where's the interaction term? This is just
 The most dangerous AI-generated code is code that is *almost* right. It runs, it produces output, and the output looks reasonable. You have to know enough to spot what's wrong — which means you need to understand the code at least as well as if you'd written it yourself.
 :::
 
-### Stata-specific traps
+::: {.callout-tip collapse="true"}
+## Click to expand: Stata-specific traps
 
 AI models are trained on lots of Python and R but comparatively less Stata. This means they make Stata-specific mistakes more often:
 
@@ -159,8 +160,10 @@ AI models are trained on lots of Python and R but comparatively less Stata. This
 | Value labels vs. actual values | AI reads the label, not the underlying number | Writing `keep if gender == "Female"` when the variable is numeric with a value label |
 | `egen` vs. `gen` | AI sometimes uses `gen` where `egen` is required, or misuses `egen` functions | `gen avg_income = mean(income)` does not work; needs `egen avg_income = mean(income)` |
 | Macro quoting | AI struggles with Stata's local/global macro syntax | Forgetting compound quotes around macro references in loops |
+:::
 
-### R-specific traps
+::: {.callout-tip collapse="true"}
+## Click to expand: R-specific traps
 
 | Trap | What Goes Wrong | Example |
 |---|---|---|
@@ -168,6 +171,7 @@ AI models are trained on lots of Python and R but comparatively less Stata. This
 | Silent type coercion | R silently converts types in ways that change results | Joining on a column that's character in one dataframe and numeric in another — R coerces without warning |
 | Factor level issues | Factors and strings behave differently in regressions and merges | A factor variable dropping unused levels after subsetting, changing your regression baseline |
 | Non-standard evaluation | AI-generated functions may not handle tidy evaluation correctly | Writing a function that uses `group_by(var)` instead of `group_by({{var}})` |
+:::
 
 ::: {.callout-warning}
 ## The Pattern
@@ -226,7 +230,8 @@ AI will make decisions about missing values (drop them? impute?), outliers (wins
 The distinction maps onto the difference between **computation** and **identification**. AI is great at computation — getting Stata to execute the mechanics you've specified. It's bad at identification — deciding *what* to estimate and *how* to estimate it credibly. That's your job, and it's the part your degree is training you to do.
 :::
 
-## Case Study: AI-Powered Code Review in Research
+::: {.callout-tip collapse="true"}
+## Click to expand: Case Study — AI-Powered Code Review in Research
 
 Here's a case where AI and code intersect in professional economics in a way you might not expect: **code review**.
 
@@ -255,6 +260,8 @@ These review checklists draw on standards from [DIME Analytics](https://dimewiki
 ::: {.callout-important}
 ## Key Insight
 AI is better at *reviewing* code than *writing* it. Why? Review is pattern-matching against known risks — "does this merge check `_merge`?" is a well-defined question. Writing code requires understanding intent — "what should I control for in this regression?" is not. This tells you something important about where to deploy AI in your own workflow.
+:::
+
 :::
 
 ## A Practical Framework: When to Use AI for Code
@@ -296,6 +303,9 @@ This exercise puts the framework into practice. You'll work with a buggy script,
 
 Here is a Stata do-file that is supposed to: (1) load a dataset of students, (2) create a standardized test score, (3) merge with school-level data, and (4) run a regression of test scores on class size, controlling for school fixed effects.
 
+::: {.callout-tip collapse="true"}
+## Click to expand: The buggy do-file
+
 ```stata
 * analysis.do — Estimate effect of class size on test scores
 * Last modified: March 2026
@@ -319,6 +329,7 @@ label var log_classsize "Log class size"
 * Run regression
 reg test_z log_classsize i.district, robust
 ```
+:::
 
 ### Step 1: Find the bugs yourself (10 minutes)
 
@@ -393,7 +404,8 @@ Look carefully at the AI's rewrite. In our experience, AI tools will correctly f
 5. **`log()` with potential zeros or negatives**: If `class_size` has any zero or missing values, `log(class_size)` will produce missing values without warning.
 :::
 
-## Discussion Questions
+::: {.callout-tip collapse="true"}
+## Click to expand: Discussion Questions
 
 1. A classmate says "I always read through the AI's code before I run it, so I'm safe." What's the flaw in this reasoning? (Hint: think about what you need to know to evaluate code you didn't write.)
 
@@ -402,6 +414,7 @@ Look carefully at the AI's rewrite. In our experience, AI tools will correctly f
 3. Consider two researchers: one who writes all their own code slowly, and one who uses AI to generate code quickly but reviews it carefully. Who produces more reliable research? Does your answer depend on the researcher's experience level?
 
 4. If AI tools keep getting better at writing code, should economics programs still require students to learn Stata and R? What would be lost if they didn't?
+:::
 
 ## Key Takeaways
 

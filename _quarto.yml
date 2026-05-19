@@ -9,54 +9,67 @@ website:
   repo-url: https://github.com/eabeam/teaching-ai
   repo-actions: [issue]
 
+  page-navigation: true
+
   navbar:
     background: primary
     left:
       - href: index.qmd
         text: Home
-      - text: Foundations
-        menu:
-          - href: modules/a1-what-llms-do.qmd
-            text: "A1: What LLMs Actually Do"
-          - href: modules/a2-prompting.qmd
-            text: "A2: Prompting as Problem Specification"
-          - href: modules/a3-when-to-use-ai.qmd
-            text: "A3: When AI Helps vs. Hurts"
-      - text: Technical
-        menu:
-          - href: modules/b1-terminal-basics.qmd
-            text: "B1: Terminal Basics"
-          - href: modules/b2-git-github.qmd
-            text: "B2: Git & GitHub Essentials"
-      - text: Econ Workflows
-        menu:
-          - href: modules/c1-lit-review.qmd
-            text: "C1: Literature Review & Synthesis"
-          - href: modules/c2-code-assistance.qmd
-            text: "C2: Code Assistance"
-          - href: modules/c3-data-exploration.qmd
-            text: "C3: Data Exploration & Cleaning"
-          - href: modules/c4-writing-revision.qmd
-            text: "C4: Writing & Revision"
-          - href: modules/c5-math-derivations.qmd
-            text: "C5: Math & Derivations"
-      - text: Faculty Quick Start
-        menu:
-          - href: modules/f1-first-real-task.qmd
-            text: "F1: Your First Real Task"
-          - href: modules/f2-course-prep.qmd
-            text: "F2: Course Prep Power Hour"
-          - href: modules/f3-feedback-at-scale.qmd
-            text: "F3: Feedback at Scale"
-          - href: modules/f4-course-ai-ready.qmd
-            text: "F4: Make Your Course AI-Ready"
-          - text: "---"
-          - href: modules/terminal-transition.qmd
-            text: "When to Move to the Terminal"
+      - href: modules/a1-what-llms-do.qmd
+        text: Modules
       - href: modules/resources.qmd
         text: Resources
       - href: about.qmd
         text: About
+
+  sidebar:
+    - title: "Modules"
+      style: floating
+      search: true
+      contents:
+        - section: "A: Foundations"
+          contents:
+            - href: modules/a1-what-llms-do.qmd
+              text: "A1: What LLMs Actually Do"
+            - href: modules/a2-prompting.qmd
+              text: "A2: Prompting as Problem Specification"
+            - href: modules/a3-when-to-use-ai.qmd
+              text: "A3: When AI Helps vs. Hurts"
+        - section: "B: Technical Setup"
+          contents:
+            - href: modules/b1-terminal-basics.qmd
+              text: "B1: Terminal Basics"
+            - href: modules/b2-git-github.qmd
+              text: "B2: Git & GitHub Essentials"
+        - section: "C: Econ Workflows"
+          contents:
+            - href: modules/c1-lit-review.qmd
+              text: "C1: Literature Review & Synthesis"
+            - href: modules/c2-code-assistance.qmd
+              text: "C2: Code Assistance"
+            - href: modules/c3-data-exploration.qmd
+              text: "C3: Data Exploration & Cleaning"
+            - href: modules/c4-writing-revision.qmd
+              text: "C4: Writing & Revision"
+            - href: modules/c5-math-derivations.qmd
+              text: "C5: Math & Derivations"
+        - section: "F: Faculty Quick Start"
+          contents:
+            - href: modules/f1-first-real-task.qmd
+              text: "F1: Your First Real Task"
+            - href: modules/f2-course-prep.qmd
+              text: "F2: Course Prep Power Hour"
+            - href: modules/f3-feedback-at-scale.qmd
+              text: "F3: Feedback at Scale"
+            - href: modules/f4-course-ai-ready.qmd
+              text: "F4: Make Your Course AI-Ready"
+            - href: modules/terminal-transition.qmd
+              text: "When to Move to the Terminal"
+        - section: "Reference"
+          contents:
+            - href: modules/resources.qmd
+              text: "Resources"
 
   page-footer:
     center: |

@@ -1,0 +1,95 @@
+institution,country,type,econ_rank_bucket,notes
+Harvard University,US,R1,top10,NBER
+MIT,US,R1,top10,NBER
+Stanford University,US,R1,top10,NBER
+Princeton University,US,R1,top10,NBER
+University of Chicago,US,R1,top10,NBER
+Yale University,US,R1,top10,NBER
+Columbia University,US,R1,top10,NBER
+UC Berkeley,US,R1,top10,NBER
+Northwestern University,US,R1,top10,NBER
+University of Pennsylvania,US,R1,top10,NBER
+NYU,US,R1,top10,NBER
+University of Michigan,US,R1,top15,NBER
+Duke University,US,R1,top15,NBER
+University of Wisconsin-Madison,US,R1,top15,NBER
+University of Minnesota,US,R1,top15,NBER
+Brown University,US,R1,top20,NBER
+Cornell University,US,R1,top20,NBER
+UCLA,US,R1,top20,NBER
+UC San Diego,US,R1,top20,NBER
+University of Virginia,US,R1,top20,NBER
+Boston University,US,R1,top25,NBER
+University of Maryland,US,R1,top25,NBER
+Ohio State University,US,R1,top25,NBER
+Penn State University,US,R1,top25,NBER
+University of Texas at Austin,US,R1,top25,NBER
+Indiana University,US,R1,top30,NBER
+University of North Carolina,US,R1,top30,NBER
+Georgetown University,US,R1,top30,
+Dartmouth College,US,R1,top30,NBER
+University of Illinois Urbana-Champaign,US,R1,top30,NBER
+Vanderbilt University,US,R1,top30,
+University of Southern California,US,R1,top30,
+Washington University in St. Louis,US,R1,top30,NBER
+Michigan State University,US,R1,top40,
+University of Pittsburgh,US,R1,top40,
+University of Iowa,US,R1,top40,
+UC Davis,US,R1,top40,
+UC Irvine,US,R1,top40,
+University of Oregon,US,R1,top40,
+University of Colorado Boulder,US,R1,top40,
+Arizona State University,US,R1,top50,
+University of Arizona,US,R1,top50,
+University of Notre Dame,US,R1,top50,
+Georgia State University,US,R1,top50,
+University of Georgia,US,R1,top50,
+Rutgers University,US,R1,top50,
+University of Washington,US,R1,top50,
+George Mason University,US,R1,top50,
+Emory University,US,R1,top50,
+University of Florida,US,R1,top50,
+California State University system,US,teaching-intensive,na,CSU $17M OpenAI deal
+University of Vermont,US,R1-small,60-80,Emily's institution
+Boise State University,US,R2,na,teaching-intensive
+San Diego State University,US,R2,na,teaching-intensive
+University of North Carolina Greensboro,US,R2,na,teaching-intensive
+James Madison University,US,M1,na,teaching-intensive
+Appalachian State University,US,R2,na,teaching-intensive
+College of William & Mary,US,R2,na,teaching-intensive
+University of Massachusetts Amherst,US,R1,50-60,
+University of Connecticut,US,R1,50-60,
+Temple University,US,R1,60-80,
+University of Oklahoma,US,R1,60-80,
+University of Kentucky,US,R1,60-80,
+University of New Hampshire,US,R1,60-80,teaching-intensive relative to size
+West Virginia University,US,R1,80+,
+University of South Dakota,US,R2,na,teaching-intensive
+SUNY Albany,US,R1,60-80,
+University of Nevada Reno,US,R1,80+,
+Howard University,US,R2,na,HBCU
+Morehouse College,US,HBCU-liberal-arts,na,HBCU
+Spelman College,US,HBCU-liberal-arts,na,HBCU
+Florida A&M University,US,R2-HBCU,na,HBCU
+North Carolina A&T,US,R2-HBCU,na,HBCU
+London School of Economics,UK,research,top10-intl,
+University of Oxford,UK,research,top10-intl,
+University of Cambridge,UK,research,top10-intl,
+UCL,UK,research,top20-intl,
+University of Warwick,UK,research,top20-intl,
+University of Edinburgh,UK,research,top30-intl,first UK AI governance framework
+Paris School of Economics,France,research,top10-intl,
+University of Zurich,Switzerland,research,top20-intl,
+Bocconi University,Italy,research,top20-intl,
+Tilburg University,Netherlands,research,top30-intl,
+University of Toronto,Canada,research,top20-intl,
+University of British Columbia,Canada,research,top25-intl,
+Australian National University,Australia,research,top30-intl,
+University of Melbourne,Australia,research,top30-intl,
+National University of Singapore,Singapore,research,top25-intl,
+Peking University,China,research,top20-intl,strict AI policy noted
+Tsinghua University,China,research,top25-intl,encourages AI
+University of Cape Town,South Africa,research,top-Africa,
+Indian Statistical Institute,India,research,top-India,
+BREAD/J-PAL affiliated institutions (MIT),US,R1,top10,development network
+IPA partner universities,various,various,na,development research

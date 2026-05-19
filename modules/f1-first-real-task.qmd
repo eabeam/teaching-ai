@@ -85,6 +85,9 @@ You attach the full exam PDF and say:
 The AI sees the whole document — structure, notation, difficulty progression — and produces something you can actually hand out. It groups questions by theme, identifies the harder application problems, and creates a topic checklist tied to the actual exam content.
 :::
 
+::: {.callout-tip collapse="true"}
+## Click to expand: More task examples (rubrics, discussion questions, evaluations)
+
 ### Example 2: Generate a rubric from an assignment description
 
 You have a paper assignment prompt. You need a rubric before the TAs start grading.
@@ -102,6 +105,7 @@ You assigned a journal article. You need five discussion questions for Tuesday.
 You have a semester of student comments. You want to know what the main themes are without reading 200 freeform responses.
 
 > Attach the evaluation file and say: "Summarize the main themes in these student comments. Group by positive feedback, constructive criticism, and specific suggestions. Quote representative comments for each theme."
+:::
 
 ## What Just Happened
 
@@ -113,7 +117,8 @@ If you tried one of those, notice what was different:
 
 This is not a trick. It's the reason these apps exist. The workflow shift from copy-paste to file-based is the single biggest unlock for faculty who want AI to be genuinely useful rather than merely interesting.
 
-## What Can Go Wrong
+::: {.callout-tip collapse="true"}
+## Click to expand: What can go wrong
 
 AI does not understand your course. It has your file, but it doesn't have your pedagogical goals, your students' preparation level, or the specific things you emphasized in lecture. Watch for:
 
@@ -123,6 +128,7 @@ AI does not understand your course. It has your file, but it doesn't have your p
 - **Confident errors.** Especially with quantitative content — check any numbers, formulas, or specific claims the AI includes.
 
 **The rule: you review everything before it reaches students.** AI produces first drafts. You produce final versions.
+:::
 
 ## Try It Now
 

@@ -71,14 +71,18 @@ The model didn't get smarter between Version 1 and Version 3. You got clearer ab
 
 ### The ROCS framework
 
+You don't need all four components every time. But when an AI gives you a bad response, it's almost always because one of these was missing.
+
+::: {.callout-tip collapse="true"}
+## Click to expand: ROCS Framework Reference Table
+
 | Component | What it is | Example |
 |---|---|---|
 | **R**ole / Context | Who you are, what you're doing | "I'm an econ student writing a research proposal..." |
 | **O**bjective | What you want the output to be | "...I need help identifying a plausible identification strategy..." |
 | **C**onstraints | Boundaries, format, level, length | "...explain in 2-3 paragraphs, at an advanced undergrad level..." |
 | **S**pecifics | Details that shape the answer | "...for estimating the effect of Medicaid expansion on ER utilization in rural areas." |
-
-You don't need all four every time. But when an AI gives you a bad response, it's almost always because one of these was missing.
+:::
 
 ::: {.callout-note}
 ## This Is Not a Magic Formula
@@ -97,6 +101,8 @@ The framework is for when you're getting bad output and need to diagnose why.
 
 ## Common Prompt Failures (And Fixes)
 
+The most common prompt problems fall into four patterns. Read the first one carefully; expand the rest as needed.
+
 ### Failure 1: The Blank Canvas
 
 **Prompt**: "Help me with my econometrics problem set."
@@ -105,29 +111,35 @@ The framework is for when you're getting bad output and need to diagnose why.
 
 **Fix**: "I'm working on a problem set about instrumental variables for my Econometrics course. The question asks me to estimate the returns to education using quarter of birth as an instrument. I've run the first-stage regression and the F-statistic is 3.2. I'm worried about weak instruments. Can you explain what the weak instrument problem is and whether I should be concerned with this F-statistic?"
 
-### Failure 2: The Implicit Assumption
+::: {.callout-tip collapse="true"}
+## Click to expand: Failure 2 — The Implicit Assumption
 
 **Prompt**: "Is this regression specification correct?" [pastes Stata code]
 
 **Problem**: "Correct" relative to what? What are you trying to estimate? What's the identification assumption?
 
 **Fix**: "I'm trying to estimate the effect of class size on test scores, using a diff-in-diff design. Treatment is a policy that reduced class sizes in schools above a size threshold. Here's my Stata code [paste]. Does this specification correctly implement the diff-in-diff? Specifically, am I including the right fixed effects and interaction terms?"
+:::
 
-### Failure 3: The Kitchen Sink
+::: {.callout-tip collapse="true"}
+## Click to expand: Failure 3 — The Kitchen Sink
 
 **Prompt**: "Explain monetary policy, fiscal policy, the IS-LM model, how the Fed works, what quantitative easing is, and how this all relates to inflation. Also what's the Taylor Rule?"
 
 **Problem**: Too many questions at once. The model will give you a shallow answer to each rather than a useful answer to any.
 
 **Fix**: Ask one question at a time. Depth beats breadth.
+:::
 
-### Failure 4: The Leading Question
+::: {.callout-tip collapse="true"}
+## Click to expand: Failure 4 — The Leading Question
 
 **Prompt**: "Explain why minimum wage increases cause unemployment."
 
 **Problem**: You've embedded your conclusion in the prompt. The model will likely agree (sycophancy — see Module A1) rather than present the nuanced evidence.
 
 **Fix**: "What does the empirical evidence say about the employment effects of minimum wage increases? Summarize the key findings and the main debate."
+:::
 
 ## Iterative Prompting: Conversations, Not One-Shots
 
@@ -140,7 +152,8 @@ The most effective use of AI is not a single perfect prompt — it's a conversat
 3. **Give specific feedback** — not "try again" but "this is too technical, simplify the explanation of the exclusion restriction" or "good, but now add a concrete example using trade data"
 4. **Repeat** until the output is useful
 
-### Example: Iterating on a literature summary
+::: {.callout-tip collapse="true"}
+## Click to expand: Example — Iterating on a literature summary
 
 **Round 1**:
 > "Summarize the literature on cash transfers and education in developing countries."
@@ -156,6 +169,7 @@ The most effective use of AI is not a single perfect prompt — it's a conversat
 > "I'm going to verify these citations. For each study, give me the exact paper title and journal so I can look it up."
 
 *Now you can fact-check and have a useful starting point for your lit review.*
+:::
 
 ::: {.callout-important}
 ## Iteration > Perfection
@@ -206,12 +220,14 @@ These are the same skills that make you a good researcher, a clear writer, and a
 The better you understand a topic, the better your prompts will be, and the more useful AI becomes. AI is *most* useful to people who already know enough to ask good questions and evaluate the answers. It's *least* reliable when you're using it to learn something you can't yet evaluate.
 :::
 
-## Discussion Questions
+::: {.callout-tip collapse="true"}
+## Click to expand: Discussion Questions
 
 1. A classmate says "I don't need to learn prompting — the AI should just figure out what I mean." What's the problem with this view?
 2. How is the skill of writing a good prompt similar to the skill of writing a good research question? Where does the analogy break down?
 3. Think of a time you got a bad or useless response from an AI tool. Using the ROCS framework, what was missing from your prompt?
 4. What are the risks of getting *too* good at prompting? (Hint: think about what happens to your critical evaluation if the outputs start looking really polished.)
+:::
 
 ## Key Takeaways
 

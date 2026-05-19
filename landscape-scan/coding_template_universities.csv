@@ -1,0 +1,6 @@
+institution,country,type,econ_rank_bucket,has_institutional_ai_access,ai_vendor,deal_type,deal_cost_if_public,has_formal_research_ai_policy,policy_scope,policy_url,restricts_ai_for_research,data_security_restrictions,irb_ai_guidance,irb_guidance_url,irb_amendment_required_for_ai,econ_dept_specific_resources,faculty_ai_training_offered,access_model,coder_notes
+Harvard University,US,R1,top10,,,,,,,,,,,,,,,,
+MIT,US,R1,top10,,,,,,,,,,,,,,,,
+Stanford University,US,R1,top10,,,,,,,,,,,,,,,,
+University of Vermont,US,R1-small,60-80,,,,,,,,,,,,,,,,
+California State University system,US,teaching-intensive,na,,,,,,,,,,,,,,,,
