@@ -3,4 +3,6 @@
 .DS_Store
 
 **/*.quarto_ipynb
+*.bak
 .superpowers/
+SANDBOXING_BRIEF_SPEC.md
