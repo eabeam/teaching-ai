@@ -1,0 +1,492 @@
+university,country,type,microsoft,openai,google,anthropic,other,ferpa_addressed,confidence,source_url
+Arizona State University,US,R1,,,ChatGPT Enterprise/Edu,,,Implicit,High,https://ai.asu.edu/chatgpt-edu
+California State University (23 campuses),US,System,,,ChatGPT Edu,,,Implicit,High,https://edsource.org/2026/cal-state-renews-controversial-system-wide-contract-with-openai/758919
+Champlain College,US,Other,,,,Claude for Education,,Implicit,High,https://www.anthropic.com/news/introducing-claude-for-education
+Clemson University,US,R1,,,ChatGPT Edu,,,Implicit,High,https://news.clemson.edu/clemson-to-expand-access-to-openai-in-support-of-universitys-ai-initiative/
+Columbia University,US,R1,,,ChatGPT Enterprise/Edu,,,Yes,High,https://etc.cuit.columbia.edu/news/AICoP-OpenAI-partnership
+Dartmouth College,US,R1,,,,Claude for Education,,Implicit,High,https://www.intelligentcio.com/north-america/2026/01/06/dartmouth-becomes-first-ivy-league-institution-to-launch-ai-at-institutional-scale-with-aws-and-anthropic/
+Duke University,US,R1,Copilot,ChatGPT Edu,,,,Implicit,High,https://oit.duke.edu/ai-suite/
+Georgetown University,US,R1,,,Gemini Enterprise,,,Yes,High,https://www.georgetown.edu/news/claim-your-google-gemini-license/
+Georgia Tech,US,R1,Copilot M365,,Gemini + NotebookLM,,,Implicit,High,https://oit.gatech.edu/ai/tools
+Harvard University,US,R1,,ChatGPT Edu (ending),Gemini,Claude for Education,,Implicit,High,https://www.thecrimson.com/article/2026/4/28/fas-anthropic-claude/
+Hofstra University,US,R2,,,ChatGPT Edu,,,Implicit,Medium,https://news.hofstra.edu/2025/09/18/chatgpt-edu-availability-across-the-university/
+Indiana University,US,R1,Copilot M365,ChatGPT Edu,Gemini + NotebookLM,,,Yes,High,https://uits.iu.edu/ai/index.html
+MIT,US,R1,Copilot,ChatGPT,Gemini,Claude (via AWS),"Adobe Firefly, Parley",Yes,High,https://ist.mit.edu/ai-tools
+Northeastern University,US,R1,,,,Claude for Education,,Implicit,High,https://news.northeastern.edu/2025/04/02/anthropic-ai-partnership/
+Ohio State University,US,R1,Copilot,,Gemini + NotebookLM,,Adobe,Yes,High,https://ai.osu.edu/resources-buckeyes/approved-ai-tools
+Princeton University,US,R1,Microsoft Copilot (enterprise data protection),,,,Adobe AI tools (institutional); GitHub Copilot and Zoom AI under evaluation,Implicit,High,https://oit.princeton.edu/generative-ai/ai-tools
+Stanford University,US,R1,Copilot Chat + GitHub Copilot,,Gemini + NotebookLM,,,Implicit,High,https://uit.stanford.edu/service/microsoft365/mscopilotchat
+Syracuse University,US,R1,,,,Claude for Education,,Implicit,High,https://news.syr.edu/2025/09/22/syracuse-university-among-first-universities-to-provide-campuswide-ai-access-to-anthropics-claude-for-education/
+UC Berkeley,US,R1,,,Gemini,,,Yes,High,https://technology.berkeley.edu/news/new-ai-tools-students
+UCLA,US,R1,Copilot Enterprise,ChatGPT Enterprise,,,,Yes,High,https://dts.ucla.edu/initiatives/ai/available-tools
+UCSF,US,R1,,,ChatGPT Enterprise,,,Yes,High,https://it.ucsf.edu/news-events/news/ucsf-launching-openais-chatgpt-enterprise-early-2026
+University of Colorado (system),US,System,,,ChatGPT Edu,,,Implicit,High,https://cuindependent.org/2026/03/07/university-of-colorado-signs-2-million-deal-with-openai-for-chatgpt-edu-access/
+University of Florida,US,R1,,,,,"HiPerGator Navigator (GPT, Llama, Gemini, Claude)",Yes,High,https://guides.uflib.ufl.edu/artificialintelligence/ufaiapps
+University of Houston,US,R1,,,Gemini + NotebookLM,,,Implicit,High,https://www.uh.edu/news-events/stories/2026/march/03172026-google-ai-partnership.php
+University of Pennsylvania,US,R1,Copilot M365,ChatGPT Edu,,,,Yes,High,https://isc.upenn.edu/ai/tools/penn-generative-ai-tools-resources
+University of Pittsburgh,US,R1,,,,Claude for Education (via AWS),,Implicit,High,https://www.pittwire.pitt.edu/features-articles/2025/10/22/claude-for-education-aws-anthropic-partnership
+University of Richmond,US,LAC,Copilot,ChatGPT,Gemini,Claude,SpiderAI platform,Implicit,High,https://is.richmond.edu/features/article/-/28014/chatgpt-5.4-claude-gemini-and-copilot-available-free-in-spiderai.html
+University of South Carolina,US,R1,,,ChatGPT Edu,,,Implicit,High,https://www.dailygamecock.com/article/2025/08/usc-contracts-with-openai-provides-free-chatgpt-access-to-students-faculty-news-grady
+University of Southern California,US,R1,,,ChatGPT Edu,,,Implicit,High,https://we-are.usc.edu/2025/12/03/announcing-uscs-adoption-of-chatgpt-edu/
+University of Texas at Austin,US,R1,Copilot,,,,UT Spark (Azure OpenAI),Yes,High,https://tech.utexas.edu/services-tools/ai
+University of Utah,US,R1,,,ChatGPT Edu,,,Implicit,Medium,https://attheu.utah.edu/facultystaff/u-launches-chatgpt-edu-a-university-centered-generative-ai-tool-for-campus-use/
+University of Vermont,US,R1,Microsoft 365 Copilot (enterprise agreement / Enterprise Data Protection),,,,,Implicit,High,https://www.uvm.edu/ai/supported-and-approved-ai-tools
+University of Virginia,US,R1,,,,Claude for Education,,Unknown,Medium,https://www.anthropic.com/news/advancing-claude-for-education
+USF School of Law,US,R1,,,,Claude for Education,,Implicit,Medium,https://www.anthropic.com/news/advancing-claude-for-education
+Washington University (St. Louis),US,R1,Copilot M365,ChatGPT Edu,Gemini,,,Yes,High,https://it.wustl.edu/ai/
+Yale University,US,R1,,,,,"Clarity platform (GPT, Claude, others)",Implicit,High,https://ai.yale.edu/yales-ai-tools-and-resources
+Bocconi University,Italy,International,,,ChatGPT Plus (institutional),,,N/A,High,https://www.unibocconi.it/en/news/bocconi-and-openai-join-forces-transform-ai-social-sciences
+ESCP Business School,France,International,,,ChatGPT Edu,,,N/A,High,https://escp.eu/news/expanding-chatgpt-edu-entire-escp-community
+London School of Economics,UK,International,,,,Claude for Education,,N/A,High,https://www.lse.ac.uk/news/latest-news-from-lse/d-april/lse-partners-with-anthropic-to-shape-the-future-of-ai-in-education
+Northumbria University,UK,International,,,,Claude for Education,,N/A,Medium,https://www.northumbria.ac.uk/about-us/news-events/news/northumbria-launches-new-ai-platform-for-staff-and-students/
+University of Manchester,UK,International,Microsoft 365 Copilot (all staff and students),,,,,Explicit,High,https://www.itservices.manchester.ac.uk/ourservices/microsoft365/copilot/
+University of Oxford,UK,International,,,ChatGPT Edu,,,N/A,High,https://www.ox.ac.uk/news/2025-09-19-oxford-becomes-first-uk-university-offer-chatgpt-edu-all-staff-and-students
+Baylor University,US,R2,Copilot Chat,,,,Copilot Studio agents,No,Medium,https://its.web.baylor.edu/ai
+BYU,US,R2,Copilot Enterprise,ChatGPT Edu (via CES),,,,Yes,High,https://genai.byu.edu/
+Colorado State University,US,R2,Copilot Chat,,,,Teams Premium,Yes,High,https://ai.colostate.edu/ai-tools/
+DePaul University,US,R2,Microsoft Copilot Chat (BlueKey/enterprise credentials),,,,,Implicit,High,https://offices.depaul.edu/information-services/about/generative-ai/Pages/default.aspx
+George Mason University,US,R2,Copilot Chat,,,,,Yes,High,https://its.gmu.edu/ai-toolkit/
+James Madison University,US,R2,"Microsoft Copilot with Data Protection (all faculty, staff, students via JMU M365)",,,,,Explicit,High,https://www.jmu.edu/computing/software/generative-artificial-intelligence.shtml
+Lehigh University,US,R2,Copilot Pro,ChatGPT,Gemini + AI Studio,Claude Pro,,No,High,https://lts.lehigh.edu/news/free-access-enhanced-ai-tools-lehigh-faculty-and-graduate-students
+Loyola University Chicago,US,R2,Microsoft 365 Copilot Chat (enterprise data protection),,,,,Implicit,High,https://www.luc.edu/its/learningtechnologies/learningtechnologies/microsoftcopilot/
+Miami University (Ohio),US,R2,,,Gemini Chat,,,Implicit,Medium,https://miamioh.edu/it-services/initiatives-projects/ai-at-miami/index.html
+Northern Arizona University,US,R2,Microsoft Copilot (recommended/supported institutional tool),,,,,Implicit,Medium,https://libraryguides.nau.edu/AI-Faculty
+Oklahoma State University,US,R2,"Microsoft Copilot (enterprise/commercial data protection, O365 account)",,,,,Implicit,High,https://itle.okstate.edu/copilot_enterprise
+Old Dominion University,US,R2,,,Gemini (MonarchSphere),,,Yes,High,https://www.odu.edu/monarchmind
+Portland State University,US,R2,,,Gemini + NotebookLM,,,Implicit,Medium,https://www.pdx.edu/technology/gemini
+San Diego State University,US,R2,Copilot,ChatGPT Edu (via CSU),Gemini,,,Implicit,High,https://it.sdsu.edu/services/ai/chatgpt-edu
+TCU,US,R2,Copilot M365,ChatGPT Edu,,Claude (limited),,No,High,https://www.tcu.edu/ai/tools.php
+Texas State University,US,R2,Copilot,,Gemini,,,Implicit,Medium,https://guides.library.txstate.edu/AI_Literacy/tools
+Tulane University,US,R2,"Microsoft Copilot (Enterprise Data Agreement; all faculty, staff, students via Office365)",,,,,Implicit,High,https://it.tulane.edu/software/microsoft-copilot
+UNLV,US,R2,Copilot M365,ChatGPT,Gemini Pro,Claude,,Yes,High,https://it.unlv.edu/ai-technology/tools
+Villanova University,US,R2,Copilot M365,ChatGPT Enterprise,,,,Implicit,High,https://www.villanova.edu/university/ai/tools.html
+Wake Forest University,US,R2,Copilot Chat,,Gemini + NotebookLM,,,Implicit,High,https://ai.wfu.edu/licensed-ai-tools/
+West Virginia University,US,R2,"Microsoft Copilot Chat (Enterprise Data Protection, WVU M365)",,,,Blackboard/Anthology AI Design Assistant (eCampus Ultra),Implicit,High,https://academicintegrity.wvu.edu/student-resources/ai-faq
+William & Mary,US,R2,Copilot M365,ChatGPT Edu (pilot),Gemini,Claude (limited),,Yes,High,https://www.wm.edu/sites/ai/tools/
+Amherst College,US,LAC,,,Gemini,,,Implicit,Medium,https://amherststudent.com/article/college-announces-new-ai-tools-for-student-and-staff/
+Bowdoin College,US,LAC,Copilot Chat,,Gemini,Claude (via LibreChat),LibreChat (multi-model),Implicit,High,https://www.bowdoin.edu/generative-ai/ai-tools/index.html
+Carleton College,US,LAC,,,Gemini,,Amplify GenAI (ChatGPT + Claude + Gemini + Mistral),Implicit,High,https://www.carleton.edu/its/services/generative-ai/
+Colby College,US,LAC,,ChatGPT (unlimited),Gemini,Claude,Mule Chat (custom portal),No,High,https://www.govtech.com/education/higher-ed/colby-college-builds-ai-literacy-with-portal-for-comparing-chatbots
+Colgate University,US,LAC,Copilot,,Gemini,,,Implicit,Medium,https://www.colgate.edu/about/campus-services-and-resources/generative-ai-tools
+Davidson College,US,LAC,,,Gemini,,Amplify GenAI (Claude + ChatGPT),Yes,High,https://www.davidson.edu/ai
+Harvey Mudd College,US,LAC,Copilot Chat,,Gemini for Education,,,Yes,High,https://www.hmc.edu/cis/ai-at-hmc/
+Macalester College,US,LAC,Copilot,,Gemini,,,Implicit,Medium,https://www.macalester.edu/its/ai-at-macalester-college/
+Middlebury College,US,LAC,Copilot,,Gemini,,,Implicit,Medium,https://dlinq.middcreate.net/topic/chatgpt-llms-and-ai/generative-ai-tools-and-what-they-do/
+Oberlin College,US,LAC,,ChatGPT Enterprise,Gemini Enterprise,,,Yes,High,https://www.oberlin.edu/ai
+Pomona College,US,LAC,,,,,BoodleBox pilot (ChatGPT + Claude),No,Medium,https://ritg.pomona.edu/pilots/
+Smith College,US,LAC,,,Gemini,,,Implicit,Medium,https://library.vassar.edu/gen-ai
+Swarthmore College,US,LAC,,,Gemini,Claude (via LibreChat),LibreChat (self-hosted),Implicit,High,https://blogs.swarthmore.edu/its/2025/10/03/ai-resources-at-swarthmore/
+Vassar College,US,LAC,,,Gemini,,,Implicit,Medium,https://library.vassar.edu/gen-ai
+Wellesley College,US,LAC,,,,,"Amplify GenAI (ChatGPT + Claude, employees only)",Implicit,Medium,https://lts.wellesley.edu/2025/08/29/fall-semester-updates-from-lts/
+Wesleyan University,US,LAC,Copilot,ChatGPT Enterprise,Gemini,,,Yes,High,https://www.wesleyan.edu/its/policies/Generative%20AI%20Policy.html
+Whitman College,US,LAC,,,Gemini + NotebookLM,,,No,Medium,https://whitmanwire.com/news/2025/09/19/whitman-expands-access-to-ai-tools/
+Cornell University,US,R1,Copilot (evaluating),ChatGPT Edu (onboarding),Gemini (evaluating),"Claude (pilot, AI Gateway)",,Implicit,High,https://it.cornell.edu/ai
+Georgia Institute of Technology,US,R1,Copilot Enterprise + Smart Pass,ChatGPT Edu (Smart Pass),Gemini (added May 2026),,,Explicit,High,https://oit.gatech.edu/ai
+Boston University,US,R1,"Copilot (enterprise, free)",,,,,Implicit,High,https://www.bu.edu/tech/services/cccs/collaboration/conversational-ai/microsoft-copilot/
+Carnegie Mellon University,US,R1,"Copilot (enterprise, free)",,,,,Explicit,High,https://www.cmu.edu/computing/services/ai/meet-ai/tools/copilot/index.html
+Emory University,US,R1,"Copilot (enterprise, free)",,,,,Explicit,High,https://news.emory.edu/stories/2024/04/er_bing_copilot_ai_chat_service_15-04-2024/story.html
+American University,US,R1,Copilot (enterprise),,,,,Explicit,High,https://www.american.edu/oit/security/responsible-use-of-ai.cfm
+Auburn University,US,R1,Copilot (enterprise),,,,,Implicit,High,https://wire.auburn.edu/content/announcements/2024/12/11165309-announcement.php
+Baylor College of Medicine,US,R1,,,,,,,Low,https://www.bcm.edu/education/academic-faculty-affairs/faculty-resources/faculty-ed-tech/other-ed-tech-apps
+Binghamton University,US,R1,Copilot (enterprise),,NotebookLM (Google Workspace),,,Implicit,High,https://binghamton.teamdynamix.com/TDClient/45/Portal/KB/ArticleDet?ID=17631
+Boston College,US,R1,Copilot (enterprise),,Gemini for Workspace + NotebookLM,,,Implicit,High,https://www.bc.edu/bc-web/offices/its/about/its-news/2024/copilot-gemini.html
+Brandeis University,US,R1,Copilot Chat (enterprise),,Gemini (enterprise),,Zoom AI,Implicit,High,https://www.brandeis.edu/its/services/ai-tools/index.html
+Brigham Young University,US,R1,Copilot Enterprise + M365 Copilot,,,,,Explicit,High,https://genai.byu.edu/copilot-enterprise
+Brown University,US,R1,Copilot (enterprise),,Gemini Chat + NotebookLM,,LibreChat (institutional gateway / open-weight LLMs on HPC),Implicit,High,https://www.browndailyherald.com/article/2025/11/brown-begins-to-implement-university-wide-ai-tools
+California Institute of Technology,US,R1,Copilot (enterprise) + M365 Copilot,,,,,Explicit,High,https://www.imss.caltech.edu/services/ai
+Case Western Reserve University,US,R1,Copilot (enterprise),ChatGPT (via CWRU AI portal),Gemini (enterprise) + NotebookLM,Claude Sonnet (via CWRU AI portal),CWRU AI (institutional gateway),Implicit,High,https://case.edu/utech/help/knowledge-base/ai-artificial-intelligence
+Catholic University of America,US,R1,,,Gemini (via Google Workspace),,,Implicit,Low,https://www.catholic.edu/all-stories/innovation-leader-microsoft-direct-new-ai-institute
+Colorado School of Mines,US,R1,Microsoft Copilot (faculty/staff pilot),,"Gemini (Google Workspace, all users)",,,Implicit,High,https://helpcenter.mines.edu/TDClient/1946/Portal/KB/ArticleDet?ID=147161
+CUNY Graduate School,US,R1,"CUNY Copilot (Microsoft 365, enterprise)",,,,,Explicit,High,https://commons.hostos.cuny.edu/edtech/ai/cuny-copilot-basics/
+Drexel University,US,R1,"Microsoft Copilot (Office 365, faculty/staff)",ChatGPT Edu (enterprise),,,,Explicit,High,https://drexel.edu/provost/news-events/announcements/2026/February/faculty-access-chatgptedu
+East Carolina University,US,R1,"Microsoft Copilot (Microsoft 365, enterprise)",,,,,Explicit,High,https://ai.ecu.edu/using-generative-ai-at-ecu/
+Florida Atlantic University,US,R1,Microsoft Copilot,,Google Gemini,,"owlONE AI Agents (institutional gateway, GPT-4.1/4o)",Implicit,High,https://www.fau.edu/ai/tools/
+Florida International University,US,R1,Microsoft 365 Copilot (faculty/staff); Copilot via FIU credentials,,,,,Explicit,High,https://it.fiu.edu/ai/
+Florida State University,US,R1,"Microsoft Copilot (web, FSU login)",,Gemini + NotebookLM (Google partnership),,,Explicit,High,https://ai.fsu.edu/access
+George Washington University,US,R1,"Microsoft Copilot (licensed, GW SSO)",,Gemini + NotebookLM (Google Workspace),,,Implicit,High,https://it.gwu.edu/microsoft-copilot
+Georgia State University,US,R1,Microsoft Copilot Chat Enterprise (Office 365),,,,,Explicit,High,https://technology.gsu.edu/technology-services/productivity-collaboration/microsoft-copilot/
+Howard University,US,R1,Copilot Chat (in Teams),OpenAI NextGenAI partnership (research),,,,Implicit,High,https://technology.howard.edu/articles/exciting-news-copilot-chat-now-available-microsoft-teams
+Indiana University Bloomington,US,R1,Microsoft 365 Copilot Chat (enterprise data protection),ChatGPT Edu (unlimited access from Jan 2026),Gemini and NotebookLM (licensed),,REALLMS (UITS open-source LLM gateway); Adobe Firefly,Implicit,High,https://uits.iu.edu/ai/index.html
+Indiana University Indianapolis,US,R1,Microsoft 365 Copilot Chat (enterprise data protection),ChatGPT Edu (unlimited access from Jan 2026),Gemini and NotebookLM (licensed),,REALLMS (UITS open-source LLM gateway); Adobe Firefly,Implicit,High,https://uits.iu.edu/ai/index.html
+Iowa State University,US,R1,"Microsoft Copilot (Bing Chat Enterprise, included in M365 license)",,,,,Explicit,High,https://www.inside.iastate.edu/article/2026/05/08/data-security-key-no-matter-ai-tool-you-choose
+Johns Hopkins University,US,R1,Microsoft 365 Copilot,"ChatGPT Edu + OpenAI API (enterprise agreement, faculty/staff)",,Claude (via HopGPT platform),"HopGPT (institutional gateway to ChatGPT, Claude, Llama for all)",Implicit,High,https://hub.jhu.edu/at-work/2025/12/15/hopgpt-generative-ai-platform-launches/
+Kansas State University,US,R1,,,,,,,Low,https://www.k-state.edu/tlc/teaching_resources/ai_resources/
+Kent State University,US,R1,,,,,,,Low,https://www.kent.edu/it/ai-kent-state-series
+Louisiana State University,US,R1,Microsoft Copilot (approved tool),,,,Glean; MikeGPT (institutional),Implicit,High,https://www.lsu.edu/ai/index.php
+Medical University of South Carolina,US,R1,Microsoft Copilot (academic use); DAX Copilot (clinical),,,,Azure AI infrastructure,Implicit,Medium,https://alchemy.works/from-policy-to-practice-how-one-campus-is-guiding-faculty-and-student-ai-use/
+Michigan State University,US,R1,"Microsoft Copilot Chat (Spartan 365, no cost)","ChatGPT Edu (enterprise, departmental purchase, Tier 3)","Gemini and NotebookLM (no cost, MSU Google account)",,,Implicit,High,https://tech.msu.edu/ai/
+Michigan Technological University,US,R1,"Microsoft Copilot (paid, via Service Catalog purchase request only; not institution-wide free)",,"Gemini (Google Workspace for Education) - free to all faculty, staff, students",,,Implicit,High,https://www.mtu.edu/it/policies-compliance/generative-ai/
+Mississippi State University,US,R1,Copilot Chat (commercial data protection),ChatGPT EDU (licensed via Tech Store),,,,Implicit,High,https://servicedesk.its.msstate.edu/TDClient/45/Portal/KB/ArticleDet?ID=2153
+Missouri University of Science and Technology,US,R1,Microsoft 365 Copilot (UM System),,,,,Implicit,Low,https://it.mst.edu/ai/
+Montana State University,US,R1,Copilot for M365 (Office 365 package),,,,,Implicit,Medium,https://www.montana.edu/office365/
+New Jersey Institute of Technology,US,R1,,,,,"IRIS (institutional AI gateway, private AWS, open-source LLMs)",Implicit,Medium,https://news.njit.edu/artificial-intelligence-brings-new-perspective-njit-institutional-data-sources
+New Mexico State University,US,R1,"Microsoft Copilot (M365 portal, NMSU credentials)",,,,,Implicit,Medium,https://dacc.nmsu.edu/student-services/vlit/aiready.html
+New York University,US,R1,Microsoft Copilot (NYU NetID),,Gemini + NotebookLM (NYU Google Workspace),,,Explicit,High,https://www.nyu.edu/life/information-technology/artificial-intelligence-at-nyu/generative-ai-services.html
+North Carolina State University,US,R1,Copilot (approved enterprise tool),ChatGPT (approved enterprise tool),Gemini (approved enterprise tool),,Grammarly (approved enterprise tool),Implicit,High,https://ncsu.service-now.com/sp/en?id=kb_article&sys_id=5a24a4fc838a5290a35714326daad302
+North Dakota State University,US,R1,,,,,,,Low,https://kb.ndsu.edu/it/page.php?id=138300
+Northwestern University,US,R1,Microsoft Copilot (Copilot Chat free all; M365 Copilot paid add-on); GitHub Copilot,,,,,Implicit,High,https://www.it.northwestern.edu/ai/tools-and-use-guidance/tools-and-use-guidance.html
+Nova Southeastern University,US,R1,"Copilot (enterprise, faculty/staff)",,,,,Implicit,Medium,https://www.nova.edu/lec/ai/index.html
+Ohio University,US,R1,"Microsoft 365 Copilot Chat (enterprise, data protection); paid M365 Copilot add-on license",,,,,Implicit,High,https://www.ohio.edu/news/2025/10/microsoft-copilot-now-running-gpt-5
+Oregon State University,US,R1,"Copilot for Web (data-protected, enterprise)",,,,,Implicit,High,https://technology.oregonstate.edu/services/copilot
+Purdue University,US,R1,Copilot with Data Protection (GPT-4); M365 Copilot via license request,,Gemini (available),,,Implicit,High,https://it.purdue.edu/ai/purdues-ai-toolkit/
+Rensselaer Polytechnic Institute,US,R1,,ChatGPT for Education (Lally School business programs; not clearly campus-wide),,,,,Low,https://guides.lib.rpi.edu/ai-literacy/lesson-plans
+Rice University,US,R1,Microsoft Copilot (enterprise),,"Gemini for Education + NotebookLM (FERPA-compliant, Google Workspace)",,,Explicit,High,https://news.rice.edu/news/2025/faculty-staff-now-have-access-ai-tools-google-gemini-and-notebooklm
+Rutgers University-New Brunswick,US,R1,"Copilot (centrally funded, enterprise)",ChatGPT Edu (subscription via Rutgers Software Portal),Gemini + NotebookLM (centrally funded),,,Implicit,High,https://it.rutgers.edu/ai/
+Saint Louis University,US,R1,"Copilot (via M365 suite, institution-wide)",,,,,Implicit,Medium,https://unewsonline.com/2026/04/slu-faculty-share-opinions-on-universitys-ai-guidelines/
+Southern Illinois University,US,R1,Microsoft Copilot integrated with M365 for faculty/staff/students; full version requires purchased license (base Copilot Chat via M365 sign-in implied),,,,,Implicit,Medium,https://oit.siu.edu/faculty-staff.php
+Southern Methodist University,US,R1,"Copilot (campus license, faculty/staff; premium tier limited)","ChatGPT Team (license pool, faculty/staff, 2025-26)",,,,Implicit,High,https://www.smu.edu/oit/services/microsoft-copilot
+Stony Brook University,US,R1,"Copilot Enterprise (M365, free w/ enterprise data protection)","ChatGPT Team (IACS researchers, limited)",Gemini,,"NotebookLM, Turnitin, Zoom AI Companion, GitHub Copilot (GitHub Global Campus)",Implicit,High,https://it.stonybrook.edu/guides/ai
+Temple University,US,R1,,,,,,,Low,https://guides.temple.edu/ai-chatbots
+Texas A&M University,US,R1,Copilot Chat (free w/ A5); M365 Copilot (paid add-on),OpenAI GPT (via TAMU AI Chat); NextGenAI consortium (API credits),Gemini (via TAMU AI Chat); Google AI training partnership,Claude Sonnet (via TAMU AI Chat),TAMU AI Chat gateway; Perplexity (Mays Business School),Implicit,High,https://www.it.tamu.edu/ai-services/index.html
+Texas Tech University,US,R1,,,,,,,Low,https://www.depts.ttu.edu/tlpdc/ai-resources/teaching-with-ai.php
+Penn State University,US,R1,"Copilot (M365, free w/ enterprise data protection)",ChatGPT (via AI Studio); BoodleBox pilot (Smeal),Gemini (via AI Studio),Claude (via AI Studio),"AI Studio multi-model gateway; BoodleBox (Perplexity, Smeal pilot)",Implicit,High,https://ai.psu.edu/ai-services/copilot
+University of Alabama,US,R1,"Copilot (web, free w/ enterprise data protection); M365 Copilot (paid, $30/user/mo)",,,,,Implicit,High,https://oit.ua.edu/software/microsoft-product-suite/microsoft-copilot/
+University of Montana,US,R1,,"ChatGPT EDU (enterprise-grade, entire campus community)",,,Amplify GenAI platform (chat.umontana.ai) — institutional multi-model gateway; OpenAI Academy pilot,Implicit,High,https://umontana.ai/
+UT Health Science Center,US,R1,Copilot (free secure version); M365 Copilot (paid add-on),ChatGPT (via UT AI Hub),Google (via UT AI Hub),Claude (via UT AI Hub),"UT AI Hub gateway (OpenAI, Anthropic, Meta, xAI, Google); UT Verse",Implicit,High,https://www.uthsc.edu/its/ai/index.php
+University of Tennessee-Knoxville,US,R1,Copilot (faculty/staff; M365 add-on paid),ChatGPT (via UT AI Hub),Google (via UT AI Hub),Claude (via UT AI Hub),"UT Verse (UT-built AI assistant, all faculty/staff/students); UT AI Hub gateway (ChatGPT, Claude, Grok)",Implicit,High,https://oit.utk.edu/ai/
+UT Arlington,US,R1,"Copilot Chat (free, enterprise data protection via UT System Microsoft agreement); M365 Copilot (paid, $360/yr)",,,,,Implicit,High,https://websites.uta.edu/pedagogynext/microsoft-copilot-at-uta-free-vs-paid-and-how-faculty-can-use-it-for-teaching/
+UT Dallas,US,R1,Copilot Chat (enterprise data protection),,,,,Implicit,High,https://oit.utdallas.edu/news/microsoft-copilot-available-to-campus/
+UT El Paso,US,R1,Copilot Chat (sole approved AI tool),,,,,Implicit,High,https://www.utep.edu/technologysupport/servicecatalog/app_copilot.html
+UT San Antonio,US,R1,"Copilot (Enterprise, sole approved AI tool)",,,,,Implicit,High,https://www.utsa.edu/techsolutions/FacAndStaff/AvailableSoftware/Microsoft%20Copilot.html
+UT Health Houston,US,R1,Copilot (free; M365 Copilot paid add-on),ChatGPT Edu (HIPAA/FERPA configured),,,"Qualified Health (PHI-compliant GenAI, UT System-funded)",Explicit,High,https://med.uth.edu/msit/generative-ai-offerings/
+UT Health San Antonio,US,R1,Copilot,ChatGPT,,,"Qualified Health (PHI-compliant, HIPAA/FERPA, UT System-funded)",Explicit,High,https://libguides.uthscsa.edu/ai/tools
+Tufts University,US,R1,Copilot Chat (enterprise data protection); M365 Copilot add-on (faculty/staff),,,,,Implicit,High,https://it.tufts.edu/generative-ai-tools
+University at Albany,US,R1,"Copilot Chat (enterprise data protection; faculty/staff, no student access)",,,,,Implicit,High,https://albany.atlassian.net/wiki/spaces/askit/pages/52331308/Microsoft+Copilot
+University at Buffalo,US,R1,"Copilot Chat (enterprise data protection, all users)",,,,"BullsAI (UB-hosted ChatGPT-like tool, pilot)",Implicit,High,https://www.buffalo.edu/ubit/services/microsoft365/copilot.html
+University of Alabama at Birmingham,US,R1,"Copilot with Data Protection (free, all users); M365 Copilot paid add-on",,,,,Implicit,High,https://www.uab.edu/it/home/tech-solutions/ai/copilot-with-data-protection
+University of Arizona,US,R1,"Copilot (NetID, privacy-protected)",,Gemini (Google Workspace for Education); NotebookLM,,AI Verde (university-hosted privacy-aware LLM platform),Implicit,High,https://responsibleai.arizona.edu/ai-arizona/ai-tools-training-support
+University of Arkansas,US,R1,Microsoft 365 Copilot (Copilot Chat),ChatGPT Edu,Gemini (Google Workspace; Google AI for Education Accelerator),,NotebookLM,Explicit,High,https://news.uark.edu/articles/80623/more-ai-tools-and-resources-approved-and-available-for-campus
+UC Davis,US,R1,Microsoft 365 Copilot Chat,ChatGPT Edu,Gemini (Google Workspace),,Aggie AI platform (Rocky AI Chat); Zoom AI Companion,Implicit,High,https://iet.ucdavis.edu/aggie-ai/ai-tools
+UC Irvine,US,R1,Microsoft 365 Copilot Chat,ChatGPT (UC systemwide Enterprise/Edu); GPT-5 via ZotGPT,Gemini (Google Workspace); Gemini 2.5 Pro via ZotGPT,Claude (Opus 4.1) via ZotGPT,ZotGPT custom platform (Azure/AWS-hosted); ClassChat,Implicit,High,https://www.oit.uci.edu/services/ai/zotgpt/
+UC Merced,US,R1,Microsoft 365 Copilot (Copilot Chat),ChatGPT Edu (UC systemwide; campus license process in progress),Gemini (Google Workspace),,Zoom AI Companion; Canva Magic Studio,Implicit,Medium,https://ai.ucmerced.edu/
+UC Riverside,US,R1,,ChatGPT Enterprise (UC systemwide; not yet widely deployed at UCR),Gemini (Google Workspace enterprise agreement),,"NotebookLM; The Grove (Gemini Enterprise, launching)",Explicit,High,https://its.ucr.edu/ai
+UC San Diego,US,R1,"Microsoft Copilot (commercial agreement, P3 data)",ChatGPT (UC systemwide Enterprise/Edu); GPT-5 via TritonGPT,Gemini (Google Workspace); Gemini Pro via TritonGPT,Claude Sonnet via TritonGPT,TritonGPT in-house platform (SDSC-hosted),Implicit,High,https://tritonai.ucsd.edu/
+UC Santa Barbara,US,R1,,ChatGPT Enterprise/Edu (UC systemwide; not deployed campus-wide at UCSB),Gemini (Google Workspace),,NotebookLM,Explicit,High,https://it.ucsb.edu/news/data-protection-and-chatgpt-use
+UC Santa Cruz,US,R1,,ChatGPT Enterprise/Edu (UC systemwide agreement; campus rollout pending Senate consultation),"Gemini (systemwide Google Workspace; staff first, faculty/students pending)",,NotebookLM; Zoom AI,Explicit,High,https://its.ucsc.edu/its-news/secure-artificial-intelligence-tools-enabled-for-staff/
+University of Central Florida,US,R1,"Microsoft Copilot (enterprise license, all faculty/staff/students)",,,,,Explicit,High,https://infosec.ucf.edu/document/ai-guidance/
+University of Chicago,US,R1,Microsoft 365 Copilot; GitHub Copilot Business,"PhoenixAI (OpenAI models, UChicago-hosted)",Gemini (Google Workspace enterprise),,PhoenixAI proprietary chatbot; NotebookLM,Implicit,High,https://genai.uchicago.edu/en/generative-ai-tools
+University of Cincinnati,US,R1,Microsoft Copilot (M365 enterprise),,,,BearcatGPT (private Azure OpenAI gateway); Adobe Firefly,Explicit,High,https://www.uc.edu/about/ucit/software-tools/ai/tools.html
+University of Colorado Boulder,US,R1,Microsoft 365 Copilot / Copilot Chat,ChatGPT Edu,,,,Explicit,High,https://www.colorado.edu/ai/ai-tools-list
+University of Colorado Denver,US,R1,Microsoft 365 Copilot (Chat free; M365 add-on paid),ChatGPT Edu (CU systemwide),,,,Explicit,High,https://www.ucdenver.edu/offices/office-of-information-technology/get-help/artificial-intelligence-tools
+University of Connecticut,US,R1,"Microsoft 365 Copilot Chat (all); Microsoft 365 Copilot (faculty/staff, paid)",,,,,Explicit,High,https://its.uconn.edu/2025/02/27/gpt-4o-powered-ai-available-to-uconn/
+University of Dayton,US,R1,,,,,Flyer GPT (custom enterprise-grade AI platform),Implicit,High,https://udayton.edu/ai.php
+University of Delaware,US,R1,Microsoft Copilot (free for all; M365 Copilot paid faculty/staff),ChatGPT Team (Lerner College faculty/staff),Google Gemini (free for all; paid on request),,Zoom AI Companion,Explicit,High,https://www.udel.edu/udaily/2025/january/generative-ai-tools-now-available-at-ud/
+University of Denver,US,R1,Microsoft Copilot,,,,Adobe Creative Cloud (generative AI); Zoom AI Companion,,High,https://www.du.edu/artificial-intelligence/resources
+University of Georgia,US,R1,Microsoft Copilot (M365 secure tenant); M365 Copilot (purchasable),"ChatGPT Edu (premium license pilot, spring 2026)","Google Gemini (Workspace, free); Gemini Pro for Education (pilot/purchasable)",Claude Enterprise for Education (AI Licensing Purchasing Program),NotebookLM,Explicit,High,https://aihub.uga.edu/resources-tools/ai-toolbox/
+University of Hawaii at Manoa,US,R1,,,Google Gemini (Workspace for Education); Google AI Pro for Education licenses,,Google Vertex AI; Google Cloud suite,Implicit,High,https://www.hawaii.edu/sitelic/google/
+University of Idaho,US,R1,Microsoft Copilot (M365 enterprise),,Google AI Pro (one year free for students),,,Implicit,High,https://ai.uidaho.edu/
+University of Illinois Chicago,US,R1,Microsoft 365 Copilot Chat (free); M365 Copilot (paid add-on),ChatGPT Edu (via University WebStore),,,,Explicit,High,https://it.uic.edu/services/ai-resources/
+University of Illinois Urbana-Champaign,US,R1,Microsoft Copilot (enterprise data protection),ChatGPT Edu (via University WebStore),,,Illinois Chat (institutional LLM gateway),Explicit,High,https://genai.illinois.edu/ai-apps/
+University of Iowa,US,R1,Microsoft 365 Copilot Chat (enterprise); M365 Copilot (licensed add-on),ChatGPT Edu,,,,Implicit,High,https://its.uiowa.edu/services/microsoft-365-copilot
+University of Kansas,US,R1,Microsoft Copilot Chat (enterprise data protection); M365 Copilot full license (paid),,,,,Implicit,High,https://technology.ku.edu/approved-ai-tools
+University of Kentucky,US,R1,"Microsoft 365 Copilot (enterprise, campus-wide); GitHub Copilot; Dragon Copilot",,,,,Explicit,High,https://its.uky.edu/ai-offerings
+University of Louisiana at Lafayette,US,R1,Microsoft Copilot Chat (enterprise data protection),,,,,Implicit,Medium,https://louisiana.edu/distancelearning/technology/ai-tools-use
+University of Louisville,US,R1,Microsoft 365 Copilot / Copilot Chat (M365 free to all; ITS recommends Copilot 365),,Gemini (recommended for advanced users; institutional provision not confirmed),Claude (recommended for advanced users; institutional provision not confirmed),ITS AI services page + AI Culture/learning hub; LinkedIn Learning access,Implicit,Medium,https://louisville.edu/its/services/ai
+University of Maine,US,R1,,"ChatGPT Edu (UMS system-wide, begins July 2026)",,,,Explicit,High,https://www.maine.edu/blog/2026/05/26/university-of-maine-system-to-launch-shared-ai-tool-to-accelerate-student-institutional-success/
+University of Maryland-Baltimore County,US,R1,Microsoft Copilot (enterprise data protection),,Google Gemini (enterprise data protection),,,Implicit,High,https://doit.umbc.edu/ai/academic-ai/
+University of Maryland-College Park,US,R1,,ChatGPT Enterprise (subsidized),"Google Gemini (Workspace, enterprise)",,"TerpAI (UMD-owned gateway, OpenAI-powered)",Explicit,High,https://ai.umd.edu/resources/services
+University of Maryland Baltimore,US,R1,Microsoft 365 Copilot / Copilot Chat (enterprise),,,,"Cloudforce nebulaONE (licensed); ChatGPT Business, Claude Team, Gemini Business in procurement",Explicit,High,https://www.umaryland.edu/ai/ai-toolkit/
+University of Massachusetts-Amherst,US,R1,"Copilot (enterprise, FERPA-compliant)",ChatGPT (via UMass GenAI Platform),,Claude (via UMass GenAI Platform),"UMass GenAI Platform / campusGenAI gateway (OpenAI, Anthropic, Meta Llama, Cohere, Mistral)",Explicit,High,https://www.umass.edu/it/genai/platform
+University of Massachusetts-Boston,US,R1,Microsoft 365 Copilot Chat (enterprise),,,,campusGenAI (UMass system gateway),Implicit,High,https://www.umb.edu/it/software-systems/admin-systems/copilot/
+University of Massachusetts-Lowell,US,R1,Microsoft 365 Copilot Chat (enterprise),OpenAI license (faculty/staff; students not covered),,,campusGenAI (UMass system gateway),Implicit,High,https://www.uml.edu/it/software/it-generative-ai.aspx
+University of Memphis,US,R1,"Microsoft 365 Copilot (all UofM accounts, Enterprise data protection)",,,,Canvas IgniteAI (instructors); Khanmigo prompts,Explicit,High,https://www.memphis.edu/careerservices/ai-career-toolkit/index.php
+University of Miami,US,R1,"Copilot for Microsoft 365 (enterprise, BAA)",,,Claude (Sonnet) via Copilot Chat,,Implicit,High,https://www.it.miami.edu/copilot-for-365
+University of Michigan-Ann Arbor,US,R1,Microsoft 365 Copilot Chat (Michigan Medicine),,Gemini + NotebookLM (for Education),,U-M GPT / U-M Maizey / U-M GPT Toolkit (custom institutional gateway; Azure OpenAI + open-source models),Explicit,High,https://genai.umich.edu/resources/tools
+University of Minnesota-Twin Cities,US,R1,Microsoft Copilot (enterprise data protection),,Gemini (enterprise-grade data protection),,,Implicit,High,https://it.umn.edu/services-technologies/gemini-enterprise-grade-data-protection
+University of Mississippi,US,R1,Microsoft Copilot (enterprise),,,,,Implicit,High,https://guides.lib.olemiss.edu/c.php?g=1362389&p=10062387
+University of Missouri-Columbia,US,R1,"Microsoft 365 Copilot (Education, DCL1-3 approved)",ChatGPT Enterprise/Edu (UM System centralized license),Google Gemini Pro,Claude (via Show-Me AI walled garden),"Show-Me AI institutional gateway (Claude, Gemini, ChatGPT, Llama 4)",Explicit,High,https://doit.missouri.edu/about/strategy-and-innovation/ai/
+University of Missouri-Kansas City,US,R1,Microsoft 365 Copilot / Copilot Chat (enterprise data protection),ChatGPT Edu (UM System Education version),,,,Explicit,High,https://www.umkc.edu/is/resources/ai-tools/
+University of Nebraska Medical Center,US,R1,Microsoft 365 Copilot (cost-center license),,,,,Implicit,High,https://nebraska.edu/offices-policies/its/policies-processes/artificial-intelligence/available-ai-tools
+University of Nebraska-Lincoln,US,R1,"Copilot Chat (M365 A5, Enterprise Data Protection)",ChatGPT enterprise/EDU (limited licenses),,,,Implicit,High,https://nebraska.edu/offices-policies/its/policies-processes/artificial-intelligence/available-ai-tools
+University of Nevada-Reno,US,R1,Microsoft 365 Copilot Chat (enterprise data protection),,,,,Implicit,High,https://www.unr.edu/ai/students/copilot-chat
+University of New Hampshire,US,R1,"Microsoft Copilot (USNH account login; note: data leaves network, limited protection)",,,,,,Medium,https://www.unh.edu/teaching-learning-resource-hub/delivery/generative-artificial-intelligence
+University of New Mexico,US,R1,Microsoft 365 Copilot Chat (enterprise data protection) + M365 Copilot (paid license),,,,,Implicit,High,https://airesources.unm.edu/tools-and-training/microsoft-365-copilot.html
+University of North Carolina at Chapel Hill,US,R1,Microsoft 365 Copilot Chat with Data Protection (campus-wide),ChatGPT (via Library PromptLab gateway),Gemini (via Library PromptLab gateway),Claude (via Library PromptLab gateway),PromptLab (University Library institutional multi-model gateway),Implicit,High,https://its.unc.edu/ai/copilot/
+University of North Carolina at Charlotte,US,R1,Microsoft Copilot with Data Protection (campus-wide),,,,,Implicit,High,https://oneit.charlotte.edu/microsoft-copilot-with-data-protection/
+University of North Dakota,US,R1,,,,,,,Low,https://und.edu/academics/provost/about/ai.html
+University of North Texas,US,R1,"Copilot Chat (campus-wide, no cost) + M365 Copilot (paid add-on)",,,,"UNiTyAI (Azure-native private GenAI platform, Cloudforce, UNT System-wide)",Implicit,High,https://ai.untsystem.edu/services.html
+University of Notre Dame,US,R1,"Copilot Chat (enterprise data protection); GitHub Copilot (centrally-managed, opt-in paid)","ChatGPT Edu (centrally-managed, nominal annual fee)","Gemini App & NotebookLM (student access, Notre Dame account data protection)",,,Explicit,High,https://ai.nd.edu/ai-in-action/approved-ai-tools/microsoft-copilot-chat/
+University of Oklahoma,US,R1,Copilot with organizational data protection (recommended); M365 Copilot in 3-phase pilot,,,,Zoom AI Companion (opt-in),Implicit,High,https://www.ou.edu/ouit/ai
+University of Oregon,US,R1,"Copilot Chat with enterprise data protection (all users); M365 Copilot in-app (subscription, faculty/staff/researchers)",,,,,Implicit,High,https://news.uoregon.edu/content/microsoft-copilot-offers-protected-ai-experience-uo
+University of Rhode Island,US,R1,"Microsoft 365 Copilot Chat (all faculty/staff/students, base tier)",,,,"LibreChat (pilot, multi-LLM secure gateway); Adobe Firefly; Zoom AI Companion",Implicit,High,https://its.uri.edu/2025/09/26/microsoft-365-copilot-chat/
+University of Rochester,US,R1,Bing/Copilot Enterprise (faculty/staff with Microsoft accounts),"chat.rochester.edu - private ChatGPT/GPT-4o licensed from OpenAI via Microsoft (faculty, staff, students); approved for Moderate/High Risk data",,,,Explicit,High,https://www.rochester.edu/ai/
+University of South Florida,US,R1,"Copilot Chat (enterprise, all faculty/staff/students); Copilot for M365 (departmental purchase)",,,,,Implicit,High,https://genai.usf.edu/genai-resources/tools
+University of Southern Mississippi,US,R1,,,,,,,Low,https://www.usm.edu/provost/artificial-intelligence.php
+UT Southwestern Medical Center,US,R1,Microsoft 365 Copilot (UT System-wide Microsoft partnership),"OpenAI ChatGPT and OpenAI API (HIPAA-compliant, expanding UTSW-OpenAI collaboration)",,,Cloudforce nebulaONE (AI tools matrix),Implicit,High,https://www.utsouthwestern.edu/ai/tools/
+University of Toledo,US,R1,Copilot (provided for academic use; institution-wide license status unconfirmed),,,,,,Low,https://www.utoledo.edu/offices/provost/artificial-intelligence/
+University of Washington,US,R1,"Copilot Chat with commercial data protection (faculty, staff, students, UW Medicine workforce)",,,,,Explicit,High,https://it.uw.edu/uware/microsoft-copilot-chat/
+University of Wisconsin-Madison,US,R1,Microsoft 365 Copilot Chat (enterprise),,,,"AWS Bedrock, Azure AI Studio (enterprise AI services)",Implicit,High,https://it.wisc.edu/services/m365-copilot-chat/
+University of Wisconsin-Milwaukee,US,R1,Microsoft 365 Copilot Chat (enterprise),,,,,Implicit,High,https://uwm.edu/information-technology/microsoft-365-copilot-chat/
+University of Wyoming,US,R1,Microsoft Copilot (enterprise),,,,,Implicit,High,https://www.uwyo.edu/infotech/news/articles/new_ai_microsoft_copilot.asp
+Utah State University,US,R1,Microsoft Copilot (enterprise; M365 Copilot paid add-on),,Google Gemini,,,Implicit,High,https://www.usu.edu/ai/tools
+Vanderbilt University,US,R1,Microsoft Copilot (enterprise),ChatGPT Edu,,Anthropic models via Amplify GenAI platform,"Amplify 2.0 (institutional gateway: Anthropic, OpenAI, Nova, Mistral)",Implicit,High,https://news.vanderbilt.edu/2026/01/12/vanderbilt-expands-multi-tool-ai-strategy-with-chatgpt-edu-amplify-2-0-and-more/
+Virginia Commonwealth University,US,R1,"Microsoft Copilot (licensed, enterprise)",,Google Gemini,,Adobe Firefly,Implicit,High,https://aiguidebook.vcu.edu/tools/
+Virginia Tech,US,R1,"Microsoft Copilot (enterprise, M365)",,,,,Implicit,High,https://ai.vt.edu/approved-ai-tools.html
+Washington State University,US,R1,Microsoft 365 Copilot Chat (enterprise; M365 Copilot paid for faculty/staff),,Google Gemini,Anthropic Claude,,Implicit,High,https://its.wsu.edu/2024/08/12/microsoft-copilot-for-web-wsus-new-ai-tool/
+Washington University in St. Louis,US,R1,"Microsoft Copilot for M365 (enterprise, additional cost)","WashU ChatGPT (ChatGPT-4o, FERPA/HIPAA approved); ChatGPT Edu forthcoming",Gemini for Education; NotebookLM,,,Explicit,High,https://genai.wustl.edu/tools/
+Wayne State University,US,R1,"Microsoft Copilot (Teams/M365 features, enterprise)",,,,WarriorGPT (institutional secure GenAI platform),Implicit,Medium,https://tech.wayne.edu/about/projects/warriorgpt
+Weill Cornell Medicine,US,R1,Copilot (enterprise),,,,,Explicit,High,https://its.weill.cornell.edu/ai
+Worcester Polytechnic Institute,US,R1,"Copilot (enterprise, WPI credentials)",,,,,Implicit,High,https://www.wpi.edu/c/wpi-artificial-intelligence
+Abilene Christian University,US,R2,,,"Gemini for Education (Gemini 2.5 Pro/Flash, Google Workspace for Education license, all students/faculty); NotebookLM",,Zoom AI Companion (campus Zoom license),Explicit,High,https://support.acu.edu/TDClient/1963/Portal/KB/ArticleDet?ID=168205
+Air Force Institute of Technology,US,R2,,,,,NIPRGPT (DAF gov AI platform; sunset Dec 31 2025),Implicit,Medium,https://www.airandspaceforces.com/air-force-launches-generative-ai-chatbot/
+Albert Einstein College of Medicine,US,R2,,ChatGPT Edu,,,,Implicit,Medium,https://library.einsteinmed.edu/scite
+Appalachian State University,US,R2,Copilot (enterprise),,,,,Implicit,High,https://its.appstate.edu/news/campus-enterprise-gen-ai-microsoft-copilot
+Arkansas State University,US,R2,,,,,,,Low,https://degree.astate.edu/online-programs/undergraduate/ai-career-readiness-students/
+Augusta University,US,R2,Copilot (Office 365 account),,,,,Implicit,High,https://www.augusta.edu/ai/
+Azusa Pacific University,US,R2,,,,,,,Low,https://support.apu.edu/kb/article/584-ai-powered-tools-at-apu-enhancing-productivity-and-innovation/
+Ball State University,US,R2,,,"Gemini (Google Workspace) — available to all students, faculty, and staff via Ball State login; data not used to train models",,,Implicit,Medium,https://commcenter.bsu.edu/message/using-gemini-this-semester-start-with-a-safe-protected-login
+Boise State University,US,R2,,"ChatGPT Edu (faculty/staff licenses, dept-funded)","Gemini for Workspace (faculty/staff licenses, dept-funded)",Claude (via boisestate.ai gateway),"boisestate.ai (institutional AWS-hosted gateway: Claude, Llama, Nova) for all students/faculty/staff",Explicit,High,https://www.boisestate.edu/genai/ai-tools-and-policy/
+Bowling Green State University,US,R2,"Copilot (Microsoft 365, enterprise)",ChatGPT (via AI degree program platform fee),Gemini (via AI degree program platform fee),,"University-negotiated AI platform for AI Major/Minor students ($40/semester fee; ChatGPT, Gemini)",Implicit,Medium,https://www.bgsu.edu/its/support/ai-resources.html
+Cal Poly Pomona,US,R2,,ChatGPT Edu (CSU systemwide),,,,Explicit,High,https://www.cpp.edu/it/advanced-computing/artificial-intelligence-at-cpp.shtml
+CSU Fresno,US,R2,,ChatGPT Edu (CSU systemwide),,,,Explicit,High,https://campustechnology.com/articles/2025/02/05/california-state-university-launches-systemwide-chatgpt-edu-deployment.aspx
+CSU Fullerton,US,R2,,ChatGPT Edu (CSU systemwide),,,,Explicit,High,https://campustechnology.com/articles/2025/02/05/california-state-university-launches-systemwide-chatgpt-edu-deployment.aspx
+CSU Long Beach,US,R2,,ChatGPT Edu (CSU systemwide),,,,Explicit,High,https://campustechnology.com/articles/2025/02/05/california-state-university-launches-systemwide-chatgpt-edu-deployment.aspx
+CSU Los Angeles,US,R2,,ChatGPT Edu (CSU systemwide),,,,Explicit,High,https://www.calstatela.edu/genai/chatgpt-edu-faq
+CSU Sacramento,US,R2,,ChatGPT Edu (CSU systemwide),,,,Explicit,High,https://campustechnology.com/articles/2025/02/05/california-state-university-launches-systemwide-chatgpt-edu-deployment.aspx
+Central Michigan University,US,R2,"Copilot (institutional version, Microsoft 365)",,,,,Implicit,Medium,https://www.cmich.edu/offices-departments/curriculum-instructional-support/select-or-develop-materials-and-tools/artificial-intelligence-AI-resources
+Chapman University,US,R2,"Copilot for Web (enterprise, formerly Bing Chat Enterprise)",,,,"PantherAI (institutional multi-model gateway: GPT-4o, Claude, Gemini)",Explicit,High,https://www.chapman.edu/campus-services/information-systems/research-technology-support/pantherai/index.aspx
+Claremont Graduate University,US,R2,,,,,,,Low,https://my.cgu.edu/faculty-excellence/resources/ai/
+Clark Atlanta University,US,R2,,,,,,,Low,
+Clark University,US,R2,,,,,,,Low,
+Clarkson University,US,R2,,,,,,,Low,
+Cleveland State University,US,R2,Copilot Chat (Microsoft 365),,,,,Implicit,Low,https://business.csuohio.edu/information-systems/ai-news
+Creighton University,US,R2,,,,,,,Low,https://culibraries.creighton.edu/AI
+CUNY City College,US,R2,"CUNY Copilot (Microsoft 365, enterprise)",,,,,Explicit,High,https://commons.hostos.cuny.edu/edtech/ai/cuny-copilot-basics/
+CUNY Hunter College,US,R2,"CUNY Copilot (Microsoft 365, enterprise)",,,,,Explicit,High,https://commons.hostos.cuny.edu/edtech/ai/cuny-copilot-basics/
+Delaware State University,US,R2,,,,,,,Low,https://www.desu.edu/
+Duquesne University,US,R2,"Copilot (Duquesne-approved, data protections)",,,,,Implicit,Medium,https://www.duq.edu/academics/office-of-the-provost/artificial-intelligence-ai-at-duquesne.php
+East Tennessee State University,US,R2,,,,,,,Low,https://www.etsu.edu/its/ats/support/support.php
+East Texas A&M University,US,R2,Copilot Chat (enterprise data protection),,,,"TAMU AI Chat gateway (GPT, Claude, Gemini) - system-wide beta",Implicit,Low,https://www.it.tamu.edu/ai-services/index.html
+Eastern Michigan University,US,R2,Microsoft Copilot,,Gemini + NotebookLM (Google Workspace for Education),,,Implicit,High,https://www.emich.edu/it/security/software-security/sensitive-data/applications/univ-lic-ai-tools.php
+Eastern Virginia Medical School,US,R2,,,,,,,Low,https://www.evms.edu/about_us/ai_resources/
+Embry-Riddle Aeronautical University,US,R2,Copilot Chat + Microsoft 365 Copilot,ChatGPT,,,Canva Magic Studio; Zoom AI Companion; Scite AI; Quinncia,Implicit,High,https://erau.edu/ai
+Florida A&M University,US,R2,,,,,,,Low,https://www.famu.edu/
+Florida Institute of Technology,US,R2,,,,,,,Low,
+Fordham University,US,R2,Copilot in Edge,,Gemini (Google Workspace),,Grammarly,Implicit,High,https://www.fordham.edu/information-technology/it-services/academic-technology/artificial-intelligence/tools/
+Georgia Southern University,US,R2,,,,,,,Low,https://digitalcommons.georgiasouthern.edu/gaintlit/2024/2024/22/
+Hampton University,US,R2,,,,,,,Low,
+Icahn School of Medicine at Mount Sinai,US,R2,,ChatGPT Edu,,,,Explicit,High,https://www.mountsinai.org/about/newsroom/2025/icahn-school-of-medicine-at-mount-sinai-expands-ai-innovation-with-openais-chatgpt-edu-rollout
+Idaho State University,US,R2,,,,,,,Low,https://www.isu.edu/ogc/ai-guidelines/
+Illinois Institute of Technology,US,R2,,,,,,,Low,https://guides.library.iit.edu/ai_chatgpt
+Illinois State University,US,R2,Copilot for the Web (commercial data protection),,,,,Explicit,High,https://help.illinoisstate.edu/technology/support-topics/campus-applications-and-websites/copilot-for-the-web
+Indiana University of Pennsylvania,US,R2,,,,,,,Low,https://www.iup.edu/scholarlycommunication/ai-summit/index.html
+Jackson State University,US,R2,,,,,,,Low,https://www.jsums.edu/ai/
+Kean University,US,R2,Microsoft Copilot (via KeanU AI gateway),ChatGPT/OpenAI (via KeanU AI gateway),,Claude/Anthropic (via KeanU AI gateway),"KeanU AI — campus-built institutional AI gateway (keanuai.kean.edu), data kept inside Kean's systems; multi-model agents",Implicit,High,https://www.kean.edu/news/kean-launches-keanu-ai-power-artificial-intelligence-use-across-campus
+Kennesaw State University,US,R2,Copilot (with data protection),,,,,Implicit,High,https://campus.kennesaw.edu/offices-services/uits/ai/copilot.php
+Lamar University,US,R2,Copilot with Data Protection,,,,,Implicit,High,https://www.lamar.edu/lu-online/instructional-support/blog/2024/04/campus-wide-access-to-microsoft-copilot.html
+Loma Linda University,US,R2,,,,,,,Low,https://www.llu.edu/
+Long Island University,US,R2,,,,,,,Low,https://liu.edu/ai
+LSU Health Sciences Center,US,R2,Microsoft Copilot (enterprise data protection),,,,Glean; MikeGPT (institutionally approved),Implicit,Medium,https://libguides.lsuhsc.edu/AI
+Louisiana Tech University,US,R2,,,,,,,Low,
+Loyola Marymount University,US,R2,"Microsoft Copilot (campus-wide, enterprise data protection)",,,,Zoom AI Companion,Explicit,High,https://its.lmu.edu/ai/aitoolsservices/
+Marquette University,US,R2,"Microsoft 365 Copilot Chat (free to all students/faculty/staff); full M365 Copilot license (paid, faculty/staff)","ChatGPT (consumer free tier, all users)","Gemini + NotebookLM (consumer free tier, all users)","Claude (consumer free tier, all users)",,Implicit,High,https://www.marquette.edu/generative-ai/ai-tools.php
+Marshall University,US,R2,Microsoft 365 Copilot Chat (enterprise data protection),,,,Blackboard AI Design Assistant,Explicit,High,https://www.marshall.edu/ai/genai/m365-copilot-chat/
+Medical College of Wisconsin,US,R2,,,,,,,Low,
+Mercer University,US,R2,,,,,,,Low,https://ctl.mercer.edu/ai-resources/sample-syllabus-guidance-for-ai-use/
+Miami University Ohio,US,R2,,,"Google Gemini (enterprise, no training on inputs); NotebookLM",,Zoom AI Companion; Webex AI Assistant,Implicit,High,https://miamioh.edu/academic-affairs/faculty-resources/teaching/ai-in-teaching/ai-faculty.html
+Middle Tennessee State University,US,R2,,,,,,,Low,https://www.mtsu.edu/businesslab/aitools/
+Montclair State University,US,R2,Copilot (enterprise data protection),,,,,Implicit,High,https://www.montclair.edu/itds/instructional-tech/ai/
+Morgan State University,US,R2,,,"Gemini (enterprise/institution-wide, all students; sign in with Morgan credentials at gemini.google.com)",,Google partnership incl. GPU research access; custom 'Obsidian' AI platform pilot,Implicit,High,https://www.morgan.edu/information-technology/about/news/morgan-state-brings-ai-to-every-student-with-google-gemini
+North Carolina A&T State University,US,R2,Copilot M365 (enterprise license),ChatGPT (institutionally licensed),,,Adobe Firefly; Scite_,Implicit,High,https://hub.ncat.edu/administration/its/ai/ai-technology-tools.php
+Northern Illinois University,US,R2,Copilot Chat (commercial data protection),,,,,Implicit,High,https://www.niu.edu/artificial-intelligence/tools/copilot/index.shtml
+Oakland University,US,R2,Copilot Chat (university-licensed),,Gemini (university-licensed),,,Implicit,High,https://www.oakland.edu/ai/students/
+Oklahoma State University Health Sciences,US,R2,Copilot (commercial data protection),,,,,Implicit,Medium,https://itle.okstate.edu/copilot_enterprise
+Oregon Health & Science University,US,R2,,,,,,Explicit,Low,https://libguides.ohsu.edu/aiforstudents
+Pepperdine University,US,R2,,,Gemini for Education (core service),,Zoom AI Companion,Implicit,High,https://community.pepperdine.edu/it/ai/
+Prairie View A&M University,US,R2,,,,,,,Low,
+Rochester Institute of Technology,US,R2,Microsoft 365 Copilot (enterprise),,Gemini + NotebookLM (enterprise),,Zoom AI Companion; AI Foundry custom tools,Implicit,High,https://www.rit.edu/its/generative-ai
+Rockefeller University,US,R2,,,,,,,Low,
+Rowan University,US,R2,Copilot (enterprise),,Gemini (enterprise) + NotebookLM,,,Explicit,High,https://irt.rowan.edu/service-catalog/ai/
+Rush University,US,R2,,,,,"Clinical ambient AI (Suki, DAX Copilot) — clinical only, no campus-wide gen-AI chatbot license confirmed",,Low,https://library.rush.edu/artificial-intelligence
+Rutgers University-Camden,US,R2,Microsoft Copilot,ChatGPT Edu (via Software Portal),Gemini + NotebookLM,,,Explicit,High,https://it.rutgers.edu/ai/
+Rutgers University-Newark,US,R2,Microsoft Copilot,ChatGPT Edu (via Software Portal),Gemini + NotebookLM,,,Explicit,High,https://it.rutgers.edu/ai/
+Saint Joseph's University,US,R2,,,,,,,Low,https://www.sju.edu/offices/it
+Sam Houston State University,US,R2,Microsoft 365 Copilot / Copilot Chat,,Gemini + NotebookLM,,,Implicit,High,https://www.shsu.edu/dept/it@sam/ai/index.html
+San Francisco State University,US,R2,"Microsoft Copilot (enterprise data protection, all users)",ChatGPT Edu (CSU-OpenAI systemwide),,,,Explicit,High,https://its.sfsu.edu/service/copilot
+San Jose State University,US,R2,Microsoft Copilot,ChatGPT Edu (CSU-OpenAI systemwide),,,,Explicit,High,https://www.sjsu.edu/it/campus-initiatives/ai-resources/chatgpt/index.php
+Seton Hall University,US,R2,Microsoft Copilot (pilot/general availability; not confirmed full enterprise license),,,,,,Low,https://www.shu.edu/technology/ai/integrating-ai-in-the-curriculum.html
+South Carolina State University,US,R2,,,,,,,Low,
+South Dakota State University,US,R2,Microsoft Copilot (commercial data protection),,,,,Implicit,High,https://www.sdstate.edu/digital-accessibility-hub/ai-accessibility
+Southern Connecticut State University,US,R2,Microsoft Copilot (campus data privacy license),,,,,Implicit,High,https://inside.southernct.edu/helpdesk/general-information/technews/ai-best-practice
+Southern University,US,R2,,,,,,,Low,
+Stevens Institute of Technology,US,R2,"Microsoft Copilot with Data Protection (all users); M365 Copilot (employee pilot, by request)",,,,Zoom AI Companion (all users); Adobe Firefly (employee pilot),Implicit,High,https://www.stevens.edu/it/programs-projects/artificial-intelligence
+SUNY ESF,US,R2,"Microsoft Copilot (ESFiD login, enterprise data protection)",,"Google Gemini (via Syracuse SU NetID, incl. 2.5 Pro)",,Adobe Express Generative AI (approved),Implicit,High,https://it.esf.edu/College-Resources/AI-at-SUNY-ESF
+Tarleton State University,US,R2,Microsoft Copilot (referenced as approved tool),,,,AI Builder (Tarleton-supported AI gateway/workspace),Implicit,High,https://www.tarleton.edu/technology/ai-builder/
+Teachers College Columbia,US,R2,Microsoft Copilot (via Microsoft 365 license),,,,,,Low,https://www.tc.columbia.edu/tcit/available-software/
+Tennessee State University,US,R2,,,,,,,Low,https://www.tnstate.edu/board/TSU%20Proposed%20AI%20Policy.pdf
+Tennessee Technological University,US,R2,Microsoft Copilot Chat (enterprise access via Tennessee Tech credentials),,,,,Implicit,High,https://www.tntech.edu/citl/tech-services/student-copilot.php
+Texas A&M University-Corpus Christi,US,R2,Microsoft 365 Copilot Chat (enterprise data protection),GPT via TAMU AI Chat,Gemini via TAMU AI Chat,Claude Sonnet via TAMU AI Chat,"TAMU AI Chat (system gateway, beta)",Implicit,Medium,https://www.it.tamu.edu/ai-services/index.html
+Texas A&M University-Kingsville,US,R2,Microsoft 365 Copilot Chat (enterprise data protection),GPT via TAMU AI Chat,Gemini via TAMU AI Chat,Claude Sonnet via TAMU AI Chat,"TAMU AI Chat (system gateway, beta)",Implicit,Medium,https://www.it.tamu.edu/ai-services/index.html
+Texas Christian University,US,R2,,,,,AI2 institutional AI mainframe (launching fall 2026),,Medium,https://www.tcu.edu/ai/tools.php
+Texas Southern University,US,R2,,,,,,,Low,
+Texas Tech Health Sciences Center,US,R2,,,,,,Explicit,High,https://www.ttuhsc.edu/compliance/artificial_intelligence.aspx
+Texas Woman's University,US,R2,,,,,,,Low,
+The New School,US,R2,,,"Gemini (Google Workspace for Education, enterprise data protection) + NotebookLM",,,Implicit,High,https://services.newschool.edu/TDClient/32/Portal/KB/ArticleDet?ID=1362
+UT Tyler,US,R2,Microsoft Copilot (enterprise; Bing Copilot + Azure OpenAI under contract),,,,Azure OpenAI (contractual agreement),Implicit,High,https://www.uttyler.edu/offices/digital-learning/ai/
+UT Medical Branch Galveston,US,R2,Microsoft Copilot / Dragon Copilot / Teams Premium (enterprise),,,,UTMB Co-Pilot (internal); Qualified Health (HIPAA generative chat); UT System REAL Health AI web search,Explicit,High,https://www.utmb.edu/ai/approved-generative-ai-tools
+UT Rio Grande Valley,US,R2,"Microsoft 365 Copilot (Premium, limited) + Copilot Chat (enterprise)",,,,,Implicit,High,https://support.utrgv.edu/TDClient/1849/Portal/KB/ArticleDet?ID=158456
+University of West Florida,US,R2,,,,,,,Low,
+Thomas Jefferson University,US,R2,Copilot (enterprise data protection),,,,Packback (Canvas-integrated),Implicit,High,https://jefflibraries.libguides.com/artificialintelligence
+University of Akron,US,R2,,,,,,,Low,https://www.uakron.edu/
+University of Alabama Huntsville,US,R2,,,,,,,Low,https://www.uah.edu/etl/etl-news/17988-uah-offers-resources-guidelines-on-responsible-use-of-ai-in-classroom-for-faculty-students
+University of Alaska Fairbanks,US,R2,"Copilot Chat (enterprise data protection, no cost, web login)",,"Gemini (Google Workspace, no cost, data protection)",,Zoom AI Companion (HIPAA-compliant),Implicit,High,https://www.alaska.edu/ai/tools/index.php
+University of Arkansas at Little Rock,US,R2,Microsoft Copilot (via Microsoft accounts),,Google Gemini (via University Gmail),,,Implicit,High,http://ualr.edu/itservices/2024/11/27/ai-now-available-at-ua-little-rock/
+University of Arkansas Medical Sciences,US,R2,Copilot for Microsoft 365,ChatGPT Edu,,,,Explicit,High,https://communications.uams.edu/web/ai-wayfinding/report-an-ai-issue/
+University of Colorado Colorado Springs,US,R2,Copilot for Microsoft 365 / Copilot for the Web,"ChatGPT Edu (CU systemwide, 3-yr OpenAI agreement)",,,Zoom AI Companion,Explicit,High,https://ai.uccs.edu/chatgpt
+UMass Chan Medical School,US,R2,Copilot (UMass system enterprise license),,,,,Implicit,Medium,https://www.umassmed.edu/globalassets/office-of-undergraduate-medical-education-media/vista-curriculum/clinical-genai-policy-v2-draft-.pdf
+UMass Dartmouth,US,R2,Copilot (UMass system enterprise license),,,,"UMass Dartmouth GenAI Platform (institutional gateway: OpenAI, Anthropic Claude, Meta Llama, Cohere, Mistral)",Implicit,High,https://www.umassd.edu/cits/genai/
+University of Michigan-Dearborn,US,R2,"Copilot Chat (no-cost, M365)",,,,"U-M GPT / U-M Maizey (institutional GenAI platform, all campuses incl. Dearborn)",Explicit,High,https://umdearborn.edu/digital-education/generative-ai-um-dearborn
+University of Missouri-St. Louis,US,R2,Microsoft 365 Copilot Chat (enterprise data protection),ChatGPT Edu (UM System Education workspace; faculty/staff licenses ~$240/yr),Google Gemini / NotebookLM (approved for student use),,Grammarly for Education; Zoom AI Companion,Explicit,High,https://www.umsl.edu/technology/resources/artificial-intelligence.html
+University of Nebraska Omaha,US,R2,"Copilot Chat (M365 A5, Enterprise Data Protection)","ChatGPT Edu / ChatGPT Enterprise (up to 1,000 licenses per semester, OpenAI partnership)",,,,Explicit,High,https://www.unomaha.edu/innovative-and-learning-centric-initiatives/ai-learning-lab/chatgpt-edu.php
+University of New England,US,R2,,,,,,,Low,https://library.une.edu/research-help/evaluating-sources/generative-ai/
+University of New Orleans,US,R2,,,,,,,Low,https://www.uno.edu/news/2025-01-15/university-launch-ai-literacy-micro-credential-free-all-students
+UNC Greensboro,US,R2,Microsoft 365 Copilot + Copilot Chat (Commercial Data Protection; Anthropic models available in M365 Copilot),,,,,Explicit,High,https://learningtech.uncg.edu/learning-technology/instructional-tools/microsoft-copilot/
+UNC Wilmington,US,R2,"Copilot (enterprise, Commercial Data Protection; all students/faculty/staff)","ChatGPT (pilot only, 200 faculty/staff through Apr 2027 - not institution-wide)",,,,Implicit,High,https://uncw.edu/seahawk-life/services/technology/support/services/microsoft-copilot
+University of North Florida,US,R2,Microsoft Copilot with Data Protection (official licensed GenAI tool; all students/faculty/staff),,Google Gemini (planned/expanding access),,,Explicit,High,https://www.unf.edu/ai/technologies.html
+University of Northern Colorado,US,R2,,,,,,,Low,https://libguides.unco.edu/c.php?g=1382128&p=10470801
+OU Health Sciences Center,US,R2,Microsoft Copilot with org data protection (recommended; M365 Copilot in pilot),,,,Zoom AI Companion; Adobe Firefly,Implicit,Medium,https://www.ou.edu/ouit/ai
+University of Puerto Rico Mayaguez,US,R2,"Copilot Chat (enterprise data protection, bundled with UPR institutional M365)",,,,,Implicit,Medium,https://www.uprm.edu/cti/office365/
+University of Puerto Rico Rio Piedras,US,R2,"Copilot Chat (enterprise data protection, bundled with UPR institutional M365)",,,,,Implicit,Medium,https://dtaa.uprrp.edu/microsoft-uprrp/
+University of San Diego,US,R2,Copilot (commercial data protection),,,,,Implicit,High,https://www.sandiego.edu/news/detail.php?_focus=92874
+University of San Francisco,US,R2,Copilot Chat (all students/employees); Copilot for M365 by dept purchase,,,,,Implicit,Medium,https://www.usfca.edu/
+University of South Alabama,US,R2,,,"Gemini (institutional Google license, university-sanctioned; Gems custom chatbots)",,,Explicit,High,https://www.southalabama.edu/departments/compliance/policylibrary/policy.html?doc=5D8D5472-5518-47A9-88C6-6344FD772CD2
+University of South Dakota,US,R2,"Microsoft 365 Copilot (approved GenAI chat, commercial data protection)",,,,,Implicit,High,https://www.usd.edu/About/Artificial-Intelligence
+University of Tulsa,US,R2,"Copilot (enterprise via TU SSO, included in Office Suite)",,,,,Implicit,High,https://libraries.utulsa.edu/c.php?g=1459769&p=10854800
+Upstate Medical University,US,R2,Microsoft 365 Copilot Chat + Copilot Agents (SUNY system-wide initiative; SUNY Upstate AI page),,,,,Implicit,Medium,https://www.upstate.edu/imt/services/ai/index.php
+Virginia State University,US,R2,,,,,,,Low,https://www.vsu.edu/
+West Chester University,US,R2,,,,,,,Low,https://www.wcupa.edu/infoServices/generative-AI.aspx
+Western Michigan University,US,R2,Microsoft Copilot (commercial/enterprise data protection; faculty and staff via BroncoNet sign-in; not M365 Copilot),,,,,Implicit,High,https://wmich.edu/bulletins/75422
+Wichita State University,US,R2,Copilot (Microsoft 365),,,,,Implicit,Low,https://www.wichita.edu/about/ai-initiatives/index.php
+Wright State University,US,R2,Copilot Chat (Microsoft 365),ChatGPT (university-purchased),,,,Explicit,High,https://www.wright.edu/information-technology/ai-usage-at-wright-state-university-wsu
+Yeshiva University,US,R2,,,,,,,Low,https://library.yu.edu/ai-for-students
+Williams College,US,LAC,,,"Gemini for Education (free to all faculty, staff, students; Gemini AI Pro available)",,,Explicit,High,https://oit.williams.edu/ats-posts/artificial-intelligence-in-the-classroom-and-at-williams/
+United States Naval Academy,US,LAC,,,,,GenAI.mil (DoD/Navy enterprise IL5 platform),Implicit,Low,https://www.executivegov.com/articles/navy-genai-mil-enterprise-it-service-cui-il5
+United States Air Force Academy,US,LAC,,,,,NIPRGPT / GenAI.mil (DoD platforms; NIPRGPT sunsetting Dec 2025),Implicit,Low,https://usafa.libguides.com/GenAI/when
+Claremont McKenna College,US,LAC,,,,,,,Low,https://www.cmc.edu/magazine/fall-2024/next-frontier-ai
+United States Military Academy,US,LAC,"Copilot (provided to cadets, faculty, staff)",,,,"CamoGPT (Army enterprise LLM, IL5)",Implicit,High,https://library.westpoint.edu/GenAI/westpointtools
+Barnard College,US,LAC,,ChatGPT Team (faculty/staff pilot),"Gemini for Education + NotebookLM (all students via Barnard email, Aug 2025)",,,Implicit,High,https://atlis.barnard.edu/using-genai-barnard
+Hamilton College,US,LAC,,,"Gemini (Workspace, campus-wide: 2.5 Flash + limited 2.5 Pro), NotebookLM",Claude via Amplify gateway,"Amplify (locally hosted gateway: Anthropic, OpenAI, Mistral models); Adobe Firefly; Zoom AI Companion; Blackboard AI Design Assistant (faculty)",Implicit,High,https://www.hamilton.edu/offices/lits/tech-lab/artificial-intelligence/tools
+Grinnell College,US,LAC,,,,,,,Low,https://www.cs.grinnell.edu/
+Washington and Lee University,US,LAC,"Microsoft Copilot (web/mobile, commercial data protection; M365 Copilot NOT provided)",,,,Box AI; Zoom AI Companion; Adobe Firefly; Smartsheet AI,Implicit,High,https://my.wlu.edu/its/how-to/ai-enhanced-apps
+Haverford College,US,LAC,,,,,Amplify GenAI (Vanderbilt open-source gateway; ChatGPT/Claude/Mistral/DeepSeek) - ~150-user pilot,Implicit,Medium,https://guides.tricolib.brynmawr.edu/ai-haverford
+Bates College,US,LAC,,,Gemini for Google Workspace (all Bates users),,,Implicit,High,https://www.bates.edu/curricular-research-computing/ai-bates/resources/gen-ai/
+College of the Holy Cross,US,LAC,,,"NotebookLM (college-provided, closed system via HC login)",,Suarez (institutional closed AI gateway for copyright/data compliance),Implicit,Medium,https://libguides.holycross.edu/artificialintelligence/Research
+Mount Holyoke College,US,LAC,,,"Gemini (enabled campus-wide in MHC Google Workspace for students/staff/faculty; private via MHC account, 3-month retention)",,,Implicit,High,https://lits.mtholyoke.edu/news/2025-08-19/gemini-ai-now-included-google-tools-mhc-users
+Colorado College,US,LAC,,,,,,Implicit,Low,https://www.coloradocollege.edu/other/generative-ai/
+Bryn Mawr College,US,LAC,,,,,"BoodleBox (multi-model higher-ed AI platform, library-supported)",,Low,https://www.insidehighered.com/news/student-success/academic-life/2026/03/13/how-libraries-shape-ai-literacy-campus
+Bucknell University,US,LAC,,,,,,,Low,https://researchbysubject.bucknell.edu/AIatBucknell
+Lafayette College,US,LAC,Copilot Chat (enterprise data protection),,Gemini Web App + NotebookLM,,,Implicit,High,https://help.lafayette.edu/ai/
+Denison University,US,LAC,,ChatGPT (via DenAI gateway),,Claude (via DenAI gateway),DenAI - custom AWS-built AI gateway (15+ LLMs),Implicit,High,https://denison.edu/ai
+Franklin and Marshall College,US,LAC,,,"Gemini (Google Workspace, campus-wide)",,,Implicit,High,https://www.fandm.edu/ai/
+Occidental College,US,LAC,,,,,,,Low,https://libguides.oxy.edu/AI/students
+Skidmore College,US,LAC,,,,,,,Low,https://ai.domains.skidmore.edu/
+Pitzer College,US,LAC,,,,,,Explicit,Low,https://www.pitzer.edu/ai-policy
+Trinity College,US,LAC,"Copilot (enterprise data protection, faculty/staff)",,Gemini / Imagen3,,,Implicit,High,https://edtech.domains.trincoll.edu/choose-the-right-generative-ai-tool-for-teaching-and-research/
+Spelman College,US,LAC,,,,,,,Low,https://www.spelmanil.org/general-4
+Trinity University,US,LAC,,,,,,,Low,
+Scripps College,US,LAC,,,,,,,Low,https://www.scrippscollege.edu/news/magazine/from-tenochtitlan-to-chatgpt-how-scripps-college-is-navigating-the-ai-era
+Soka University of America,US,LAC,,,,,,,Low,
+Union College,US,LAC,,,,,,,Low,
+Berea College,US,LAC,,,,,,,Low,https://libraryguides.berea.edu/plagiarism
+Kenyon College,US,LAC,,,,,,,Low,https://www.kenyon.edu/offices-and-services/office-of-the-provost/teaching-resources/instructional-technology/artificial-intelligence/
+Dickinson College,US,LAC,Copilot (Microsoft 365 license),,,,,Implicit,Medium,https://www.dickinson.edu/news/article/6043/dickinson_college_to_host_ai_symposium
+Furman University,US,LAC,"Copilot (enterprise, Furman credentials)",,,,,Implicit,High,https://www.furman.edu/ai/
+Sewanee: The University of the South,US,LAC,Copilot Pro (faculty),,,,,Implicit,Medium,https://thecraft.sewanee.edu/index.php/2025/11/18/ai-language-teaching/
+Hillsdale College,US,LAC,,,,,,,Low,https://hillsdalecollegian.com/2023/08/faculty-responds-to-ai-threat-on-campus/
+St. Olaf College,US,LAC,,,,,,,Low,
+Wheaton College,US,LAC,,,,,,,Low,https://www.wheaton.edu/academics/services/academic-and-institutional-technology/support-and-services/software-and-business-applications/
+Connecticut College,US,LAC,,,"Gemini (Workspace, enterprise data protection via Conn Gmail) + NotebookLM",,"BoodleBox (preferred platform 2025-26, FERPA/HIPAA/GDPR compliant); Adobe Firefly",Explicit,High,https://engage.digital.conncoll.edu/ai/a-commitment-to-responsible-ai-innovation/
+Wabash College,US,LAC,,,,,,,Low,https://library.wabash.edu/ai-in-the-classroom
+Centre College,US,LAC,,,,,,,Low,
+Rhodes College,US,LAC,"Copilot (enterprise data protection, OneLogin SSO)",,,,,Implicit,High,https://sites.rhodes.edu/sites/sites/files/2025-03/Artificial_Intelligence_Guidelines.pdf
+Thomas Aquinas College,US,LAC,,,,,,,Low,
+DePauw University,US,LAC,,,,,,,Low,https://www.depauw.edu/gateways/faculty-staff/
+Oberlin College and Conservatory,US,LAC,,"ChatGPT Enterprise (faculty/staff fall 2025, students spring 2026)","Gemini (enterprise, faculty/staff fall 2025, students spring 2026)",,,Implicit,High,https://www.oberlin.edu/news/exploring-ai-oberlin-way
+Gettysburg College,US,LAC,,,,,,,Low,https://gettysburgian.com/2023/10/the-age-of-generative-ai-at-gettysburg-college/
+St. Lawrence University,US,LAC,Microsoft Copilot (integrated in institutional Microsoft Office 365),,,,,Implicit,Medium,https://digital.stlawu.edu/tool/microsoft-copilot/
+Reed College,US,LAC,,,,,,,Low,https://www.reed.edu/ctl/generative-ai.html
+Principia College,US,LAC,,,,,,,Low,https://library.principiacollege.edu/citation-help/apa
+Virginia Military Institute,US,LAC,,,,,,,Low,https://www.vmi.edu/about/offices-a-z/it/cadet-computing/
+Lawrence University,US,LAC,,,,,,,Low,
+Agnes Scott College,US,LAC,,,,,,,Low,https://www.insidehighered.com/news/student-success/academic-life/2026/04/03/how-5-colleges-are-approaching-ai
+Wofford College,US,LAC,,,,,,,Low,
+Kalamazoo College,US,LAC,,,,,,,Low,https://libguides.kzoo.edu/ai
+Gustavus Adolphus College,US,LAC,,,,,,,Low,https://libguides.gustavus.edu/faculty/ChatGPT
+Bard College,US,LAC,,,,,,,Low,
+Muhlenberg College,US,LAC,,,,,,,Low,
+College of St. Benedict,US,LAC,Microsoft Copilot (Commercial Data Protection),,Gemini,,,Implicit,Medium,https://guides.csbsju.edu/AI
+Hobart and William Smith Colleges,US,LAC,,,,,"BoodleBox (multi-model aggregator pilot, ~300 users; ChatGPT/Gemini/Claude access)",Implicit,Medium,https://www.hws.edu/news/2026/opening-the-black-box.aspx
+Lake Forest College,US,LAC,,,,,,,Low,
+Earlham College,US,LAC,,,,,,,Low,https://earlham.edu/student-life/expectations-policies-services/academic-life/
+College of Wooster,US,LAC,Copilot Chat (enterprise data protection),,,,,Implicit,High,https://inside.wooster.edu/technology/knowledge-base/copilot/
+Willamette University,US,LAC,,,Gemini (Workspace) + NotebookLM,,,Implicit,High,https://libguides.willamette.edu/google-ed-ai-tools/gemini
+Allegheny College,US,LAC,,,,,,,Low,
+Knox College,US,LAC,,,,,,,Low,
+St. John's University,US,LAC,"Copilot (commercial/enterprise data protection, @stjohns.edu sign-in)",,,,Superhuman Go (formerly Grammarly) - higher-ed AI partnership,Explicit,High,https://www.stjohns.edu/academics/artificial-intelligence-ai-st-johns-university/ai-tools
+Stonehill College,US,LAC,,,,,,,Low,
+Saint Mary's College,US,LAC,,,,,,,Low,https://www.saintmarys.edu/student-life/student-services/information-technology
+St. John's College,US,LAC,,,,,,,Low,https://www.sjc.edu/news/how-might-st-johns-college-fare-in-age-of-artificial-intelligence
+Ursinus College,US,LAC,,,,,,,Low,
+Southwestern University,US,LAC,,,,,,,Low,https://www.southwestern.edu/teaching-learning-scholarship/artificial-intelligence-ai/
+Austin College,US,LAC,,,,,,,Low,
+Drew University,US,LAC,,,,,,,Low,https://drew.edu/about/technology-resources/university-technology/policies/microsoft-campus-agreement/
+Washington and Jefferson College,US,LAC,,,,,,,Low,
+Hope College,US,LAC,,,,,,,Low,
+Juniata College,US,LAC,,,,,,,Low,https://www.juniata.edu/offices/information-technology-services/new-student-guide.php
+Beloit College,US,LAC,,,,,,,Low,
+Washington College,US,LAC,,,,,,,Low,
+Whittier College,US,LAC,,,,,,,Low,https://ctl.whittier.domains/ai/
+Saint Anselm College,US,LAC,,,,,,,Low,
+University of Puget Sound,US,LAC,,,,,,,Low,https://www.pugetsound.edu/guidance-faculty-ai-based-writing-tools
+Morehouse College,US,LAC,,OpenAI (AI teaching assistant pilot via VictoryXR),,,AWS/Amazon-MLU Educators Consortium,,Low,https://morehouse.edu/ai/initiatives-and-pilots
+St. Mary's College of Maryland,US,LAC,,,,,,,Low,
+Augustana College,US,LAC,,,,,,,Low,https://augustana.edu/ai-statement
+Lycoming College,US,LAC,,,,,,,Low,
+Lewis & Clark College,US,LAC,,,Gemini for Education (Google Workspace) + NotebookLM,,,Implicit,High,https://www.lclark.edu/live/news/55865-google-gemini-notebooklm-now-available
+Randolph-Macon College,US,LAC,,,,,,,Low,
+Susquehanna University,US,LAC,,,,,,,Low,
+Hendrix College,US,LAC,,,,,,,Low,
+Hampden-Sydney College,US,LAC,,,,,,,Low,
+Patrick Henry College,US,LAC,,,,,,,Low,https://www.phc.edu/strategic-intelligence-cyber-track
+Sarah Lawrence College,US,LAC,,,,,,,Low,https://patch.com/new-york/bronxville/sarah-lawrence-college-announces-non-credit-programs-genai-film
+Transylvania University,US,LAC,,,,,,,Low,
+St. Norbert College,US,LAC,,,,,,,Low,
+Linfield College,US,LAC,,,,,,,Low,
+Luther College,US,LAC,,,,,,,Low,
+Illinois College,US,LAC,,,,,,,Low,
+Hanover College,US,LAC,,,,,,,Low,
+Westmont College,US,LAC,,,Gemini (Google Workspace for Education),,,Implicit,Medium,https://www.westmont.edu/information-technology/ai-policy
+Massachusetts College of Liberal Arts,US,LAC,,,,,,,Low,https://library.mcla.edu/c.php?g=703731&p=10495135
+Saint Michael's College,US,LAC,,,,,,,Low,https://www.smcvt.edu/about-smc/news/2026/may/ai-friend-or-faux-saint-michaels-college-prepares-students-for-critical-engagement-with-emerging-tech/
+University of Minnesota Morris,US,LAC,Copilot with Enterprise Data Protection,,Gemini (licensed),,,Implicit,Medium,https://it.umn.edu/services-technologies/microsoft-copilot-enterprise-data
+Meredith College,US,LAC,,,,,,,Low,
+Westminster College,US,LAC,,,,,,,Low,https://libguides.westminster.edu/artificialintelligenceresources
+Bennington College,US,LAC,,,,,,,Low,
+Saint Vincent College,US,LAC,,,,,,,Low,
+Ohio Wesleyan University,US,LAC,,,,,,,Low,https://www.owu.edu/about/offices-services-directory/smith-center-for-faculty-excellence/artificial-intelligence-ai/cic-ai-ready-program-for-faculty/
+Cornell College,US,LAC,,,,,,,Low,https://www.cornellcollege.edu/information-technology/
+Covenant College,US,LAC,,,,,,,Low,
+Roanoke College,US,LAC,,,,,,,Low,
+Goucher College,US,LAC,,,,,,,Low,
+Coe College,US,LAC,,,"Gemini Pro, NotebookLM, Veo (Google AI for Education Accelerator)",,,,High,https://www.coe.edu/why-coe/news/coe-news/coe-college-partners-google-ai-education-accelerator
+College of the Atlantic,US,LAC,,,,,,,Low,
+Albion College,US,LAC,,,,,,,Low,
+Central College,US,LAC,,,,,,,Low,
+University of Mary Washington,US,LAC,Microsoft 365 Copilot Chat (enterprise data protection),,,,,Implicit,High,https://dkc.umw.edu/tools/copilot/
+State University of New York at Purchase College,US,LAC,,,,,,,Low,
+New College of Florida,US,LAC,,,,,,,Low,
+Eckerd College,US,LAC,,,,,,,Low,https://www.eckerd.edu/news/blog/learn-about-ai-from-google-executive/
+Concordia College at Moorhead,US,LAC,,,,,,,Low,https://www.concordiacollege.edu/
+University of North Carolina at Asheville,US,LAC,,,,,,,Low,https://go.unca.edu/ctl/artificial-intelligence/
+Hollins University,US,LAC,,,,,,,Low,
+Emmanuel College,US,LAC,,,,,,,Low,
+University of New Hampshire at Manchester,US,LAC,Copilot (enterprise data protection),ChatGPT (via DeepThought gateway),Gemini (via DeepThought gateway),Claude (via DeepThought gateway; FERPA/Tier 3 approval pending),"DeepThought — USNH's own AI platform hosting premium models (custom chatbots, document upload)",Explicit,High,https://td.usnh.edu/TDClient/60/Portal/KB/ArticleDet?ID=5322
+Claflin University,US,LAC,,,,,,,Low,
+Salem College,US,LAC,,,,,,,Low,
+Centenary College of Louisiana,US,LAC,,,,,,,Low,
+Ripon College,US,LAC,,,,,,,Low,
+Millsaps College,US,LAC,,,,,,,Low,
+Franklin College,US,LAC,,,,,,,Low,
+Aquinas College,US,LAC,,,,,,,Low,
+Houghton College,US,LAC,,,,,,,Low,
+New Saint Andrews College,US,LAC,,,,,,,Low,

@@ -1,0 +1,477 @@
+institution,type
+American University,R1
+Arizona State University,R1
+Auburn University,R1
+Baylor College of Medicine,R1
+Baylor University,R1
+Binghamton University,R1
+Boston College,R1
+Boston University,R1
+Brandeis University,R1
+Brigham Young University,R1
+Brown University,R1
+California Institute of Technology,R1
+Carnegie Mellon University,R1
+Case Western Reserve University,R1
+Catholic University of America,R1
+Clemson University,R1
+Colorado School of Mines,R1
+Colorado State University,R1
+Columbia University,R1
+Cornell University,R1
+CUNY Graduate School,R1
+Dartmouth College,R1
+Drexel University,R1
+Duke University,R1
+East Carolina University,R1
+Emory University,R1
+Florida Atlantic University,R1
+Florida International University,R1
+Florida State University,R1
+George Mason University,R1
+George Washington University,R1
+Georgetown University,R1
+Georgia Institute of Technology,R1
+Georgia State University,R1
+Harvard University,R1
+Howard University,R1
+Indiana University Bloomington,R1
+Indiana University Indianapolis,R1
+Iowa State University,R1
+Johns Hopkins University,R1
+Kansas State University,R1
+Kent State University,R1
+Lehigh University,R1
+Louisiana State University,R1
+Loyola University Chicago,R1
+MIT,R1
+Medical University of South Carolina,R1
+Michigan State University,R1
+Michigan Technological University,R1
+Mississippi State University,R1
+Missouri University of Science and Technology,R1
+Montana State University,R1
+New Jersey Institute of Technology,R1
+New Mexico State University,R1
+New York University,R1
+North Carolina State University,R1
+North Dakota State University,R1
+Northeastern University,R1
+Northern Arizona University,R1
+Northwestern University,R1
+Nova Southeastern University,R1
+Ohio State University,R1
+Ohio University,R1
+Oklahoma State University,R1
+Old Dominion University,R1
+Oregon State University,R1
+Princeton University,R1
+Purdue University,R1
+Rensselaer Polytechnic Institute,R1
+Rice University,R1
+Rutgers University-New Brunswick,R1
+Saint Louis University,R1
+San Diego State University,R1
+Southern Illinois University,R1
+Southern Methodist University,R1
+Stanford University,R1
+Stony Brook University,R1
+Syracuse University,R1
+Temple University,R1
+Texas A&M University,R1
+Texas Tech University,R1
+Penn State University,R1
+University of Alabama,R1
+University of Montana,R1
+UT Health Science Center,R1
+University of Tennessee-Knoxville,R1
+UT Arlington,R1
+University of Texas at Austin,R1
+UT Dallas,R1
+UT El Paso,R1
+UT San Antonio,R1
+UT Health Houston,R1
+UT Health San Antonio,R1
+Tufts University,R1
+Tulane University,R1
+University at Albany,R1
+University at Buffalo,R1
+University of Alabama at Birmingham,R1
+University of Arizona,R1
+University of Arkansas,R1
+UC Berkeley,R1
+UC Davis,R1
+UC Irvine,R1
+UCLA,R1
+UC Merced,R1
+UC Riverside,R1
+UC San Diego,R1
+UCSF,R1
+UC Santa Barbara,R1
+UC Santa Cruz,R1
+University of Central Florida,R1
+University of Chicago,R1
+University of Cincinnati,R1
+University of Colorado Boulder,R1
+University of Colorado Denver,R1
+University of Connecticut,R1
+University of Dayton,R1
+University of Delaware,R1
+University of Denver,R1
+University of Florida,R1
+University of Georgia,R1
+University of Hawaii at Manoa,R1
+University of Houston,R1
+University of Idaho,R1
+University of Illinois Chicago,R1
+University of Illinois Urbana-Champaign,R1
+University of Iowa,R1
+University of Kansas,R1
+University of Kentucky,R1
+University of Louisiana at Lafayette,R1
+University of Louisville,R1
+University of Maine,R1
+University of Maryland-Baltimore County,R1
+University of Maryland-College Park,R1
+University of Maryland Baltimore,R1
+University of Massachusetts-Amherst,R1
+University of Massachusetts-Boston,R1
+University of Massachusetts-Lowell,R1
+University of Memphis,R1
+University of Miami,R1
+University of Michigan-Ann Arbor,R1
+University of Minnesota-Twin Cities,R1
+University of Mississippi,R1
+University of Missouri-Columbia,R1
+University of Missouri-Kansas City,R1
+University of Nebraska Medical Center,R1
+University of Nebraska-Lincoln,R1
+UNLV,R1
+University of Nevada-Reno,R1
+University of New Hampshire,R1
+University of New Mexico,R1
+University of North Carolina at Chapel Hill,R1
+University of North Carolina at Charlotte,R1
+University of North Dakota,R1
+University of North Texas,R1
+University of Notre Dame,R1
+University of Oklahoma,R1
+University of Oregon,R1
+University of Pennsylvania,R1
+University of Pittsburgh,R1
+University of Rhode Island,R1
+University of Rochester,R1
+University of South Carolina,R1
+University of South Florida,R1
+University of Southern California,R1
+University of Southern Mississippi,R1
+UT Southwestern Medical Center,R1
+University of Toledo,R1
+University of Utah,R1
+University of Vermont,R1
+University of Virginia,R1
+University of Washington,R1
+University of Wisconsin-Madison,R1
+University of Wisconsin-Milwaukee,R1
+University of Wyoming,R1
+Utah State University,R1
+Vanderbilt University,R1
+Virginia Commonwealth University,R1
+Virginia Tech,R1
+Washington State University,R1
+Washington University in St. Louis,R1
+Wayne State University,R1
+Weill Cornell Medicine,R1
+West Virginia University,R1
+William & Mary,R1
+Worcester Polytechnic Institute,R1
+Yale University,R1
+Abilene Christian University,R2
+Air Force Institute of Technology,R2
+Albert Einstein College of Medicine,R2
+Appalachian State University,R2
+Arkansas State University,R2
+Augusta University,R2
+Azusa Pacific University,R2
+Ball State University,R2
+Boise State University,R2
+Bowling Green State University,R2
+Cal Poly Pomona,R2
+CSU Fresno,R2
+CSU Fullerton,R2
+CSU Long Beach,R2
+CSU Los Angeles,R2
+CSU Sacramento,R2
+Central Michigan University,R2
+Chapman University,R2
+Claremont Graduate University,R2
+Clark Atlanta University,R2
+Clark University,R2
+Clarkson University,R2
+Cleveland State University,R2
+Creighton University,R2
+CUNY City College,R2
+CUNY Hunter College,R2
+Delaware State University,R2
+DePaul University,R2
+Duquesne University,R2
+East Tennessee State University,R2
+East Texas A&M University,R2
+Eastern Michigan University,R2
+Eastern Virginia Medical School,R2
+Embry-Riddle Aeronautical University,R2
+Florida A&M University,R2
+Florida Institute of Technology,R2
+Fordham University,R2
+Georgia Southern University,R2
+Hampton University,R2
+Hofstra University,R2
+Icahn School of Medicine at Mount Sinai,R2
+Idaho State University,R2
+Illinois Institute of Technology,R2
+Illinois State University,R2
+Indiana University of Pennsylvania,R2
+Jackson State University,R2
+James Madison University,R2
+Kean University,R2
+Kennesaw State University,R2
+Lamar University,R2
+Loma Linda University,R2
+Long Island University,R2
+LSU Health Sciences Center,R2
+Louisiana Tech University,R2
+Loyola Marymount University,R2
+Marquette University,R2
+Marshall University,R2
+Medical College of Wisconsin,R2
+Mercer University,R2
+Miami University Ohio,R2
+Middle Tennessee State University,R2
+Montclair State University,R2
+Morgan State University,R2
+North Carolina A&T State University,R2
+Northern Illinois University,R2
+Oakland University,R2
+Oklahoma State University Health Sciences,R2
+Oregon Health & Science University,R2
+Pepperdine University,R2
+Portland State University,R2
+Prairie View A&M University,R2
+Rochester Institute of Technology,R2
+Rockefeller University,R2
+Rowan University,R2
+Rush University,R2
+Rutgers University-Camden,R2
+Rutgers University-Newark,R2
+Saint Joseph's University,R2
+Sam Houston State University,R2
+San Francisco State University,R2
+San Jose State University,R2
+Seton Hall University,R2
+South Carolina State University,R2
+South Dakota State University,R2
+Southern Connecticut State University,R2
+Southern University,R2
+Stevens Institute of Technology,R2
+SUNY ESF,R2
+Tarleton State University,R2
+Teachers College Columbia,R2
+Tennessee State University,R2
+Tennessee Technological University,R2
+Texas A&M University-Corpus Christi,R2
+Texas A&M University-Kingsville,R2
+Texas Christian University,R2
+Texas Southern University,R2
+Texas State University,R2
+Texas Tech Health Sciences Center,R2
+Texas Woman's University,R2
+The New School,R2
+UT Tyler,R2
+UT Medical Branch Galveston,R2
+UT Rio Grande Valley,R2
+University of West Florida,R2
+Thomas Jefferson University,R2
+University of Akron,R2
+University of Alabama Huntsville,R2
+University of Alaska Fairbanks,R2
+University of Arkansas at Little Rock,R2
+University of Arkansas Medical Sciences,R2
+University of Colorado Colorado Springs,R2
+UMass Chan Medical School,R2
+UMass Dartmouth,R2
+University of Michigan-Dearborn,R2
+University of Missouri-St. Louis,R2
+University of Nebraska Omaha,R2
+University of New England,R2
+University of New Orleans,R2
+UNC Greensboro,R2
+UNC Wilmington,R2
+University of North Florida,R2
+University of Northern Colorado,R2
+OU Health Sciences Center,R2
+University of Puerto Rico Mayaguez,R2
+University of Puerto Rico Rio Piedras,R2
+University of San Diego,R2
+University of San Francisco,R2
+University of South Alabama,R2
+University of South Dakota,R2
+University of Tulsa,R2
+Upstate Medical University,R2
+Villanova University,R2
+Virginia State University,R2
+Wake Forest University,R2
+West Chester University,R2
+Western Michigan University,R2
+Wichita State University,R2
+Wright State University,R2
+Yeshiva University,R2
+Williams College,LAC
+Amherst College,LAC
+United States Naval Academy,LAC
+Swarthmore College,LAC
+Bowdoin College,LAC
+United States Air Force Academy,LAC
+Pomona College,LAC
+Wellesley College,LAC
+Claremont McKenna College,LAC
+United States Military Academy,LAC
+Carleton College,LAC
+Harvey Mudd College,LAC
+Vassar College,LAC
+Barnard College,LAC
+Wesleyan University,LAC
+Davidson College,LAC
+Hamilton College,LAC
+Smith College,LAC
+Grinnell College,LAC
+Middlebury College,LAC
+Washington and Lee University,LAC
+Colgate University,LAC
+University of Richmond,LAC
+Haverford College,LAC
+Colby College,LAC
+Bates College,LAC
+College of the Holy Cross,LAC
+Macalester College,LAC
+Mount Holyoke College,LAC
+Colorado College,LAC
+Bryn Mawr College,LAC
+Bucknell University,LAC
+Lafayette College,LAC
+Denison University,LAC
+Franklin and Marshall College,LAC
+Occidental College,LAC
+Skidmore College,LAC
+Pitzer College,LAC
+Trinity College,LAC
+Spelman College,LAC
+Trinity University,LAC
+Scripps College,LAC
+Soka University of America,LAC
+Union College,LAC
+Berea College,LAC
+Kenyon College,LAC
+Dickinson College,LAC
+Furman University,LAC
+Sewanee: The University of the South,LAC
+Hillsdale College,LAC
+St. Olaf College,LAC
+Wheaton College,LAC
+Connecticut College,LAC
+Wabash College,LAC
+Centre College,LAC
+Rhodes College,LAC
+Thomas Aquinas College,LAC
+DePauw University,LAC
+Whitman College,LAC
+Oberlin College and Conservatory,LAC
+Gettysburg College,LAC
+St. Lawrence University,LAC
+Reed College,LAC
+Principia College,LAC
+Virginia Military Institute,LAC
+Lawrence University,LAC
+Agnes Scott College,LAC
+Wofford College,LAC
+Kalamazoo College,LAC
+Gustavus Adolphus College,LAC
+Bard College,LAC
+Muhlenberg College,LAC
+College of St. Benedict,LAC
+Hobart and William Smith Colleges,LAC
+Lake Forest College,LAC
+Wheaton College,LAC
+Earlham College,LAC
+College of Wooster,LAC
+Willamette University,LAC
+Allegheny College,LAC
+Knox College,LAC
+St. John's University,LAC
+Stonehill College,LAC
+Saint Mary's College,LAC
+St. John's College,LAC
+Ursinus College,LAC
+Southwestern University,LAC
+Austin College,LAC
+Drew University,LAC
+Washington and Jefferson College,LAC
+Hope College,LAC
+Juniata College,LAC
+Beloit College,LAC
+Washington College,LAC
+Whittier College,LAC
+Saint Anselm College,LAC
+University of Puget Sound,LAC
+Morehouse College,LAC
+St. Mary's College of Maryland,LAC
+Augustana College,LAC
+Lycoming College,LAC
+Lewis & Clark College,LAC
+Randolph-Macon College,LAC
+Susquehanna University,LAC
+St. John's College,LAC
+Hendrix College,LAC
+Hampden-Sydney College,LAC
+Patrick Henry College,LAC
+Sarah Lawrence College,LAC
+Transylvania University,LAC
+St. Norbert College,LAC
+Linfield College,LAC
+Luther College,LAC
+Illinois College,LAC
+Hanover College,LAC
+Westmont College,LAC
+Massachusetts College of Liberal Arts,LAC
+Saint Michael's College,LAC
+University of Minnesota Morris,LAC
+Meredith College,LAC
+Westminster College,LAC
+Bennington College,LAC
+Saint Vincent College,LAC
+Ohio Wesleyan University,LAC
+Cornell College,LAC
+Covenant College,LAC
+Roanoke College,LAC
+Goucher College,LAC
+Coe College,LAC
+College of the Atlantic,LAC
+Albion College,LAC
+Central College,LAC
+University of Mary Washington,LAC
+State University of New York at Purchase College,LAC
+New College of Florida,LAC
+Eckerd College,LAC
+Concordia College at Moorhead,LAC
+University of North Carolina at Asheville,LAC
+Hollins University,LAC
+Emmanuel College,LAC
+University of New Hampshire at Manchester,LAC
+Claflin University,LAC
+Salem College,LAC
+Centenary College of Louisiana,LAC
+Ripon College,LAC
+Millsaps College,LAC
+Franklin College,LAC
+Aquinas College,LAC
+Houghton College,LAC
+New Saint Andrews College,LAC
