@@ -226,6 +226,26 @@ These are not formal university courses but occupy adjacent space and are likely
 
 ---
 
+## Refresh Addendum — 2026-07-05
+
+Focused refresh (~12 searches) ahead of the Spring 2027 course launch. **Verdict: the March conclusion holds, with one erosion.** No for-credit undergraduate course teaching hands-on AI skills specifically to economics students was found. Changes since March:
+
+1. **CEU Vienna (Békés) — updated, most important change.** The June 1, 2026 "Summer edition" is now explicitly **open-source and forkable by instructors**, and now includes **"Terminal Basics" in its Knowledge Base and "Git discipline" in Week 3**. This kills the March sub-claim that no course teaches terminal/Git to econ students. Still: mixed BA/MA, assumes prior coding, data-analysis-scoped, no career prep, credit status unclear. Remains the closest comparator; no forks/adoptions found yet.
+2. **Grad Claude Code workshops proliferating** (Goldsmith-Pinkham, Sant'Anna, and others per Lastunen's site) — non-credit, grad-level; this is where the space moves fastest.
+3. **Lastunen moved + expanded**: now at https://policy.fi/ai-econ/ (agentic coding, verification-debt framing). Still a resource, not a course.
+4. **New Tier 4 entry**: Mele, "Awesome Econ AI Stuff / AI Skills for Economists" (https://meleantonio.github.io/awesome-econ-ai-stuff/) — open skills/prompt library; note the naming overlap with our positioning.
+5. **No change**: Fetzer/Warwick (still lecture-based), Korinek genaiforecon.org (last update Aug 2025), AEA EDUCATE 2026 (no AI-skills offering).
+6. Falsification searches (course catalogs, econ+Git+prompting syllabi, 1-credit AI econ) found nothing combining for-credit + undergraduate + econ-specific + hands-on skills.
+
+**Safe claim wording (use this, not "the first"):**
+> "To my knowledge, this is among the first for-credit undergraduate courses anywhere dedicated to teaching economics majors to work effectively with AI — combining hands-on tool skills, verification practices, technical foundations (command line, Git, plain-text workflows), AI-assisted data analysis, and career preparation. As of a July 2026 scan, the closest existing offering (CEU Vienna's 'Doing Data Analysis with AI') is a semester-length data-analysis course for mixed BA/MA students that assumes prior coding experience."
+
+Short public version: **"plausibly among the first for-credit undergraduate AI-skills courses designed specifically for economics majors."**
+
+**Hedging rules:** (a) never "the first" — always "among the first" + "to my knowledge" + date stamp; (b) don't claim terminal/Git instruction is unprecedented (CEU 2026 covers both) — the novelty is the *integrated undergraduate bundle*; (c) "for-credit" and "undergraduate" are the load-bearing qualifiers; (d) **re-scan ~Nov/Dec 2026** before anything goes to print — CEU's materials are forkable and the window to Jan 2027 carries real risk of a competing announcement.
+
+---
+
 ## Sources
 
 - [CEU - Doing Data Analysis with AI](https://gabors-data-analysis.com/ai-course/)
